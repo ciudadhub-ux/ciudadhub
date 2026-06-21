@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import GuestsList from "@/components/GuestsList";
 import EpisodesSection from "@/components/EpisodesSection";
+import TeamSection from "@/components/TeamSection";
 import Footer from "@/components/Footer";
 import { episodes, allTopics } from "@/lib/data";
 
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero episode={latestEpisode} />
         <EpisodesSection episodes={episodes} topics={topicNames} />
         <GuestsList episodes={episodes} />
+        <TeamSection />
       </main>
       <Footer />
     </>

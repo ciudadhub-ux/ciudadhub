@@ -29,6 +29,12 @@ export default function Nav() {
           >
             Invitados
           </Link>
+          <Link
+            href="#equipo"
+            className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors"
+          >
+            Equipo
+          </Link>
         </div>
 
         <a
