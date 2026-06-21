@@ -167,13 +167,16 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
 
     if (topicParam) setActiveTopic(topicParam);
 
-    // Wait for filter animation (400ms) then scroll + highlight
+    // Wait for filter + Motion animations to settle (~0.76s max), then scroll precisely
     setTimeout(() => {
       setHighlightedId(id);
       const el = document.getElementById(`ep-${id}`);
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 168; // 144px nav + 24px gap
+        window.scrollTo({ top, behavior: "smooth" });
+      }
       setTimeout(() => setHighlightedId(null), 3200);
-    }, 500);
+    }, 900);
   }, []);
 
   const cities = useMemo(
