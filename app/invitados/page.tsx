@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { MapPin } from "@phosphor-icons/react/dist/ssr";
 import Nav from "@/components/Nav";
 import { episodes } from "@/lib/data";
@@ -140,7 +139,7 @@ export default function InvitadosPage() {
             {guests.map(({ name, episodeId, city }) => {
               const photo = PHOTO_MAP[name];
               return (
-                <Link
+                <a
                   key={`${name}-${episodeId}`}
                   href={`/#ep-${episodeId}`}
                   className="group flex flex-col"
@@ -173,7 +172,7 @@ export default function InvitadosPage() {
                       {city}
                     </p>
                   )}
-                </Link>
+                </a>
               );
             })}
           </div>
