@@ -32,9 +32,14 @@ function formatRole(role: string) {
   ));
 }
 
+function seedColor(seed: string) {
+  let h = 0;
+  for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) & 0xfffff;
+  return 20 + (h % 36); // warm hues 20-55°
+}
+
 export default function Hero({ episode }: HeroProps) {
-  const imageUrl = episode.imageUrl ||
-    `/api/og?title=${encodeURIComponent(episode.title)}&guest=${encodeURIComponent(episode.guest)}&city=${encodeURIComponent(episode.city)}`;
+  const hue = seedColor(episode.guestAvatarSeed);
 
   return (
     <section className="min-h-[100dvh] pt-36 flex items-center">
@@ -104,14 +109,24 @@ export default function Hero({ episode }: HeroProps) {
 
           <div className="relative hidden lg:block">
             <div className="aspect-[4/5] rounded-2xl overflow-hidden relative">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={imageUrl}
-                alt={episode.title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+              {episode.imageUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={episode.imageUrl}
+                  alt={episode.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              ) : (
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: `radial-gradient(ellipse 80% 60% at 30% 40%, hsl(${hue} 70% 22%), transparent),
+                                 radial-gradient(ellipse 60% 50% at 75% 70%, hsl(${hue + 15} 60% 16%), transparent),
+                                 #09090b`,
+                  }}
+                />
+              )}
             </div>
-
           </div>
         </div>
       </div>
