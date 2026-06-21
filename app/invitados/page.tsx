@@ -109,12 +109,12 @@ function initials(name: string) {
 
 export default function InvitadosPage() {
   // Deduplicar invitados: un registro por nombre, el episodio más reciente (primero en array)
-  const guestsMap = new Map<string, { name: string; episodeId: number; city: string }>();
+  const guestsMap = new Map<string, { name: string; episodeId: number; city: string; topics: string[] }>();
   for (const ep of episodes) {
     const name = ep.guest.trim();
     if (!name || name.toLowerCase() === "ciudadhub") continue;
     if (!guestsMap.has(name)) {
-      guestsMap.set(name, { name, episodeId: ep.id, city: ep.city });
+      guestsMap.set(name, { name, episodeId: ep.id, city: ep.city, topics: ep.topics ?? [] });
     }
   }
 
@@ -136,12 +136,12 @@ export default function InvitadosPage() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-            {guests.map(({ name, episodeId, city }) => {
+            {guests.map(({ name, episodeId, city, topics }) => {
               const photo = PHOTO_MAP[name];
               return (
                 <a
                   key={`${name}-${episodeId}`}
-                  href={`/#ep-${episodeId}`}
+                  href={`/?highlight=${episodeId}${topics[0] ? `&topic=${encodeURIComponent(topics[0])}` : ""}#ep-${episodeId}`}
                   className="group flex flex-col"
                 >
                   {/* Foto */}

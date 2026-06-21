@@ -155,6 +155,27 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
     return () => window.removeEventListener("highlight-episode", handler);
   }, []);
 
+  // On arrival from /invitados via /?highlight=ID&topic=TEMA#ep-ID
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const topicParam = params.get("topic");
+    const highlightParam = params.get("highlight");
+    if (!highlightParam) return;
+
+    const id = parseInt(highlightParam, 10);
+    if (isNaN(id)) return;
+
+    if (topicParam) setActiveTopic(topicParam);
+
+    // Wait for filter animation (400ms) then scroll + highlight
+    setTimeout(() => {
+      setHighlightedId(id);
+      const el = document.getElementById(`ep-${id}`);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => setHighlightedId(null), 3200);
+    }, 500);
+  }, []);
+
   const cities = useMemo(
     () => [...new Set(episodes.map((ep) => ep.city).filter(Boolean))].sort(),
     [episodes]
