@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { MapPin } from "@phosphor-icons/react/dist/ssr";
 import { Episode } from "@/lib/data";
 
@@ -47,15 +46,6 @@ export default function Hero({ episode }: HeroProps) {
           <span className="font-mono text-[11px] text-orange-500 tracking-[0.2em] uppercase">
             Último episodio
           </span>
-          {episode.topics.length > 0 && (
-            <div className="hidden sm:flex items-center gap-5">
-              {episode.topics.slice(0, 3).map((t) => (
-                <span key={t} className="font-mono text-[10px] text-zinc-600 tracking-widest uppercase">
-                  {t}
-                </span>
-              ))}
-            </div>
-          )}
         </div>
 
         {/* Título central */}
@@ -112,12 +102,6 @@ export default function Hero({ episode }: HeroProps) {
                   Apple Podcasts
                 </a>
               )}
-              <Link
-                href="#episodios"
-                className="text-[11px] text-zinc-600 hover:text-zinc-400 transition-colors px-2 font-mono tracking-widest uppercase"
-              >
-                Ver todos →
-              </Link>
             </div>
           </div>
         </div>
