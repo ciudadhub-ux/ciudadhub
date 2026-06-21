@@ -32,58 +32,72 @@ function formatRole(role: string) {
   ));
 }
 
-function seedColor(seed: string) {
-  let h = 0;
-  for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) & 0xfffff;
-  return 20 + (h % 36); // warm hues 20-55°
-}
-
 export default function Hero({ episode }: HeroProps) {
-  const hue = seedColor(episode.guestAvatarSeed);
-
   return (
-    <section className="min-h-[100dvh] pt-36 flex items-center">
-      <div className="max-w-7xl mx-auto px-6 w-full py-20">
-        <div className="grid lg:grid-cols-[1fr_400px] gap-16 xl:gap-24 items-center">
-          <div>
-            <p className="font-mono text-xs text-orange-500 tracking-[0.15em] uppercase mb-6">
-              Último episodio
-            </p>
+    <section className="relative min-h-[100dvh] pt-36 flex flex-col overflow-hidden">
+      {/* Glow de fondo */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div className="absolute top-0 left-1/3 w-[700px] h-[500px] -translate-x-1/2 -translate-y-1/3 rounded-full opacity-[0.055] blur-[140px] bg-orange-500" />
+      </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-[3.75rem] xl:text-7xl font-bold tracking-tight leading-[1.05] text-zinc-50 mb-6">
-              {episode.title}
-            </h1>
+      <div className="relative max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col justify-between py-12 lg:py-16">
 
-            {episode.description && (
-              <p className="text-lg text-zinc-400 leading-relaxed max-w-[52ch] mb-8">
-                {episode.description}
-              </p>
-            )}
+        {/* Franja superior */}
+        <div className="flex items-center justify-between border-b border-zinc-800/60 pb-5">
+          <span className="font-mono text-[11px] text-orange-500 tracking-[0.2em] uppercase">
+            Último episodio
+          </span>
+          {episode.topics.length > 0 && (
+            <div className="hidden sm:flex items-center gap-5">
+              {episode.topics.slice(0, 3).map((t) => (
+                <span key={t} className="font-mono text-[10px] text-zinc-600 tracking-widest uppercase">
+                  {t}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
 
-            <div className="mb-10">
-              <p className="text-base font-semibold text-zinc-50">
+        {/* Título central */}
+        <div className="flex-1 flex items-center py-10 lg:py-0">
+          <h1
+            className="font-bold tracking-tight leading-[0.96] text-zinc-50 max-w-[18ch]"
+            style={{ fontSize: "clamp(3rem, 5.8vw, 5.75rem)" }}
+          >
+            {episode.title}
+          </h1>
+        </div>
+
+        {/* Franja inferior */}
+        <div className="border-t border-zinc-800/60 pt-7">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-7">
+
+            {/* Invitado */}
+            <div>
+              <p className="text-base font-semibold text-zinc-100 leading-snug">
                 {episode.guest}
               </p>
-              <p className="text-sm text-zinc-500 mt-0.5 leading-relaxed">
+              <p className="text-sm text-zinc-500 mt-1 leading-relaxed">
                 {formatRole(episode.guestRole)}
               </p>
               {episode.city && (
-                <p className="flex items-center gap-1 text-sm text-zinc-600 mt-1.5">
-                  <MapPin size={10} />
+                <p className="flex items-center gap-1.5 text-[11px] text-zinc-600 mt-2.5 font-mono tracking-widest uppercase">
+                  <MapPin size={9} weight="bold" />
                   {episode.city}
                 </p>
               )}
             </div>
 
-            <div className="flex items-center flex-wrap gap-3">
+            {/* Acciones */}
+            <div className="flex items-center gap-2.5 flex-shrink-0 flex-wrap">
               {episode.spotifyUrl && (
                 <a
                   href={episode.spotifyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 border border-zinc-700 text-zinc-50 font-medium px-6 py-3.5 rounded-md hover:border-zinc-400 hover:bg-zinc-800 active:scale-[0.98] transition-all text-base"
+                  className="inline-flex items-center gap-2 border border-zinc-700 text-zinc-100 font-medium px-4 py-2.5 rounded-md hover:border-zinc-500 hover:bg-zinc-800/60 active:scale-[0.98] transition-all text-sm"
                 >
-                  <SpotifyIcon className="w-5 h-5 text-green-400" />
+                  <SpotifyIcon className="w-3.5 h-3.5 text-green-400" />
                   Spotify
                 </a>
               )}
@@ -92,43 +106,22 @@ export default function Hero({ episode }: HeroProps) {
                   href={episode.appleUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 border border-zinc-700 text-zinc-50 font-medium px-6 py-3.5 rounded-md hover:border-zinc-400 hover:bg-zinc-800 active:scale-[0.98] transition-all text-base"
+                  className="inline-flex items-center gap-2 border border-zinc-700 text-zinc-100 font-medium px-4 py-2.5 rounded-md hover:border-zinc-500 hover:bg-zinc-800/60 active:scale-[0.98] transition-all text-sm"
                 >
-                  <AppleIcon className="w-5 h-5 text-purple-400" />
+                  <AppleIcon className="w-3.5 h-3.5 text-purple-400" />
                   Apple Podcasts
                 </a>
               )}
               <Link
                 href="#episodios"
-                className="text-sm text-zinc-600 hover:text-zinc-400 transition-colors px-2"
+                className="text-[11px] text-zinc-600 hover:text-zinc-400 transition-colors px-2 font-mono tracking-widest uppercase"
               >
-                Ver todos
+                Ver todos →
               </Link>
             </div>
           </div>
-
-          <div className="relative hidden lg:block">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden relative">
-              {episode.imageUrl ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={episode.imageUrl}
-                  alt={episode.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              ) : (
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: `radial-gradient(ellipse 80% 60% at 30% 40%, hsl(${hue} 70% 22%), transparent),
-                                 radial-gradient(ellipse 60% 50% at 75% 70%, hsl(${hue + 15} 60% 16%), transparent),
-                                 #09090b`,
-                  }}
-                />
-              )}
-            </div>
-          </div>
         </div>
+
       </div>
     </section>
   );
