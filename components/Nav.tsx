@@ -5,7 +5,7 @@ export default function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/70 bg-zinc-950/90 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 h-40 flex items-center justify-between">
-        <Link href="/" className="flex items-center">
+        <a href="/" className="flex items-center">
           <Image
             src="/logo.png"
             alt="Ciudad Hub Podcast"
@@ -14,7 +14,7 @@ export default function Nav() {
             className="h-[135px] w-auto"
             priority
           />
-        </Link>
+        </a>
 
         <div className="hidden md:flex items-center gap-8">
           <Link
