@@ -21,7 +21,7 @@ export interface TopicStat {
 
 export const episodes: Episode[] = [
   {
-    id: 88,
+    id: 97,
     title: "Impacto local de la acción global de las ciudades",
     description: "",
     guest: "Luz Amparo Medina",
@@ -34,7 +34,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "luzamparomedina",
   },
   {
-    id: 87,
+    id: 96,
     title: "De las estrategias a los cambios reales",
     description: "",
     guest: "Xavi Matilla",
@@ -47,7 +47,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "xavimatilla",
   },
   {
-    id: 86,
+    id: 95,
     title: "Smart City: Modelo Latam",
     description: "",
     guest: "Diana Celis",
@@ -60,7 +60,20 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "dianacelis",
   },
   {
-    id: 85,
+    id: 94,
+    title: "Tandil, un modelo inspirador",
+    description: "",
+    guest: "Pedro Espondaburu",
+    guestRole: "Docente Innovación y Desarrollo. Ciencias Económicas Unicen. Tandil, Argentina",
+    topics: ["Innovación"],
+    city: "Tandil",
+    appleUrl: "https://podcasts.apple.com/us/podcast/tandil-un-modelo-inspirador/id1093603743?i=1000611751709",
+    spotifyUrl: "https://open.spotify.com/episode/0UwM9c3P8ns6iQsy6KXZn4?si=bHJ-BC06TkSoIamY_-lHCw",
+    imageUrl: "",
+    guestAvatarSeed: "pedroespondaburu",
+  },
+  {
+    id: 93,
     title: "A la escuela en Bicibus!",
     description: "",
     guest: "Mireia Piqueras",
@@ -73,7 +86,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "mireiapiqueras",
   },
   {
-    id: 84,
+    id: 92,
     title: "Ciudades globales en un mundo desglobalizado",
     description: "",
     guest: "Agustí Fernández de Losada",
@@ -86,7 +99,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "agustfernndezdelosad",
   },
   {
-    id: 83,
+    id: 91,
     title: "La expansión urbana, una aliada de la biodiversidad.",
     description: "",
     guest: "Nicolás Galarza",
@@ -99,20 +112,20 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "nicolsgalarza",
   },
   {
-    id: 82,
+    id: 90,
     title: "Pinamar: la reinvención del mar",
     description: "",
     guest: "Martin Yeza",
     guestRole: "Intendente de Pinamar",
     topics: [],
-    city: "",
+    city: "Pinamar",
     appleUrl: "https://open.spotify.com/episode/2PpNRwrTz4dhYO9YvdUsPf?si=50316716608f4314",
-    spotifyUrl: "",
+    spotifyUrl: "https://open.spotify.com/episode/2PpNRwrTz4dhYO9YvdUsPf?si=AgYrB_t-QYW08G1FP5X4JQ",
     imageUrl: "",
     guestAvatarSeed: "martinyeza",
   },
   {
-    id: 81,
+    id: 89,
     title: "Alcaldes de la bicicleta: Madrid",
     description: "",
     guest: "Fernando García",
@@ -125,7 +138,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "fernandogarca",
   },
   {
-    id: 80,
+    id: 88,
     title: "El derecho a la ciudad",
     description: "",
     guest: "Lorena Zárate",
@@ -138,7 +151,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "lorenazrate",
   },
   {
-    id: 79,
+    id: 87,
     title: "Data for public good in metropolitan areas",
     description: "",
     guest: "Sarah Williams",
@@ -151,7 +164,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "sarahwilliams",
   },
   {
-    id: 78,
+    id: 86,
     title: "Desigualdad urbana, un reto del presente",
     description: "",
     guest: "Edgardo Bilsky",
@@ -164,7 +177,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "edgardobilsky",
   },
   {
-    id: 77,
+    id: 85,
     title: "Boti: Una experiencia ciudadana",
     description: "",
     guest: "Agustín Suárez",
@@ -177,7 +190,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "agustnsurez",
   },
   {
-    id: 76,
+    id: 84,
     title: "Ciudades cuidadoras",
     description: "",
     guest: "Diana Maria Parra Romero",
@@ -190,7 +203,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "dianamariaparraromer",
   },
   {
-    id: 75,
+    id: 83,
     title: "Ciudadanía 3.0",
     description: "",
     guest: "Javier Creus",
@@ -203,7 +216,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "javiercreus",
   },
   {
-    id: 74,
+    id: 82,
     title: "Buenos Aires: Un elefante ágil",
     description: "",
     guest: "Melisa Breda",
@@ -216,7 +229,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "melisabreda",
   },
   {
-    id: 73,
+    id: 81,
     title: "Urbanistas: integradores en clave espacial",
     description: "",
     guest: "Federico Bervejillo",
@@ -229,7 +242,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "federicobervejillo",
   },
   {
-    id: 72,
+    id: 80,
     title: "La bici vino para quedarse",
     description: "",
     guest: "Carles Benito",
@@ -242,7 +255,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "carlesbenito",
   },
   {
-    id: 71,
+    id: 79,
     title: "Urbanismo Metropolitano",
     description: "",
     guest: "Gabriel Lanfranchi",
@@ -255,7 +268,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "gabriellanfranchi",
   },
   {
-    id: 70,
+    id: 78,
     title: "Metrópolis, el desafío de la escala humana",
     description: "",
     guest: "Octavi de la Varga Mas",
@@ -268,7 +281,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "octavidelavargamas",
   },
   {
-    id: 69,
+    id: 77,
     title: "City Prosperity Initiative, UN-Habitat",
     description: "",
     guest: "Luis Herrera Favela",
@@ -281,7 +294,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "luisherrerafavela",
   },
   {
-    id: 68,
+    id: 76,
     title: "El Salvador: el cambio va de la mano de la tecnología",
     description: "",
     guest: "Mónica Taher",
@@ -294,7 +307,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "mnicataher",
   },
   {
-    id: 67,
+    id: 75,
     title: "Israel, Start-Up Nation",
     description: "",
     guest: "Sergio Vinitsky",
@@ -307,7 +320,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "sergiovinitsky",
   },
   {
-    id: 66,
+    id: 74,
     title: "Urbanismo y salud: el Covid es un síntoma",
     description: "",
     guest: "Elvis García",
@@ -320,7 +333,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "elvisgarca",
   },
   {
-    id: 65,
+    id: 73,
     title: "La ciudad como proyecto",
     description: "",
     guest: "Jordi Hereu",
@@ -333,7 +346,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "jordihereu",
   },
   {
-    id: 64,
+    id: 72,
     title: "¿Cómo enfrentar la rápida urbanización y el cambio climático?",
     description: "",
     guest: "Ellis Juan",
@@ -346,7 +359,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "ellisjuan",
   },
   {
-    id: 63,
+    id: 71,
     title: "La implementación de la nueva agenda urbana - WUF9 Kuala Lumpur",
     description: "",
     guest: "Elkin Velasquez",
@@ -359,7 +372,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "elkinvelasquez",
   },
   {
-    id: 62,
+    id: 70,
     title: "Privilegios ambientales, una nueva forma de desigualdad",
     description: "",
     guest: "Isabelle Anguelovski",
@@ -372,7 +385,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "isabelleanguelovski",
   },
   {
-    id: 61,
+    id: 69,
     title: "Supermanzanas: urbanismo para los ciudadanos",
     description: "",
     guest: "Salvador Rueda",
@@ -385,7 +398,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "salvadorrueda",
   },
   {
-    id: 60,
+    id: 68,
     title: "De las ciudades a los territorios: el modelo diamante",
     description: "",
     guest: "Ignacio Alcalde",
@@ -398,7 +411,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "ignacioalcalde",
   },
   {
-    id: 59,
+    id: 67,
     title: "La simbiosis industrial: nuevo paradigma económico",
     description: "",
     guest: "Verónica Kuchinow",
@@ -411,7 +424,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "vernicakuchinow",
   },
   {
-    id: 58,
+    id: 66,
     title: "Nuevos problemas, nuevas competencias",
     description: "",
     guest: "Gabriel Lanfranchi",
@@ -424,7 +437,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "gabriellanfranchi",
   },
   {
-    id: 57,
+    id: 65,
     title: "Ciudades inclusivas ¿Cómo gestionar la diversidad?",
     description: "",
     guest: "Víctor Pineda",
@@ -437,7 +450,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "vctorpineda",
   },
   {
-    id: 56,
+    id: 64,
     title: "Mercados Urbanos: una tradición centenaria en las ciudades",
     description: "",
     guest: "Genis Arnàs",
@@ -450,7 +463,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "genisarns",
   },
   {
-    id: 55,
+    id: 63,
     title: "Conexión de áreas metropolitanas, en bici",
     description: "",
     guest: "Silvia Casorrán",
@@ -463,7 +476,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "silviacasorrn",
   },
   {
-    id: 54,
+    id: 62,
     title: "Digitalización de las ciudades",
     description: "",
     guest: "Pedro Uribe",
@@ -476,7 +489,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "pedrouribe",
   },
   {
-    id: 53,
+    id: 61,
     title: "Medellín ante los desafíos de su éxito",
     description: "",
     guest: "Jorge Pérez Jaramillo",
@@ -489,7 +502,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "jorgeprezjaramillo",
   },
   {
-    id: 52,
+    id: 60,
     title: "Wonder Innovation Lab: las ciudades como experimento",
     description: "",
     guest: "Carolina Pozo",
@@ -502,7 +515,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "carolinapozo",
   },
   {
-    id: 51,
+    id: 59,
     title: "Smart Cities: esto va de personas",
     description: "",
     guest: "Josep Ferrer",
@@ -515,7 +528,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "josepferrer",
   },
   {
-    id: 50,
+    id: 58,
     title: "Alimentación, salud y política urbana",
     description: "",
     guest: "Alvaro Porro González",
@@ -528,7 +541,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "alvaroporrogonzlez",
   },
   {
-    id: 49,
+    id: 57,
     title: "Economía popular, ciudades y tecnología",
     description: "",
     guest: "Mercedes Bidart",
@@ -541,7 +554,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "mercedesbidart",
   },
   {
-    id: 48,
+    id: 56,
     title: "Ciudades Resilientes: estar en forma es la mejor defensa",
     description: "",
     guest: "Esteban León",
@@ -554,7 +567,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "estebanlen",
   },
   {
-    id: 47,
+    id: 55,
     title: "Londres: el transporte urbano como actividad vital",
     description: "",
     guest: "Claudia Peñaranda",
@@ -567,7 +580,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "claudiapearanda",
   },
   {
-    id: 46,
+    id: 54,
     title: "Montevideo: laboratorio urbano",
     description: "",
     guest: "Cristina Zubillaga",
@@ -580,7 +593,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "cristinazubillaga",
   },
   {
-    id: 45,
+    id: 53,
     title: "Bogotá, capital de la bicicleta",
     description: "",
     guest: "David Uniman",
@@ -593,7 +606,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "daviduniman",
   },
   {
-    id: 44,
+    id: 52,
     title: "Megalópolis y tribus: dos caras de las ciudades",
     description: "",
     guest: "Fabio Quetglas",
@@ -606,7 +619,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "fabioquetglas",
   },
   {
-    id: 43,
+    id: 51,
     title: "El espacio público, la piel de la democracia",
     description: "",
     guest: "Iván Acevedo",
@@ -619,7 +632,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "ivnacevedo",
   },
   {
-    id: 42,
+    id: 50,
     title: "Smart Cities: una visión global de un concepto en evolución",
     description: "",
     guest: "Pilar Conesa",
@@ -632,7 +645,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "pilarconesa",
   },
   {
-    id: 41,
+    id: 49,
     title: "Waterproofing data",
     description: "",
     guest: "Joao Porto de Albuquereque",
@@ -645,7 +658,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "joaoportodealbuquere",
   },
   {
-    id: 40,
+    id: 48,
     title: "Seguridad vial, un tema de salud pública",
     description: "",
     guest: "Johnny López",
@@ -658,7 +671,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "johnnylpez",
   },
   {
-    id: 39,
+    id: 47,
     title: "En las ciudades, experimentar no es improvisar",
     description: "",
     guest: "Jordi Honey-Roses",
@@ -671,7 +684,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "jordihoneyroses",
   },
   {
-    id: 38,
+    id: 46,
     title: "GovLab: ¿cómo gobernar a través de la tecnología?",
     description: "",
     guest: "Victoria Alsina",
@@ -684,7 +697,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "victoriaalsina",
   },
   {
-    id: 37,
+    id: 45,
     title: "Del transporte público colectivo a las plataformas de movilidad",
     description: "",
     guest: "Juan Ortiz",
@@ -697,7 +710,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "juanortiz",
   },
   {
-    id: 36,
+    id: 44,
     title: "Bicicletas públicas",
     description: "",
     guest: "Alvaro Nicolás",
@@ -710,7 +723,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "alvaronicols",
   },
   {
-    id: 35,
+    id: 43,
     title: "Urbanismo feminista: visibilizando lo cotidiano",
     description: "",
     guest: "Sara Ortiz",
@@ -723,7 +736,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "saraortiz",
   },
   {
-    id: 34,
+    id: 42,
     title: "Portland: una atípica ciudad estadounidense",
     description: "",
     guest: "Mauricio Leclerc",
@@ -736,7 +749,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "mauricioleclerc",
   },
   {
-    id: 33,
+    id: 41,
     title: "Gentrificación en las ciudades",
     description: "",
     guest: "Carlos Hernández",
@@ -749,7 +762,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "carloshernndez",
   },
   {
-    id: 32,
+    id: 40,
     title: "El Malestar en las ciudades",
     description: "",
     guest: "Elkin Velasquez",
@@ -762,7 +775,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "elkinvelasquez",
   },
   {
-    id: 31,
+    id: 39,
     title: "Social Bicycle: movilidad medida en byts",
     description: "",
     guest: "Daniel Treviño",
@@ -775,7 +788,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "danieltrevio",
   },
   {
-    id: 30,
+    id: 38,
     title: "De las autopistas urbanas a las calles peatonales",
     description: "",
     guest: "Carlos Corral",
@@ -788,7 +801,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "carloscorral",
   },
   {
-    id: 29,
+    id: 37,
     title: "Gobierno digital para no hacer esperar al ciudadano",
     description: "",
     guest: "Daniel Abadie",
@@ -801,7 +814,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "danielabadie",
   },
   {
-    id: 28,
+    id: 36,
     title: "En movilidad la solución está en compartir",
     description: "",
     guest: "Darío Hidalgo",
@@ -814,7 +827,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "darohidalgo",
   },
   {
-    id: 27,
+    id: 35,
     title: "Ciudades 880, para los de 8 y los de 80",
     description: "",
     guest: "Guillermo Peñalosa",
@@ -827,7 +840,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "guillermopealosa",
   },
   {
-    id: 26,
+    id: 34,
     title: "Placemaking: transformando espacios públicos en lugares",
     description: "",
     guest: "Guillermo Bernal",
@@ -840,7 +853,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "guillermobernal",
   },
   {
-    id: 25,
+    id: 33,
     title: "NYC, el bus también existe!",
     description: "",
     guest: "Julián Bautista Rojas",
@@ -853,7 +866,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "julinbautistarojas",
   },
   {
-    id: 24,
+    id: 32,
     title: "Hacker activismo urbano",
     description: "",
     guest: "Leonardo Brawl",
@@ -866,7 +879,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "leonardobrawl",
   },
   {
-    id: 23,
+    id: 31,
     title: "Las ciudades tienen que reinventar la gestión",
     description: "",
     guest: "Luis Gómez",
@@ -879,7 +892,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "luisgmez",
   },
   {
-    id: 22,
+    id: 30,
     title: "Parques urbanos: mucho más que el pulmón de las ciudades",
     description: "",
     guest: "Luis Romhan Diez",
@@ -892,7 +905,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "luisromhandiez",
   },
   {
-    id: 21,
+    id: 29,
     title: "Ciudades: wikipedias urbanas",
     description: "",
     guest: "Manu Fernández",
@@ -905,7 +918,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "manufernndez",
   },
   {
-    id: 20,
+    id: 28,
     title: "CDMX: escuchar y compartir, una estrategia de inserción internacional",
     description: "",
     guest: "Mariana Flores Mayen",
@@ -918,7 +931,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "marianafloresmayen",
   },
   {
-    id: 19,
+    id: 27,
     title: "C40: red de ciudades para el desarrollo sostenible",
     description: "",
     guest: "Mariola Panzuela",
@@ -931,7 +944,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "mariolapanzuela",
   },
   {
-    id: 18,
+    id: 26,
     title: "Bikesharing: dos ruedas, dos modelos",
     description: "",
     guest: "Miguel Rodríguez Planas",
@@ -944,7 +957,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "miguelrodrguezplanas",
   },
   {
-    id: 17,
+    id: 25,
     title: "Big data y urbanismo: lo importante son las preguntas",
     description: "",
     guest: "Nancy Lozano",
@@ -957,7 +970,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "nancylozano",
   },
   {
-    id: 16,
+    id: 24,
     title: "Ciudades y Universidad, una alianza inteligente",
     description: "",
     guest: "Omar Quiroga",
@@ -970,7 +983,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "omarquiroga",
   },
   {
-    id: 15,
+    id: 23,
     title: "Lima cómo vamos: los ciudadanos evalúan su ciudad",
     description: "",
     guest: "Patricia Alalta",
@@ -983,7 +996,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "patriciaalalta",
   },
   {
-    id: 14,
+    id: 22,
     title: "Reputación, el storydoing-telling de las ciudades",
     description: "",
     guest: "Pau Solanilla Franco",
@@ -996,7 +1009,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "pausolanillafranco",
   },
   {
-    id: 13,
+    id: 21,
     title: "La ciudad como solución: nueva agenda urbana",
     description: "",
     guest: "Rosa Suriñach",
@@ -1009,7 +1022,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "rosasuriach",
   },
   {
-    id: 12,
+    id: 20,
     title: "Pasado, presente y futuro de las Smart Cities",
     description: "",
     guest: "Ugo Valenti",
@@ -1022,7 +1035,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "ugovalenti",
   },
   {
-    id: 11,
+    id: 19,
     title: "Las ciudades son \"cosa de niños\"",
     description: "",
     guest: "Verónica Mansilla",
@@ -1035,7 +1048,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "vernicamansilla",
   },
   {
-    id: 10,
+    id: 18,
     title: "Caracas, Venezuela: cómo planificar en medio de la crisis",
     description: "",
     guest: "Zulma Bolívar",
@@ -1048,7 +1061,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "zulmabolvar",
   },
   {
-    id: 9,
+    id: 17,
     title: "Aeropuertos: mini-ciudades",
     description: "",
     guest: "Franco Rinaldi",
@@ -1061,7 +1074,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "francorinaldi",
   },
   {
-    id: 8,
+    id: 16,
     title: "SmartCity Expo Latam: la experiencia latinoamericana",
     description: "",
     guest: "Manuel Redondo",
@@ -1074,7 +1087,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "manuelredondo",
   },
   {
-    id: 7,
+    id: 15,
     title: "Ir más despacio para llegar antes",
     description: "",
     guest: "Carlos Pardo",
@@ -1087,7 +1100,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "carlospardo",
   },
   {
-    id: 6,
+    id: 14,
     title: "Caminabilidad, la magia de redescubrir la ciudad",
     description: "",
     guest: "Carolina Huffman",
@@ -1100,7 +1113,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "carolinahuffman",
   },
   {
-    id: 5,
+    id: 13,
     title: "CiudadesR: cómo devolver el río a las ciudades",
     description: "",
     guest: "Carlos Eduardo Correa",
@@ -1113,7 +1126,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "carloseduardocorrea",
   },
   {
-    id: 4,
+    id: 12,
     title: "Liderazgo colaborativo, la clave del desarrollo local",
     description: "",
     guest: "Alain Jorda",
@@ -1126,7 +1139,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "alainjorda",
   },
   {
-    id: 3,
+    id: 11,
     title: "Nuevos sistemas de pago para la movilidad urbana",
     description: "",
     guest: "Aida Esteban Millet",
@@ -1139,7 +1152,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "aidaestebanmillet",
   },
   {
-    id: 2,
+    id: 10,
     title: "Vehículos eléctricos: pasado, presente y futuro",
     description: "",
     guest: "CiudadHub",
@@ -1152,7 +1165,7 @@ export const episodes: Episode[] = [
     guestAvatarSeed: "ciudadhub",
   },
   {
-    id: 1,
+    id: 9,
     title: "Siglo XXI, el siglo de las ciudades",
     description: "",
     guest: "CiudadHub",
@@ -1164,19 +1177,123 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestAvatarSeed: "ciudadhub",
   },
+  {
+    id: 8,
+    title: "Salud urbana: cómo la ciudad define nuestra calidad de vida",
+    description: "",
+    guest: "Usama Bilal",
+    guestRole: "Associate Professor of Epidemiology and Co-Director of the Urban Health Collaborative\nEpidemiology and Biostatistics, Drexel University, Philadelphia",
+    topics: ["Salud", "Innovación"],
+    city: "Philadelphia",
+    appleUrl: "https://podcasts.apple.com/us/podcast/salud-urbana-c%C3%B3mo-la-ciudad-define-nuestra-calidad-de-vida/id1093603743?i=1000761316362",
+    spotifyUrl: "https://open.spotify.com/episode/7ucl4XdvFlJjH5quHWms9k?si=bsj2QFK-TgepZjKyJQqFDw",
+    imageUrl: "",
+    guestAvatarSeed: "usamabilal",
+  },
+  {
+    id: 7,
+    title: "Ecosistemas urbanos innovadores, Gov-Tech y talento",
+    description: "",
+    guest: "Patricio Ovalle Woods",
+    guestRole: "Senior Innovation Advisor | Expert in Entrepreneurship & Innovation Ecosystems, Providencia, Chile",
+    topics: ["Innovación"],
+    city: "Chile",
+    appleUrl: "https://podcasts.apple.com/us/podcast/ecosistemas-urbanos-innovadores-gov-tech-y-talento/id1093603743?i=1000756742211",
+    spotifyUrl: "https://open.spotify.com/episode/2uPljFpCx5JXOmM4eToiYF?si=hKMJQZfoS3C887xutXoFuw",
+    imageUrl: "",
+    guestAvatarSeed: "patricioovallewoods",
+  },
+  {
+    id: 6,
+    title: "Ciudades, geopolítica y el nuevo (des) orden mundial",
+    description: "",
+    guest: "Mariano Turzi",
+    guestRole: "Dr en RRII, profesor Universidad Austral, Argentina",
+    topics: [],
+    city: "Buenos Aires",
+    appleUrl: "https://podcasts.apple.com/us/podcast/ciudades-geopol%C3%ADtica-y-el-nuevo-des-orden-mundial/id1093603743?i=1000754009235",
+    spotifyUrl: "https://open.spotify.com/episode/0TiewNr5ipqg2SU07vWMUl?si=6VnkOLFuSxmQgJPVDL4e1w",
+    imageUrl: "",
+    guestAvatarSeed: "marianoturzi",
+  },
+  {
+    id: 5,
+    title: "Estonia, un país sin fronteras digitales",
+    description: "",
+    guest: "Guillermo Chávez",
+    guestRole: "Estonia e-Residency - Business Development Coordinator (Spain, Latin America)",
+    topics: ["Smart Cities", "Movilidad"],
+    city: "Estonia",
+    appleUrl: "https://podcasts.apple.com/us/podcast/estonia-un-pa%C3%ADs-sin-fronteras-digitales/id1093603743?i=1000753135947",
+    spotifyUrl: "https://open.spotify.com/episode/3bpl5klGvyUjvwT60Z4TW5?si=U5IXdM9uSeOnWfJemeWnRg",
+    imageUrl: "",
+    guestAvatarSeed: "guillermochvez",
+  },
+  {
+    id: 4,
+    title: "Buenos Aires: juegos, deporte y espacio urbano",
+    description: "",
+    guest: "Samanta Szusterman",
+    guestRole: "Diseñadora industrial, directora de Arquilúdica: estudio de diseño de espacios lúdicos, deportivos y de encuentro",
+    topics: [],
+    city: "Buenos Aires",
+    appleUrl: "https://podcasts.apple.com/us/podcast/buenos-aires-juegos-deporte-y-espacio-urbano/id1093603743?i=1000750039015",
+    spotifyUrl: "https://open.spotify.com/episode/451DDoSSZLKTg4IxajSNGw?si=GZupnRnjR3SqpnQnh9RUrg",
+    imageUrl: "",
+    guestAvatarSeed: "samantaszusterman",
+  },
+  {
+    id: 3,
+    title: "Urbanismo, una danza entre ciencia y arte",
+    description: "",
+    guest: "Ramon Gras Alumà",
+    guestRole: "Investigador en Ciencias de la Ciudad y Diseño Urbano, Universidad de Harvard, cofundador de Aretian",
+    topics: ["Urbanismo"],
+    city: "Boston",
+    appleUrl: "https://podcasts.apple.com/us/podcast/urbanismo-una-danza-entre-ciencia-y-arte/id1093603743?i=1000671222672",
+    spotifyUrl: "https://open.spotify.com/episode/09n34hUOJ0Ar62MTAuApx2?si=t3W-9xvIQFSzE9mZPQ2WnQ",
+    imageUrl: "",
+    guestAvatarSeed: "ramongrasalum",
+  },
+  {
+    id: 2,
+    title: "Silverstone, un evento, una ciudad",
+    description: "",
+    guest: "Stephane Bazire",
+    guestRole: "Director de Sostenibilidad de Silverstone, UK",
+    topics: ["Sostenibilidad"],
+    city: "Oxford",
+    appleUrl: "https://podcasts.apple.com/us/podcast/silverstone-un-evento-una-ciudad/id1093603743?i=1000669990311",
+    spotifyUrl: "https://open.spotify.com/episode/4jjB5Qu9crR7j3E1f3tsdV?si=LLkcqiJERaWwV40HN3Z_BA",
+    imageUrl: "",
+    guestAvatarSeed: "stephanebazire",
+  },
+  {
+    id: 1,
+    title: "Mendoza, un oasis urbano",
+    description: "",
+    guest: "Sebastián Fermani",
+    guestRole: "Secretario de Ambiente y Desarrollo Urbano de la Ciudad de Mendoza, Argentina",
+    topics: [],
+    city: "Mendoza",
+    appleUrl: "https://podcasts.apple.com/us/podcast/mendoza-un-oasis-urbano/id1093603743?i=1000666946582",
+    spotifyUrl: "https://open.spotify.com/episode/4sJBFL63ktIinG7yUl08wK?si=XSKrA6U7Tqq0VVLiGjPhOg",
+    imageUrl: "",
+    guestAvatarSeed: "sebastinfermani",
+  },
 ]
 
 export const allTopics: TopicStat[] = [
-  { name: "Movilidad", count: 22 },
-  { name: "Smart Cities", count: 16 },
-  { name: "Urbanismo", count: 15 },
-  { name: "Innovación", count: 8 },
+  { name: "Movilidad", count: 23 },
+  { name: "Smart Cities", count: 17 },
+  { name: "Urbanismo", count: 16 },
+  { name: "Innovación", count: 11 },
   { name: "Gobernanza", count: 6 },
   { name: "Ciudades Globales", count: 5 },
+  { name: "Sostenibilidad", count: 5 },
   { name: "Equidad", count: 5 },
-  { name: "Sostenibilidad", count: 4 },
+  { name: "Salud", count: 4 },
   { name: "Datos", count: 3 },
-  { name: "Salud", count: 3 },
   { name: "Espacio Público", count: 3 },
 ]
 
