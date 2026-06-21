@@ -5,6 +5,7 @@ import { episodes } from "@/lib/data";
 
 // Mapa explícito: nombre exacto en data → path de foto bw
 const PHOTO_MAP: Record<string, string> = {
+  "Agustí Fernández de Losada":  "/images/INVITADOS/Agusti Fernandez  deLosada bw.png",
   "Agustín Suárez":              "/images/INVITADOS/Agustín Suarez bw.jpg",
   "Aida Esteban Millet":         "/images/INVITADOS/Aida Esteban Millat bw.jpg",
   "Alain Jorda":                  "/images/INVITADOS/Alain Jorda bw.png",
@@ -37,12 +38,17 @@ const PHOTO_MAP: Record<string, string> = {
   "Genis Arnàs":                  "/images/INVITADOS/Genis Arnal bw.jpg",
   "Guillermo Bernal":             "/images/INVITADOS/Guillermo Bernal bw.png",
   "Guillermo Chávez":             "/images/INVITADOS/Guillermo Chávez García bw.png",
+  "Guillermo Peñalosa":           "/images/INVITADOS/Guillermo Gil Peñaloza bw.jpeg",
+  "Iván Acevedo":                 "/images/INVITADOS/Ivan Acevedo bw.jpg",
   "Isabelle Anguelovski":         "/images/INVITADOS/Isabelle Anguelovski bw.jpg",
   "Joao Porto de Albuquereque":   "/images/INVITADOS/Joa Porto de Albuquerque bw.jpg",
+  "Johnny López":                 "/images/INVITADOS/Johnny López bw.jpeg",
   "Jordi Honey-Roses":            "/images/INVITADOS/Jordi Honeyroses bw.jpg",
   "Jorge Pérez Jaramillo":        "/images/INVITADOS/JorgePerez bw.jpg",
   "Josep Ferrer":                 "/images/INVITADOS/Josep Ferrer bw.jpg",
+  "Juan Ortiz":                   "/images/INVITADOS/Juan Ortiz Taboada bw.jpeg",
   "Lorena Zárate":                "/images/INVITADOS/Lorena Zarate bw .jpg",
+  "Luis Gómez":                   "/images/INVITADOS/Luis Gomez bw.jpeg",
   "Luis Herrera Favela":          "/images/INVITADOS/Luis Herrera Favela bw.jpg",
   "Manu Fernández":               "/images/INVITADOS/ManuvFernandez bw.jpg",
   "Manuel Redondo":               "/images/INVITADOS/Manuel Redondo bw.jpg",
