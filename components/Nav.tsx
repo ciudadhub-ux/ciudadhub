@@ -4,14 +4,14 @@ import Image from "next/image";
 export default function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/70 bg-zinc-950/90 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-6 h-36 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-40 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
             alt="Ciudad Hub Podcast"
-            width={96}
-            height={108}
-            className="h-[108px] w-auto"
+            width={120}
+            height={135}
+            className="h-[135px] w-auto"
             priority
           />
         </Link>

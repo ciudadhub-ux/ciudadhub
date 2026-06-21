@@ -33,7 +33,7 @@ function formatRole(role: string) {
 
 export default function Hero({ episode }: HeroProps) {
   return (
-    <section className="relative min-h-[100dvh] pt-36 flex flex-col overflow-hidden">
+    <section className="relative min-h-[100dvh] pt-40 flex flex-col overflow-hidden">
       {/* Glow de fondo */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>
         <div className="absolute top-0 left-1/3 w-[700px] h-[500px] -translate-x-1/2 -translate-y-1/3 rounded-full opacity-[0.055] blur-[140px] bg-orange-500" />

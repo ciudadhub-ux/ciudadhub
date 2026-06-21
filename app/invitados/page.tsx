@@ -125,7 +125,7 @@ export default function InvitadosPage() {
   return (
     <>
       <Nav />
-      <main className="pt-36">
+      <main className="pt-40">
         <div className="max-w-7xl mx-auto px-6 py-16">
 
           <div className="flex items-baseline justify-between mb-14">
