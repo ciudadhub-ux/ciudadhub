@@ -136,10 +136,15 @@ def parse_rows(rows: list[dict]) -> list[dict]:
             "created_date": created_date,
             "image_url": image_url,
             "seed": name_to_seed(name),
+            "row_index": len(episodes),  # posición en el sheet
         })
 
-    # Ordenar por fecha de creación descendente (más reciente primero)
-    episodes.sort(key=lambda e: e["created_date"] or "0000-00-00", reverse=True)
+    # Ordenar: con fecha → por fecha DESC; sin fecha → por posición en sheet DESC (más reciente al tope)
+    total = len(episodes)
+    episodes.sort(
+        key=lambda e: e["created_date"] if e["created_date"] else f"9999-{total - e['row_index']:05d}",
+        reverse=True,
+    )
 
     # Asignar IDs correlativos (el más reciente = id más alto)
     for i, ep in enumerate(episodes):
