@@ -26,9 +26,35 @@ function AppleIcon({ className }: { className?: string }) {
   );
 }
 
-const pillBase = "px-3 py-1.5 rounded-full text-sm font-medium transition-all border";
-const pillActive = "bg-orange-500 text-zinc-950 border-orange-500";
-const pillInactive = "bg-zinc-800 text-zinc-400 border-transparent hover:bg-orange-500/15 hover:text-orange-400 hover:border-orange-500/40";
+const TOPIC_COLORS: Record<string, { h: number; s: number }> = {
+  "Smart Cities":      { h: 213, s: 94 },
+  "Datos":             { h: 258, s: 89 },
+  "Movilidad":         { h: 142, s: 71 },
+  "Sostenibilidad":    { h: 160, s: 84 },
+  "Urbanismo":         { h: 38,  s: 92 },
+  "Equidad":           { h: 343, s: 88 },
+  "Gobernanza":        { h: 199, s: 89 },
+  "Salud":             { h: 173, s: 80 },
+  "Innovación":        { h: 24,  s: 94 },
+  "Espacio Público":   { h: 84,  s: 81 },
+  "Ciudades Globales": { h: 239, s: 84 },
+};
+
+function topicStyle(topic: string, active: boolean) {
+  const c = TOPIC_COLORS[topic] ?? { h: 30, s: 60 };
+  if (active) {
+    return {
+      background: `hsl(${c.h} ${c.s}% 55%)`,
+      color: "#09090b",
+      borderColor: `hsl(${c.h} ${c.s}% 55%)`,
+    };
+  }
+  return {
+    background: `hsl(${c.h} ${c.s}% 50% / 0.1)`,
+    color: `hsl(${c.h} ${c.s}% 75%)`,
+    borderColor: `hsl(${c.h} ${c.s}% 50% / 0.25)`,
+  };
+}
 
 function EpisodeCard({
   episode,
@@ -161,12 +187,15 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
   return (
     <div>
       {/* Topic filters */}
-      <div className="mb-3">
-        <p className="text-xs text-zinc-600 uppercase tracking-widest mb-2">Temas</p>
+      <div className="mb-4">
+        <p className="text-[10px] text-zinc-600 uppercase tracking-widest font-mono mb-2.5">Temas</p>
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setActiveTopic(null)}
-            className={`${pillBase} ${!activeTopic ? pillActive : pillInactive}`}
+            className="px-3 py-1.5 rounded-full text-sm font-medium border transition-all"
+            style={!activeTopic
+              ? { background: "#f97316", color: "#09090b", borderColor: "#f97316" }
+              : { background: "transparent", color: "#71717a", borderColor: "#3f3f46" }}
           >
             Todos
           </button>
@@ -174,7 +203,8 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
             <button
               key={topic}
               onClick={() => setActiveTopic(topic === activeTopic ? null : topic)}
-              className={`${pillBase} ${activeTopic === topic ? pillActive : pillInactive}`}
+              className="px-3 py-1.5 rounded-full text-sm font-medium border transition-all"
+              style={topicStyle(topic, activeTopic === topic)}
             >
               {topic}
             </button>
@@ -184,11 +214,14 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
 
       {/* City filters */}
       <div className="mb-10">
-        <p className="text-xs text-zinc-600 uppercase tracking-widest mb-2">Ciudades</p>
+        <p className="text-[10px] text-zinc-600 uppercase tracking-widest font-mono mb-2.5">Ciudades</p>
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setActiveCity(null)}
-            className={`${pillBase} ${!activeCity ? pillActive : pillInactive}`}
+            className="px-3 py-1.5 rounded-full text-sm font-medium border transition-all"
+            style={!activeCity
+              ? { background: "#f97316", color: "#09090b", borderColor: "#f97316" }
+              : { background: "transparent", color: "#71717a", borderColor: "#3f3f46" }}
           >
             Todas
           </button>
@@ -196,8 +229,12 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
             <button
               key={city}
               onClick={() => setActiveCity(city === activeCity ? null : city)}
-              className={`${pillBase} ${activeCity === city ? pillActive : pillInactive}`}
+              className="px-3 py-1.5 rounded-full text-sm font-medium border transition-all flex items-center gap-1.5"
+              style={activeCity === city
+                ? { background: "#27272a", color: "#f4f4f5", borderColor: "#f97316" }
+                : { background: "transparent", color: "#71717a", borderColor: "#3f3f46" }}
             >
+              <MapPin size={10} weight="bold" />
               {city}
             </button>
           ))}
