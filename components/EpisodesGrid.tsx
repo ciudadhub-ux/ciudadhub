@@ -89,7 +89,7 @@ function EpisodeCard({
       }}
       id={`ep-${episode.id}`}
       className={[
-        "group rounded-xl p-5 flex flex-col transition-[border-color,box-shadow]",
+        "group rounded-xl p-5 flex flex-col transition-[border-color,box-shadow] scroll-mt-40",
         isHighlighted
           ? "ep-highlight bg-zinc-900 border border-orange-500 shadow-[0_0_40px_-4px_rgba(249,115,22,0.35)]"
           : isFilterActive && isMatch
