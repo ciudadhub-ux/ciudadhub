@@ -24,7 +24,7 @@ export default function Nav() {
             Episodios
           </Link>
           <Link
-            href="#invitados"
+            href="/invitados"
             className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors"
           >
             Invitados
