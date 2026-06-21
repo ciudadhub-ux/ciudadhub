@@ -40,7 +40,7 @@ const TOPIC_COLORS: Record<string, { h: number; s: number }> = {
   "Ciudades Globales": { h: 239, s: 84 },
 };
 
-function topicStyle(topic: string, active: boolean) {
+function topicStyle(topic: string, active: boolean, hovered: boolean) {
   const c = TOPIC_COLORS[topic] ?? { h: 30, s: 60 };
   if (active) {
     return {
@@ -49,11 +49,57 @@ function topicStyle(topic: string, active: boolean) {
       borderColor: `hsl(${c.h} ${c.s}% 55%)`,
     };
   }
+  if (hovered) {
+    return {
+      background: `hsl(${c.h} ${c.s}% 50% / 0.22)`,
+      color: `hsl(${c.h} ${c.s}% 88%)`,
+      borderColor: `hsl(${c.h} ${c.s}% 55% / 0.6)`,
+    };
+  }
   return {
     background: `hsl(${c.h} ${c.s}% 50% / 0.1)`,
     color: `hsl(${c.h} ${c.s}% 75%)`,
     borderColor: `hsl(${c.h} ${c.s}% 50% / 0.25)`,
   };
+}
+
+function TopicChip({ topic, active, onClick }: { topic: string; active: boolean; onClick: () => void }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="px-3 py-1.5 rounded-full text-sm font-medium border transition-all duration-200"
+      style={topicStyle(topic, active, hovered)}
+    >
+      {topic}
+    </button>
+  );
+}
+
+function CityChip({ city, active, onClick }: { city: string; active: boolean; onClick: () => void }) {
+  const [hovered, setHovered] = useState(false);
+  let style: React.CSSProperties;
+  if (active) {
+    style = { background: "#27272a", color: "#f4f4f5", borderColor: "#f97316" };
+  } else if (hovered) {
+    style = { background: "#27272a", color: "#e4e4e7", borderColor: "#71717a" };
+  } else {
+    style = { background: "transparent", color: "#71717a", borderColor: "#3f3f46" };
+  }
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="px-3 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 flex items-center gap-1.5"
+      style={style}
+    >
+      <MapPin size={10} weight="bold" />
+      {city}
+    </button>
+  );
 }
 
 function EpisodeCard({
@@ -224,14 +270,12 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
             Todos
           </button>
           {topics.map((topic) => (
-            <button
+            <TopicChip
               key={topic}
+              topic={topic}
+              active={activeTopic === topic}
               onClick={() => setActiveTopic(topic === activeTopic ? null : topic)}
-              className="px-3 py-1.5 rounded-full text-sm font-medium border transition-all"
-              style={topicStyle(topic, activeTopic === topic)}
-            >
-              {topic}
-            </button>
+            />
           ))}
         </div>
       </div>
@@ -250,17 +294,12 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
             Todas
           </button>
           {cities.map((city) => (
-            <button
+            <CityChip
               key={city}
+              city={city}
+              active={activeCity === city}
               onClick={() => setActiveCity(city === activeCity ? null : city)}
-              className="px-3 py-1.5 rounded-full text-sm font-medium border transition-all flex items-center gap-1.5"
-              style={activeCity === city
-                ? { background: "#27272a", color: "#f4f4f5", borderColor: "#f97316" }
-                : { background: "transparent", color: "#71717a", borderColor: "#3f3f46" }}
-            >
-              <MapPin size={10} weight="bold" />
-              {city}
-            </button>
+            />
           ))}
         </div>
       </div>
