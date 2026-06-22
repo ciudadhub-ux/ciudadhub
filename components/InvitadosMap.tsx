@@ -96,16 +96,20 @@ export default function InvitadosMap({ cities, activeCity, onCityClick }: Props)
         {cities.map(({ city, coordinates, count }) => {
           const isActive = activeCity === city;
           const isDimmed = hasFilter && !isActive;
-          const r = Math.max(4, Math.min(11, 4 + Math.sqrt(count) * 1.8));
+          // Divide by zoom so dots stay the same visual size regardless of zoom level
+          const base = Math.max(4, Math.min(11, 4 + Math.sqrt(count) * 1.8));
+          const r  = base / zoom;
+          const sw = (isActive ? 1.5 : 0.8) / zoom;
+          const ringR = (base + 5) / zoom;
 
           return (
             <Marker key={city} coordinates={coordinates}>
               {isActive && (
                 <circle
-                  r={r + 5}
+                  r={ringR}
                   fill="none"
                   stroke="#f97316"
-                  strokeWidth={1}
+                  strokeWidth={1 / zoom}
                   opacity={0.35}
                   style={{ pointerEvents: "none" }}
                 />
@@ -114,8 +118,8 @@ export default function InvitadosMap({ cities, activeCity, onCityClick }: Props)
                 r={r}
                 fill={isDimmed ? "#f9731620" : isActive ? "#f97316" : hovered === city ? "#fb923c" : "#f9731699"}
                 stroke={isActive || hovered === city ? "#fdba74" : "#f97316"}
-                strokeWidth={isActive ? 1.5 : 0.8}
-                style={{ cursor: "pointer", transition: "all 0.18s ease" }}
+                strokeWidth={sw}
+                style={{ cursor: "pointer" }}
                 onClick={() => onCityClick(city)}
                 onMouseEnter={() => setHovered(city)}
                 onMouseLeave={() => setHovered(null)}

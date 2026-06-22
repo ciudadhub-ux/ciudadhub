@@ -27,12 +27,6 @@ export default function Nav() {
           </a>
         </div>
 
-        <a
-          href="#"
-          className="text-sm font-semibold bg-orange-500 text-zinc-950 px-4 py-2 rounded-md hover:bg-orange-400 active:scale-[0.98] transition-all"
-        >
-          Suscribirse
-        </a>
       </div>
     </nav>
   );

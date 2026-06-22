@@ -254,45 +254,48 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
                     <X size={18} weight="bold" />
                   </button>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  {cityGuests.map(({ name, guestRole, photoSrc, spotifyUrl, appleUrl }) => (
-                    <div key={name} className="flex flex-col">
-                      <div className="aspect-square rounded-xl overflow-hidden bg-zinc-800 mb-2.5 relative">
-                        {photoSrc ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img
-                            src={photoSrc}
-                            alt={name}
-                            className="w-full h-full object-cover"
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-base">
-                            {initials(name)}
-                          </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+                  {cityGuests.map(({ name, guestRole, photoSrc, spotifyUrl, appleUrl }) => {
+                    const roleFirstLine = guestRole ? guestRole.split("\n")[0] : "";
+                    return (
+                      <div key={name} className="flex flex-col">
+                        <div className="aspect-square rounded-xl overflow-hidden bg-zinc-800 mb-3 relative">
+                          {photoSrc ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={photoSrc}
+                              alt={name}
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-base">
+                              {initials(name)}
+                            </div>
+                          )}
+                        </div>
+                        <p className="text-zinc-100 text-sm font-semibold leading-snug">{name}</p>
+                        {roleFirstLine && (
+                          <p className="text-zinc-400 text-xs leading-snug mt-1 mb-3 line-clamp-2">{roleFirstLine}</p>
                         )}
+                        <div className="flex flex-wrap gap-1.5 mt-auto">
+                          {spotifyUrl && (
+                            <a href={spotifyUrl} target="_blank" rel="noopener noreferrer"
+                              className="flex items-center gap-1 text-xs text-zinc-400 hover:text-green-400 transition-colors px-2 py-1.5 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
+                              <SpotifyIcon className="w-3 h-3 shrink-0" />
+                              Spotify
+                            </a>
+                          )}
+                          {appleUrl && (
+                            <a href={appleUrl} target="_blank" rel="noopener noreferrer"
+                              className="flex items-center gap-1 text-xs text-zinc-400 hover:text-purple-400 transition-colors px-2 py-1.5 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
+                              <AppleIcon className="w-3 h-3 shrink-0" />
+                              Apple
+                            </a>
+                          )}
+                        </div>
                       </div>
-                      <p className="text-zinc-100 text-sm font-semibold leading-snug">{name}</p>
-                      {guestRole && (
-                        <p className="text-zinc-500 text-xs leading-snug mt-0.5 mb-2">{guestRole}</p>
-                      )}
-                      <div className="flex gap-1.5 mt-auto pt-1">
-                        {spotifyUrl && (
-                          <a href={spotifyUrl} target="_blank" rel="noopener noreferrer"
-                            className="flex items-center gap-1 text-xs text-zinc-500 hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-800 hover:bg-zinc-700">
-                            <SpotifyIcon className="w-3 h-3" />
-                            Spotify
-                          </a>
-                        )}
-                        {appleUrl && (
-                          <a href={appleUrl} target="_blank" rel="noopener noreferrer"
-                            className="flex items-center gap-1 text-xs text-zinc-500 hover:text-purple-400 transition-colors px-2 py-1 rounded-md bg-zinc-800 hover:bg-zinc-700">
-                            <AppleIcon className="w-3 h-3" />
-                            Apple
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>
