@@ -246,13 +246,15 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
 
   return (
     <div>
-      {/* Topic filters */}
-      <div className="mb-4">
-        <p className="text-[10px] text-zinc-600 uppercase tracking-widest font-mono mb-2.5">Temas</p>
-        <div className="flex flex-wrap gap-2">
+      {/* Topic filter — sticky secondary nav */}
+      <div
+        className="sticky z-40 -mx-6 px-6 py-3 mb-8 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800/80"
+        style={{ top: "160px" }}
+      >
+        <div className="flex items-center gap-2 overflow-x-auto scrollbar-none">
           <button
             onClick={() => setActiveTopic(null)}
-            className="px-3 py-1.5 rounded-full text-sm font-medium border transition-all"
+            className="shrink-0 px-3.5 py-1.5 rounded-full text-sm font-medium border transition-all duration-200"
             style={!activeTopic
               ? { background: "#f97316", color: "#09090b", borderColor: "#f97316" }
               : { background: "transparent", color: "#71717a", borderColor: "#3f3f46" }}
@@ -260,12 +262,13 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
             Todos
           </button>
           {topics.map((topic) => (
-            <TopicChip
-              key={topic}
-              topic={topic}
-              active={activeTopic === topic}
-              onClick={() => setActiveTopic(topic === activeTopic ? null : topic)}
-            />
+            <div key={topic} className="shrink-0">
+              <TopicChip
+                topic={topic}
+                active={activeTopic === topic}
+                onClick={() => setActiveTopic(topic === activeTopic ? null : topic)}
+              />
+            </div>
           ))}
         </div>
       </div>
