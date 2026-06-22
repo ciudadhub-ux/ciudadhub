@@ -2,7 +2,7 @@ const TEAM = [
   {
     name: "Andrés Carpanzano",
     photo: "/images/equipo/Andres Carpanzano_edited.jpg",
-    bio: "Trabajo como consultor para gobiernos e instituciones en el desarrollo de estrategias de internacionalización. Delegado para Canadá, Argentina, Uruguay, Paraguay, Costa Rica, Panamá y República Dominicana del Smart City Expo World Congress de Barcelona.",
+    bio: "Argentino, de Santa Fe, consultor especializado en estrategias de comunicación para personalidades, instituciones, ciudades y empresas.\n\nDirector de [Diplomacity](https://www.diploma.city), consultora especializada en el posicionamiento internacional de ciudades e instituciones.\n\nEs delegado oficial del Smart City Expo World Congress de Barcelona para: Canada, Argentina, Uruguay, Paraguay, República Dominicana, Costa Rica, Panamá y Bolivia — una de las redes de ciudades inteligentes más influyentes del mundo.\n\nBasado entre Wakefield, Québec y Buenos Aires, su trabajo conecta perspectivas globales con las realidades y desafíos urbanos de la región.",
   },
   {
     name: "Ignacio Argonz",
@@ -15,6 +15,31 @@ const TEAM = [
     bio: "Bogotano de nacimiento, Colombiano por adopción. Desde finales de los años 90 tratando de entender el fenómeno urbano en diferentes escalas, desde pequeñas ciudades en Colombia hasta escalas metropolitanas/regionales en Europa. Radicado en Barcelona desde hace 16 años pero con la suerte de poder seguir vinculado a Latinoamérica en lo profesional, personal y académico.",
   },
 ];
+
+function BioText({ text }: { text: string }) {
+  const paragraphs = text.split("\n\n");
+  return (
+    <div className="flex flex-col gap-3">
+      {paragraphs.map((para, i) => {
+        const parts = para.split(/\[([^\]]+)\]\(([^)]+)\)/g);
+        return (
+          <p key={i} className="text-base text-zinc-300 leading-relaxed">
+            {parts.map((part, j) => {
+              if (j % 3 === 1) return (
+                <a key={j} href={parts[j + 1]} target="_blank" rel="noopener noreferrer"
+                  className="text-orange-400 hover:text-orange-300 underline underline-offset-2 transition-colors">
+                  {part}
+                </a>
+              );
+              if (j % 3 === 2) return null;
+              return part;
+            })}
+          </p>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function TeamSection() {
   return (
@@ -43,9 +68,7 @@ export default function TeamSection() {
                 <h3 className="text-base font-semibold text-zinc-50 leading-snug mb-3">
                   {member.name}
                 </h3>
-                <p className="text-base text-zinc-300 leading-relaxed">
-                  {member.bio}
-                </p>
+                <BioText text={member.bio} />
               </div>
             </div>
           ))}
