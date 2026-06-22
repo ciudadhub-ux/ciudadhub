@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { MapPin } from "@phosphor-icons/react";
 import { Episode } from "@/lib/data";
@@ -197,6 +197,20 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
   const [highlightedId, setHighlightedId] = useState<number | null>(null);
   const reduce = useReducedMotion();
   const latestId = episodes[0]?.id ?? -1;
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  const handleTopicChange = useCallback((topic: string | null) => {
+    setActiveTopic(topic);
+    // If the section is partially behind the nav, scroll so its top aligns with the nav bottom
+    setTimeout(() => {
+      if (!wrapperRef.current) return;
+      const rect = wrapperRef.current.getBoundingClientRect();
+      const NAV_H = 192;
+      if (rect.top < NAV_H) {
+        window.scrollTo({ top: window.scrollY + rect.top - NAV_H, behavior: "smooth" });
+      }
+    }, 30);
+  }, []);
 
   useEffect(() => {
     const handler = (e: Event) => {
@@ -253,7 +267,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
   }, [episodes, activeTopic]);
 
   return (
-    <div>
+    <div ref={wrapperRef}>
       {/* Topic filter — sticky secondary nav */}
       <div
         className="sticky z-40 -mx-6 px-6 py-3 mb-8 bg-zinc-950/95 backdrop-blur-md"
@@ -261,7 +275,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
       >
         <div className="flex flex-wrap gap-2">
           <button
-            onClick={() => setActiveTopic(null)}
+            onClick={() => handleTopicChange(null)}
             className="px-3.5 py-1.5 rounded-full text-lg font-medium border transition-all duration-200"
             style={!activeTopic
               ? { background: "#f97316", color: "#09090b", borderColor: "#f97316" }
@@ -274,7 +288,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
               <TopicChip
                 topic={topic}
                 active={activeTopic === topic}
-                onClick={() => setActiveTopic(topic === activeTopic ? null : topic)}
+                onClick={() => handleTopicChange(topic === activeTopic ? null : topic)}
               />
             </div>
           ))}
