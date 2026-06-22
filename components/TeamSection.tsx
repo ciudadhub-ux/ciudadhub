@@ -2,7 +2,7 @@ const TEAM = [
   {
     name: "Andrés Carpanzano",
     photo: "/images/equipo/Andres Carpanzano_edited.jpg",
-    bio: "Argentino, de Santa Fe, consultor especializado en estrategias de comunicación para personalidades, instituciones, ciudades y empresas.\n\nDirector de [Diplomacity](https://www.diploma.city), consultora especializada en el posicionamiento internacional de ciudades e instituciones.\n\nEs delegado oficial del Smart City Expo World Congress de Barcelona para: Canada, Argentina, Uruguay, Paraguay, República Dominicana, Costa Rica, Panamá y Bolivia — una de las redes de ciudades inteligentes más influyentes del mundo.\n\nBasado entre Wakefield, Québec y Buenos Aires, su trabajo conecta perspectivas globales con las realidades y desafíos urbanos de la región.",
+    bio: "Argentino, de Santa Fe, Director de [Diplomacity](https://www.diploma.city) consultor especializado en estrategias de comunicación para personalidades, instituciones, ciudades y empresas.\n\nEs delegado oficial del Smart City Expo World Congress de Barcelona para: Canada, Argentina, Uruguay, Paraguay, República Dominicana, Costa Rica, Panamá y Bolivia.\n\nBasado entre Wakefield, Québec y Buenos Aires, su trabajo conecta perspectivas globales con las realidades y desafíos urbanos de la región.",
   },
   {
     name: "Ignacio Argonz",
