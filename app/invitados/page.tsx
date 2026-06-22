@@ -1,8 +1,7 @@
-import { MapPin } from "@phosphor-icons/react/dist/ssr";
 import Nav from "@/components/Nav";
+import InvitadosClient, { type GuestData } from "@/components/InvitadosClient";
 import { episodes } from "@/lib/data";
 
-// Mapa explícito: nombre exacto en data → path de foto bw
 const PHOTO_MAP: Record<string, string> = {
   "Agustí Fernández de Losada":  "/images/INVITADOS/Agusti Fernandez  deLosada bw.png",
   "Agustín Suárez":              "/images/INVITADOS/Agustín Suarez bw.jpg",
@@ -99,85 +98,38 @@ const PHOTO_MAP: Record<string, string> = {
   "Zulma Bolívar":                "/images/INVITADOS/Zulma Bolivar bw.jpg",
 };
 
-function encodePath(path: string) {
-  return path.split("/").map((seg) => encodeURIComponent(seg)).join("/");
-}
-
-function initials(name: string) {
-  return name.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+function encodePath(p: string) {
+  return p.split("/").map((s) => encodeURIComponent(s)).join("/");
 }
 
 export default function InvitadosPage() {
-  // Deduplicar invitados: un registro por nombre, el episodio más reciente (primero en array)
-  const guestsMap = new Map<string, { name: string; episodeId: number; city: string; topics: string[] }>();
+  const seen = new Map<string, GuestData>();
+
   for (const ep of episodes) {
     const name = ep.guest.trim();
     if (!name || name.toLowerCase() === "ciudadhub") continue;
-    if (!guestsMap.has(name)) {
-      guestsMap.set(name, { name, episodeId: ep.id, city: ep.city, topics: ep.topics ?? [] });
-    }
+    if (seen.has(name)) continue;
+
+    const topics: string[] = ep.topics ?? [];
+    const raw = PHOTO_MAP[name];
+    seen.set(name, {
+      name,
+      episodeId: ep.id,
+      city: ep.city,
+      topics,
+      photoSrc: raw ? encodePath(raw) : null,
+      href: `/?highlight=${ep.id}${topics[0] ? `&topic=${encodeURIComponent(topics[0])}` : ""}#ep-${ep.id}`,
+    });
   }
 
-  const guests = [...guestsMap.values()].sort((a, b) =>
-    a.name.localeCompare(b.name, "es")
-  );
+  const guests = [...seen.values()].sort((a, b) => a.name.localeCompare(b.name, "es"));
+  const allTopics = [...new Set(guests.flatMap((g) => g.topics))].sort((a, b) => a.localeCompare(b, "es"));
 
   return (
     <>
       <Nav />
       <main className="pt-40">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-
-          <div className="flex items-baseline justify-between mb-14">
-            <h1 className="text-3xl font-bold text-zinc-50 tracking-tight">Invitados</h1>
-            <span className="font-mono text-[10px] text-zinc-600 tracking-widest uppercase">
-              {guests.length} personas
-            </span>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-            {guests.map(({ name, episodeId, city, topics }) => {
-              const photo = PHOTO_MAP[name];
-              return (
-                <a
-                  key={`${name}-${episodeId}`}
-                  href={`/?highlight=${episodeId}${topics[0] ? `&topic=${encodeURIComponent(topics[0])}` : ""}#ep-${episodeId}`}
-                  className="group flex flex-col"
-                >
-                  {/* Foto */}
-                  <div className="aspect-square rounded-xl overflow-hidden bg-zinc-900 mb-3 relative">
-                    {photo ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={encodePath(photo)}
-                        alt={name}
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-xl">
-                        {initials(name)}
-                      </div>
-                    )}
-                    {/* Overlay sutil en hover */}
-                    <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/8 transition-all duration-500 rounded-xl" />
-                  </div>
-
-                  {/* Info */}
-                  <p className="text-zinc-200 text-sm font-medium leading-snug group-hover:text-orange-400 transition-colors">
-                    {name}
-                  </p>
-                  {city && (
-                    <p className="flex items-center gap-1 text-zinc-600 text-xs mt-0.5">
-                      <MapPin size={9} weight="bold" />
-                      {city}
-                    </p>
-                  )}
-                </a>
-              );
-            })}
-          </div>
-
-        </div>
+        <InvitadosClient guests={guests} allTopics={allTopics} />
       </main>
     </>
   );

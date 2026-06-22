@@ -187,7 +187,6 @@ function EpisodeCard({
 
 export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
-  const [activeCity, setActiveCity] = useState<string | null>(null);
   const [highlightedId, setHighlightedId] = useState<number | null>(null);
   const reduce = useReducedMotion();
 
@@ -225,21 +224,12 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
     }, 900);
   }, []);
 
-  const cities = useMemo(
-    () => [...new Set(episodes.map((ep) => ep.city).filter(Boolean))].sort(),
-    [episodes]
-  );
-
-  const isFilterActive = !!(activeTopic || activeCity);
+  const isFilterActive = !!activeTopic;
 
   const { matchingEps, restEps } = useMemo(() => {
-    if (!activeTopic && !activeCity) return { matchingEps: episodes, restEps: [] };
+    if (!activeTopic) return { matchingEps: episodes, restEps: [] };
 
-    const matches = (ep: Episode) => {
-      const topicOk = !activeTopic || ep.topics.includes(activeTopic);
-      const cityOk = !activeCity || ep.city === activeCity;
-      return topicOk && cityOk;
-    };
+    const matches = (ep: Episode) => !activeTopic || ep.topics.includes(activeTopic);
 
     const matching = episodes.filter(matches);
     const matchSet = new Set(matching.map((ep) => ep.id));
@@ -252,7 +242,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
     }
 
     return { matchingEps: matching, restEps: shuffled };
-  }, [episodes, activeTopic, activeCity]);
+  }, [episodes, activeTopic]);
 
   return (
     <div>
@@ -275,30 +265,6 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
               topic={topic}
               active={activeTopic === topic}
               onClick={() => setActiveTopic(topic === activeTopic ? null : topic)}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* City filters */}
-      <div className="mb-10">
-        <p className="text-[10px] text-zinc-600 uppercase tracking-widest font-mono mb-2.5">Ciudades</p>
-        <div className="flex flex-wrap gap-2">
-          <button
-            onClick={() => setActiveCity(null)}
-            className="px-3 py-1.5 rounded-full text-sm font-medium border transition-all"
-            style={!activeCity
-              ? { background: "#f97316", color: "#09090b", borderColor: "#f97316" }
-              : { background: "transparent", color: "#71717a", borderColor: "#3f3f46" }}
-          >
-            Todas
-          </button>
-          {cities.map((city) => (
-            <CityChip
-              key={city}
-              city={city}
-              active={activeCity === city}
-              onClick={() => setActiveCity(city === activeCity ? null : city)}
             />
           ))}
         </div>
