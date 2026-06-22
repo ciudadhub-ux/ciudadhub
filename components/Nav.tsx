@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 export default function Nav() {
@@ -17,24 +16,15 @@ export default function Nav() {
         </a>
 
         <div className="hidden md:flex items-center gap-8">
-          <Link
-            href="#episodios"
-            className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors"
-          >
+          <a href="/#episodios" className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors">
             Episodios
-          </Link>
-          <Link
-            href="/invitados"
-            className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors"
-          >
+          </a>
+          <a href="/invitados" className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors">
             Invitados
-          </Link>
-          <Link
-            href="#equipo"
-            className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors"
-          >
+          </a>
+          <a href="/#equipo" className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors">
             Equipo
-          </Link>
+          </a>
         </div>
 
         <a
