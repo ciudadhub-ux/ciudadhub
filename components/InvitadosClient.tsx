@@ -201,7 +201,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
               {name}
             </p>
             {city && (
-              <p className="flex items-center gap-1 text-zinc-600 text-xs mt-0.5">
+              <p className="flex items-center gap-1 text-zinc-400 text-sm mt-0.5">
                 <MapPin size={9} weight="bold" />
                 {city}{country ? `, ${country}` : ""}
               </p>
@@ -277,7 +277,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
                         </div>
                         <p className="text-zinc-100 text-sm font-semibold leading-snug">{name}</p>
                         {roleFirstLine && (
-                          <p className="text-zinc-400 text-xs leading-snug mt-1 mb-3 line-clamp-2">{roleFirstLine}</p>
+                          <p className="text-zinc-400 text-xs leading-snug mt-1 mb-3">{roleFirstLine}</p>
                         )}
                         <div className="flex flex-wrap gap-1.5 mt-auto">
                           {spotifyUrl && (

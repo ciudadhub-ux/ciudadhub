@@ -70,7 +70,7 @@ function TopicChip({ topic, active, onClick }: { topic: string; active: boolean;
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="px-3 py-1.5 rounded-full text-sm font-medium border transition-all duration-200"
+      className="px-3 py-1.5 rounded-full text-lg font-medium border transition-all duration-200"
       style={topicStyle(topic, active, hovered)}
     >
       {topic}
@@ -148,10 +148,10 @@ function EpisodeCard({
       </h3>
 
       <p className="text-zinc-300 text-base font-medium mb-1">{episode.guest}</p>
-      <p className="text-zinc-500 text-sm leading-snug mb-auto">{episode.guestRole}</p>
+      <p className="text-zinc-400 text-base leading-snug mb-auto">{episode.guestRole}</p>
 
       {episode.city && (
-        <p className="flex items-center gap-1 text-zinc-400 text-sm mt-3">
+        <p className="flex items-center gap-1 text-zinc-300 text-base mt-3">
           <MapPin size={12} />
           {episode.city}
         </p>
@@ -251,10 +251,10 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
         className="sticky z-40 -mx-6 px-6 py-3 mb-8 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800/80"
         style={{ top: "160px" }}
       >
-        <div className="flex items-center gap-2 overflow-x-auto scrollbar-none">
+        <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setActiveTopic(null)}
-            className="shrink-0 px-3.5 py-1.5 rounded-full text-sm font-medium border transition-all duration-200"
+            className="px-3.5 py-1.5 rounded-full text-lg font-medium border transition-all duration-200"
             style={!activeTopic
               ? { background: "#f97316", color: "#09090b", borderColor: "#f97316" }
               : { background: "transparent", color: "#71717a", borderColor: "#3f3f46" }}
@@ -262,7 +262,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
             Todos
           </button>
           {topics.map((topic) => (
-            <div key={topic} className="shrink-0">
+            <div key={topic}>
               <TopicChip
                 topic={topic}
                 active={activeTopic === topic}
