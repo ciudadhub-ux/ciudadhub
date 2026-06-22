@@ -163,7 +163,7 @@ function EpisodeCard({
             href={episode.spotifyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm text-zinc-400 hover:text-green-400 transition-colors px-3 py-1.5 rounded-md bg-zinc-800 hover:bg-zinc-700"
+            className="inline-flex items-center gap-1.5 text-sm text-zinc-400 group-hover:text-green-400 hover:text-green-400 transition-colors px-3 py-1.5 rounded-md bg-zinc-800 hover:bg-zinc-700"
           >
             <SpotifyIcon className="w-3.5 h-3.5" />
             Spotify
@@ -174,7 +174,7 @@ function EpisodeCard({
             href={episode.appleUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm text-zinc-400 hover:text-purple-400 transition-colors px-3 py-1.5 rounded-md bg-zinc-800 hover:bg-zinc-700"
+            className="inline-flex items-center gap-1.5 text-sm text-zinc-400 group-hover:text-purple-400 hover:text-purple-400 transition-colors px-3 py-1.5 rounded-md bg-zinc-800 hover:bg-zinc-700"
           >
             <AppleIcon className="w-3.5 h-3.5" />
             Apple
