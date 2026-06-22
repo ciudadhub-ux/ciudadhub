@@ -114,11 +114,14 @@ export default function InvitadosPage() {
     const raw = PHOTO_MAP[name];
     seen.set(name, {
       name,
+      guestRole: ep.guestRole,
       episodeId: ep.id,
       city: ep.city,
       topics,
       photoSrc: raw ? encodePath(raw) : null,
       href: `/?highlight=${ep.id}${topics[0] ? `&topic=${encodeURIComponent(topics[0])}` : ""}#ep-${ep.id}`,
+      spotifyUrl: ep.spotifyUrl,
+      appleUrl: ep.appleUrl,
     });
   }
 

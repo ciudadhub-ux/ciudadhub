@@ -3,6 +3,7 @@
 import { useState, useMemo, useRef } from "react";
 import dynamic from "next/dynamic";
 import { MapPin, X } from "@phosphor-icons/react";
+import { SpotifyIcon, AppleIcon } from "./PodcastIcons";
 import type { CityDot } from "./InvitadosMap";
 
 const InvitadosMap = dynamic(() => import("./InvitadosMap"), {
@@ -96,11 +97,14 @@ function initials(name: string) {
 
 export type GuestData = {
   name: string;
+  guestRole: string;
   episodeId: number;
   city: string;
   topics: string[];
   photoSrc: string | null;
   href: string;
+  spotifyUrl: string;
+  appleUrl: string;
 };
 
 interface Props {
@@ -250,28 +254,44 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
                     <X size={18} weight="bold" />
                   </button>
                 </div>
-                <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
-                  {cityGuests.map(({ name, photoSrc, href }) => (
-                    <a key={name} href={href} className="group flex flex-col">
-                      <div className="aspect-square rounded-xl overflow-hidden bg-zinc-800 mb-2 relative">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  {cityGuests.map(({ name, guestRole, photoSrc, spotifyUrl, appleUrl }) => (
+                    <div key={name} className="flex flex-col">
+                      <div className="aspect-square rounded-xl overflow-hidden bg-zinc-800 mb-2.5 relative">
                         {photoSrc ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img
                             src={photoSrc}
                             alt={name}
-                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                            className="w-full h-full object-cover"
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-base">
                             {initials(name)}
                           </div>
                         )}
-                        <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/10 transition-all duration-300 rounded-xl" />
                       </div>
-                      <p className="text-zinc-300 text-xs font-medium leading-snug group-hover:text-orange-400 transition-colors">
-                        {name}
-                      </p>
-                    </a>
+                      <p className="text-zinc-100 text-sm font-semibold leading-snug">{name}</p>
+                      {guestRole && (
+                        <p className="text-zinc-500 text-xs leading-snug mt-0.5 mb-2">{guestRole}</p>
+                      )}
+                      <div className="flex gap-1.5 mt-auto pt-1">
+                        {spotifyUrl && (
+                          <a href={spotifyUrl} target="_blank" rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-xs text-zinc-500 hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-800 hover:bg-zinc-700">
+                            <SpotifyIcon className="w-3 h-3" />
+                            Spotify
+                          </a>
+                        )}
+                        {appleUrl && (
+                          <a href={appleUrl} target="_blank" rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-xs text-zinc-500 hover:text-purple-400 transition-colors px-2 py-1 rounded-md bg-zinc-800 hover:bg-zinc-700">
+                            <AppleIcon className="w-3 h-3" />
+                            Apple
+                          </a>
+                        )}
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
