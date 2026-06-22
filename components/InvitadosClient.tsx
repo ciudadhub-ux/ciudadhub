@@ -113,12 +113,16 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
   const topRef = useRef<HTMLDivElement>(null);
 
+  // Top grid only filters by topic; city is handled by the map popover
   const filtered = useMemo(
-    () => guests.filter((g) =>
-      (!activeCity || g.city === activeCity) &&
-      (!activeTopic || g.topics.includes(activeTopic))
-    ),
-    [guests, activeCity, activeTopic]
+    () => guests.filter((g) => !activeTopic || g.topics.includes(activeTopic)),
+    [guests, activeTopic]
+  );
+
+  // Guests shown in the map popover
+  const cityGuests = useMemo(
+    () => (activeCity ? guests.filter((g) => g.city === activeCity) : []),
+    [guests, activeCity]
   );
 
   const cityDots = useMemo<CityDot[]>(() => {
@@ -136,15 +140,11 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
   }, [guests]);
 
   const handleCityClick = (city: string) => {
-    const next = city === activeCity ? null : city;
-    setActiveCity(next);
-    if (next && topRef.current) {
-      topRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    setActiveCity(city === activeCity ? null : city);
   };
 
   const clearAll = () => { setActiveCity(null); setActiveTopic(null); };
-  const isFiltered = !!(activeCity || activeTopic);
+  const isFiltered = !!activeTopic;
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
@@ -157,26 +157,17 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
         </span>
       </div>
 
-      {/* Active filters bar */}
-      {isFiltered && (
+      {/* Active topic filter bar */}
+      {activeTopic && (
         <div className="flex items-center gap-3 mb-8 flex-wrap">
-          <span className="text-xs text-zinc-500 font-mono uppercase tracking-widest">Filtrando por</span>
-          {activeCity && (
-            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-sm bg-orange-500/15 text-orange-400 border border-orange-500/30">
-              <MapPin size={11} weight="bold" />
-              {activeCity}
-              <button onClick={() => setActiveCity(null)} className="ml-1 hover:text-orange-200"><X size={11} weight="bold" /></button>
-            </span>
-          )}
-          {activeTopic && (
-            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-sm border"
-              style={topicStyle(activeTopic, true, false)}>
-              {activeTopic}
-              <button onClick={() => setActiveTopic(null)} className="ml-1 opacity-60 hover:opacity-100"><X size={11} weight="bold" /></button>
-            </span>
-          )}
+          <span className="text-xs text-zinc-500 font-mono uppercase tracking-widest">Tema</span>
+          <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-sm border"
+            style={topicStyle(activeTopic, true, false)}>
+            {activeTopic}
+            <button onClick={() => setActiveTopic(null)} className="ml-1 opacity-60 hover:opacity-100"><X size={11} weight="bold" /></button>
+          </span>
           <button onClick={clearAll} className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors underline underline-offset-2">
-            Limpiar todo
+            Limpiar
           </button>
         </div>
       )}
@@ -227,11 +218,66 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
             {cityDots.length} ciudades
           </span>
         </div>
-        <InvitadosMap
-          cities={cityDots}
-          activeCity={activeCity}
-          onCityClick={handleCityClick}
-        />
+
+        {/* Map + floating popover */}
+        <div className="relative">
+          <InvitadosMap
+            cities={cityDots}
+            activeCity={activeCity}
+            onCityClick={handleCityClick}
+          />
+
+          {activeCity && cityGuests.length > 0 && (
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+              {/* Backdrop */}
+              <div
+                className="absolute inset-0 bg-zinc-950/80 backdrop-blur-sm rounded-xl"
+                onClick={() => setActiveCity(null)}
+              />
+              {/* Panel */}
+              <div className="relative bg-zinc-900 border border-zinc-700 rounded-2xl p-6 w-full max-w-xl mx-6 max-h-[80%] overflow-y-auto shadow-2xl shadow-black/60">
+                <div className="flex items-start justify-between mb-5">
+                  <div>
+                    <h3 className="text-lg font-bold text-zinc-50 tracking-tight">{activeCity}</h3>
+                    <p className="text-xs text-zinc-500 mt-0.5 font-mono uppercase tracking-widest">
+                      {cityGuests.length} invitado{cityGuests.length !== 1 ? "s" : ""}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setActiveCity(null)}
+                    className="text-zinc-500 hover:text-zinc-200 transition-colors p-1 -mr-1"
+                  >
+                    <X size={18} weight="bold" />
+                  </button>
+                </div>
+                <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                  {cityGuests.map(({ name, photoSrc, href }) => (
+                    <a key={name} href={href} className="group flex flex-col">
+                      <div className="aspect-square rounded-xl overflow-hidden bg-zinc-800 mb-2 relative">
+                        {photoSrc ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={photoSrc}
+                            alt={name}
+                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-base">
+                            {initials(name)}
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/10 transition-all duration-300 rounded-xl" />
+                      </div>
+                      <p className="text-zinc-300 text-xs font-medium leading-snug group-hover:text-orange-400 transition-colors">
+                        {name}
+                      </p>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Topic tags */}
