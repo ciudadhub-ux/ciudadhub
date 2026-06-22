@@ -59,22 +59,21 @@ export default function TeamSection() {
         <div className="grid md:grid-cols-3 gap-px bg-zinc-800">
           {TEAM.map((member) => (
             <div key={member.name} className="bg-zinc-950 p-8 flex flex-col gap-5">
-              {/* Photo + name side by side */}
-              <div className="flex items-start gap-4">
-                <div className="w-20 h-20 rounded-xl overflow-hidden bg-zinc-800 flex-shrink-0">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={member.photo}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="pt-1">
-                  <h3 className="text-base font-semibold text-zinc-50 leading-snug">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm text-zinc-500 mt-1">{member.country}</p>
-                </div>
+              {/* Photo */}
+              <div className="w-full aspect-square rounded-xl overflow-hidden bg-zinc-800">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Name + country */}
+              <div>
+                <h3 className="text-lg font-semibold text-zinc-50 leading-snug">
+                  {member.name}
+                </h3>
+                <p className="text-sm text-zinc-500 mt-1">{member.country}</p>
               </div>
               <BioText text={member.bio} />
             </div>
