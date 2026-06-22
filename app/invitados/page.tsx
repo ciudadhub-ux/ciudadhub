@@ -12,7 +12,7 @@ const PHOTO_MAP: Record<string, string> = {
   "Carles Benito":                "/images/INVITADOS/Carles Benito bw.jpg",
   "Carlos Corral":                "/images/INVITADOS/Carlos Corral bw.png",
   "Carlos Eduardo Correa":        "/images/INVITADOS/Carlos Eduardo Correa bw.jpg",
-  "Carlos Hernández":             "/images/INVITADOS/Carlos Hernádez bw.jpeg",
+  "Carlos Hernández":             "/images/INVITADOS/Carlos Hernandez bw.jpg",
   "Carlos Pardo":                 "/images/INVITADOS/Carlos Pardo bw.jpg",
   "Carolina Huffman":             "/images/INVITADOS/Carolina Huffman bw.jpg",
   "Carolina Pozo":                "/images/INVITADOS/Carolina Pozo bw.jpeg",
