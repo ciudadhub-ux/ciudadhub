@@ -117,6 +117,7 @@ export default function InvitadosPage() {
       guestRole: ep.guestRole,
       episodeId: ep.id,
       city: ep.city,
+      country: ep.country,
       topics,
       photoSrc: raw ? encodePath(raw) : null,
       href: `/?highlight=${ep.id}${topics[0] ? `&topic=${encodeURIComponent(topics[0])}` : ""}#ep-${ep.id}`,

@@ -106,7 +106,8 @@ def parse_rows(rows: list[dict]) -> list[dict]:
         title = row.get("Podcast", "").strip()
         apple_url = row.get("AppelPodcast", "").strip()
         spotify_url = row.get("spotify", "").strip()
-        city = clean_city(row.get("Grabado desde...", ""))
+        city = clean_city(row.get("Grabado desde Ciudad", ""))
+        country = clean_city(row.get("Grabado desde País", ""))
         order_raw = row.get("Order", "0").strip()
 
         # Saltar filas sin datos esenciales
@@ -132,6 +133,7 @@ def parse_rows(rows: list[dict]) -> list[dict]:
             "apple_url": apple_url,
             "spotify_url": spotify_url if spotify_url.startswith("http") else "",
             "city": city,
+            "country": country,
             "topics": topics,
             "created_date": created_date,
             "image_url": image_url,
@@ -170,6 +172,7 @@ def generate_ts(episodes: list[dict]) -> str:
         "  guestRole: string",
         "  topics: string[]",
         "  city: string",
+        "  country: string",
         "  appleUrl: string",
         "  spotifyUrl: string",
         "  imageUrl: string",
@@ -195,6 +198,7 @@ def generate_ts(episodes: list[dict]) -> str:
             f"    guestRole: {ts_string(ep['role'])},",
             f"    topics: {topics_ts},",
             f"    city: {ts_string(ep['city'])},",
+            f"    country: {ts_string(ep['country'])},",
             f"    appleUrl: {ts_string(ep['apple_url'])},",
             f"    spotifyUrl: {ts_string(ep['spotify_url'])},",
             f"    imageUrl: {ts_string(ep['image_url'])},",

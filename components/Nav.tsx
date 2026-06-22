@@ -15,16 +15,23 @@ export default function Nav() {
           />
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
-          <a href="/#episodios" className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors">
-            Episodios
-          </a>
-          <a href="/invitados" className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors">
-            Invitados
-          </a>
-          <a href="/#equipo" className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors">
-            Equipo
-          </a>
+        <div className="hidden md:flex items-center">
+          {[
+            { href: "/#episodios",         label: "Episodios" },
+            { href: "/invitados",          label: "Invitados" },
+            { href: "/invitados#ciudades", label: "Ciudades"  },
+            { href: "/#equipo",            label: "Equipo"    },
+          ].map(({ href, label }, i) => (
+            <div key={label} className="flex items-center">
+              {i > 0 && <span className="w-px h-4 bg-orange-500/60 mx-1" />}
+              <a
+                href={href}
+                className="px-4 py-2 text-sm text-zinc-400 hover:text-orange-400 transition-colors"
+              >
+                {label}
+              </a>
+            </div>
+          ))}
         </div>
 
       </div>

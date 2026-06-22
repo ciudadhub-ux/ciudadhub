@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from "react-simple-maps";
 
 const GEO_URL = "/countries-110m.json";
 
 export type CityDot = {
   city: string;
+  country: string;
   coordinates: [number, number];
   count: number;
 };
@@ -21,17 +22,17 @@ export default function InvitadosMap({ cities, activeCity, onCityClick }: Props)
   const [hovered, setHovered] = useState<string | null>(null);
   const [zoom, setZoom] = useState(1);
   const [center, setCenter] = useState<[number, number]>([-20, 5]);
+  const [tooltip, setTooltip] = useState<{ city: string; country: string; count: number; x: number; y: number } | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const zoomIn  = () => setZoom((z) => Math.min(parseFloat((z * 1.6).toFixed(2)), 12));
   const zoomOut = () => setZoom((z) => Math.max(parseFloat((z / 1.6).toFixed(2)), 1));
   const reset   = () => { setZoom(1); setCenter([-20, 5]); };
 
   const hasFilter = activeCity !== null;
-  const label = hovered ?? activeCity;
-  const labelCount = label ? (cities.find((c) => c.city === label)?.count ?? 0) : 0;
 
   return (
-    <div className="relative select-none">
+    <div ref={containerRef} className="relative select-none">
       {/* Zoom controls */}
       <div className="absolute top-2 right-2 z-10 flex flex-col gap-1">
         <button onClick={zoomIn}  className="w-8 h-8 rounded-lg bg-zinc-800 border border-zinc-700 text-zinc-300 hover:text-zinc-50 hover:bg-zinc-700 transition-colors flex items-center justify-center text-lg font-light leading-none">+</button>
@@ -41,21 +42,21 @@ export default function InvitadosMap({ cities, activeCity, onCityClick }: Props)
         )}
       </div>
 
-      {/* Status label */}
-      <div className="h-7 mb-1 flex items-center">
-        {label ? (
-          <p className="text-sm font-medium text-orange-400">
-            {label}
-            <span className="text-zinc-500 font-normal ml-2">
-              {labelCount} invitado{labelCount !== 1 ? "s" : ""}
-            </span>
+      {/* Floating tooltip */}
+      {tooltip && (
+        <div
+          className="absolute z-20 pointer-events-none bg-zinc-900 border border-zinc-700 rounded-lg px-2.5 py-2 shadow-xl shadow-black/40"
+          style={{ left: tooltip.x + 12, top: tooltip.y - 48 }}
+        >
+          <p className="text-xs font-semibold text-zinc-100 leading-none">{tooltip.city}</p>
+          {tooltip.country && (
+            <p className="text-[10px] text-zinc-500 mt-0.5 leading-none">{tooltip.country}</p>
+          )}
+          <p className="text-[10px] text-orange-400 mt-1.5 leading-none font-mono">
+            {tooltip.count} invitado{tooltip.count !== 1 ? "s" : ""}
           </p>
-        ) : (
-          <p className="text-xs text-zinc-600 font-mono uppercase tracking-widest">
-            Hacé clic en una ciudad para filtrar
-          </p>
-        )}
-      </div>
+        </div>
+      )}
 
       <ComposableMap
         projection="geoNaturalEarth1"
@@ -93,7 +94,7 @@ export default function InvitadosMap({ cities, activeCity, onCityClick }: Props)
           }
         </Geographies>
 
-        {cities.map(({ city, coordinates, count }) => {
+        {cities.map(({ city, country, coordinates, count  }) => {
           const isActive = activeCity === city;
           const isDimmed = hasFilter && !isActive;
           // Divide by zoom so dots stay the same visual size regardless of zoom level
@@ -121,8 +122,23 @@ export default function InvitadosMap({ cities, activeCity, onCityClick }: Props)
                 strokeWidth={sw}
                 style={{ cursor: "pointer" }}
                 onClick={() => onCityClick(city)}
-                onMouseEnter={() => setHovered(city)}
-                onMouseLeave={() => setHovered(null)}
+                onMouseEnter={(e) => {
+                  setHovered(city);
+                  if (containerRef.current) {
+                    const rect = containerRef.current.getBoundingClientRect();
+                    setTooltip({ city, country, count, x: e.clientX - rect.left, y: e.clientY - rect.top });
+                  }
+                }}
+                onMouseMove={(e) => {
+                  if (containerRef.current) {
+                    const rect = containerRef.current.getBoundingClientRect();
+                    setTooltip((prev) => prev ? { ...prev, x: e.clientX - rect.left, y: e.clientY - rect.top } : null);
+                  }
+                }}
+                onMouseLeave={() => {
+                  setHovered(null);
+                  setTooltip(null);
+                }}
               />
             </Marker>
           );

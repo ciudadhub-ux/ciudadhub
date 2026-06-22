@@ -13,46 +13,44 @@ const InvitadosMap = dynamic(() => import("./InvitadosMap"), {
 
 // Coordenadas: [longitud, latitud]
 const CITY_COORDS: Record<string, [number, number]> = {
-  "Barcelona":                  [2.17,    41.39],
-  "Barelona":                   [2.17,    41.39],
-  "Berkeley":                   [-122.27, 37.87],
-  "Bilbao":                     [-2.92,   43.26],
-  "Bogotá":                     [-74.07,  4.71],
-  "Bogotá, Colombia":           [-74.07,  4.71],
-  "Boston":                     [-71.06,  42.36],
-  "Bucaramanga":                [-73.12,  7.13],
-  "Buenos Aires":               [-58.38,  -34.60],
-  "Caracas":                    [-66.92,  10.48],
-  "Chile":                      [-70.67,  -33.45],
-  "Córdoba":                    [-64.18,  -31.42],
-  "Estonia":                    [24.75,   59.44],
-  "Guadalajara":                [-103.35, 20.67],
-  "Lima":                       [-77.04,  -12.05],
-  "Londres":                    [-0.12,   51.51],
-  "Madrid":                     [-3.70,   40.42],
-  "Manresa":                    [1.83,    41.72],
-  "Mendoza":                    [-68.83,  -32.89],
-  "Miami":                      [-80.19,  25.77],
-  "Montería":                   [-75.89,  8.75],
-  "Montevideo":                 [-56.16,  -34.90],
-  "New York":                   [-74.01,  40.71],
-  "Ottawa":                     [-75.70,  45.42],
-  "Oxford":                     [-1.26,   51.75],
-  "Philadelphia":               [-75.16,  39.95],
-  "Pinamar":                    [-56.86,  -37.11],
-  "Portland":                   [-122.68, 45.52],
-  "Porto Alegre":               [-51.23,  -30.03],
-  "Puebla":                     [-98.20,  19.04],
-  "Rio de Janeiro":             [-43.17,  -22.91],
-  "San Salvador, El Salvador":  [-89.20,  13.70],
-  "Tandil":                     [-59.13,  -37.32],
-  "Tel Aviv":                   [34.78,   32.08],
-  "Toronto":                    [-79.38,  43.65],
-  "Tucumán":                    [-65.20,  -26.82],
-  "Vancouver":                  [-123.12, 49.28],
-  "Warwick":                    [-1.59,   52.28],
-  "Washington":                 [-77.04,  38.91],
-  "Zaragoza":                   [-0.88,   41.65],
+  "Barcelona":    [2.17,    41.39],
+  "Berkeley":     [-122.27, 37.87],
+  "Bilbao":       [-2.92,   43.26],
+  "Bogotá":       [-74.07,  4.71],
+  "Boston":       [-71.06,  42.36],
+  "Bucaramanga":  [-73.12,  7.13],
+  "Buenos Aires": [-58.38,  -34.60],
+  "Caracas":      [-66.92,  10.48],
+  "Chile":        [-70.67,  -33.45],
+  "Córdoba":      [-64.18,  -31.42],
+  "Estonia":      [24.75,   59.44],
+  "Guadalajara":  [-103.35, 20.67],
+  "Lima":         [-77.04,  -12.05],
+  "Londres":      [-0.12,   51.51],
+  "Madrid":       [-3.70,   40.42],
+  "Manresa":      [1.83,    41.72],
+  "Mendoza":      [-68.83,  -32.89],
+  "Miami":        [-80.19,  25.77],
+  "Montería":     [-75.89,  8.75],
+  "Montevideo":   [-56.16,  -34.90],
+  "New York":     [-74.01,  40.71],
+  "Ottawa":       [-75.70,  45.42],
+  "Oxford":       [-1.26,   51.75],
+  "Philadelphia": [-75.16,  39.95],
+  "Pinamar":      [-56.86,  -37.11],
+  "Portland":     [-122.68, 45.52],
+  "Porto Alegre": [-51.23,  -30.03],
+  "Puebla":       [-98.20,  19.04],
+  "Rio de Janeiro": [-43.17, -22.91],
+  "San Salvador": [-89.20,  13.70],
+  "Tandil":       [-59.13,  -37.32],
+  "Tel Aviv":     [34.78,   32.08],
+  "Toronto":      [-79.38,  43.65],
+  "Tucumán":      [-65.20,  -26.82],
+  "Vancouver":    [-123.12, 49.28],
+  "Warwick":      [-1.59,   52.28],
+  "Washington":   [-77.04,  38.91],
+  "Zaragoza":     [-0.88,   41.65],
 };
 
 const TOPIC_COLORS: Record<string, { h: number; s: number }> = {
@@ -100,6 +98,7 @@ export type GuestData = {
   guestRole: string;
   episodeId: number;
   city: string;
+  country: string;
   topics: string[];
   photoSrc: string | null;
   href: string;
@@ -131,13 +130,16 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
 
   const cityDots = useMemo<CityDot[]>(() => {
     const counts = new Map<string, number>();
+    const countryByCity = new Map<string, string>();
     for (const g of guests) {
       if (g.city && CITY_COORDS[g.city]) {
         counts.set(g.city, (counts.get(g.city) ?? 0) + 1);
+        if (!countryByCity.has(g.city)) countryByCity.set(g.city, g.country);
       }
     }
     return [...counts.entries()].map(([city, count]) => ({
       city,
+      country: countryByCity.get(city) ?? "",
       coordinates: CITY_COORDS[city],
       count,
     }));
@@ -178,7 +180,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
 
       {/* Guest grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mb-24">
-        {filtered.map(({ name, photoSrc, city, href }) => (
+        {filtered.map(({ name, photoSrc, city, country, href }) => (
           <a key={name} href={href} className="group flex flex-col">
             <div className="aspect-square rounded-xl overflow-hidden bg-zinc-900 mb-3 relative">
               {photoSrc ? (
@@ -201,7 +203,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
             {city && (
               <p className="flex items-center gap-1 text-zinc-600 text-xs mt-0.5">
                 <MapPin size={9} weight="bold" />
-                {city}
+                {city}{country ? `, ${country}` : ""}
               </p>
             )}
           </a>
@@ -215,7 +217,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
       </div>
 
       {/* Map section */}
-      <div className="border-t border-zinc-800 pt-16 mb-16">
+      <div id="ciudades" className="border-t border-zinc-800 pt-16 mb-16 scroll-mt-48">
         <div className="flex items-baseline justify-between mb-8">
           <h2 className="text-xl font-bold text-zinc-50 tracking-tight">Ciudades</h2>
           <span className="font-mono text-[10px] text-zinc-600 tracking-widest uppercase">
