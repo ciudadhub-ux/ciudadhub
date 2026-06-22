@@ -109,6 +109,7 @@ function EpisodeCard({
   isFilterActive,
   isHighlighted,
   reduce,
+  isLatest,
 }: {
   episode: Episode;
   index: number;
@@ -116,6 +117,7 @@ function EpisodeCard({
   isFilterActive: boolean;
   isHighlighted: boolean;
   reduce: boolean | null;
+  isLatest: boolean;
 }) {
   return (
     <motion.div
@@ -135,7 +137,7 @@ function EpisodeCard({
       }}
       id={`ep-${episode.id}`}
       className={[
-        "group rounded-xl p-5 flex flex-col transition-[border-color,box-shadow] scroll-mt-44",
+        "group rounded-xl p-5 flex flex-col transition-[border-color,box-shadow] scroll-mt-52",
         isHighlighted
           ? "ep-highlight bg-zinc-900 border border-orange-500 shadow-[0_0_40px_-4px_rgba(249,115,22,0.35)]"
           : isFilterActive && isMatch
@@ -143,6 +145,11 @@ function EpisodeCard({
           : "bg-zinc-900 border border-zinc-800 hover:border-zinc-700",
       ].join(" ")}
     >
+      {isLatest && (
+        <div className="inline-flex self-start items-center gap-1.5 px-2.5 py-1 rounded-md mb-3 font-mono text-[10px] tracking-[0.18em] uppercase bg-orange-500/15 border border-orange-500/35 text-orange-400">
+          Último podcast
+        </div>
+      )}
       <h3 className="text-zinc-50 font-semibold text-lg leading-snug mb-3 group-hover:text-orange-500 transition-colors">
         {episode.title}
       </h3>
@@ -189,6 +196,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
   const [highlightedId, setHighlightedId] = useState<number | null>(null);
   const reduce = useReducedMotion();
+  const latestId = episodes[0]?.id ?? -1;
 
   useEffect(() => {
     const handler = (e: Event) => {
@@ -217,7 +225,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
       setHighlightedId(id);
       const el = document.getElementById(`ep-${id}`);
       if (el) {
-        const top = el.getBoundingClientRect().top + window.scrollY - 184; // 160px nav + 24px gap
+        const top = el.getBoundingClientRect().top + window.scrollY - 216; // 192px nav + 24px gap
         window.scrollTo({ top, behavior: "smooth" });
       }
       setTimeout(() => setHighlightedId(null), 3200);
@@ -248,8 +256,8 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
     <div>
       {/* Topic filter — sticky secondary nav */}
       <div
-        className="sticky z-40 -mx-6 px-6 py-3 mb-8 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800/80"
-        style={{ top: "160px" }}
+        className="sticky z-40 -mx-6 px-6 py-3 mb-8 bg-zinc-950/95 backdrop-blur-md"
+        style={{ top: "192px" }}
       >
         <div className="flex flex-wrap gap-2">
           <button
@@ -276,7 +284,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
       {/* Matching count */}
       {isFilterActive && matchingEps.length > 0 && (
         <p className="text-xs text-zinc-600 mb-4">
-          {matchingEps.length} episodio{matchingEps.length !== 1 ? "s" : ""} coinciden
+          {matchingEps.length} podcast{matchingEps.length !== 1 ? "s" : ""} coinciden
         </p>
       )}
 
@@ -291,6 +299,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
               isFilterActive={isFilterActive}
               isHighlighted={highlightedId === ep.id}
               reduce={reduce}
+              isLatest={ep.id === latestId}
             />
           ))}
 
@@ -321,6 +330,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
               isFilterActive={isFilterActive}
               isHighlighted={highlightedId === ep.id}
               reduce={reduce}
+              isLatest={ep.id === latestId}
             />
           ))}
         </AnimatePresence>

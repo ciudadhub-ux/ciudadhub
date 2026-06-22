@@ -11,7 +11,7 @@ export default function EpisodesSection({
   topics,
 }: EpisodesSectionProps) {
   return (
-    <section id="episodios" className="pt-2 pb-24 border-t border-zinc-800">
+    <section id="podcasts" className="pt-2 pb-24">
       <div className="max-w-7xl mx-auto px-6">
         <EpisodesGrid episodes={episodes} topics={topics} />
       </div>

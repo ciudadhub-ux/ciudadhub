@@ -156,7 +156,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
     <div className="max-w-7xl mx-auto px-6 py-16">
 
       {/* Header */}
-      <div ref={topRef} className="flex items-baseline justify-between mb-6 scroll-mt-44">
+      <div ref={topRef} className="flex items-baseline justify-between mb-6 scroll-mt-52">
         <h1 className="text-3xl font-bold text-zinc-50 tracking-tight">Invitados</h1>
         <span className="font-mono text-[10px] text-zinc-600 tracking-widest uppercase">
           {filtered.length}{isFiltered ? ` / ${guests.length}` : ""} personas
@@ -217,7 +217,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
       </div>
 
       {/* Map section */}
-      <div id="ciudades" className="border-t border-zinc-800 pt-16 mb-16 scroll-mt-48">
+      <div id="ciudades" className="border-t border-zinc-800 pt-16 mb-16 scroll-mt-52">
         <div className="flex items-baseline justify-between mb-8">
           <h2 className="text-xl font-bold text-zinc-50 tracking-tight">Ciudades</h2>
           <span className="font-mono text-[10px] text-zinc-600 tracking-widest uppercase">
