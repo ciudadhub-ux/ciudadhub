@@ -120,7 +120,7 @@ export default function InvitadosPage() {
       country: ep.country,
       topics,
       photoSrc: raw ? encodePath(raw) : null,
-      href: `/#ep-${ep.id}`,
+      href: `/?highlight=${ep.id}${topics[0] ? `&topic=${encodeURIComponent(topics[0])}` : ""}#ep-${ep.id}`,
       spotifyUrl: ep.spotifyUrl,
       appleUrl: ep.appleUrl,
     });

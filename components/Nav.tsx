@@ -6,9 +6,10 @@ import { XLogo, InstagramLogo, FacebookLogo, List, X } from "@phosphor-icons/rea
 import { AnimatePresence, motion } from "motion/react";
 
 const NAV_LINKS = [
-  { href: "/#episodios", label: "Episodios" },
-  { href: "/invitados",  label: "Invitados" },
-  { href: "/#equipo",    label: "Equipo"    },
+  { href: "/#episodios",          label: "Episodios",  desktopOnly: false },
+  { href: "/invitados",           label: "Invitados",  desktopOnly: false },
+  { href: "/invitados#ciudades",  label: "Ciudades",   desktopOnly: true  },
+  { href: "/#equipo",             label: "Equipo",     desktopOnly: false },
 ];
 
 const SOCIAL = [
@@ -105,7 +106,7 @@ export default function Nav() {
             className="md:hidden overflow-hidden border-t border-zinc-800 bg-zinc-950/98 backdrop-blur-md"
           >
             <div className="px-6 py-2 flex flex-col">
-              {NAV_LINKS.map(({ href, label }) => (
+              {NAV_LINKS.filter((l) => !l.desktopOnly).map(({ href, label }) => (
                 <a
                   key={label}
                   href={href}
