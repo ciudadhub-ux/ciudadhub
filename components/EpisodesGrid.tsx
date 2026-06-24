@@ -70,7 +70,7 @@ function TopicChip({ topic, active, onClick }: { topic: string; active: boolean;
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="px-3 py-1.5 rounded-full text-lg font-medium border transition-all duration-200"
+      className="px-3 py-1.5 rounded-full text-base font-medium border transition-all duration-200"
       style={topicStyle(topic, active, hovered)}
     >
       {topic}
@@ -275,7 +275,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
         <div className="flex md:flex-wrap gap-2 overflow-x-auto md:overflow-visible scrollbar-none pb-0.5 md:pb-0">
           <button
             onClick={() => handleTopicChange(null)}
-            className="px-3.5 py-1.5 rounded-full text-lg font-medium border transition-all duration-200 shrink-0"
+            className="px-3.5 py-1.5 rounded-full text-base font-medium border transition-all duration-200 shrink-0"
             style={!activeTopic
               ? { background: "#f97316", color: "#09090b", borderColor: "#f97316" }
               : { background: "transparent", color: "#71717a", borderColor: "#3f3f46" }}
