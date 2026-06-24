@@ -54,7 +54,7 @@ function BioText({ text }: { text: string }) {
 
 export default function TeamSection() {
   return (
-    <section id="equipo" className="pt-4 pb-8 md:pt-6 md:pb-16 border-t border-zinc-800 scroll-mt-[98px] md:scroll-mt-48">
+    <section id="equipo" className="pt-2 pb-8 md:pt-6 md:pb-16 border-t border-zinc-800 scroll-mt-[98px] md:scroll-mt-48">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="grid md:grid-cols-3 gap-px bg-zinc-800">
