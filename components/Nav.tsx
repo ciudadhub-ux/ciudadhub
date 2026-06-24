@@ -6,10 +6,9 @@ import { XLogo, InstagramLogo, FacebookLogo, List, X } from "@phosphor-icons/rea
 import { AnimatePresence, motion } from "motion/react";
 
 const NAV_LINKS = [
-  { href: "/#episodios",          label: "Episodios" },
-  { href: "/invitados",          label: "Invitados" },
-  { href: "/invitados#ciudades", label: "Ciudades"  },
-  { href: "/#equipo",            label: "Equipo"    },
+  { href: "/#episodios", label: "Episodios" },
+  { href: "/invitados",  label: "Invitados" },
+  { href: "/#equipo",    label: "Equipo"    },
 ];
 
 const SOCIAL = [
@@ -27,16 +26,19 @@ export default function Nav() {
       {/* Main bar */}
       <div className="max-w-7xl mx-auto pl-4 md:pl-8 pr-4 md:pr-6 h-16 md:h-48 flex items-stretch">
 
-        {/* Logo */}
-        <a href="/" className="flex items-center pr-4 md:pr-8 shrink-0">
+        {/* Logo + tagline (mobile) */}
+        <a href="/" className="flex items-center gap-2.5 pr-4 md:pr-8 shrink-0">
           <Image
             src="/logo.png"
             alt="Ciudad Hub Podcast"
             width={138}
             height={155}
-            className="h-[42px] md:h-[155px] w-auto"
+            className="h-[50px] md:h-[155px] w-auto"
             priority
           />
+          <p className="md:hidden italic font-light text-zinc-400 text-[11px] tracking-wide leading-tight max-w-[90px]">
+            El Podcast de las Ciudades
+          </p>
         </a>
 
         {/* Center: tagline + links — desktop only */}

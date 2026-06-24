@@ -1,57 +1,8 @@
 "use client";
 
 import { useState, useMemo, useRef } from "react";
-import dynamic from "next/dynamic";
 import { MapPin, X } from "@phosphor-icons/react";
 import { SpotifyIcon, AppleIcon } from "./PodcastIcons";
-import type { CityDot } from "./InvitadosMap";
-
-const InvitadosMap = dynamic(() => import("./InvitadosMap"), {
-  ssr: false,
-  loading: () => <div className="w-full h-[420px] bg-zinc-900/50 rounded-xl animate-pulse" />,
-});
-
-// Coordenadas: [longitud, latitud]
-const CITY_COORDS: Record<string, [number, number]> = {
-  "Barcelona":    [2.17,    41.39],
-  "Berkeley":     [-122.27, 37.87],
-  "Bilbao":       [-2.92,   43.26],
-  "Bogotá":       [-74.07,  4.71],
-  "Boston":       [-71.06,  42.36],
-  "Bucaramanga":  [-73.12,  7.13],
-  "Buenos Aires": [-58.38,  -34.60],
-  "Caracas":      [-66.92,  10.48],
-  "Chile":        [-70.67,  -33.45],
-  "Córdoba":      [-64.18,  -31.42],
-  "Estonia":      [24.75,   59.44],
-  "Guadalajara":  [-103.35, 20.67],
-  "Lima":         [-77.04,  -12.05],
-  "Londres":      [-0.12,   51.51],
-  "Madrid":       [-3.70,   40.42],
-  "Manresa":      [1.83,    41.72],
-  "Mendoza":      [-68.83,  -32.89],
-  "Miami":        [-80.19,  25.77],
-  "Montería":     [-75.89,  8.75],
-  "Montevideo":   [-56.16,  -34.90],
-  "New York":     [-74.01,  40.71],
-  "Ottawa":       [-75.70,  45.42],
-  "Oxford":       [-1.26,   51.75],
-  "Philadelphia": [-75.16,  39.95],
-  "Pinamar":      [-56.86,  -37.11],
-  "Portland":     [-122.68, 45.52],
-  "Porto Alegre": [-51.23,  -30.03],
-  "Puebla":       [-98.20,  19.04],
-  "Rio de Janeiro": [-43.17, -22.91],
-  "San Salvador": [-89.20,  13.70],
-  "Tandil":       [-59.13,  -37.32],
-  "Tel Aviv":     [34.78,   32.08],
-  "Toronto":      [-79.38,  43.65],
-  "Tucumán":      [-65.20,  -26.82],
-  "Vancouver":    [-123.12, 49.28],
-  "Warwick":      [-1.59,   52.28],
-  "Washington":   [-77.04,  38.91],
-  "Zaragoza":     [-0.88,   41.65],
-};
 
 const TOPIC_COLORS: Record<string, { h: number; s: number }> = {
   "Smart Cities":      { h: 213, s: 94 },
@@ -112,44 +63,14 @@ interface Props {
 }
 
 export default function InvitadosClient({ guests, allTopics }: Props) {
-  const [activeCity, setActiveCity] = useState<string | null>(null);
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
   const topRef = useRef<HTMLDivElement>(null);
 
-  // Top grid only filters by topic; city is handled by the map popover
   const filtered = useMemo(
     () => guests.filter((g) => !activeTopic || g.topics.includes(activeTopic)),
     [guests, activeTopic]
   );
 
-  // Guests shown in the map popover
-  const cityGuests = useMemo(
-    () => (activeCity ? guests.filter((g) => g.city === activeCity) : []),
-    [guests, activeCity]
-  );
-
-  const cityDots = useMemo<CityDot[]>(() => {
-    const counts = new Map<string, number>();
-    const countryByCity = new Map<string, string>();
-    for (const g of guests) {
-      if (g.city && CITY_COORDS[g.city]) {
-        counts.set(g.city, (counts.get(g.city) ?? 0) + 1);
-        if (!countryByCity.has(g.city)) countryByCity.set(g.city, g.country);
-      }
-    }
-    return [...counts.entries()].map(([city, count]) => ({
-      city,
-      country: countryByCity.get(city) ?? "",
-      coordinates: CITY_COORDS[city],
-      count,
-    }));
-  }, [guests]);
-
-  const handleCityClick = (city: string) => {
-    setActiveCity(city === activeCity ? null : city);
-  };
-
-  const clearAll = () => { setActiveCity(null); setActiveTopic(null); };
   const isFiltered = !!activeTopic;
 
   return (
@@ -172,7 +93,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
             {activeTopic}
             <button onClick={() => setActiveTopic(null)} className="ml-1 opacity-60 hover:opacity-100"><X size={11} weight="bold" /></button>
           </span>
-          <button onClick={clearAll} className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors underline underline-offset-2">
+          <button onClick={() => setActiveTopic(null)} className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors underline underline-offset-2">
             Limpiar
           </button>
         </div>
@@ -180,7 +101,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
 
       {/* Guest grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mb-24">
-        {filtered.map(({ name, photoSrc, city, country, href }) => (
+        {filtered.map(({ name, photoSrc, city, country, href, spotifyUrl, appleUrl }) => (
           <a key={name} href={href} className="group flex flex-col">
             <div className="aspect-square rounded-xl overflow-hidden bg-zinc-900 mb-3 relative">
               {photoSrc ? (
@@ -201,108 +122,37 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
               {name}
             </p>
             {city && (
-              <p className="flex items-center gap-1 text-zinc-400 text-sm mt-0.5">
+              <p className="flex items-center gap-1 text-zinc-400 text-sm mt-0.5 mb-2">
                 <MapPin size={9} weight="bold" />
                 {city}{country ? `, ${country}` : ""}
               </p>
+            )}
+            {(spotifyUrl || appleUrl) && (
+              <div className="flex gap-1.5 mt-auto pt-1" onClick={(e) => e.preventDefault()}>
+                {spotifyUrl && (
+                  <a href={spotifyUrl} target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-xs text-zinc-500 hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
+                    <SpotifyIcon className="w-3 h-3 shrink-0" />
+                    <span>Spotify</span>
+                  </a>
+                )}
+                {appleUrl && (
+                  <a href={appleUrl} target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-xs text-zinc-500 hover:text-purple-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
+                    <AppleIcon className="w-3 h-3 shrink-0" />
+                    <span>Apple</span>
+                  </a>
+                )}
+              </div>
             )}
           </a>
         ))}
         {filtered.length === 0 && (
           <p className="col-span-full text-zinc-600 py-12 text-center text-sm">
             No hay invitados con ese filtro.{" "}
-            <button onClick={clearAll} className="text-orange-500 underline underline-offset-2">Limpiar filtros</button>
+            <button onClick={() => setActiveTopic(null)} className="text-orange-500 underline underline-offset-2">Limpiar filtros</button>
           </p>
         )}
-      </div>
-
-      {/* Map section */}
-      <div id="ciudades" className="border-t border-zinc-800 pt-16 mb-16 scroll-mt-52">
-        <div className="flex items-baseline justify-between mb-8">
-          <h2 className="text-xl font-bold text-zinc-50 tracking-tight">Ciudades</h2>
-          <span className="font-mono text-[10px] text-zinc-600 tracking-widest uppercase">
-            {cityDots.length} ciudades
-          </span>
-        </div>
-
-        {/* Map + floating popover */}
-        <div className="relative">
-          <InvitadosMap
-            cities={cityDots}
-            activeCity={activeCity}
-            onCityClick={handleCityClick}
-          />
-
-          {activeCity && cityGuests.length > 0 && (
-            <div className="absolute inset-0 flex items-center justify-center z-10">
-              {/* Backdrop */}
-              <div
-                className="absolute inset-0 bg-zinc-950/80 backdrop-blur-sm rounded-xl"
-                onClick={() => setActiveCity(null)}
-              />
-              {/* Panel */}
-              <div className="relative bg-zinc-900 border border-zinc-700 rounded-2xl p-6 w-full max-w-xl mx-6 max-h-[80%] overflow-y-auto shadow-2xl shadow-black/60">
-                <div className="flex items-start justify-between mb-5">
-                  <div>
-                    <h3 className="text-lg font-bold text-zinc-50 tracking-tight">{activeCity}</h3>
-                    <p className="text-xs text-zinc-500 mt-0.5 font-mono uppercase tracking-widest">
-                      {cityGuests.length} invitado{cityGuests.length !== 1 ? "s" : ""}
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => setActiveCity(null)}
-                    className="text-zinc-500 hover:text-zinc-200 transition-colors p-1 -mr-1"
-                  >
-                    <X size={18} weight="bold" />
-                  </button>
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
-                  {cityGuests.map(({ name, guestRole, photoSrc, spotifyUrl, appleUrl }) => {
-                    const roleFirstLine = guestRole ? guestRole.split("\n")[0] : "";
-                    return (
-                      <div key={name} className="flex flex-col">
-                        <div className="aspect-square rounded-xl overflow-hidden bg-zinc-800 mb-3 relative">
-                          {photoSrc ? (
-                            // eslint-disable-next-line @next/next/no-img-element
-                            <img
-                              src={photoSrc}
-                              alt={name}
-                              className="w-full h-full object-cover"
-                            />
-                          ) : (
-                            <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-base">
-                              {initials(name)}
-                            </div>
-                          )}
-                        </div>
-                        <p className="text-zinc-100 text-sm font-semibold leading-snug">{name}</p>
-                        {roleFirstLine && (
-                          <p className="text-zinc-400 text-xs leading-snug mt-1 mb-3">{roleFirstLine}</p>
-                        )}
-                        <div className="flex flex-wrap gap-1.5 mt-auto">
-                          {spotifyUrl && (
-                            <a href={spotifyUrl} target="_blank" rel="noopener noreferrer"
-                              className="flex items-center gap-1 text-xs text-zinc-400 hover:text-green-400 transition-colors px-2 py-1.5 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
-                              <SpotifyIcon className="w-3 h-3 shrink-0" />
-                              Spotify
-                            </a>
-                          )}
-                          {appleUrl && (
-                            <a href={appleUrl} target="_blank" rel="noopener noreferrer"
-                              className="flex items-center gap-1 text-xs text-zinc-400 hover:text-purple-400 transition-colors px-2 py-1.5 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
-                              <AppleIcon className="w-3 h-3 shrink-0" />
-                              Apple
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
       </div>
 
       {/* Topic tags */}

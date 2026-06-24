@@ -120,7 +120,7 @@ export default function InvitadosPage() {
       country: ep.country,
       topics,
       photoSrc: raw ? encodePath(raw) : null,
-      href: `/?highlight=${ep.id}${topics[0] ? `&topic=${encodeURIComponent(topics[0])}` : ""}#ep-${ep.id}`,
+      href: `/#ep-${ep.id}`,
       spotifyUrl: ep.spotifyUrl,
       appleUrl: ep.appleUrl,
     });
@@ -132,7 +132,7 @@ export default function InvitadosPage() {
   return (
     <>
       <Nav />
-      <main className="pt-48">
+      <main className="pt-16 md:pt-48">
         <InvitadosClient guests={guests} allTopics={allTopics} />
       </main>
     </>
