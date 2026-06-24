@@ -57,50 +57,52 @@ export default function TeamSection() {
     <section id="equipo" className="pt-2 pb-8 md:pt-6 md:pb-16 border-t border-zinc-800 scroll-mt-[98px] md:scroll-mt-48">
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid md:grid-cols-3 gap-px bg-zinc-800">
+        <div className="grid md:grid-cols-3 gap-8">
           {TEAM.map((member) => (
-            <div key={member.name} className="group bg-zinc-950 p-8 flex flex-col gap-5">
-              <div className="w-full aspect-square rounded-xl overflow-hidden bg-zinc-900 relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={member.photo}
-                  alt={member.name}
-                  loading="lazy"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                />
-                <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/8 transition-all duration-500 rounded-xl" />
-              </div>
-              {/* Name + country + social: icons right of name on mobile */}
-              <div className="flex items-start justify-between md:block">
-                <div>
-                  <h3 className="text-lg font-semibold text-zinc-50 leading-snug">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm text-zinc-500 mt-1">{member.country}</p>
+            <div key={member.name} className="group flex flex-col gap-5">
+              {/* Photo + name/social row */}
+              <div className="flex gap-4 items-start">
+                <div className="w-1/2 aspect-square shrink-0 rounded-xl overflow-hidden bg-zinc-900 relative">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    loading="lazy"
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                  <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/8 transition-all duration-500 rounded-xl" />
                 </div>
-                <div className="flex items-center gap-3 mt-1 md:mt-2 shrink-0 ml-3 md:ml-0">
-                  {member.twitter && (
-                    <a
-                      href={`https://twitter.com/${member.twitter}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Twitter"
-                      className="text-zinc-400 hover:text-orange-400 transition-colors"
-                    >
-                      <XLogo size={22} weight="fill" />
-                    </a>
-                  )}
-                  {member.linkedin && (
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="LinkedIn"
-                      className="text-zinc-400 hover:text-orange-400 transition-colors"
-                    >
-                      <LinkedinLogo size={22} weight="fill" />
-                    </a>
-                  )}
+                <div className="flex flex-col gap-2 pt-1">
+                  <div>
+                    <h3 className="text-base font-semibold text-zinc-50 leading-snug">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm text-zinc-500 mt-1">{member.country}</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    {member.twitter && (
+                      <a
+                        href={`https://twitter.com/${member.twitter}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Twitter"
+                        className="text-zinc-400 hover:text-orange-400 transition-colors"
+                      >
+                        <XLogo size={20} weight="fill" />
+                      </a>
+                    )}
+                    {member.linkedin && (
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        className="text-zinc-400 hover:text-orange-400 transition-colors"
+                      >
+                        <LinkedinLogo size={20} weight="fill" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
               <BioText text={member.bio} />
