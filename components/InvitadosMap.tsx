@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from "react-simple-maps";
 
 const GEO_URL = "/countries-110m.json";
@@ -23,7 +23,19 @@ export default function InvitadosMap({ cities, activeCity, onCityClick }: Props)
   const [zoom, setZoom] = useState(1);
   const [center, setCenter] = useState<[number, number]>([-20, 5]);
   const [tooltip, setTooltip] = useState<{ city: string; country: string; count: number; x: number; y: number } | null>(null);
+  const [mapWidth, setMapWidth] = useState<number | undefined>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver((entries) => {
+      const width = entries[0]?.contentRect.width;
+      if (width) setMapWidth(Math.round(width));
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const zoomIn  = () => setZoom((z) => Math.min(parseFloat((z * 1.6).toFixed(2)), 12));
   const zoomOut = () => setZoom((z) => Math.max(parseFloat((z / 1.6).toFixed(2)), 1));
@@ -63,6 +75,7 @@ export default function InvitadosMap({ cities, activeCity, onCityClick }: Props)
         projectionConfig={{ scale: 160, center: [-20, 5] }}
         style={{ background: "transparent" }}
         className="w-full cursor-grab active:cursor-grabbing"
+        width={mapWidth}
         height={420}
       >
         <ZoomableGroup
