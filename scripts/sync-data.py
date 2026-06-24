@@ -247,8 +247,14 @@ def parse_rows(rows: list[dict]) -> list[dict]:
             topics = MANUAL_TOPICS.get(apple_url) or derive_topics(title, role)
 
         quote = (row.get("quote") or row.get("Quote") or "").strip()
-        slider_raw = (row.get("Slider") or row.get("slider") or "").strip().lower()
-        featured = slider_raw in ("yes", "si", "sí", "x", "1", "true", "✓", "✔")
+        # "Slider" column may appear as "TRUE"/"FALSE" header when using a Google Sheets checkbox
+        slider_raw = (row.get("Slider") or row.get("slider") or "").strip()
+        if not slider_raw:
+            for k in row:
+                if k.strip().upper() in ("TRUE", "FALSE"):
+                    slider_raw = row[k].strip()
+                    break
+        featured = slider_raw.lower() in ("yes", "si", "sí", "x", "1", "true", "✓", "✔")
 
         sheet_id_raw = row.get("ID", "").strip()
         sheet_id = int(sheet_id_raw) if sheet_id_raw.isdigit() else None

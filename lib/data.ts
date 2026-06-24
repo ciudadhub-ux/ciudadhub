@@ -30,7 +30,7 @@ export const episodes: Episode[] = [
     guest: "Usama Bilal",
     guestRole: "Associate Professor of Epidemiology and Co-Director of the Urban Health Collaborative\nEpidemiology and Biostatistics, Drexel University, Philadelphia",
     topics: ["Salud", "Innovación"],
-    city: "Oxford",
+    city: "Philadelphia",
     country: "España",
     appleUrl: "https://podcasts.apple.com/us/podcast/salud-urbana-c%C3%B3mo-la-ciudad-define-nuestra-calidad-de-vida/id1093603743?i=1000761316362",
     spotifyUrl: "https://open.spotify.com/episode/7ucl4XdvFlJjH5quHWms9k?si=bsj2QFK-TgepZjKyJQqFDw",
