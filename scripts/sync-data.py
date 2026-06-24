@@ -108,7 +108,7 @@ def build_episodio_image_map() -> dict[int, str]:
         m = re.match(r'^id\s+(\d+)', f, re.IGNORECASE)
         if m:
             ep_id = int(m.group(1))
-            result[ep_id] = f"/images/episodios/{urllib.parse.quote(f, safe='')}"
+            result[ep_id] = f"/images/episodios/{urllib.parse.quote(unicodedata.normalize('NFC', f), safe='')}"
     return result
 
 
@@ -132,7 +132,7 @@ def _build_image_map() -> dict[str, str]:
                 continue
             base = os.path.splitext(f)[0]
             base = re.sub(r"\s+bw\s*$", "", base, flags=re.IGNORECASE).strip()
-            encoded = urllib.parse.quote(f, safe="")
+            encoded = urllib.parse.quote(unicodedata.normalize("NFC", f), safe="")
             result[_norm(base)] = f"/images/INVITADOS/{encoded}"
     return result
 
@@ -147,7 +147,7 @@ def find_guest_image(guest_name: str) -> str:
     # Manual override first
     if guest_name in MANUAL_GUEST_IMAGES:
         f = MANUAL_GUEST_IMAGES[guest_name]
-        return f"/images/INVITADOS/{urllib.parse.quote(f, safe='')}"
+        return f"/images/INVITADOS/{urllib.parse.quote(unicodedata.normalize('NFC', f), safe='')}"
     norm = _norm(guest_name)
     # Exact match
     if norm in _IMAGE_MAP:
