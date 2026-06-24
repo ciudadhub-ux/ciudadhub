@@ -205,7 +205,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
     setTimeout(() => {
       if (!wrapperRef.current) return;
       const rect = wrapperRef.current.getBoundingClientRect();
-      const NAV_H = 192;
+      const NAV_H = 200;
       if (rect.top < NAV_H) {
         window.scrollTo({ top: window.scrollY + rect.top - NAV_H, behavior: "smooth" });
       }
@@ -270,7 +270,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
     <div ref={wrapperRef}>
       {/* Topic filter — sticky secondary nav */}
       <div
-        className="sticky z-40 -mx-6 px-6 py-3 mb-8 bg-zinc-950/95 backdrop-blur-md top-16 md:top-48"
+        className="sticky z-40 -mx-6 px-6 py-3 mb-8 bg-zinc-950/95 backdrop-blur-md top-[72px] md:top-[200px]"
       >
         <div className="flex md:flex-wrap gap-2 overflow-x-auto md:overflow-visible scrollbar-none pb-0.5 md:pb-0">
           <button

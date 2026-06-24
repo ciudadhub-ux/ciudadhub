@@ -46,7 +46,7 @@ function BioText({ text }: { text: string }) {
 
 export default function TeamSection() {
   return (
-    <section id="equipo" className="py-24 border-t border-zinc-800 scroll-mt-16 md:scroll-mt-48">
+    <section id="equipo" className="py-24 border-t border-zinc-800 scroll-mt-[72px] md:scroll-mt-[200px]">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="flex items-baseline justify-between mb-16">
