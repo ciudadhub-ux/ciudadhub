@@ -137,7 +137,7 @@ function EpisodeCard({
       }}
       id={`ep-${episode.id}`}
       className={[
-        "group rounded-xl p-5 flex flex-col transition-[border-color,box-shadow] scroll-mt-52",
+        "group rounded-xl p-5 flex flex-col transition-[border-color,box-shadow] scroll-mt-[140px] md:scroll-mt-[256px]",
         isHighlighted
           ? "ep-highlight bg-zinc-900 border border-orange-500 shadow-[0_0_40px_-4px_rgba(249,115,22,0.35)]"
           : isFilterActive && isMatch
@@ -239,7 +239,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
       setHighlightedId(id);
       const el = document.getElementById(`ep-${id}`);
       if (el) {
-        const top = el.getBoundingClientRect().top + window.scrollY - 216; // 192px nav + 24px gap
+        const top = el.getBoundingClientRect().top + window.scrollY - 256; // nav + chips bar + gap
         window.scrollTo({ top, behavior: "smooth" });
       }
       setTimeout(() => setHighlightedId(null), 3200);
