@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { XLogo, InstagramLogo, FacebookLogo, List, X } from "@phosphor-icons/react";
+import { XLogo, InstagramLogo, FacebookLogo, List, X, Envelope } from "@phosphor-icons/react";
 import { AnimatePresence, motion } from "motion/react";
 
 const NAV_LINKS = [
@@ -67,7 +67,7 @@ export default function Nav() {
           </div>
         </div>
 
-        {/* Social — desktop only */}
+        {/* Social + mail — desktop only */}
         <div className="hidden md:flex items-center gap-4 pl-6 shrink-0">
           {SOCIAL.map(({ href, Icon, label }) => (
             <a
@@ -81,6 +81,13 @@ export default function Nav() {
               <Icon size={26} weight="fill" />
             </a>
           ))}
+          <a
+            href="mailto:contacto@ciudadhub.info"
+            aria-label="Email"
+            className="text-zinc-500 hover:text-orange-400 transition-colors"
+          >
+            <Envelope size={26} weight="fill" />
+          </a>
         </div>
 
         {/* Hamburger — mobile only */}
