@@ -57,9 +57,9 @@ export default function TeamSection() {
     <section id="equipo" className="pt-2 pb-8 md:pt-6 md:pb-16 border-t border-zinc-800 scroll-mt-[98px] md:scroll-mt-48">
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-zinc-800">
           {TEAM.map((member) => (
-            <div key={member.name} className="group flex flex-col gap-5">
+            <div key={member.name} className="group flex flex-col gap-5 py-8 first:pt-0 last:pb-0 md:py-0 md:px-8 md:first:pl-0 md:last:pr-0 flex-1">
               {/* Photo + name/social row */}
               <div className="flex gap-4 items-start">
                 <div className="w-1/2 aspect-square shrink-0 rounded-xl overflow-hidden bg-zinc-900 relative">
