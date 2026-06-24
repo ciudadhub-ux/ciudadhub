@@ -186,6 +186,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
                 <img
                   src={photoSrc}
                   alt={name}
+                  loading="lazy"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                 />
               ) : (
@@ -281,6 +282,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
                               <img
                                 src={photoSrc}
                                 alt={name}
+                                loading="lazy"
                                 className="w-full h-full object-cover"
                               />
                             ) : (
