@@ -234,7 +234,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
 
       {/* Map section — desktop only */}
       <div className="hidden md:block">
-        <div id="ciudades" className="border-t border-zinc-800 pt-16 mb-16 scroll-mt-52">
+        <div id="ciudades" className="border-t border-zinc-800 pt-16 mb-4 scroll-mt-52">
           <div className="relative">
             <InvitadosMap
               cities={cityDots}
@@ -315,10 +315,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
       </div>
 
       {/* Topic tags */}
-      <div className="border-t border-zinc-800 pt-16">
-        <div className="flex items-baseline justify-between mb-6">
-          <h2 className="text-xl font-bold text-zinc-50 tracking-tight">Temas</h2>
-        </div>
+      <div className="pt-8">
         <div className="flex flex-wrap gap-2">
           {allTopics.map((topic) => (
             <TopicChip
