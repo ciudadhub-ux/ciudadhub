@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <Nav />
       <main>
-        <Hero />
+        <Hero episodes={episodes} />
         <EpisodesSection episodes={episodes} topics={topicNames} />
         <GuestsList episodes={episodes} />
         <TeamSection />

@@ -22,6 +22,15 @@ html {
   color: #09090b;
 }
 
+/* Hero slider infinite scroll */
+@keyframes hero-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-hero-scroll {
+  animation: hero-scroll 40s linear infinite;
+}
+
 /* Episode card highlight — triggered via JS by adding .ep-highlight class */
 .ep-highlight {
   animation: ep-highlight 2.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
