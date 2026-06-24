@@ -243,7 +243,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
         const stickyBar = wrapperRef.current?.querySelector<HTMLElement>(".sticky");
         const clearance = (stickyBar ? stickyBar.getBoundingClientRect().bottom : 260) + 16;
         const top = el.getBoundingClientRect().top + window.scrollY - clearance;
-        window.scrollTo({ top, behavior: "smooth" });
+        window.scrollTo({ top, behavior: "instant" });
       }
       setTimeout(() => setHighlightedId(null), 3200);
     }, 900);
