@@ -270,13 +270,12 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
     <div ref={wrapperRef}>
       {/* Topic filter — sticky secondary nav */}
       <div
-        className="sticky z-40 -mx-6 px-6 py-3 mb-8 bg-zinc-950/95 backdrop-blur-md"
-        style={{ top: "192px" }}
+        className="sticky z-40 -mx-6 px-6 py-3 mb-8 bg-zinc-950/95 backdrop-blur-md top-16 md:top-48"
       >
-        <div className="flex flex-wrap gap-2">
+        <div className="flex md:flex-wrap gap-2 overflow-x-auto md:overflow-visible scrollbar-none pb-0.5 md:pb-0">
           <button
             onClick={() => handleTopicChange(null)}
-            className="px-3.5 py-1.5 rounded-full text-lg font-medium border transition-all duration-200"
+            className="px-3.5 py-1.5 rounded-full text-lg font-medium border transition-all duration-200 shrink-0"
             style={!activeTopic
               ? { background: "#f97316", color: "#09090b", borderColor: "#f97316" }
               : { background: "transparent", color: "#71717a", borderColor: "#3f3f46" }}
@@ -284,7 +283,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
             Todos
           </button>
           {topics.map((topic) => (
-            <div key={topic}>
+            <div key={topic} className="shrink-0">
               <TopicChip
                 topic={topic}
                 active={activeTopic === topic}
