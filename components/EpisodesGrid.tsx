@@ -273,7 +273,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
     <div ref={wrapperRef}>
       {/* Topic filter — sticky secondary nav */}
       <div
-        className="sticky z-40 -mx-6 px-6 py-3 mb-8 bg-zinc-950/95 backdrop-blur-md top-[98px] md:top-48"
+        className="sticky z-40 -mx-6 px-6 py-3 mb-4 bg-zinc-950/95 backdrop-blur-md top-[98px] md:top-48"
       >
         <div className="flex md:flex-wrap gap-2 overflow-x-auto md:overflow-visible scrollbar-none pb-0.5 md:pb-0">
           <button

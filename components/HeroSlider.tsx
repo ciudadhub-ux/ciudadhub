@@ -128,12 +128,12 @@ export default function HeroSlider({ episodes }: { episodes: Episode[] }) {
           </AnimatePresence>
 
           <button onClick={prev} aria-label="Anterior"
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-zinc-950/70 border border-zinc-700/50 flex items-center justify-center text-zinc-300 hover:text-white hover:bg-zinc-800 transition-all backdrop-blur-sm z-30">
-            <CaretLeft size={16} weight="bold" />
+            className="absolute left-2 top-1/2 -translate-y-1/2 p-2 text-white/40 hover:text-white/90 transition-colors z-30">
+            <CaretLeft size={20} weight="bold" />
           </button>
           <button onClick={next} aria-label="Siguiente"
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-zinc-950/70 border border-zinc-700/50 flex items-center justify-center text-zinc-300 hover:text-white hover:bg-zinc-800 transition-all backdrop-blur-sm z-30">
-            <CaretRight size={16} weight="bold" />
+            className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-white/40 hover:text-white/90 transition-colors z-30">
+            <CaretRight size={20} weight="bold" />
           </button>
         </div>
 
@@ -211,12 +211,12 @@ export default function HeroSlider({ episodes }: { episodes: Episode[] }) {
           </AnimatePresence>
 
           <button onClick={prev} aria-label="Anterior"
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-zinc-950/70 border border-zinc-700/50 flex items-center justify-center text-zinc-300 z-30">
-            <CaretLeft size={14} weight="bold" />
+            className="absolute left-1 top-1/2 -translate-y-1/2 p-2 text-white/40 active:text-white/90 transition-colors z-30">
+            <CaretLeft size={18} weight="bold" />
           </button>
           <button onClick={next} aria-label="Siguiente"
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-zinc-950/70 border border-zinc-700/50 flex items-center justify-center text-zinc-300 z-30">
-            <CaretRight size={14} weight="bold" />
+            className="absolute right-1 top-1/2 -translate-y-1/2 p-2 text-white/40 active:text-white/90 transition-colors z-30">
+            <CaretRight size={18} weight="bold" />
           </button>
         </div>
 
