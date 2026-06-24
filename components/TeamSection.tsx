@@ -21,7 +21,7 @@ const TEAM = [
     name: "Oscar Chamat",
     country: "España",
     twitter: null,
-    linkedin: null,
+    linkedin: "https://www.linkedin.com/in/oscarchamat/",
     photo: "/images/equipo/Oscar Chamat.jpg",
     bio: "Bogotano de nacimiento, Colombiano por adopción. Desde finales de los años 90 tratando de entender el fenómeno urbano en diferentes escalas, desde pequeñas ciudades en Colombia hasta escalas metropolitanas/regionales en Europa. Radicado en Barcelona desde hace 16 años pero con la suerte de poder seguir vinculado a Latinoamérica en lo profesional, personal y académico.",
   },
