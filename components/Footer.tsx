@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <footer className="border-t border-zinc-800 py-16">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-[1fr_auto_auto] gap-12 items-start mb-12">
-          <div className="max-w-xs">
+        <div className="grid grid-cols-2 md:grid-cols-[1fr_auto_auto] gap-8 md:gap-12 items-start mb-12">
+          <div className="col-span-2 md:col-span-1 max-w-xs">
             <div className="mb-5">
               <Image
                 src="/logo.png"

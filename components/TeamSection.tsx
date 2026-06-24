@@ -57,7 +57,7 @@ export default function TeamSection() {
     <section id="equipo" className="py-24 border-t border-zinc-800 scroll-mt-[88px] md:scroll-mt-48">
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="flex items-baseline justify-between mb-16">
+        <div className="flex items-baseline justify-between mb-4 md:mb-16">
           <h2 className="text-3xl font-bold text-zinc-50 tracking-tight">Equipo</h2>
           <span className="font-mono text-[10px] text-zinc-600 tracking-widest uppercase">
             {TEAM.length} personas
@@ -67,8 +67,8 @@ export default function TeamSection() {
         <div className="grid md:grid-cols-3 gap-px bg-zinc-800">
           {TEAM.map((member) => (
             <div key={member.name} className="bg-zinc-950 p-8 flex flex-col gap-5">
-              {/* Photo */}
-              <div className="w-full aspect-square rounded-xl overflow-hidden bg-zinc-800">
+              {/* Photo — 30% smaller on mobile */}
+              <div className="w-[70%] md:w-full aspect-square rounded-xl overflow-hidden bg-zinc-800">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={member.photo}
@@ -76,13 +76,15 @@ export default function TeamSection() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Name + country + social */}
-              <div>
-                <h3 className="text-lg font-semibold text-zinc-50 leading-snug">
-                  {member.name}
-                </h3>
-                <p className="text-sm text-zinc-500 mt-1 mb-2">{member.country}</p>
-                <div className="flex items-center gap-3">
+              {/* Name + country + social: icons right of name on mobile */}
+              <div className="flex items-start justify-between md:block">
+                <div>
+                  <h3 className="text-lg font-semibold text-zinc-50 leading-snug">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm text-zinc-500 mt-1">{member.country}</p>
+                </div>
+                <div className="flex items-center gap-3 mt-1 md:mt-2 shrink-0 ml-3 md:ml-0">
                   {member.twitter && (
                     <a
                       href={`https://twitter.com/${member.twitter}`}
@@ -91,7 +93,7 @@ export default function TeamSection() {
                       aria-label="Twitter"
                       className="text-zinc-400 hover:text-orange-400 transition-colors"
                     >
-                      <XLogo size={18} weight="fill" />
+                      <XLogo size={22} weight="fill" />
                     </a>
                   )}
                   {member.linkedin && (
@@ -102,7 +104,7 @@ export default function TeamSection() {
                       aria-label="LinkedIn"
                       className="text-zinc-400 hover:text-orange-400 transition-colors"
                     >
-                      <LinkedinLogo size={18} weight="fill" />
+                      <LinkedinLogo size={22} weight="fill" />
                     </a>
                   )}
                 </div>

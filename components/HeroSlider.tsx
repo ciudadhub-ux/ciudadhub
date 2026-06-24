@@ -149,7 +149,7 @@ export default function HeroSlider({ episodes }: { episodes: Episode[] }) {
 
       {/* ── MOBILE (< md) ─────────────────────────────────────── */}
       <div className="md:hidden px-4">
-        <div className="relative rounded-xl overflow-hidden" style={{ height: "22rem" }}>
+        <div className="relative rounded-xl overflow-hidden" style={{ height: "16rem" }}>
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={ep.id}
