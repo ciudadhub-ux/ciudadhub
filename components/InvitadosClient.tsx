@@ -236,13 +236,6 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
       {/* Map section — desktop only */}
       <div className="hidden md:block">
         <div id="ciudades" className="border-t border-zinc-800 pt-16 mb-16 scroll-mt-52">
-          <div className="flex items-baseline justify-between mb-8">
-            <h2 className="text-xl font-bold text-zinc-50 tracking-tight">Ciudades</h2>
-            <span className="font-mono text-[10px] text-zinc-600 tracking-widest uppercase">
-              {cityDots.length} ciudades
-            </span>
-          </div>
-
           <div className="relative">
             <InvitadosMap
               cities={cityDots}
