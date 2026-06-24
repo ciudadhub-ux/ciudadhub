@@ -132,7 +132,7 @@ export default function InvitadosPage() {
   return (
     <>
       <Nav />
-      <main className="pt-[72px] md:pt-[200px]">
+      <main className="pt-[88px] md:pt-[220px]">
         <InvitadosClient guests={guests} allTopics={allTopics} />
       </main>
     </>
