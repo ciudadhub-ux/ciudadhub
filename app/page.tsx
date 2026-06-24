@@ -1,6 +1,5 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import GuestsList from "@/components/GuestsList";
 import EpisodesSection from "@/components/EpisodesSection";
 import TeamSection from "@/components/TeamSection";
 import Footer from "@/components/Footer";
@@ -15,7 +14,6 @@ export default function Home() {
       <main>
         <Hero episodes={episodes} />
         <EpisodesSection episodes={episodes} topics={topicNames} />
-        <GuestsList episodes={episodes} />
         <TeamSection />
       </main>
       <Footer />
