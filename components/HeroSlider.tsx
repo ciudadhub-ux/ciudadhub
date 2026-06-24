@@ -127,23 +127,23 @@ export default function HeroSlider({ episodes }: { episodes: Episode[] }) {
             </motion.div>
           </AnimatePresence>
 
-          <button onClick={prev} aria-label="Anterior"
-            className="absolute left-2 top-1/2 -translate-y-1/2 p-2 text-white/40 hover:text-white/90 transition-colors z-30">
-            <CaretLeft size={20} weight="bold" />
-          </button>
-          <button onClick={next} aria-label="Siguiente"
-            className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-white/40 hover:text-white/90 transition-colors z-30">
-            <CaretRight size={20} weight="bold" />
-          </button>
         </div>
 
-        <div className="flex items-center justify-center gap-1.5 mt-4">
+        <div className="flex items-center justify-center gap-3 mt-4">
+          <button onClick={prev} aria-label="Anterior"
+            className="p-1 text-zinc-500 hover:text-zinc-200 transition-colors">
+            <CaretLeft size={16} weight="bold" />
+          </button>
           {items.map((_, i) => (
             <button key={i} onClick={() => go(i, i > index ? 1 : -1)} aria-label={`Episodio ${i + 1}`}>
               <div className={["rounded-full transition-all duration-300",
-                i === index ? "w-5 h-1.5 bg-orange-500" : "w-1.5 h-1.5 bg-zinc-700 hover:bg-zinc-500"].join(" ")} />
+                i === index ? "w-6 h-2 bg-orange-500" : "w-2 h-2 bg-zinc-700 hover:bg-zinc-500"].join(" ")} />
             </button>
           ))}
+          <button onClick={next} aria-label="Siguiente"
+            className="p-1 text-zinc-500 hover:text-zinc-200 transition-colors">
+            <CaretRight size={16} weight="bold" />
+          </button>
         </div>
       </div>
 
@@ -210,23 +210,23 @@ export default function HeroSlider({ episodes }: { episodes: Episode[] }) {
             </motion.div>
           </AnimatePresence>
 
-          <button onClick={prev} aria-label="Anterior"
-            className="absolute left-1 top-1/2 -translate-y-1/2 p-2 text-white/40 active:text-white/90 transition-colors z-30">
-            <CaretLeft size={18} weight="bold" />
-          </button>
-          <button onClick={next} aria-label="Siguiente"
-            className="absolute right-1 top-1/2 -translate-y-1/2 p-2 text-white/40 active:text-white/90 transition-colors z-30">
-            <CaretRight size={18} weight="bold" />
-          </button>
         </div>
 
-        <div className="flex items-center justify-center gap-1.5 mt-3">
+        <div className="flex items-center justify-center gap-3 mt-3">
+          <button onClick={prev} aria-label="Anterior"
+            className="p-1 text-zinc-500 active:text-zinc-200 transition-colors">
+            <CaretLeft size={14} weight="bold" />
+          </button>
           {items.map((_, i) => (
             <button key={i} onClick={() => go(i, i > index ? 1 : -1)} aria-label={`Episodio ${i + 1}`}>
               <div className={["rounded-full transition-all duration-300",
-                i === index ? "w-4 h-1.5 bg-orange-500" : "w-1.5 h-1.5 bg-zinc-700"].join(" ")} />
+                i === index ? "w-[18px] h-2 bg-orange-500" : "w-2 h-2 bg-zinc-700"].join(" ")} />
             </button>
           ))}
+          <button onClick={next} aria-label="Siguiente"
+            className="p-1 text-zinc-500 active:text-zinc-200 transition-colors">
+            <CaretRight size={14} weight="bold" />
+          </button>
         </div>
       </div>
     </div>
