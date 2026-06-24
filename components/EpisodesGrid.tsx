@@ -70,7 +70,7 @@ function TopicChip({ topic, active, onClick }: { topic: string; active: boolean;
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="px-3 py-1.5 rounded-full text-base font-medium border transition-all duration-200"
+      className="px-3 py-1.5 rounded-full text-[13px] md:text-base font-medium border transition-all duration-200"
       style={topicStyle(topic, active, hovered)}
     >
       {topic}
@@ -273,12 +273,12 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
     <div ref={wrapperRef}>
       {/* Topic filter — sticky secondary nav */}
       <div
-        className="sticky z-40 -mx-6 px-6 py-3 mb-8 bg-zinc-950/95 backdrop-blur-md top-[88px] md:top-48"
+        className="sticky z-40 -mx-6 px-6 py-3 mb-8 bg-zinc-950/95 backdrop-blur-md top-[98px] md:top-48"
       >
         <div className="flex md:flex-wrap gap-2 overflow-x-auto md:overflow-visible scrollbar-none pb-0.5 md:pb-0">
           <button
             onClick={() => handleTopicChange(null)}
-            className="px-3.5 py-1.5 rounded-full text-base font-medium border transition-all duration-200 shrink-0"
+            className="px-3.5 py-1.5 rounded-full text-[13px] md:text-base font-medium border transition-all duration-200 shrink-0"
             style={!activeTopic
               ? { background: "#f97316", color: "#09090b", borderColor: "#f97316" }
               : { background: "transparent", color: "#71717a", borderColor: "#3f3f46" }}

@@ -25,7 +25,7 @@ export default function Nav() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md shadow-[0_1px_0_rgba(63,63,70,0.3),0_6px_24px_-4px_rgba(0,0,0,0.6)]">
 
       {/* Main bar */}
-      <div className="relative max-w-7xl mx-auto pl-4 md:pl-8 pr-4 md:pr-6 h-[88px] md:h-48 flex items-stretch">
+      <div className="relative max-w-7xl mx-auto pl-4 md:pl-8 pr-4 md:pr-6 h-[98px] md:h-48 flex items-stretch">
 
         {/* Logo */}
         <a href="/" className="flex items-center pr-4 md:pr-8 shrink-0">
@@ -34,7 +34,7 @@ export default function Nav() {
             alt="Ciudad Hub Podcast"
             width={138}
             height={155}
-            className="h-[60px] md:h-[155px] w-auto"
+            className="h-[75px] md:h-[155px] w-auto"
             priority
           />
         </a>
