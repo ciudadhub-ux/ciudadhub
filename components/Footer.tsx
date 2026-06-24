@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SpotifyLogo, YoutubeLogo } from "@phosphor-icons/react/dist/ssr";
+import { SpotifyLogo, XLogo, InstagramLogo, FacebookLogo, Envelope } from "@phosphor-icons/react/dist/ssr";
 
 export default function Footer() {
   return (
@@ -48,13 +48,6 @@ export default function Footer() {
               </svg>
               Apple Podcasts
             </a>
-            <a
-              href="#"
-              className="flex items-center gap-2.5 text-zinc-400 hover:text-zinc-50 transition-colors text-sm"
-            >
-              <YoutubeLogo size={16} weight="fill" className="text-red-400" />
-              YouTube
-            </a>
           </div>
 
           <div className="flex flex-col gap-2">
@@ -62,22 +55,38 @@ export default function Footer() {
               Seguir
             </p>
             <a
-              href="#"
-              className="text-zinc-400 hover:text-zinc-50 transition-colors text-sm"
+              href="https://www.instagram.com/ciudadhub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 text-zinc-400 hover:text-zinc-50 transition-colors text-sm"
             >
+              <InstagramLogo size={16} weight="fill" />
               Instagram
             </a>
             <a
-              href="#"
-              className="text-zinc-400 hover:text-zinc-50 transition-colors text-sm"
+              href="https://www.twitter.com/ciudadhub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 text-zinc-400 hover:text-zinc-50 transition-colors text-sm"
             >
+              <XLogo size={16} weight="fill" />
               X (Twitter)
             </a>
             <a
-              href="#"
-              className="text-zinc-400 hover:text-zinc-50 transition-colors text-sm"
+              href="https://www.facebook.com/ciudadhub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 text-zinc-400 hover:text-zinc-50 transition-colors text-sm"
             >
-              LinkedIn
+              <FacebookLogo size={16} weight="fill" />
+              Facebook
+            </a>
+            <a
+              href="mailto:contacto@ciudadhub.info"
+              className="flex items-center gap-2.5 text-zinc-400 hover:text-zinc-50 transition-colors text-sm"
+            >
+              <Envelope size={16} weight="fill" />
+              Contacto
             </a>
           </div>
         </div>
