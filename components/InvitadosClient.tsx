@@ -111,9 +111,12 @@ interface Props {
   allTopics: string[];
 }
 
+const PAGE_SIZE = 18;
+
 export default function InvitadosClient({ guests, allTopics }: Props) {
   const [activeCity, setActiveCity] = useState<string | null>(null);
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const topRef = useRef<HTMLDivElement>(null);
 
   const filtered = useMemo(
@@ -147,8 +150,10 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
     setActiveCity(city === activeCity ? null : city);
   };
 
-  const clearAll = () => { setActiveCity(null); setActiveTopic(null); };
+  const clearAll = () => { setActiveCity(null); setActiveTopic(null); setVisibleCount(PAGE_SIZE); };
   const isFiltered = !!activeTopic;
+  const visibleGuests = activeTopic ? filtered : filtered.slice(0, visibleCount);
+  const hasMore = !activeTopic && visibleCount < filtered.length;
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
@@ -167,7 +172,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
           <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-sm border"
             style={topicStyle(activeTopic, true, false)}>
             {activeTopic}
-            <button onClick={() => setActiveTopic(null)} className="ml-1 opacity-60 hover:opacity-100"><X size={11} weight="bold" /></button>
+            <button onClick={() => { setActiveTopic(null); setVisibleCount(PAGE_SIZE); }} className="ml-1 opacity-60 hover:opacity-100"><X size={11} weight="bold" /></button>
           </span>
           <button onClick={clearAll} className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors underline underline-offset-2">
             Limpiar
@@ -176,8 +181,8 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
       )}
 
       {/* Guest grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mb-24">
-        {filtered.map(({ name, photoSrc, city, country, href, spotifyUrl, appleUrl }) => (
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mb-8">
+        {visibleGuests.map(({ name, photoSrc, city, country, href, spotifyUrl, appleUrl }) => (
           <a key={name} href={href} className="group flex flex-col">
             <div className="aspect-square rounded-xl overflow-hidden bg-zinc-900 mb-3 relative">
               {photoSrc ? (
@@ -231,6 +236,19 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
           </p>
         )}
       </div>
+
+      {hasMore && (
+        <div className="flex justify-center mb-20">
+          <button
+            onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
+            className="px-6 py-2.5 rounded-full border border-zinc-700 text-zinc-400 hover:text-zinc-200 hover:border-zinc-500 transition-colors text-sm font-medium"
+          >
+            Ver más · {filtered.length - visibleCount} invitados
+          </button>
+        </div>
+      )}
+
+      {!hasMore && <div className="mb-20" />}
 
       {/* Map section — desktop only */}
       <div className="hidden md:block">
@@ -325,6 +343,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
               onClick={() => {
                 const next = topic === activeTopic ? null : topic;
                 setActiveTopic(next);
+                setVisibleCount(PAGE_SIZE);
                 if (next && topRef.current) {
                   topRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
                 }

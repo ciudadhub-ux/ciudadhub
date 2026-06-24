@@ -192,15 +192,19 @@ function EpisodeCard({
   );
 }
 
+const PAGE_SIZE = 12;
+
 export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
   const [highlightedId, setHighlightedId] = useState<number | null>(null);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const reduce = useReducedMotion();
   const latestId = episodes[0]?.id ?? -1;
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const handleTopicChange = useCallback((topic: string | null) => {
     setActiveTopic(topic);
+    setVisibleCount(PAGE_SIZE);
     // If the section is partially behind the nav, scroll so its top aligns with the nav bottom
     setTimeout(() => {
       if (!wrapperRef.current) return;
@@ -232,7 +236,13 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
     const id = parseInt(highlightParam, 10);
     if (isNaN(id)) return;
 
-    if (topicParam) setActiveTopic(topicParam);
+    if (topicParam) {
+      setActiveTopic(topicParam);
+    } else {
+      // Expand visible list so the target episode is rendered
+      const idx = episodes.findIndex((ep) => ep.id === id);
+      if (idx >= 0) setVisibleCount(idx + 1);
+    }
 
     // Wait for filter + Motion animations to settle (~0.76s max), then scroll precisely
     setTimeout(() => {
@@ -247,7 +257,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
       }
       setTimeout(() => setHighlightedId(null), 3200);
     }, 900);
-  }, []);
+  }, [episodes]);
 
   const isFilterActive = !!activeTopic;
 
@@ -306,7 +316,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
         <AnimatePresence mode="popLayout">
-          {matchingEps.map((ep, i) => (
+          {(isFilterActive ? matchingEps : matchingEps.slice(0, visibleCount)).map((ep, i) => (
             <EpisodeCard
               key={ep.id}
               episode={ep}
@@ -351,6 +361,17 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
           ))}
         </AnimatePresence>
       </div>
+
+      {!isFilterActive && visibleCount < matchingEps.length && (
+        <div className="flex justify-center pt-10">
+          <button
+            onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
+            className="px-6 py-2.5 rounded-full border border-zinc-700 text-zinc-400 hover:text-zinc-200 hover:border-zinc-500 transition-colors text-sm font-medium"
+          >
+            Ver más · {matchingEps.length - visibleCount} episodios
+          </button>
+        </div>
+      )}
     </div>
   );
 }
