@@ -155,9 +155,8 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
 
       {/* Header */}
       <div ref={topRef} className="flex items-baseline justify-between mb-6 scroll-mt-52">
-        <h1 className="text-3xl font-bold text-zinc-50 tracking-tight">Invitados</h1>
         <span className="font-mono text-[10px] text-zinc-600 tracking-widest uppercase">
-          {filtered.length}{isFiltered ? ` / ${guests.length}` : ""} personas
+          {filtered.length}{isFiltered ? ` / ${guests.length}` : ""} invitados
         </span>
       </div>
 
