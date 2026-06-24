@@ -272,20 +272,14 @@ def parse_rows(rows: list[dict]) -> list[dict]:
             "row_index": len(episodes),
         })
 
-    # Usar IDs del sheet si están disponibles; si no, asignar por orden descendente de fecha
-    has_sheet_ids = all(ep["sheet_id"] is not None for ep in episodes)
-    if has_sheet_ids:
-        for ep in episodes:
-            ep["id"] = ep["sheet_id"]
-        episodes.sort(key=lambda e: e["id"], reverse=True)
-    else:
-        total = len(episodes)
-        episodes.sort(
-            key=lambda e: e["created_date"] if e["created_date"] else f"9999-{total - e['row_index']:05d}",
-            reverse=True,
-        )
-        for i, ep in enumerate(episodes):
-            ep["id"] = len(episodes) - i
+    # IDs fijos desde la columna ID del sheet
+    missing = [ep["name"] for ep in episodes if ep["sheet_id"] is None]
+    if missing:
+        print(f"⚠️  Sin ID en el sheet: {', '.join(missing)} — filas omitidas")
+    episodes = [ep for ep in episodes if ep["sheet_id"] is not None]
+    for ep in episodes:
+        ep["id"] = ep["sheet_id"]
+    episodes.sort(key=lambda e: e["id"], reverse=True)
 
     # Sobrescribir image_url con fotos locales de la carpeta episodios/
     episodio_images = build_episodio_image_map()

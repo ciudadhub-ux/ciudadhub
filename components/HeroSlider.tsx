@@ -29,8 +29,8 @@ function AppleIcon() {
 const INTERVAL = 5500;
 
 export default function HeroSlider({ episodes }: { episodes: Episode[] }) {
-  const featured = episodes.filter((ep) => ep.featured);
-  const items = (featured.length > 0 ? featured : episodes).slice(0, 10);
+  const featured = episodes.filter((ep) => ep.featured).sort((a, b) => b.id - a.id);
+  const items = (featured.length > 0 ? featured : [...episodes].sort((a, b) => b.id - a.id)).slice(0, 10);
 
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);

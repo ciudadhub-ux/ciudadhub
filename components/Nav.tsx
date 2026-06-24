@@ -6,7 +6,7 @@ import { XLogo, InstagramLogo, FacebookLogo, List, X } from "@phosphor-icons/rea
 import { AnimatePresence, motion } from "motion/react";
 
 const NAV_LINKS = [
-  { href: "/#podcasts",           label: "Podcasts"  },
+  { href: "/#episodios",          label: "Episodios" },
   { href: "/invitados",          label: "Invitados" },
   { href: "/invitados#ciudades", label: "Ciudades"  },
   { href: "/#equipo",            label: "Equipo"    },

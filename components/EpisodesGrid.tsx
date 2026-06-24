@@ -147,7 +147,7 @@ function EpisodeCard({
     >
       {isLatest && (
         <div className="inline-flex self-start items-center gap-1.5 px-2.5 py-1 rounded-md mb-3 font-mono text-[10px] tracking-[0.18em] uppercase bg-orange-500/15 border border-orange-500/35 text-orange-400">
-          Último podcast
+          Último episodio
         </div>
       )}
       <h3 className="text-zinc-50 font-semibold text-lg leading-snug mb-3 group-hover:text-orange-500 transition-colors">
