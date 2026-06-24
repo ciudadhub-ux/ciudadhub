@@ -59,16 +59,16 @@ export default function TeamSection() {
 
         <div className="grid md:grid-cols-3 gap-px bg-zinc-800">
           {TEAM.map((member) => (
-            <div key={member.name} className="bg-zinc-950 p-8 flex flex-col gap-5">
-              {/* Photo — 30% smaller on mobile */}
-              <div className="w-[70%] md:w-full aspect-square rounded-xl overflow-hidden bg-zinc-800">
+            <div key={member.name} className="group bg-zinc-950 p-8 flex flex-col gap-5">
+              <div className="w-full aspect-square rounded-xl overflow-hidden bg-zinc-900 relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={member.photo}
                   alt={member.name}
                   loading="lazy"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                 />
+                <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/8 transition-all duration-500 rounded-xl" />
               </div>
               {/* Name + country + social: icons right of name on mobile */}
               <div className="flex items-start justify-between md:block">
