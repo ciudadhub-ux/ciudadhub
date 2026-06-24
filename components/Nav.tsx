@@ -24,10 +24,10 @@ export default function Nav() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md shadow-[0_1px_0_rgba(63,63,70,0.3),0_6px_24px_-4px_rgba(0,0,0,0.6)]">
 
       {/* Main bar */}
-      <div className="max-w-7xl mx-auto pl-4 md:pl-8 pr-4 md:pr-6 h-16 md:h-48 flex items-stretch">
+      <div className="relative max-w-7xl mx-auto pl-4 md:pl-8 pr-4 md:pr-6 h-16 md:h-48 flex items-stretch">
 
-        {/* Logo + tagline (mobile) */}
-        <a href="/" className="flex items-center gap-2.5 pr-4 md:pr-8 shrink-0">
+        {/* Logo */}
+        <a href="/" className="flex items-center pr-4 md:pr-8 shrink-0">
           <Image
             src="/logo.png"
             alt="Ciudad Hub Podcast"
@@ -36,10 +36,12 @@ export default function Nav() {
             className="h-[50px] md:h-[155px] w-auto"
             priority
           />
-          <p className="md:hidden italic font-light text-zinc-400 text-[11px] tracking-wide leading-tight max-w-[90px]">
-            El Podcast de las Ciudades
-          </p>
         </a>
+
+        {/* Tagline centered — mobile only */}
+        <p className="md:hidden absolute inset-x-0 top-1/2 -translate-y-1/2 text-center italic font-light text-zinc-400 text-[13px] tracking-wide pointer-events-none">
+          El Podcast de las Ciudades
+        </p>
 
         {/* Center: tagline + links — desktop only */}
         <div className="flex-1 hidden md:flex flex-col items-center justify-center gap-3">
