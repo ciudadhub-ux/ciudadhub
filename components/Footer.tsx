@@ -16,10 +16,7 @@ export default function Footer() {
                 className="h-20 w-auto"
               />
             </div>
-            <p className="text-zinc-500 text-sm leading-relaxed">
-              Conversaciones sobre urbanismo, movilidad, cultura y el futuro de
-              nuestras ciudades en Latinoamérica.
-            </p>
+            <p className="text-zinc-600 text-sm">Desde 2016</p>
           </div>
 
           <div className="flex flex-col gap-2">
@@ -93,7 +90,7 @@ export default function Footer() {
 
         <div className="border-t border-zinc-800/60 pt-8">
           <p className="text-zinc-700 text-sm">
-            2025 ciudadhub. Todos los derechos reservados.
+            © 2026 ciudadhub. Todos los derechos reservados.
           </p>
         </div>
       </div>
