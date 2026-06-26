@@ -138,6 +138,37 @@ def _build_image_map() -> dict[str, str]:
 
 
 _IMAGE_MAP: dict[str, str] = {}
+_COLOR_IMAGE_MAP: dict[str, str] = {}
+
+
+def _build_color_image_map() -> dict[str, str]:
+    if not os.path.isdir(INVITADOS_DIR):
+        return {}
+    result: dict[str, str] = {}
+    for f in os.listdir(INVITADOS_DIR):
+        if f.startswith(".") or " bw" in f.lower():
+            continue
+        base = os.path.splitext(f)[0].strip()
+        encoded = urllib.parse.quote(unicodedata.normalize("NFC", f), safe="")
+        result[_norm(base)] = f"/images/INVITADOS/{encoded}"
+    return result
+
+
+def find_guest_color_image(guest_name: str) -> str:
+    global _COLOR_IMAGE_MAP
+    if not _COLOR_IMAGE_MAP:
+        _COLOR_IMAGE_MAP = _build_color_image_map()
+    norm = _norm(guest_name)
+    if norm in _COLOR_IMAGE_MAP:
+        return _COLOR_IMAGE_MAP[norm]
+    for key, path in _COLOR_IMAGE_MAP.items():
+        if norm.startswith(key) or key.startswith(norm):
+            return path
+    for key, path in _COLOR_IMAGE_MAP.items():
+        key_words = set(key.split())
+        if key_words and key_words.issubset(set(norm.split())):
+            return path
+    return ""
 
 
 def find_guest_image(guest_name: str) -> str:
@@ -272,6 +303,7 @@ def parse_rows(rows: list[dict]) -> list[dict]:
             "created_date": created_date,
             "image_url": image_url,
             "guest_image_url": find_guest_image(name),
+            "guest_color_image_url": find_guest_color_image(name),
             "featured": featured,
             "seed": name_to_seed(name),
             "sheet_id": sheet_id,
@@ -318,6 +350,7 @@ def generate_ts(episodes: list[dict]) -> str:
         "  spotifyUrl: string",
         "  imageUrl: string",
         "  guestImageUrl: string",
+        "  guestColorImageUrl: string",
         "  guestAvatarSeed: string",
         "  featured: boolean",
         "}",
@@ -346,6 +379,7 @@ def generate_ts(episodes: list[dict]) -> str:
             f"    spotifyUrl: {ts_string(ep['spotify_url'])},",
             f"    imageUrl: {ts_string(ep['image_url'])},",
             f"    guestImageUrl: {ts_string(ep['guest_image_url'])},",
+            f"    guestColorImageUrl: {ts_string(ep['guest_color_image_url'])},",
             f"    guestAvatarSeed: {ts_string(ep['seed'])},",
             f"    featured: {'true' if ep['featured'] else 'false'},",
             "  },",
