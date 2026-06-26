@@ -257,9 +257,12 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
       setHighlightedId(id);
       const el = document.getElementById(`ep-${id}`);
       if (el) {
-        // Measure the actual bottom of the sticky chips bar so the card clears it
+        // Use the sticky bar's stuck position (NAV height + bar height) so the
+        // clearance is correct regardless of where the page is when this fires.
         const stickyBar = wrapperRef.current?.querySelector<HTMLElement>(".sticky");
-        const clearance = (stickyBar ? stickyBar.getBoundingClientRect().bottom : 260) + 16;
+        const NAV_H = window.innerWidth >= 768 ? 192 : 98;
+        const stickyH = stickyBar ? stickyBar.offsetHeight : 0;
+        const clearance = NAV_H + stickyH + 16;
         const top = el.getBoundingClientRect().top + window.scrollY - clearance;
         window.scrollTo({ top, behavior: "instant" });
       }
