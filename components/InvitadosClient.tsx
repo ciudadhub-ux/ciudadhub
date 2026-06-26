@@ -183,7 +183,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
       {/* Guest grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mb-8">
         {visibleGuests.map(({ name, photoSrc, city, country, href, spotifyUrl, appleUrl }) => (
-          <a key={name} href={href} className="group flex flex-col">
+          <div key={name} className="group flex flex-col cursor-pointer" onClick={() => { window.location.href = href; }}>
             <div className="aspect-square rounded-xl overflow-hidden bg-zinc-900 mb-3 relative">
               {photoSrc ? (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -210,7 +210,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
               </p>
             )}
             {(spotifyUrl || appleUrl) && (
-              <div className="flex gap-1.5 mt-auto pt-1" onClick={(e) => e.preventDefault()}>
+              <div className="flex gap-1.5 mt-auto pt-1" onClick={(e) => e.stopPropagation()}>
                 {spotifyUrl && (
                   <a href={spotifyUrl} target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-1 text-xs text-zinc-500 hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
@@ -227,7 +227,7 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
                 )}
               </div>
             )}
-          </a>
+          </div>
         ))}
         {filtered.length === 0 && (
           <p className="col-span-full text-zinc-600 py-12 text-center text-sm">
