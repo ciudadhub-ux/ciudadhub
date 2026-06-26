@@ -157,12 +157,6 @@ function EpisodeCard({
       <p className="text-zinc-300 text-base font-medium mb-1">{episode.guest}</p>
       <p className="text-zinc-400 text-base leading-snug">{episode.guestRole}</p>
 
-      {episode.quote && (
-        <p className="text-zinc-500 text-sm italic leading-relaxed mt-3 border-l-2 border-orange-500/30 pl-3 line-clamp-3">
-          "{episode.quote}"
-        </p>
-      )}
-
       <div className="flex-1" />
 
       {episode.city && (
