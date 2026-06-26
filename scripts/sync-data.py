@@ -83,18 +83,19 @@ TOPIC_RULES: list[tuple[list[str], str]] = [
 
 # Guest name → image filename (for names that don't auto-match)
 MANUAL_GUEST_IMAGES: dict[str, str] = {
-    "Xavi Matilla":                    "Xavier Matilla bw.jpg",
+    "Xavi Matilla":                    "Xavier Matilla.jpeg",
     "Nicolás Galarza":                 "Nicalás Galarza bw.jpeg",
     "Genis Arnàs":                     "Genis Arnal bw.jpg",
     "Miguel Rodríguez Planas":         "Miquel_Rodriguez_Planas bw.png",
     "Manu Fernández":                  "ManuvFernandez bw.jpg",
     "Patricia Alalta":                 "Patricia Alata bw.jpg",
     "Jorge Pérez Jaramillo":           "JorgePerez bw.jpg",
-    "Aida Esteban Millet":             "Aida Esteban Millat bw.jpg",
+    "Aida Esteban Millet":             "Aida Esteban Millat.jpeg",
     "Mauricio Leclerc":                "Mauricio Leclerq bw.jpg",
     "Elkin Velasquez":                 "Elkin Velazques bw.jpg",
-    "Guillermo Peñalosa":              "Guillermo Gil Peñaloza bw.jpeg",
-    "Joao Porto de Albuquereque":      "Joa Porto de Albuquerque bw.jpg",
+    "Guillermo Peñalosa":              "Guillermo Gil Peñaloza.jpeg",
+    "Joao Porto de Albuquereque":      "Joao Porto de Albuquerque.png",
+    "CiudadHub":                       "CiudadHub.png",
 }
 
 
@@ -124,8 +125,8 @@ def _build_image_map() -> dict[str, str]:
         return {}
     result: dict[str, str] = {}
     files = [f for f in os.listdir(INVITADOS_DIR) if not f.startswith(".")]
-    # Process color first so bw versions override them
-    for bw_first in (False, True):
+    # Process bw first so color versions override them
+    for bw_first in (True, False):
         for f in files:
             is_bw = " bw" in f.lower()
             if is_bw != bw_first:
@@ -138,37 +139,6 @@ def _build_image_map() -> dict[str, str]:
 
 
 _IMAGE_MAP: dict[str, str] = {}
-_COLOR_IMAGE_MAP: dict[str, str] = {}
-
-
-def _build_color_image_map() -> dict[str, str]:
-    if not os.path.isdir(INVITADOS_DIR):
-        return {}
-    result: dict[str, str] = {}
-    for f in os.listdir(INVITADOS_DIR):
-        if f.startswith(".") or " bw" in f.lower():
-            continue
-        base = os.path.splitext(f)[0].strip()
-        encoded = urllib.parse.quote(unicodedata.normalize("NFC", f), safe="")
-        result[_norm(base)] = f"/images/INVITADOS/{encoded}"
-    return result
-
-
-def find_guest_color_image(guest_name: str) -> str:
-    global _COLOR_IMAGE_MAP
-    if not _COLOR_IMAGE_MAP:
-        _COLOR_IMAGE_MAP = _build_color_image_map()
-    norm = _norm(guest_name)
-    if norm in _COLOR_IMAGE_MAP:
-        return _COLOR_IMAGE_MAP[norm]
-    for key, path in _COLOR_IMAGE_MAP.items():
-        if norm.startswith(key) or key.startswith(norm):
-            return path
-    for key, path in _COLOR_IMAGE_MAP.items():
-        key_words = set(key.split())
-        if key_words and key_words.issubset(set(norm.split())):
-            return path
-    return ""
 
 
 def find_guest_image(guest_name: str) -> str:
@@ -303,7 +273,6 @@ def parse_rows(rows: list[dict]) -> list[dict]:
             "created_date": created_date,
             "image_url": image_url,
             "guest_image_url": find_guest_image(name),
-            "guest_color_image_url": find_guest_color_image(name),
             "featured": featured,
             "seed": name_to_seed(name),
             "sheet_id": sheet_id,
@@ -350,7 +319,6 @@ def generate_ts(episodes: list[dict]) -> str:
         "  spotifyUrl: string",
         "  imageUrl: string",
         "  guestImageUrl: string",
-        "  guestColorImageUrl: string",
         "  guestAvatarSeed: string",
         "  featured: boolean",
         "}",
@@ -379,7 +347,6 @@ def generate_ts(episodes: list[dict]) -> str:
             f"    spotifyUrl: {ts_string(ep['spotify_url'])},",
             f"    imageUrl: {ts_string(ep['image_url'])},",
             f"    guestImageUrl: {ts_string(ep['guest_image_url'])},",
-            f"    guestColorImageUrl: {ts_string(ep['guest_color_image_url'])},",
             f"    guestAvatarSeed: {ts_string(ep['seed'])},",
             f"    featured: {'true' if ep['featured'] else 'false'},",
             "  },",

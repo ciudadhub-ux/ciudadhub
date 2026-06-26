@@ -51,7 +51,7 @@ export default function HeroSlider({ episodes }: { episodes: Episode[] }) {
   }, [index, items.length, paused, go]);
 
   const ep = items[index];
-  const guestPhoto = ep.guestColorImageUrl || ep.guestImageUrl || avatarUrl(ep.guestAvatarSeed);
+  const guestPhoto = ep.guestImageUrl || avatarUrl(ep.guestAvatarSeed);
 
   return (
     <div
