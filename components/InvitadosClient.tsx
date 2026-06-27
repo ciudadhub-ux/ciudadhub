@@ -100,11 +100,11 @@ function MapPopupCard({ guest }: { guest: GuestData }) {
   const roleFirstLine = guestRole ? guestRole.split("\n")[0] : "";
 
   return (
-    <div className="flex flex-col">
+    <div className="group flex flex-col">
       <div className="aspect-square rounded-xl overflow-hidden bg-zinc-800 mb-3">
         {photoSrc ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={photoSrc} alt={name} loading="lazy" className="w-full h-full object-cover" />
+          <img src={photoSrc} alt={name} loading="lazy" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-base">
             {initials(name)}
