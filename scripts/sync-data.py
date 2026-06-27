@@ -252,7 +252,7 @@ def parse_rows(rows: list[dict]) -> list[dict]:
             continue
         seen_apple.add(apple_url)
 
-        created_date = row.get("Created Date", "").strip()
+        created_date = (row.get("Created Date") or row.get("Date created") or "").strip()
         image_url_raw = row.get("Image", "").strip()
         image_url = convert_image_url(image_url_raw)
 
