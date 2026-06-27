@@ -96,6 +96,9 @@ MANUAL_GUEST_IMAGES: dict[str, str] = {
     "Guillermo Peñalosa":              "Guillermo Gil Peñaloza.jpeg",
     "Joao Porto de Albuquereque":      "Joao Porto de Albuquerque.png",
     "CiudadHub":                       "CiudadHub.png",
+    "Silvia Casorrán":                 "Silvia Cazorran.jpeg",
+    "Ellis Juan":                      "Elis Juan.jpeg",
+    "Carlos Pardo":                    "Carlos Felipe Pardo.jpeg",
 }
 
 
