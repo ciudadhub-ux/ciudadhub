@@ -93,6 +93,99 @@ function initials(name: string) {
   return name.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();
 }
 
+function GuestCard({ guest }: { guest: GuestData }) {
+  const { name, photoSrc, city, country, href, episodes: eps } = guest;
+  const [expanded, setExpanded] = useState(false);
+  const multi = eps.length > 1;
+
+  return (
+    <div className="group flex flex-col cursor-pointer" onClick={() => { window.location.href = href; }}>
+      <div className="aspect-square rounded-xl overflow-hidden bg-zinc-900 mb-3 relative">
+        {photoSrc ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={photoSrc}
+            alt={name}
+            loading="lazy"
+            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-xl">
+            {initials(name)}
+          </div>
+        )}
+        <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/8 transition-all duration-500 rounded-xl" />
+      </div>
+      <p className="text-zinc-200 text-sm font-medium leading-snug group-hover:text-orange-400 transition-colors">
+        {name}
+      </p>
+      {city && (
+        <p className="flex items-center gap-1 text-zinc-400 text-sm mt-0.5 mb-2">
+          <MapPin size={9} weight="bold" />
+          {city}{country ? `, ${country}` : ""}
+        </p>
+      )}
+      <div className="mt-auto pt-1" onClick={(e) => e.stopPropagation()}>
+        {multi && !expanded ? (
+          <button
+            onClick={() => setExpanded(true)}
+            className="text-[10px] font-mono text-orange-500/70 hover:text-orange-400 border border-orange-500/20 hover:border-orange-500/40 rounded-full px-2.5 py-0.5 transition-colors"
+          >
+            2 episodios
+          </button>
+        ) : multi && expanded ? (
+          <div className="flex flex-col gap-2">
+            {eps.map((ep) => (
+              <div key={ep.id}>
+                <p className="text-[10px] text-zinc-500 leading-snug line-clamp-2 mb-1">{ep.title}</p>
+                <div className="flex gap-1.5">
+                  {ep.spotifyUrl && (
+                    <a href={ep.spotifyUrl} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs text-zinc-500 hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
+                      <SpotifyIcon className="w-3 h-3 shrink-0" />
+                      <span>Spotify</span>
+                    </a>
+                  )}
+                  {ep.appleUrl && (
+                    <a href={ep.appleUrl} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs text-zinc-500 hover:text-purple-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
+                      <AppleIcon className="w-3 h-3 shrink-0" />
+                      <span>Apple</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+            <button
+              onClick={() => setExpanded(false)}
+              className="text-[10px] text-zinc-600 hover:text-zinc-400 transition-colors self-start mt-0.5"
+            >
+              ↑ cerrar
+            </button>
+          </div>
+        ) : (
+          <div className="flex gap-1.5">
+            {eps[0]?.spotifyUrl && (
+              <a href={eps[0].spotifyUrl} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-1 text-xs text-zinc-500 hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
+                <SpotifyIcon className="w-3 h-3 shrink-0" />
+                <span>Spotify</span>
+              </a>
+            )}
+            {eps[0]?.appleUrl && (
+              <a href={eps[0].appleUrl} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-1 text-xs text-zinc-500 hover:text-purple-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
+                <AppleIcon className="w-3 h-3 shrink-0" />
+                <span>Apple</span>
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export type EpisodeLink = {
   id: number;
   title: string;
@@ -188,59 +281,8 @@ export default function InvitadosClient({ guests, allTopics, cityGuestNames, cou
 
       {/* Guest grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mb-8">
-        {visibleGuests.map(({ name, photoSrc, city, country, href, episodes: eps }) => (
-          <div key={name} className="group flex flex-col cursor-pointer" onClick={() => { window.location.href = href; }}>
-            <div className="aspect-square rounded-xl overflow-hidden bg-zinc-900 mb-3 relative">
-              {photoSrc ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={photoSrc}
-                  alt={name}
-                  loading="lazy"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-xl">
-                  {initials(name)}
-                </div>
-              )}
-              <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/8 transition-all duration-500 rounded-xl" />
-            </div>
-            <p className="text-zinc-200 text-sm font-medium leading-snug group-hover:text-orange-400 transition-colors">
-              {name}
-            </p>
-            {city && (
-              <p className="flex items-center gap-1 text-zinc-400 text-sm mt-0.5 mb-2">
-                <MapPin size={9} weight="bold" />
-                {city}{country ? `, ${country}` : ""}
-              </p>
-            )}
-            <div className="flex flex-col gap-1.5 mt-auto pt-1" onClick={(e) => e.stopPropagation()}>
-              {eps.map((ep) => (
-                <div key={ep.id} className="flex flex-col gap-1">
-                  {eps.length > 1 && (
-                    <p className="text-[10px] text-zinc-600 leading-snug line-clamp-1">{ep.title}</p>
-                  )}
-                  <div className="flex gap-1.5">
-                    {ep.spotifyUrl && (
-                      <a href={ep.spotifyUrl} target="_blank" rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-xs text-zinc-500 hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
-                        <SpotifyIcon className="w-3 h-3 shrink-0" />
-                        <span>Spotify</span>
-                      </a>
-                    )}
-                    {ep.appleUrl && (
-                      <a href={ep.appleUrl} target="_blank" rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-xs text-zinc-500 hover:text-purple-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
-                        <AppleIcon className="w-3 h-3 shrink-0" />
-                        <span>Apple</span>
-                      </a>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        {visibleGuests.map((guest) => (
+          <GuestCard key={guest.name} guest={guest} />
         ))}
         {filtered.length === 0 && (
           <p className="col-span-full text-zinc-600 py-12 text-center text-sm">
