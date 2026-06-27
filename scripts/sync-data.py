@@ -89,7 +89,6 @@ MANUAL_GUEST_NAMES: dict[str, str] = {
 
 MANUAL_GUEST_IMAGES: dict[str, str] = {
     "Xavi Matilla":                    "Xavier Matilla.jpeg",
-    "Nicolás Galarza":                 "Nicalás Galarza bw.jpeg",
     "Genis Arnàs":                     "Genis Arnal bw.jpg",
     "Miguel Rodríguez Planas":         "Miquel_Rodriguez_Planas bw.png",
     "Manu Fernández":                  "ManuvFernandez bw.jpg",

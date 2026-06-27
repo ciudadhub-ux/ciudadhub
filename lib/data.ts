@@ -339,7 +339,7 @@ export const episodes: Episode[] = [
     appleUrl: "https://podcasts.apple.com/ca/podcast/ciudad-hubs-tracks/id1093603743?i=1000567274033",
     spotifyUrl: "https://open.spotify.com/episode/3zYpHdC4okzY0n0eYVeQUQ?si=s-4aEX5JQSOs4ZF3jtHDqQ",
     imageUrl: "",
-    guestImageUrl: "/images/INVITADOS/Nical%C3%A1s%20Galarza%20bw.jpeg",
+    guestImageUrl: "/images/INVITADOS/Nicol%C3%A1s%20Galarza.jpeg",
     guestAvatarSeed: "nicolsgalarza",
     featured: false,
   },
