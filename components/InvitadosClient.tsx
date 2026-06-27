@@ -109,11 +109,13 @@ export type GuestData = {
 interface Props {
   guests: GuestData[];
   allTopics: string[];
+  cityGuestNames: Record<string, string[]>;
+  countryByCity: Record<string, string>;
 }
 
 const PAGE_SIZE = 18;
 
-export default function InvitadosClient({ guests, allTopics }: Props) {
+export default function InvitadosClient({ guests, allTopics, cityGuestNames, countryByCity }: Props) {
   const [activeCity, setActiveCity] = useState<string | null>(null);
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
@@ -124,27 +126,22 @@ export default function InvitadosClient({ guests, allTopics }: Props) {
     [guests, activeTopic]
   );
 
-  const cityGuests = useMemo(
-    () => (activeCity ? guests.filter((g) => g.city === activeCity) : []),
-    [guests, activeCity]
-  );
+  const cityGuests = useMemo(() => {
+    if (!activeCity) return [];
+    const names = new Set(cityGuestNames[activeCity] ?? []);
+    return guests.filter((g) => names.has(g.name));
+  }, [guests, activeCity, cityGuestNames]);
 
   const cityDots = useMemo<CityDot[]>(() => {
-    const counts = new Map<string, number>();
-    const countryByCity = new Map<string, string>();
-    for (const g of guests) {
-      if (g.city && CITY_COORDS[g.city]) {
-        counts.set(g.city, (counts.get(g.city) ?? 0) + 1);
-        if (!countryByCity.has(g.city)) countryByCity.set(g.city, g.country);
-      }
-    }
-    return [...counts.entries()].map(([city, count]) => ({
-      city,
-      country: countryByCity.get(city) ?? "",
-      coordinates: CITY_COORDS[city],
-      count,
-    }));
-  }, [guests]);
+    return Object.entries(cityGuestNames)
+      .filter(([city]) => CITY_COORDS[city])
+      .map(([city, names]) => ({
+        city,
+        country: countryByCity[city] ?? "",
+        coordinates: CITY_COORDS[city],
+        count: names.length,
+      }));
+  }, [cityGuestNames, countryByCity]);
 
   const handleCityClick = (city: string) => {
     setActiveCity(city === activeCity ? null : city);
