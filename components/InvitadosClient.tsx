@@ -93,6 +93,14 @@ function initials(name: string) {
   return name.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();
 }
 
+export type EpisodeLink = {
+  id: number;
+  title: string;
+  spotifyUrl: string;
+  appleUrl: string;
+  href: string;
+};
+
 export type GuestData = {
   name: string;
   guestRole: string;
@@ -104,6 +112,7 @@ export type GuestData = {
   href: string;
   spotifyUrl: string;
   appleUrl: string;
+  episodes: EpisodeLink[];
 };
 
 interface Props {
@@ -179,7 +188,7 @@ export default function InvitadosClient({ guests, allTopics, cityGuestNames, cou
 
       {/* Guest grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mb-8">
-        {visibleGuests.map(({ name, photoSrc, city, country, href, spotifyUrl, appleUrl }) => (
+        {visibleGuests.map(({ name, photoSrc, city, country, href, episodes: eps }) => (
           <div key={name} className="group flex flex-col cursor-pointer" onClick={() => { window.location.href = href; }}>
             <div className="aspect-square rounded-xl overflow-hidden bg-zinc-900 mb-3 relative">
               {photoSrc ? (
@@ -206,24 +215,31 @@ export default function InvitadosClient({ guests, allTopics, cityGuestNames, cou
                 {city}{country ? `, ${country}` : ""}
               </p>
             )}
-            {(spotifyUrl || appleUrl) && (
-              <div className="flex gap-1.5 mt-auto pt-1" onClick={(e) => e.stopPropagation()}>
-                {spotifyUrl && (
-                  <a href={spotifyUrl} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-xs text-zinc-500 hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
-                    <SpotifyIcon className="w-3 h-3 shrink-0" />
-                    <span>Spotify</span>
-                  </a>
-                )}
-                {appleUrl && (
-                  <a href={appleUrl} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-xs text-zinc-500 hover:text-purple-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
-                    <AppleIcon className="w-3 h-3 shrink-0" />
-                    <span>Apple</span>
-                  </a>
-                )}
-              </div>
-            )}
+            <div className="flex flex-col gap-1.5 mt-auto pt-1" onClick={(e) => e.stopPropagation()}>
+              {eps.map((ep) => (
+                <div key={ep.id} className="flex flex-col gap-1">
+                  {eps.length > 1 && (
+                    <p className="text-[10px] text-zinc-600 leading-snug line-clamp-1">{ep.title}</p>
+                  )}
+                  <div className="flex gap-1.5">
+                    {ep.spotifyUrl && (
+                      <a href={ep.spotifyUrl} target="_blank" rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-xs text-zinc-500 hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
+                        <SpotifyIcon className="w-3 h-3 shrink-0" />
+                        <span>Spotify</span>
+                      </a>
+                    )}
+                    {ep.appleUrl && (
+                      <a href={ep.appleUrl} target="_blank" rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-xs text-zinc-500 hover:text-purple-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
+                        <AppleIcon className="w-3 h-3 shrink-0" />
+                        <span>Apple</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         ))}
         {filtered.length === 0 && (
