@@ -469,7 +469,7 @@ export const episodes: Episode[] = [
     imageUrl: "/images/episodios/id%2075%20Agust%C3%ADn%20Su%C3%A1rez%20-%20Boti%20Una%20experiencia%20ciudadana.jpg",
     guestImageUrl: "/images/INVITADOS/Agust%C3%ADn%20Su%C3%A1rez.jpg",
     guestAvatarSeed: "agustnsurez",
-    featured: true,
+    featured: false,
   },
   {
     id: 74,
@@ -1253,7 +1253,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Carlos%20Corral.png",
     guestAvatarSeed: "carloscorral",
-    featured: true,
+    featured: false,
   },
   {
     id: 25,
@@ -1619,7 +1619,7 @@ export const episodes: Episode[] = [
     appleUrl: "https://podcasts.apple.com/ca/podcast/ciudad-hubs-tracks/id1093603743?i=1000440992766",
     spotifyUrl: "https://open.spotify.com/episode/4cVnj89Sz5k6GMNvy9seXH?si=_ECPF-daSACE1l_np5RbrQ",
     imageUrl: "",
-    guestImageUrl: "",
+    guestImageUrl: "/images/INVITADOS/Carlos%20Felipe%20Pardo.jpeg",
     guestAvatarSeed: "carlospardo",
     featured: false,
   },
