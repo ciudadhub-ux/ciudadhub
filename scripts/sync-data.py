@@ -311,9 +311,10 @@ def parse_rows(rows: list[dict]) -> list[dict]:
                 pass
         ep["_sort_date"] = d
 
+    _EPOCH = datetime(1970, 1, 1)
     episodes.sort(key=lambda e: (
         e["_sort_date"] is None,
-        -(e["_sort_date"] or datetime.min).timestamp(),
+        -(e["_sort_date"] or _EPOCH).timestamp(),
         -e["id"],
     ))
 
