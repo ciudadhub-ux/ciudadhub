@@ -1619,7 +1619,7 @@ export const episodes: Episode[] = [
     appleUrl: "https://podcasts.apple.com/ca/podcast/ciudad-hubs-tracks/id1093603743?i=1000440992766",
     spotifyUrl: "https://open.spotify.com/episode/4cVnj89Sz5k6GMNvy9seXH?si=_ECPF-daSACE1l_np5RbrQ",
     imageUrl: "",
-    guestImageUrl: "/images/INVITADOS/Carlos%20Felipe%20Pardo.jpeg",
+    guestImageUrl: "",
     guestAvatarSeed: "carlospardo",
     featured: false,
   },
