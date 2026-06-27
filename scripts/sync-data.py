@@ -13,6 +13,7 @@ import unicodedata
 import urllib.parse
 import urllib.request
 from collections import Counter
+from datetime import datetime
 
 SHEET_CSV_URL = (
     "https://docs.google.com/spreadsheets/d/e/"
@@ -300,7 +301,21 @@ def parse_rows(rows: list[dict]) -> list[dict]:
     episodes = [ep for ep in episodes if ep["sheet_id"] is not None]
     for ep in episodes:
         ep["id"] = ep["sheet_id"]
-    episodes.sort(key=lambda e: e["id"], reverse=True)
+    for ep in episodes:
+        d = None
+        for fmt in ("%Y-%m-%d", "%m/%d/%Y", "%d/%m/%Y", "%m/%d/%y"):
+            try:
+                d = datetime.strptime(ep["created_date"], fmt)
+                break
+            except (ValueError, TypeError):
+                pass
+        ep["_sort_date"] = d
+
+    episodes.sort(key=lambda e: (
+        e["_sort_date"] is None,
+        -(e["_sort_date"] or datetime.min).timestamp(),
+        -e["id"],
+    ))
 
     # Sobrescribir image_url con fotos locales de la carpeta episodios/
     episodio_images = build_episodio_image_map()
