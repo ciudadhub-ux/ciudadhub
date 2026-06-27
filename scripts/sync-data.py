@@ -144,23 +144,31 @@ def _build_image_map() -> dict[str, str]:
 _IMAGE_MAP: dict[str, str] = {}
 
 
-def find_guest_image(guest_name: str) -> str:
+def find_guest_image(guest_name: str, ep_id=None) -> str:
     global _IMAGE_MAP
     if not _IMAGE_MAP:
         _IMAGE_MAP = _build_image_map()
-    # Manual override first
+    # 1. ID-based match (highest priority): file named {id}.jpg / {id}.jpeg / {id}.png
+    if ep_id is not None:
+        for ext in (".jpg", ".jpeg", ".png"):
+            fname = f"{ep_id}{ext}"
+            fpath = os.path.join(INVITADOS_DIR, fname)
+            if os.path.exists(fpath):
+                encoded = urllib.parse.quote(unicodedata.normalize("NFC", fname), safe="")
+                return f"/images/INVITADOS/{encoded}"
+    # 2. Manual override by name
     if guest_name in MANUAL_GUEST_IMAGES:
         f = MANUAL_GUEST_IMAGES[guest_name]
         return f"/images/INVITADOS/{urllib.parse.quote(unicodedata.normalize('NFC', f), safe='')}"
     norm = _norm(guest_name)
-    # Exact match
+    # 3. Exact name match
     if norm in _IMAGE_MAP:
         return _IMAGE_MAP[norm]
-    # File name is prefix of guest full name (e.g. "pau solanilla" vs "pau solanilla franco")
+    # 4. Prefix match (e.g. "pau solanilla" vs "pau solanilla franco")
     for key, path in _IMAGE_MAP.items():
         if norm.startswith(key) or key.startswith(norm):
             return path
-    # All words in the file name appear in the guest name
+    # 5. Word-subset match
     for key, path in _IMAGE_MAP.items():
         key_words = set(key.split())
         if key_words and key_words.issubset(set(norm.split())):
@@ -278,7 +286,7 @@ def parse_rows(rows: list[dict]) -> list[dict]:
             "topics": topics,
             "created_date": created_date,
             "image_url": image_url,
-            "guest_image_url": find_guest_image(name),
+            "guest_image_url": find_guest_image(name, sheet_id),
             "featured": featured,
             "seed": name_to_seed(name),
             "sheet_id": sheet_id,
