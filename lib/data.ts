@@ -1611,7 +1611,7 @@ export const episodes: Episode[] = [
     id: 3,
     title: "Ir más despacio para llegar antes",
     quote: "",
-    guest: "Carlos Pardo",
+    guest: "Carlos Felipe Pardo",
     guestRole: "Senior Manager - Pilots at NUMO -New Urban Mobility Alliance",
     topics: ["Movilidad", "Sostenibilidad"],
     city: "Washington",
@@ -1620,7 +1620,7 @@ export const episodes: Episode[] = [
     spotifyUrl: "https://open.spotify.com/episode/4cVnj89Sz5k6GMNvy9seXH?si=_ECPF-daSACE1l_np5RbrQ",
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Carlos%20Felipe%20Pardo.jpeg",
-    guestAvatarSeed: "carlospardo",
+    guestAvatarSeed: "carlosfelipepardo",
     featured: false,
   },
   {

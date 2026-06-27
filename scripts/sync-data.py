@@ -82,6 +82,11 @@ TOPIC_RULES: list[tuple[list[str], str]] = [
 
 
 # Guest name → image filename (for names that don't auto-match)
+# Renombrar invitados cuyo nombre en el Sheet difiere del nombre correcto.
+MANUAL_GUEST_NAMES: dict[str, str] = {
+    "Carlos Pardo": "Carlos Felipe Pardo",
+}
+
 MANUAL_GUEST_IMAGES: dict[str, str] = {
     "Xavi Matilla":                    "Xavier Matilla.jpeg",
     "Nicolás Galarza":                 "Nicalás Galarza bw.jpeg",
@@ -98,7 +103,6 @@ MANUAL_GUEST_IMAGES: dict[str, str] = {
     "CiudadHub":                       "CiudadHub.png",
     "Silvia Casorrán":                 "Silvia Cazorran.jpeg",
     "Ellis Juan":                      "Elis Juan.jpeg",
-    "Carlos Pardo":                    "Carlos Felipe Pardo.jpeg",
 }
 
 
@@ -223,7 +227,10 @@ def parse_rows(rows: list[dict]) -> list[dict]:
     seen_apple = set()
 
     for row in rows:
-        name = (row.get("Invitado") or row.get("Name") or "").strip()
+        name = MANUAL_GUEST_NAMES.get(
+            (row.get("Invitado") or row.get("Name") or "").strip(),
+            (row.get("Invitado") or row.get("Name") or "").strip(),
+        )
         role = row.get("Job Title", "").strip()
         title = row.get("Podcast", "").strip()
         apple_url = row.get("AppelPodcast", "").strip()
