@@ -93,6 +93,89 @@ function initials(name: string) {
   return name.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();
 }
 
+function MapPopupCard({ guest }: { guest: GuestData }) {
+  const { name, guestRole, photoSrc, episodes: eps } = guest;
+  const [expanded, setExpanded] = useState(false);
+  const multi = eps.length > 1;
+  const roleFirstLine = guestRole ? guestRole.split("\n")[0] : "";
+
+  return (
+    <div className="flex flex-col">
+      <div className="aspect-square rounded-xl overflow-hidden bg-zinc-800 mb-3">
+        {photoSrc ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={photoSrc} alt={name} loading="lazy" className="w-full h-full object-cover" />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-base">
+            {initials(name)}
+          </div>
+        )}
+      </div>
+      <p className="text-zinc-100 text-sm font-semibold leading-snug">{name}</p>
+      {roleFirstLine && (
+        <p className="text-zinc-400 text-xs leading-snug mt-1 mb-3">{roleFirstLine}</p>
+      )}
+      <div className="mt-auto">
+        {multi && !expanded ? (
+          <button
+            onClick={() => setExpanded(true)}
+            className="text-[10px] font-mono text-orange-500/70 hover:text-orange-400 border border-orange-500/20 hover:border-orange-500/40 rounded-full px-2.5 py-0.5 transition-colors"
+          >
+            2 episodios
+          </button>
+        ) : multi && expanded ? (
+          <div className="flex flex-col gap-2">
+            {eps.map((ep) => (
+              <div key={ep.id}>
+                <p className="text-[10px] text-zinc-500 leading-snug line-clamp-2 mb-1">{ep.title}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {ep.spotifyUrl && (
+                    <a href={ep.spotifyUrl} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs text-zinc-400 hover:text-green-400 transition-colors px-2 py-1.5 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
+                      <SpotifyIcon className="w-3 h-3 shrink-0" />
+                      Spotify
+                    </a>
+                  )}
+                  {ep.appleUrl && (
+                    <a href={ep.appleUrl} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs text-zinc-400 hover:text-purple-400 transition-colors px-2 py-1.5 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
+                      <AppleIcon className="w-3 h-3 shrink-0" />
+                      Apple
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+            <button
+              onClick={() => setExpanded(false)}
+              className="text-[10px] text-zinc-600 hover:text-zinc-400 transition-colors self-start mt-0.5"
+            >
+              ↑ cerrar
+            </button>
+          </div>
+        ) : (
+          <div className="flex flex-wrap gap-1.5">
+            {eps[0]?.spotifyUrl && (
+              <a href={eps[0].spotifyUrl} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-1 text-xs text-zinc-400 hover:text-green-400 transition-colors px-2 py-1.5 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
+                <SpotifyIcon className="w-3 h-3 shrink-0" />
+                Spotify
+              </a>
+            )}
+            {eps[0]?.appleUrl && (
+              <a href={eps[0].appleUrl} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-1 text-xs text-zinc-400 hover:text-purple-400 transition-colors px-2 py-1.5 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
+                <AppleIcon className="w-3 h-3 shrink-0" />
+                Apple
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function GuestCard({ guest }: { guest: GuestData }) {
   const { name, photoSrc, city, country, href, episodes: eps } = guest;
   const [expanded, setExpanded] = useState(false);
@@ -337,48 +420,9 @@ export default function InvitadosClient({ guests, allTopics, cityGuestNames, cou
                     </button>
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
-                    {cityGuests.map(({ name, guestRole, photoSrc, spotifyUrl, appleUrl }) => {
-                      const roleFirstLine = guestRole ? guestRole.split("\n")[0] : "";
-                      return (
-                        <div key={name} className="flex flex-col">
-                          <div className="aspect-square rounded-xl overflow-hidden bg-zinc-800 mb-3 relative">
-                            {photoSrc ? (
-                              // eslint-disable-next-line @next/next/no-img-element
-                              <img
-                                src={photoSrc}
-                                alt={name}
-                                loading="lazy"
-                                className="w-full h-full object-cover"
-                              />
-                            ) : (
-                              <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-base">
-                                {initials(name)}
-                              </div>
-                            )}
-                          </div>
-                          <p className="text-zinc-100 text-sm font-semibold leading-snug">{name}</p>
-                          {roleFirstLine && (
-                            <p className="text-zinc-400 text-xs leading-snug mt-1 mb-3">{roleFirstLine}</p>
-                          )}
-                          <div className="flex flex-wrap gap-1.5 mt-auto">
-                            {spotifyUrl && (
-                              <a href={spotifyUrl} target="_blank" rel="noopener noreferrer"
-                                className="flex items-center gap-1 text-xs text-zinc-400 hover:text-green-400 transition-colors px-2 py-1.5 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
-                                <SpotifyIcon className="w-3 h-3 shrink-0" />
-                                Spotify
-                              </a>
-                            )}
-                            {appleUrl && (
-                              <a href={appleUrl} target="_blank" rel="noopener noreferrer"
-                                className="flex items-center gap-1 text-xs text-zinc-400 hover:text-purple-400 transition-colors px-2 py-1.5 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
-                                <AppleIcon className="w-3 h-3 shrink-0" />
-                                Apple
-                              </a>
-                            )}
-                          </div>
-                        </div>
-                      );
-                    })}
+                    {cityGuests.map((guest) => (
+                      <MapPopupCard key={guest.name} guest={guest} />
+                    ))}
                   </div>
                 </div>
               </div>
