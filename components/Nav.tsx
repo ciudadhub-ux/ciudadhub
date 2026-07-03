@@ -29,7 +29,11 @@ export default function Nav() {
       <div className="relative max-w-7xl mx-auto pl-4 md:pl-8 pr-4 md:pr-6 h-[98px] md:h-48 flex items-stretch">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center pr-4 md:pr-8 shrink-0">
+        <Link
+          href="/"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="flex items-center pr-4 md:pr-8 shrink-0"
+        >
           <Image
             src="/logo.png"
             alt="Ciudad Hub Podcast"
