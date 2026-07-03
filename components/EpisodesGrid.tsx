@@ -4,102 +4,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { MapPin } from "@phosphor-icons/react";
 import { Episode } from "@/lib/data";
+import { SpotifyIcon, AppleIcon } from "./PodcastIcons";
+import { TopicChip } from "./TopicChip";
 
 interface EpisodesGridProps {
   episodes: Episode[];
   topics: string[];
-}
-
-function SpotifyIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
-    </svg>
-  );
-}
-
-function AppleIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701" />
-    </svg>
-  );
-}
-
-const TOPIC_COLORS: Record<string, { h: number; s: number }> = {
-  "Smart Cities":      { h: 213, s: 94 },
-  "Datos":             { h: 258, s: 89 },
-  "Movilidad":         { h: 142, s: 71 },
-  "Sostenibilidad":    { h: 160, s: 84 },
-  "Urbanismo":         { h: 38,  s: 92 },
-  "Equidad":           { h: 343, s: 88 },
-  "Gobernanza":        { h: 199, s: 89 },
-  "Salud":             { h: 173, s: 80 },
-  "Innovación":        { h: 24,  s: 94 },
-  "Espacio Público":   { h: 84,  s: 81 },
-  "Ciudades Globales": { h: 239, s: 84 },
-};
-
-function topicStyle(topic: string, active: boolean, hovered: boolean) {
-  const c = TOPIC_COLORS[topic] ?? { h: 30, s: 60 };
-  if (active) {
-    return {
-      background: `hsl(${c.h} ${c.s}% 55%)`,
-      color: "#09090b",
-      borderColor: `hsl(${c.h} ${c.s}% 55%)`,
-    };
-  }
-  if (hovered) {
-    return {
-      background: `hsl(${c.h} ${c.s}% 50% / 0.22)`,
-      color: `hsl(${c.h} ${c.s}% 88%)`,
-      borderColor: `hsl(${c.h} ${c.s}% 55% / 0.6)`,
-    };
-  }
-  return {
-    background: `hsl(${c.h} ${c.s}% 50% / 0.1)`,
-    color: `hsl(${c.h} ${c.s}% 75%)`,
-    borderColor: `hsl(${c.h} ${c.s}% 50% / 0.25)`,
-  };
-}
-
-function TopicChip({ topic, active, onClick }: { topic: string; active: boolean; onClick: () => void }) {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <button
-      onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="px-3 py-1.5 rounded-full text-[13px] md:text-base font-medium border transition-all duration-200"
-      style={topicStyle(topic, active, hovered)}
-    >
-      {topic}
-    </button>
-  );
-}
-
-function CityChip({ city, active, onClick }: { city: string; active: boolean; onClick: () => void }) {
-  const [hovered, setHovered] = useState(false);
-  let style: React.CSSProperties;
-  if (active) {
-    style = { background: "#27272a", color: "#f4f4f5", borderColor: "#f97316" };
-  } else if (hovered) {
-    style = { background: "#27272a", color: "#e4e4e7", borderColor: "#71717a" };
-  } else {
-    style = { background: "transparent", color: "#71717a", borderColor: "#3f3f46" };
-  }
-  return (
-    <button
-      onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="px-3 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 flex items-center gap-1.5"
-      style={style}
-    >
-      <MapPin size={10} weight="bold" />
-      {city}
-    </button>
-  );
 }
 
 function EpisodeCard({
@@ -211,21 +121,11 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
     setTimeout(() => {
       if (!wrapperRef.current) return;
       const rect = wrapperRef.current.getBoundingClientRect();
-      const NAV_H = 192;
+      const NAV_H = window.innerWidth >= 768 ? 192 : 98;
       if (rect.top < NAV_H) {
         window.scrollTo({ top: window.scrollY + rect.top - NAV_H, behavior: "smooth" });
       }
     }, 30);
-  }, []);
-
-  useEffect(() => {
-    const handler = (e: Event) => {
-      const id = (e as CustomEvent<number>).detail;
-      setHighlightedId(id);
-      setTimeout(() => setHighlightedId(null), 2800);
-    };
-    window.addEventListener("highlight-episode", handler);
-    return () => window.removeEventListener("highlight-episode", handler);
   }, []);
 
   // On arrival from /invitados via /?highlight=ID&topic=TEMA#ep-ID
@@ -306,6 +206,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
                 topic={topic}
                 active={activeTopic === topic}
                 onClick={() => handleTopicChange(topic === activeTopic ? null : topic)}
+                className="px-3 py-1.5 rounded-full text-[13px] md:text-base font-medium border transition-all duration-200"
               />
             </div>
           ))}

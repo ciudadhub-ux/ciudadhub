@@ -90,7 +90,6 @@ MANUAL_GUEST_NAMES: dict[str, str] = {
 
 MANUAL_GUEST_IMAGES: dict[str, str] = {
     "Xavi Matilla":                    "Xavier Matilla.jpeg",
-    "Genis Arnàs":                     "Genis Arnal bw.jpg",
     "Miguel Rodríguez Planas":         "Miquel_Rodriguez_Planas.png",
     "Manu Fernández":                  "Man Fernandez.jpg",
     "Patricia Alalta":                 "Patricia Alata.jpg",
@@ -391,18 +390,6 @@ def generate_ts(episodes: list[dict]) -> str:
         lines.append(f"  {{ name: {ts_string(topic)}, count: {count} }},")
     lines += [
         "]",
-        "",
-        "export const allGuests = episodes.map(ep => ({",
-        "  name: ep.guest,",
-        "  role: ep.guestRole,",
-        "  city: ep.city,",
-        "  topics: ep.topics,",
-        "  episodeId: ep.id,",
-        "  episodeTitle: ep.title,",
-        "  appleUrl: ep.appleUrl,",
-        "  spotifyUrl: ep.spotifyUrl,",
-        "  guestAvatarSeed: ep.guestAvatarSeed,",
-        "}))",
         "",
     ]
 

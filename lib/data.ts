@@ -1682,15 +1682,3 @@ export const allTopics: TopicStat[] = [
   { name: "Gentrificación", count: 1 },
   { name: "Electrificación", count: 1 },
 ]
-
-export const allGuests = episodes.map(ep => ({
-  name: ep.guest,
-  role: ep.guestRole,
-  city: ep.city,
-  topics: ep.topics,
-  episodeId: ep.id,
-  episodeTitle: ep.title,
-  appleUrl: ep.appleUrl,
-  spotifyUrl: ep.spotifyUrl,
-  guestAvatarSeed: ep.guestAvatarSeed,
-}))

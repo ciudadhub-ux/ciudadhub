@@ -39,8 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-scripts/credentials.json
-scripts/token.json
-scripts/service-account.json
-public/client_secret_*.json
+# google credentials — never commit, wherever they land
+credentials.json
+token.json
+service-account.json
+client_secret_*.json
 episodios.csv

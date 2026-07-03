@@ -4,6 +4,7 @@ import { useState, useMemo, useRef } from "react";
 import dynamic from "next/dynamic";
 import { MapPin, X } from "@phosphor-icons/react";
 import { SpotifyIcon, AppleIcon } from "./PodcastIcons";
+import { TopicChip, topicStyle } from "./TopicChip";
 import type { CityDot } from "./InvitadosMap";
 
 const InvitadosMap = dynamic(() => import("./InvitadosMap"), {
@@ -18,18 +19,17 @@ const CITY_COORDS: Record<string, [number, number]> = {
   "Bilbao":       [-2.92,   43.26],
   "Bogotá":       [-74.07,  4.71],
   "Boston":       [-71.06,  42.36],
-  "Bucaramanga":  [-73.12,  7.13],
   "Buenos Aires": [-58.38,  -34.60],
   "Caracas":      [-66.92,  10.48],
   "Chile":        [-70.67,  -33.45],
   "Córdoba":      [-64.18,  -31.42],
-  "Estonia":      [24.75,   59.44],
   "Guadalajara":  [-103.35, 20.67],
   "Lima":         [-77.04,  -12.05],
   "Londres":      [-0.12,   51.51],
   "Madrid":       [-3.70,   40.42],
   "Manresa":      [1.83,    41.72],
   "Mendoza":      [-68.83,  -32.89],
+  "México":       [-99.13,  19.43],
   "Miami":        [-80.19,  25.77],
   "Montería":     [-75.89,  8.75],
   "Montevideo":   [-56.16,  -34.90],
@@ -43,51 +43,16 @@ const CITY_COORDS: Record<string, [number, number]> = {
   "Puebla":       [-98.20,  19.04],
   "Rio de Janeiro": [-43.17, -22.91],
   "San Salvador": [-89.20,  13.70],
+  "Santa Fe":     [-60.70,  -31.63],
+  "Silverstone":  [-1.03,   52.09],
+  "Tallin":       [24.75,   59.44],
   "Tandil":       [-59.13,  -37.32],
   "Tel Aviv":     [34.78,   32.08],
   "Toronto":      [-79.38,  43.65],
   "Tucumán":      [-65.20,  -26.82],
-  "Vancouver":    [-123.12, 49.28],
-  "Warwick":      [-1.59,   52.28],
   "Washington":   [-77.04,  38.91],
   "Zaragoza":     [-0.88,   41.65],
 };
-
-const TOPIC_COLORS: Record<string, { h: number; s: number }> = {
-  "Smart Cities":      { h: 213, s: 94 },
-  "Datos":             { h: 258, s: 89 },
-  "Movilidad":         { h: 142, s: 71 },
-  "Sostenibilidad":    { h: 160, s: 84 },
-  "Urbanismo":         { h: 38,  s: 92 },
-  "Equidad":           { h: 343, s: 88 },
-  "Gobernanza":        { h: 199, s: 89 },
-  "Salud":             { h: 173, s: 80 },
-  "Innovación":        { h: 24,  s: 94 },
-  "Espacio Público":   { h: 84,  s: 81 },
-  "Ciudades Globales": { h: 239, s: 84 },
-};
-
-function topicStyle(topic: string, active: boolean, hovered: boolean) {
-  const c = TOPIC_COLORS[topic] ?? { h: 30, s: 60 };
-  if (active) return { background: `hsl(${c.h} ${c.s}% 55%)`, color: "#09090b", borderColor: `hsl(${c.h} ${c.s}% 55%)` };
-  if (hovered) return { background: `hsl(${c.h} ${c.s}% 50% / 0.22)`, color: `hsl(${c.h} ${c.s}% 88%)`, borderColor: `hsl(${c.h} ${c.s}% 55% / 0.6)` };
-  return { background: `hsl(${c.h} ${c.s}% 50% / 0.1)`, color: `hsl(${c.h} ${c.s}% 75%)`, borderColor: `hsl(${c.h} ${c.s}% 50% / 0.25)` };
-}
-
-function TopicChip({ topic, active, onClick }: { topic: string; active: boolean; onClick: () => void }) {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <button
-      onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="px-3 py-1.5 rounded-full text-sm font-medium border transition-all duration-200"
-      style={topicStyle(topic, active, hovered)}
-    >
-      {topic}
-    </button>
-  );
-}
 
 function initials(name: string) {
   return name.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SpotifyLogo, XLogo, InstagramLogo, FacebookLogo, Envelope } from "@phosphor-icons/react/dist/ssr";
+import { AppleIcon } from "./PodcastIcons";
 
 export default function Footer() {
   return (
@@ -24,25 +25,21 @@ export default function Footer() {
               Escuchar en
             </p>
             <a
-              href="#"
+              href="https://open.spotify.com/show/3C1ry4r1XvOr1YSsWGvtMT"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2.5 text-zinc-400 hover:text-zinc-50 transition-colors text-sm"
             >
               <SpotifyLogo size={16} weight="fill" className="text-green-400" />
               Spotify
             </a>
             <a
-              href="#"
+              href="https://podcasts.apple.com/us/podcast/ciudadhubs-tracks/id1093603743"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2.5 text-zinc-400 hover:text-zinc-50 transition-colors text-sm"
             >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="text-purple-400"
-              >
-                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 4.5c2.071 0 3.938.84 5.3 2.2L15.75 10.25A5.478 5.478 0 0012 8.5c-3.038 0-5.5 2.462-5.5 5.5s2.462 5.5 5.5 5.5c2.627 0 4.836-1.845 5.369-4.314H12V13h5.98c.013.164.02.329.02.5 0 3.314-2.686 6-6 6s-6-2.686-6-6 2.686-6 6-6z" />
-              </svg>
+              <AppleIcon className="w-4 h-4 text-purple-400" />
               Apple Podcasts
             </a>
           </div>
@@ -90,7 +87,7 @@ export default function Footer() {
 
         <div className="border-t border-zinc-800/60 pt-8">
           <p className="text-zinc-700 text-sm">
-            © 2026 ciudadhub. Todos los derechos reservados.
+            © {new Date().getFullYear()} ciudadhub. Todos los derechos reservados.
           </p>
         </div>
       </div>
