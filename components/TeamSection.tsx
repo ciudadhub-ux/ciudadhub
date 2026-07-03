@@ -69,7 +69,6 @@ export default function TeamSection() {
                   <img
                     src={member.photo}
                     alt={member.name}
-                    loading="lazy"
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/8 transition-all duration-500 rounded-xl" />
