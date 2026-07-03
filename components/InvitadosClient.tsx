@@ -64,40 +64,44 @@ function MapPopupCard({ guest }: { guest: GuestData }) {
 
   return (
     <div className="group flex flex-col">
-      <div className="aspect-square rounded-xl overflow-hidden bg-zinc-800 mb-3">
-        {photoSrc ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={photoSrc} alt={name} loading="lazy" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-base">
-            {initials(name)}
-          </div>
-        )}
-      </div>
-      <p className="text-zinc-100 text-sm font-semibold leading-snug">{name}</p>
-      {roleFirstLine && (
-        <p className="text-zinc-400 text-xs leading-snug mt-1 mb-3">{roleFirstLine}</p>
-      )}
-      <div className="mt-auto flex flex-col gap-2">
-        {eps.map((ep) => (
-          <div key={ep.id}>
-            <p className="text-[10px] text-zinc-500 leading-snug line-clamp-2 mb-1">{ep.title}</p>
-            <div className="flex flex-wrap gap-1.5">
-              {ep.spotifyUrl && (
-                <a href={ep.spotifyUrl} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-xs text-zinc-400 hover:text-green-400 transition-colors px-2 py-1.5 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
-                  <SpotifyIcon className="w-3 h-3 shrink-0" />
-                  Spotify
-                </a>
-              )}
-              {ep.appleUrl && (
-                <a href={ep.appleUrl} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-xs text-zinc-400 hover:text-purple-400 transition-colors px-2 py-1.5 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
-                  <AppleIcon className="w-3 h-3 shrink-0" />
-                  Apple
-                </a>
-              )}
+      <div className="flex items-start gap-2.5 mb-2">
+        <div className="w-16 h-16 rounded-lg overflow-hidden bg-zinc-800 shrink-0">
+          {photoSrc ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={photoSrc} alt={name} loading="lazy" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-xs">
+              {initials(name)}
             </div>
+          )}
+        </div>
+        <div className="min-w-0">
+          <p className="text-zinc-100 text-sm font-semibold leading-snug">{name}</p>
+          {roleFirstLine && (
+            <p className="text-zinc-400 text-xs leading-snug line-clamp-2">{roleFirstLine}</p>
+          )}
+        </div>
+      </div>
+      <div className="mt-auto flex flex-col gap-1.5">
+        {eps.map((ep) => (
+          <div key={ep.id} className="flex items-center gap-1.5" title={ep.title}>
+            {eps.length > 1 && (
+              <span className="font-mono text-[10px] text-orange-500/70 shrink-0">EP {ep.id}</span>
+            )}
+            {ep.spotifyUrl && (
+              <a href={ep.spotifyUrl} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-1 text-xs text-zinc-400 hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
+                <SpotifyIcon className="w-3 h-3 shrink-0" />
+                Spotify
+              </a>
+            )}
+            {ep.appleUrl && (
+              <a href={ep.appleUrl} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-1 text-xs text-zinc-400 hover:text-purple-400 transition-colors px-2 py-1 rounded-md bg-zinc-800/80 hover:bg-zinc-700 border border-zinc-700/50">
+                <AppleIcon className="w-3 h-3 shrink-0" />
+                Apple
+              </a>
+            )}
           </div>
         ))}
       </div>
@@ -135,26 +139,26 @@ function GuestCard({ guest }: { guest: GuestData }) {
           {city}{country ? `, ${country}` : ""}
         </p>
       )}
-      <div className="mt-auto pt-1 flex flex-col gap-2">
+      <div className="mt-auto pt-1 flex flex-col gap-1.5">
         {eps.map((ep) => (
-          <div key={ep.id}>
-            <p className="text-[10px] text-zinc-500 leading-snug line-clamp-2 mb-1">{ep.title}</p>
-            <div className="flex gap-1.5">
-              {ep.spotifyUrl && (
-                <a href={ep.spotifyUrl} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-xs text-zinc-500 hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
-                  <SpotifyIcon className="w-3 h-3 shrink-0" />
-                  <span>Spotify</span>
-                </a>
-              )}
-              {ep.appleUrl && (
-                <a href={ep.appleUrl} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-xs text-zinc-500 hover:text-purple-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
-                  <AppleIcon className="w-3 h-3 shrink-0" />
-                  <span>Apple</span>
-                </a>
-              )}
-            </div>
+          <div key={ep.id} className="flex items-center gap-1.5" title={ep.title}>
+            {eps.length > 1 && (
+              <span className="font-mono text-[10px] text-orange-500/70 shrink-0">EP {ep.id}</span>
+            )}
+            {ep.spotifyUrl && (
+              <a href={ep.spotifyUrl} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-1 text-xs text-zinc-500 hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
+                <SpotifyIcon className="w-3 h-3 shrink-0" />
+                <span>Spotify</span>
+              </a>
+            )}
+            {ep.appleUrl && (
+              <a href={ep.appleUrl} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-1 text-xs text-zinc-500 hover:text-purple-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
+                <AppleIcon className="w-3 h-3 shrink-0" />
+                <span>Apple</span>
+              </a>
+            )}
           </div>
         ))}
       </div>
@@ -292,7 +296,7 @@ export default function InvitadosClient({ guests, allTopics, cityGuestNames, cou
                   className="absolute inset-0 bg-zinc-950/80 backdrop-blur-sm rounded-xl"
                   onClick={() => setActiveCity(null)}
                 />
-                <div className="relative bg-zinc-900 border border-zinc-700 rounded-2xl p-6 w-full max-w-xl mx-6 max-h-[80%] overflow-y-auto shadow-2xl shadow-black/60">
+                <div className="relative bg-zinc-900 border border-zinc-700 rounded-2xl p-6 w-full max-w-xl mx-6 max-h-[92%] overflow-y-auto shadow-2xl shadow-black/60">
                   <div className="flex items-start justify-between mb-5">
                     <div>
                       <h3 className="text-lg font-bold text-zinc-50 tracking-tight">{activeCity}</h3>
@@ -307,7 +311,7 @@ export default function InvitadosClient({ guests, allTopics, cityGuestNames, cou
                       <X size={18} weight="bold" />
                     </button>
                   </div>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5">
                     {cityGuests.map((guest) => (
                       <MapPopupCard key={guest.name} guest={guest} />
                     ))}
