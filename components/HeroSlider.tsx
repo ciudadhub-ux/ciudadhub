@@ -99,7 +99,7 @@ export default function HeroSlider({ episodes }: { episodes: Episode[] }) {
                 {ep.quote && (
                   <p className="text-zinc-300 text-sm leading-relaxed mb-4 italic"
                     style={{ textShadow: "0 1px 6px rgba(0,0,0,0.9)" }}>
-                    "{ep.quote}"
+                    “{ep.quote}”
                   </p>
                 )}
                 <div className="flex items-center gap-3">

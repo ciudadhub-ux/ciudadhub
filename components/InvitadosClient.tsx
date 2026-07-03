@@ -147,33 +147,35 @@ function GuestCard({ guest }: { guest: GuestData }) {
   const multi = eps.length > 1;
 
   return (
-    <div className="group flex flex-col cursor-pointer" onClick={() => { window.location.href = href; }}>
-      <div className="aspect-square rounded-xl overflow-hidden bg-zinc-900 mb-3 relative">
-        {photoSrc ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={photoSrc}
-            alt={name}
-            loading="lazy"
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-xl">
-            {initials(name)}
-          </div>
-        )}
-        <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/8 transition-all duration-500 rounded-xl" />
-      </div>
-      <p className="text-zinc-200 text-sm font-medium leading-snug group-hover:text-orange-400 transition-colors">
-        {name}
-      </p>
-      {city && (
-        <p className="flex items-center gap-1 text-zinc-400 text-sm mt-0.5 mb-2">
-          <MapPin size={9} weight="bold" />
-          {city}{country ? `, ${country}` : ""}
+    <div className="group flex flex-col">
+      <a href={href} className="flex flex-col">
+        <div className="aspect-square rounded-xl overflow-hidden bg-zinc-900 mb-3 relative">
+          {photoSrc ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={photoSrc}
+              alt={name}
+              loading="lazy"
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-zinc-600 font-bold text-xl">
+              {initials(name)}
+            </div>
+          )}
+          <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/8 transition-all duration-500 rounded-xl" />
+        </div>
+        <p className="text-zinc-200 text-sm font-medium leading-snug group-hover:text-orange-400 transition-colors">
+          {name}
         </p>
-      )}
-      <div className="mt-auto pt-1" onClick={(e) => e.stopPropagation()}>
+        {city && (
+          <p className="flex items-center gap-1 text-zinc-400 text-sm mt-0.5 mb-2">
+            <MapPin size={9} weight="bold" />
+            {city}{country ? `, ${country}` : ""}
+          </p>
+        )}
+      </a>
+      <div className="mt-auto pt-1">
         {multi && !expanded ? (
           <button
             onClick={() => setExpanded(true)}

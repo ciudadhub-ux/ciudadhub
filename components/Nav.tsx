@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { XLogo, InstagramLogo, FacebookLogo, List, X, Envelope } from "@phosphor-icons/react";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -28,7 +29,7 @@ export default function Nav() {
       <div className="relative max-w-7xl mx-auto pl-4 md:pl-8 pr-4 md:pr-6 h-[98px] md:h-48 flex items-stretch">
 
         {/* Logo */}
-        <a href="/" className="flex items-center pr-4 md:pr-8 shrink-0">
+        <Link href="/" className="flex items-center pr-4 md:pr-8 shrink-0">
           <Image
             src="/logo.png"
             alt="Ciudad Hub Podcast"
@@ -37,7 +38,7 @@ export default function Nav() {
             className="h-[75px] md:h-[155px] w-auto"
             priority
           />
-        </a>
+        </Link>
 
         {/* Tagline centered — mobile only */}
         <p className="md:hidden absolute inset-x-0 top-1/2 -translate-y-1/2 text-center italic font-light text-zinc-400 text-[13px] tracking-wide pointer-events-none">
@@ -56,12 +57,12 @@ export default function Nav() {
             {NAV_LINKS.map(({ href, label }, i) => (
               <div key={label} className="flex items-center">
                 {i > 0 && <span className="w-px h-3.5 bg-orange-500/60 mx-1" />}
-                <a
+                <Link
                   href={href}
                   className="px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-zinc-400 hover:text-orange-400 transition-colors"
                 >
                   {label}
-                </a>
+                </Link>
               </div>
             ))}
           </div>
@@ -114,14 +115,14 @@ export default function Nav() {
           >
             <div className="px-6 py-2 flex flex-col">
               {NAV_LINKS.filter((l) => !l.desktopOnly).map(({ href, label }) => (
-                <a
+                <Link
                   key={label}
                   href={href}
                   onClick={() => setOpen(false)}
                   className="py-3.5 text-sm font-semibold uppercase tracking-widest text-zinc-400 hover:text-orange-400 transition-colors border-b border-zinc-800/60 last:border-0"
                 >
                   {label}
-                </a>
+                </Link>
               ))}
               <div className="flex items-center gap-5 py-4">
                 {SOCIAL.map(({ href, Icon, label }) => (

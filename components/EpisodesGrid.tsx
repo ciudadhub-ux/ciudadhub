@@ -138,13 +138,17 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
     const id = parseInt(highlightParam, 10);
     if (isNaN(id)) return;
 
-    if (topicParam) {
-      setActiveTopic(topicParam);
-    } else {
-      // Expand visible list so the target episode is rendered
-      const idx = episodes.findIndex((ep) => ep.id === id);
-      if (idx >= 0) setVisibleCount(idx + 1);
-    }
+    // Deferred so state updates don't run synchronously inside the effect
+    // (avoids a double render on mount; see react-hooks/set-state-in-effect)
+    setTimeout(() => {
+      if (topicParam) {
+        setActiveTopic(topicParam);
+      } else {
+        // Expand visible list so the target episode is rendered
+        const idx = episodes.findIndex((ep) => ep.id === id);
+        if (idx >= 0) setVisibleCount(idx + 1);
+      }
+    }, 0);
 
     // Wait for filter + Motion animations to settle (~0.76s max), then scroll precisely
     setTimeout(() => {
@@ -168,20 +172,10 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
 
   const { matchingEps, restEps } = useMemo(() => {
     if (!activeTopic) return { matchingEps: episodes, restEps: [] };
-
-    const matches = (ep: Episode) => !activeTopic || ep.topics.includes(activeTopic);
-
-    const matching = episodes.filter(matches);
-    const matchSet = new Set(matching.map((ep) => ep.id));
-    const rest = episodes.filter((ep) => !matchSet.has(ep.id));
-
-    const shuffled = [...rest];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-
-    return { matchingEps: matching, restEps: shuffled };
+    return {
+      matchingEps: episodes.filter((ep) => ep.topics.includes(activeTopic)),
+      restEps: episodes.filter((ep) => !ep.topics.includes(activeTopic)),
+    };
   }, [episodes, activeTopic]);
 
   return (
