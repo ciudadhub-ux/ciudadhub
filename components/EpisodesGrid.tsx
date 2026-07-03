@@ -185,17 +185,20 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
         data-topics-bar
         className="static md:sticky z-40 -mx-6 px-6 py-3 mb-4 bg-zinc-950/95 backdrop-blur-md top-[98px] md:top-48"
       >
-        <div className="grid grid-rows-[auto_auto_auto] grid-flow-col justify-start items-center gap-2 overflow-x-auto scrollbar-none pb-0.5 md:flex md:flex-wrap md:overflow-visible md:pb-0">
-          <button
-            onClick={() => handleTopicChange(null)}
-            className="px-3.5 py-1.5 rounded-full text-[13px] md:text-base font-medium border transition-all duration-200 shrink-0"
-            style={!activeTopic
-              ? { background: "#f97316", color: "#09090b", borderColor: "#f97316" }
-              : { background: "transparent", color: "#71717a", borderColor: "#3f3f46" }}
-          >
-            Todos
-          </button>
-          {topics.map((topic) => (
+        {(() => {
+          const todosBtn = (
+            <button
+              key="todos"
+              onClick={() => handleTopicChange(null)}
+              className="px-3.5 py-1.5 rounded-full text-[13px] md:text-base font-medium border transition-all duration-200 shrink-0"
+              style={!activeTopic
+                ? { background: "#f97316", color: "#09090b", borderColor: "#f97316" }
+                : { background: "transparent", color: "#71717a", borderColor: "#3f3f46" }}
+            >
+              Todos
+            </button>
+          );
+          const chip = (topic: string) => (
             <div key={topic} className="shrink-0">
               <TopicChip
                 topic={topic}
@@ -204,8 +207,25 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
                 className="px-3 py-1.5 rounded-full text-[13px] md:text-base font-medium border transition-all duration-200"
               />
             </div>
-          ))}
-        </div>
+          );
+          const all = [todosBtn, ...topics.map(chip)];
+          return (
+            <>
+              {/* Móvil: 3 filas empaquetadas que scrollean juntas */}
+              <div className="md:hidden overflow-x-auto scrollbar-none">
+                <div className="flex flex-col gap-2 w-max">
+                  {[0, 1, 2].map((r) => (
+                    <div key={r} className="flex gap-2">
+                      {all.filter((_, i) => i % 3 === r)}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* Desktop: wrap normal */}
+              <div className="hidden md:flex md:flex-wrap gap-2">{all}</div>
+            </>
+          );
+        })()}
       </div>
 
       {/* Matching count */}
