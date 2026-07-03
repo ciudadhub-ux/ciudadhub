@@ -15,6 +15,13 @@ const TOPIC_COLORS: Record<string, { h: number; s: number }> = {
   "Espacio Público":   { h: 84,  s: 81 },
 };
 
+export function topicHsl(topic: string, lightness: number, alpha = 1) {
+  const c = TOPIC_COLORS[topic] ?? { h: 30, s: 60 };
+  return alpha < 1
+    ? `hsl(${c.h} ${c.s}% ${lightness}% / ${alpha})`
+    : `hsl(${c.h} ${c.s}% ${lightness}%)`;
+}
+
 export function topicStyle(topic: string, active: boolean, hovered: boolean) {
   const c = TOPIC_COLORS[topic] ?? { h: 30, s: 60 };
   if (active) {

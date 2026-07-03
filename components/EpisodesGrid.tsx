@@ -6,6 +6,7 @@ import { MapPin } from "@phosphor-icons/react";
 import { Episode } from "@/lib/data";
 import { SpotifyIcon, AppleIcon } from "./PodcastIcons";
 import { TopicChip } from "./TopicChip";
+import TopicWheel from "./TopicWheel";
 
 interface EpisodesGridProps {
   episodes: Episode[];
@@ -211,15 +212,13 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
           const all = [todosBtn, ...topics.map(chip)];
           return (
             <>
-              {/* Móvil: 3 filas empaquetadas que scrollean juntas */}
-              <div className="md:hidden overflow-x-auto scrollbar-none">
-                <div className="flex flex-col gap-2 w-max">
-                  {[0, 1, 2].map((r) => (
-                    <div key={r} className="flex gap-2">
-                      {all.filter((_, i) => i % 3 === r)}
-                    </div>
-                  ))}
-                </div>
+              {/* Móvil: rueda tipo selector iOS */}
+              <div className="md:hidden">
+                <TopicWheel
+                  topics={topics}
+                  activeTopic={activeTopic}
+                  onChange={handleTopicChange}
+                />
               </div>
               {/* Desktop: wrap normal */}
               <div className="hidden md:flex md:flex-wrap gap-2">{all}</div>
