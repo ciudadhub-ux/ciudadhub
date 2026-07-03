@@ -147,14 +147,14 @@ function GuestCard({ guest }: { guest: GuestData }) {
             )}
             {ep.spotifyUrl && (
               <a href={ep.spotifyUrl} target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-1 text-xs text-zinc-500 hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
+                className="flex items-center gap-1 text-xs text-green-400 md:text-zinc-500 md:hover:text-green-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
                 <SpotifyIcon className="w-3 h-3 shrink-0" />
                 <span>Spotify</span>
               </a>
             )}
             {ep.appleUrl && (
               <a href={ep.appleUrl} target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-1 text-xs text-zinc-500 hover:text-purple-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
+                className="flex items-center gap-1 text-xs text-purple-400 md:text-zinc-500 md:hover:text-purple-400 transition-colors px-2 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-800">
                 <AppleIcon className="w-3 h-3 shrink-0" />
                 <span>Apple</span>
               </a>
