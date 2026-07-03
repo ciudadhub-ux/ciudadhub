@@ -54,7 +54,7 @@ export default function HeroSlider({ episodes }: { episodes: Episode[] }) {
       {/* ── DESKTOP (md+) ─────────────────────────────────────── */}
       <div className="hidden md:block pl-10 pr-3 max-w-5xl mx-auto">
         <div className="relative rounded-2xl overflow-hidden" style={{ height: "30rem" }}>
-          <AnimatePresence mode="wait" custom={direction}>
+          <AnimatePresence mode="wait" custom={direction} initial={false}>
             <motion.div
               key={ep.id}
               custom={direction}
@@ -143,7 +143,7 @@ export default function HeroSlider({ episodes }: { episodes: Episode[] }) {
       {/* ── MOBILE (< md) ─────────────────────────────────────── */}
       <div className="md:hidden px-4">
         <div className="relative rounded-xl overflow-hidden" style={{ height: "16rem" }}>
-          <AnimatePresence mode="wait" custom={direction}>
+          <AnimatePresence mode="wait" custom={direction} initial={false}>
             <motion.div
               key={ep.id}
               custom={direction}

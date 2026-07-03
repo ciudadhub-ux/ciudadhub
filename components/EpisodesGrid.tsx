@@ -215,7 +215,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
       )}
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence mode="popLayout" initial={false}>
           {(isFilterActive ? matchingEps : matchingEps.slice(0, visibleCount)).map((ep, i) => (
             <EpisodeCard
               key={ep.id}
