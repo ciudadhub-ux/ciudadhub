@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { SpotifyLogo, XLogo, InstagramLogo, FacebookLogo, Envelope } from "@phosphor-icons/react/dist/ssr";
 import { AppleIcon } from "./PodcastIcons";
+import FooterLogo from "./FooterLogo";
 
 export default function Footer() {
   return (
@@ -9,13 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-[1fr_auto_auto] gap-8 md:gap-12 items-start mb-12">
           <div className="col-span-2 md:col-span-1 max-w-xs">
             <div className="mb-5">
-              <Image
-                src="/logo.webp"
-                alt="Ciudad Hub Podcast"
-                width={69}
-                height={80}
-                className="h-20 w-auto"
-              />
+              <FooterLogo />
             </div>
             <p className="text-zinc-600 text-sm">Desde 2016</p>
           </div>
