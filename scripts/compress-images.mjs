@@ -1,5 +1,5 @@
 import sharp from "sharp";
-import { readdir, stat } from "fs/promises";
+import { readdir, stat, writeFile, unlink } from "fs/promises";
 import { join, extname, basename } from "path";
 
 const FOLDERS = [
@@ -25,25 +25,24 @@ async function processFile(filePath, maxWidth, quality) {
   }
 
   let buf;
+  let outPath = filePath;
   if (ext === ".png") {
-    // Keep PNG only if it has transparency, otherwise convert to JPEG
+    // PNG con transparencia se queda PNG; foto opaca en PNG pasa a .jpg (mucho más liviana)
     if (meta.hasAlpha) {
       buf = await pipeline.png({ compressionLevel: 9, effort: 10 }).toBuffer();
     } else {
       buf = await pipeline.jpeg({ quality, mozjpeg: true }).toBuffer();
-      // Note: we overwrite the .png file with JPEG bytes — browsers handle this fine
-      // since the Content-Type comes from the HTTP header, not the extension on GH Pages
-      // Actually, let's keep PNG format to avoid extension mismatch issues
-      buf = await pipeline.png({ compressionLevel: 9, effort: 10 }).toBuffer();
+      outPath = filePath.slice(0, -ext.length) + ".jpg";
     }
   } else {
     buf = await pipeline.jpeg({ quality, mozjpeg: true }).toBuffer();
   }
 
   const after = buf.length;
-  if (after < before) {
-    await sharp(buf).toFile(filePath);
-    return { filePath, before, after, saved: before - after };
+  if (after < before || outPath !== filePath) {
+    await writeFile(outPath, buf);
+    if (outPath !== filePath) await unlink(filePath);
+    return { filePath: outPath, before, after, saved: before - after };
   }
   return { filePath, before, after: before, saved: 0, skipped: true };
 }
