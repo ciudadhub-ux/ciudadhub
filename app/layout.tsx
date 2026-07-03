@@ -31,8 +31,8 @@ export default function RootLayout({
       className={`${outfit.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1TGRB4GKB" />
-        <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N1TGRB4GKB');` }} />
+        {/* gtag se inyecta tras el evento load para no competir con el contenido en conexiones lentas */}
+        <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N1TGRB4GKB');window.addEventListener('load',function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-N1TGRB4GKB';document.head.appendChild(s);});` }} />
       </head>
       <body className="bg-zinc-950 text-zinc-50 font-sans">{children}</body>
     </html>
