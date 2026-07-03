@@ -54,17 +54,22 @@ export default function Nav() {
             El Podcast de las Ciudades
           </p>
           <div className="flex items-center">
-            {NAV_LINKS.map(({ href, label }, i) => (
-              <div key={label} className="flex items-center">
-                {i > 0 && <span className="w-px h-3.5 bg-orange-500/60 mx-1" />}
-                <Link
-                  href={href}
-                  className="px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-zinc-400 hover:text-orange-400 transition-colors"
-                >
-                  {label}
-                </Link>
-              </div>
-            ))}
+            {NAV_LINKS.map(({ href, label }, i) => {
+              // Links con ancla usan <a> nativo: Link de Next no scrollea
+              // cuando el hash apunta a la página actual
+              const LinkTag = href.includes("#") ? "a" : Link;
+              return (
+                <div key={label} className="flex items-center">
+                  {i > 0 && <span className="w-px h-3.5 bg-orange-500/60 mx-1" />}
+                  <LinkTag
+                    href={href}
+                    className="px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-zinc-400 hover:text-orange-400 transition-colors"
+                  >
+                    {label}
+                  </LinkTag>
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -114,16 +119,19 @@ export default function Nav() {
             className="md:hidden overflow-hidden border-t border-zinc-800 bg-zinc-950/98 backdrop-blur-md"
           >
             <div className="px-6 py-2 flex flex-col">
-              {NAV_LINKS.filter((l) => !l.desktopOnly).map(({ href, label }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  onClick={() => setOpen(false)}
-                  className="py-3.5 text-sm font-semibold uppercase tracking-widest text-zinc-400 hover:text-orange-400 transition-colors border-b border-zinc-800/60 last:border-0"
-                >
-                  {label}
-                </Link>
-              ))}
+              {NAV_LINKS.filter((l) => !l.desktopOnly).map(({ href, label }) => {
+                const LinkTag = href.includes("#") ? "a" : Link;
+                return (
+                  <LinkTag
+                    key={label}
+                    href={href}
+                    onClick={() => setOpen(false)}
+                    className="py-3.5 text-sm font-semibold uppercase tracking-widest text-zinc-400 hover:text-orange-400 transition-colors border-b border-zinc-800/60 last:border-0"
+                  >
+                    {label}
+                  </LinkTag>
+                );
+              })}
               <div className="flex items-center gap-5 py-4">
                 {SOCIAL.map(({ href, Icon, label }) => (
                   <a
