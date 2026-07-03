@@ -18,21 +18,16 @@ export default function InvitadosPage() {
       title: ep.title,
       spotifyUrl: ep.spotifyUrl,
       appleUrl: ep.appleUrl,
-      href: `/?highlight=${ep.id}${topics[0] ? `&topic=${encodeURIComponent(topics[0])}` : ""}#ep-${ep.id}`,
     };
 
     if (!seen.has(name)) {
       seen.set(name, {
         name,
         guestRole: ep.guestRole,
-        episodeId: ep.id,
         city: ep.city,
         country: ep.country,
         topics,
         photoSrc: ep.guestImageUrl || null,
-        href: epLink.href,
-        spotifyUrl: ep.spotifyUrl,
-        appleUrl: ep.appleUrl,
         episodes: [],
       });
       guestEpisodes.set(name, []);
