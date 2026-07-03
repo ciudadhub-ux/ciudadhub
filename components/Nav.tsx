@@ -35,7 +35,7 @@ export default function Nav() {
           className="flex items-center pr-4 md:pr-8 shrink-0"
         >
           <Image
-            src="/logo.png"
+            src="/logo.webp"
             alt="Ciudad Hub Podcast"
             width={138}
             height={155}

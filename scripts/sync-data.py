@@ -89,15 +89,15 @@ MANUAL_GUEST_NAMES: dict[str, str] = {
 }
 
 MANUAL_GUEST_IMAGES: dict[str, str] = {
-    "Xavi Matilla":                    "Xavier Matilla.jpeg",
-    "Miguel Rodríguez Planas":         "Miquel_Rodriguez_Planas.jpg",
-    "Manu Fernández":                  "Man Fernandez.jpg",
-    "Patricia Alalta":                 "Patricia Alata.jpg",
-    "Aida Esteban Millet":             "Aida Esteban Millat.jpeg",
-    "Guillermo Peñalosa":              "Guillermo Gil Peñaloza.jpeg",
-    "CiudadHub":                       "CiudadHub.png",
-    "Silvia Casorrán":                 "Silvia Cazorran.jpeg",
-    "Ellis Juan":                      "Elis Juan.jpeg",
+    "Xavi Matilla":                    "Xavier Matilla.webp",
+    "Miguel Rodríguez Planas":         "Miquel_Rodriguez_Planas.webp",
+    "Manu Fernández":                  "Man Fernandez.webp",
+    "Patricia Alalta":                 "Patricia Alata.webp",
+    "Aida Esteban Millet":             "Aida Esteban Millat.webp",
+    "Guillermo Peñalosa":              "Guillermo Gil Peñaloza.webp",
+    "CiudadHub":                       "CiudadHub.webp",
+    "Silvia Casorrán":                 "Silvia Cazorran.webp",
+    "Ellis Juan":                      "Elis Juan.webp",
 }
 
 
@@ -149,7 +149,7 @@ def find_guest_image(guest_name: str, ep_id=None) -> str:
         _IMAGE_MAP = _build_image_map()
     # 1. ID-based match (highest priority): file named {id}.jpg / {id}.jpeg / {id}.png
     if ep_id is not None:
-        for ext in (".jpg", ".jpeg", ".png"):
+        for ext in (".webp", ".jpg", ".jpeg", ".png"):
             fname = f"{ep_id}{ext}"
             fpath = os.path.join(INVITADOS_DIR, fname)
             if os.path.exists(fpath):

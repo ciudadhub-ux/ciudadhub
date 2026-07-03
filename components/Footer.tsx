@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1 max-w-xs">
             <div className="mb-5">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Ciudad Hub Podcast"
                 width={69}
                 height={80}

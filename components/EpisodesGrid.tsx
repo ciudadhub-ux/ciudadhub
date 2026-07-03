@@ -157,9 +157,9 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
       if (el) {
         // Use the sticky bar's stuck position (NAV height + bar height) so the
         // clearance is correct regardless of where the page is when this fires.
-        const stickyBar = wrapperRef.current?.querySelector<HTMLElement>(".sticky");
+        const stickyBar = wrapperRef.current?.querySelector<HTMLElement>("[data-topics-bar]");
         const NAV_H = window.innerWidth >= 768 ? 192 : 98;
-        const stickyH = stickyBar ? stickyBar.offsetHeight : 0;
+        const stickyH = stickyBar && getComputedStyle(stickyBar).position === "sticky" ? stickyBar.offsetHeight : 0;
         const clearance = NAV_H + stickyH + 16;
         const top = el.getBoundingClientRect().top + window.scrollY - clearance;
         window.scrollTo({ top, behavior: "instant" });
@@ -182,9 +182,10 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
     <div ref={wrapperRef}>
       {/* Topic filter — sticky secondary nav */}
       <div
-        className="sticky z-40 -mx-6 px-6 py-3 mb-4 bg-zinc-950/95 backdrop-blur-md top-[98px] md:top-48"
+        data-topics-bar
+        className="static md:sticky z-40 -mx-6 px-6 py-3 mb-4 bg-zinc-950/95 backdrop-blur-md top-[98px] md:top-48"
       >
-        <div className="flex md:flex-wrap gap-2 overflow-x-auto md:overflow-visible scrollbar-none pb-0.5 md:pb-0">
+        <div className="grid grid-rows-[auto_auto_auto] grid-flow-col justify-start items-center gap-2 overflow-x-auto scrollbar-none pb-0.5 md:flex md:flex-wrap md:overflow-visible md:pb-0">
           <button
             onClick={() => handleTopicChange(null)}
             className="px-3.5 py-1.5 rounded-full text-[13px] md:text-base font-medium border transition-all duration-200 shrink-0"

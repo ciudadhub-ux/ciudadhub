@@ -6,7 +6,7 @@ const TEAM = [
     country: "Canadá",
     twitter: "andrescarpan",
     linkedin: "https://www.linkedin.com/in/andrescarpanzano",
-    photo: "/images/equipo/Andres Carpanzano_edited.jpg",
+    photo: "/images/equipo/Andres Carpanzano_edited.webp",
     bio: "Argentino, de Santa Fe, Director de [Diplomacity](https://www.diploma.city) consultor especializado en estrategias de comunicación para personalidades, instituciones, ciudades y empresas.\n\nEs delegado oficial del Smart City Expo World Congress de Barcelona para: Canada, Argentina, Uruguay, Paraguay, República Dominicana, Costa Rica, Panamá y Bolivia.\n\nBasado entre Wakefield, Québec y Buenos Aires, su trabajo conecta perspectivas globales con las realidades y desafíos urbanos de la región.",
   },
   {
@@ -14,7 +14,7 @@ const TEAM = [
     country: "Argentina",
     twitter: "iargonz",
     linkedin: "https://www.linkedin.com/in/ignacioargonz/",
-    photo: "/images/equipo/Ignacio Argonz.jpg",
+    photo: "/images/equipo/Ignacio Argonz.webp",
     bio: "Rosarino, radicado en la Ciudad Autónoma Buenos Aires. Licenciado en Relaciones Internacionales y Magíster en Políticas Públicas, especializado en gestión urbana y ciudades inteligentes. Hace más de 15 años trabaja con gobiernos y decisores del sector público y privado en estrategias de desarrollo territorial, transformación digital y Smart Cities. Acompaña procesos de innovación con foco en desarrollo económico y arraigo, articulando tecnología, gestión y comunicación estratégica. Piensa lo global con impacto local, adaptando buenas prácticas internacionales a ciudades de América Latina.",
   },
   {
@@ -22,7 +22,7 @@ const TEAM = [
     country: "España",
     twitter: null,
     linkedin: "https://www.linkedin.com/in/oscarchamat/",
-    photo: "/images/equipo/Oscar Chamat.jpg",
+    photo: "/images/equipo/Oscar Chamat.webp",
     bio: "Bogotano de nacimiento, Colombiano por adopción. Desde finales de los años 90 tratando de entender el fenómeno urbano en diferentes escalas, desde pequeñas ciudades en Colombia hasta escalas metropolitanas/regionales en Europa. Radicado en Barcelona desde hace 16 años pero con la suerte de poder seguir vinculado a Latinoamérica en lo profesional, personal y académico.",
   },
 ];
