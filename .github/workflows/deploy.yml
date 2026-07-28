@@ -44,3 +44,13 @@ jobs:
     steps:
       - uses: actions/deploy-pages@v4
         id: deployment
+        continue-on-error: true
+
+      # deploy-pages falla intermitentemente con rechazos rápidos de la API;
+      # esperar y reintentar una vez resuelve la gran mayoría de los casos
+      - if: steps.deployment.outcome == 'failure'
+        run: sleep 30
+
+      - if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        id: deployment-retry
