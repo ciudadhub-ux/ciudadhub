@@ -1,0 +1,200 @@
+Patricio Ovalle (00:00)
+Tenemos programas de aceleración, tenemos programas de acompañamiento, tenemos financiamiento, tenemos acceso a tecnología. Lo que nos falta es hambre.
+
+Andrés (00:12)
+Hola, estamos en Ciudad Hub, el podcast en el que hablamos sobre ciudades y donde las ciudades también hablan a través de sus protagonistas. Soy Andrés Carpanzano, estoy en Wakefield, muy cerquita de la capital de Canadá, Ottawa, y hago Ciudad Hub con Ignacio Argonz desde Buenos Aires. Hola Nacho, ¿cómo estás?
+
+Ignacio Argonz (00:33)
+Hola Andrés, un gusto escucharte, muy bien por acá en Buenos Aires.
+
+Hoy tenemos el honor de conversar con Patricio Valle-Wood, es consultor senior de innovación en el BID. Trabaja las temáticas de GovTech, de innovación y Smart Cities para distintos gobiernos de América Latina.
+
+Andrés (00:50)
+Bienvenido, Patricio, a Ciudad Hub Un placer conversar contigo.
+
+Patricio Ovalle (00:55)
+Andrés, Hola Ignacio, un gusto saludarlo y muchas gracias por la invitación.
+
+Andrés (00:59)
+Bueno, como decía en la introducción, Ciudad Hub nos gusta hablar con protagonistas, con gente que ha estado ahí en la trinchera de la gestión, del desarrollo de las ciudades. Vos particularmente tuviste un rol protagónico en la ciudad de Providencia, en Chile, en el desarrollo de su hub, de la estrategia de innovación de la ciudad.
+
+Situanos a Providencia en el mapa y contanos cómo nació tu experiencia, cómo fue el desarrollo que llevaron adelante.
+
+Patricio Ovalle (01:32)
+Bien, bueno, repito las gracias por la invitación. Creo que estos espacios son tremendamente importantes para visibilizar y validar la innovación en el ámbito público en Ciudad de. Dicho eso, yo llegué a Providencia en diciembre del año 2016 cuando sume la alcaldesa de Belly Matei, que fue ex candidata a la presidencia, quien me llama y me invita a este proyecto porque tenía la ilusión de hacer de Providencia el mejor municipio de Chile para innovar, emprender y trabajar.
+
+municipio que tiene aproximadamente 150.000 habitantes.
+
+digamos, no es mucho, una población de la región metropolitana Santiago que son 8 millones, se podríamos decir que Providencia no es tan importante, pero si yo les dijera que recibe diariamente a cerca de 2 millones de personas, ahí cambia un poco la importancia de Providencia. Providencia es probablemente el municipio más importante de la región metropolitana, el municipio que tiene mayor cantidad de universidades, estaciones de subway, metros, ¿no es cierto? Bancos, instituciones financieras. La torre más alta latinoamérica se encuentra en Providencia cerca de
+
+50.000 patentes comerciales, 50.000 empresas, las empresas más grandes de Chile, alojan en Providencia, etcétera. Y también geográficamente se ubica dentro de un área muy estratégica para la región porque es donde está la plaza Italia, lo que sería el obelisco para ustedes en Buenos Aires, que son argentinos, entonces tiene una importancia relevante. Y comenzamos entonces a hacer un trabajo súper importante porque los municipios usualmente son los olvidados del ecosistema de emprendimiento e innovación.
+
+Pero son los más importantes, finalmente. Las empresas no pueden emprender o comenzar una actividad comercial si no hay un municipio que le entrena una licencia o una patente municipal para poder ejercer esa labor. Entonces, hicimos todo un cambio paradigma, quisimos transformar a este municipio olvidado del ecosistema, hacer protagonista del ecosistema de aprendimiento e innovación, empezar a desarrollar un proyecto que involucra al ciudadano para hacer partco diseño de las políticas públicas, cuando se hace las ordenanzas, por ejemplo, del espacio público.
+
+cuando vemos bares, restaurantes, cafeterías que hacen uso de las veredas, ¿no cierto? Y que la municipalidad simplemente va y les dice cómo deben poner la silla y mesa. Nosotros cambiamos eso y empezamos a un codiceño de la mano con los empresarios para que ellos mismos pudieran participar en las ordenanzas municipales, ¿no cierto? Y empezar a sacar esta caricatura del municipio que solamente la interacción que ofrece al ciudadano es cuando hay que pagar algo.
+
+o bien tienen que pagar una multa o algún mal comportamiento van a la municipalidad, ¿correcto? Por tanto, desde ahí nace este deseo y empezamos ya a desarrollar diversas verticales para fomentar el emprendimiento, la innovación, el turismo y otros ámbitos que vivía la municipalidad. Diez años después lo han tomado muy en serio en Chile.
+
+Ignacio Argonz (04:18)
+Pato, vos viajás muchísimo por el mundo, siempre estás formando, estás viendo casos de éxito y sos uno de los que más fuertemente está trabajando el tema de los hubs de innovación, ¿no? De los hubs como conectores, las ciudades como lugares de atracción del talento y de la producción. ¿Cómo crees que se logra que un hub conecte ciudades entre sí?
+
+y no sea solo una puerta tal vez de salida al exterior. Y en ese caso, contarnos un poco cómo se está implementando la idea de hubs de innovación en la región y tal vez qué modelos del mundo te interesan o te llaman la atención para que conozcamos.
+
+Patricio Ovalle (05:02)
+Bueno, a ver, yo siento que para que haya innovación pública y haya en este tipo de proyectos hubs, labs, distritos y cualquier otro, se requiere de un fuerte apoyo político. Primero hay que tener una alcalde, alcaldesa o intendente, intendenta que tenga la convicción que la innovación y el emprendimiento debe ser parte del core de la gestión municipal. Dicho esto, hay otro aspecto que es tremendamente importante que es la confianza.
+
+Si no hay confianza, no se pueden desarrollar ecosistemas de colaboración entre el ciudadano y la ciudad, entre el emprendedor y la ciudad. Por tanto, cuando hablamos de Hubs, Labs y estos espacios de innovación, tiene que haber apoyo político y confianza, que es la base para el desarrollo de la estrategia.
+
+un HAF o un LAF o un distrito no requiere grandes inversiones, no requiere grandes edificios. Requiere capital social, es decir, requiere un equipo de personas capacitadas para poder desarrollar
+
+lo que quiere el alcalde en materia de innovación y emprendimiento. Porque el alcalde te dice el qué, qué quiero, que es el sueño. Y es la obra del equipo hacer el cómo, cómo lo vamos a hacer, cómo vamos a acercar ese objetivo a cumplir, cómo generamos las condiciones para que el empresario pueda emprender con mayores probabilidades de éxito, cómo vamos a generar la cancha para que el ciudadano pueda desarrollar de mejor manera su plan de vida o su proyecto de vida, lo que sería lo más parecido, en mi opinión, a una Smart City.
+
+o cómo vamos a hacer para que este empresario pueda pasar de un producto commodity a un producto con la mayor agregación de valores posible dentro de un programa municipal. Entonces ahí aparecen estos espacios. Digo hubs, labs, distritos porque cada municipalidad le pone, ciudad, va poniendo, acuñando el término que quiere. Pero estos centros ayudan no solamente para la generación de redes, el conocimiento, conectarnos uno a otro para inspirar a base de las mejores prácticas, algo que tú mencionabas, Ignacio.
+
+sino que también te apoya en la formación, ¿no es cierto? Te instala habilidades, conocimiento y competencia cuando empiezan a desarrollar cursos, talleres, Te generan conexiones improbables, hacen que un emprendedor que no tiene las redes pueda conectarse con un empresario más grande y que el simple hecho de una conversación a veces a ese emprendedor le puede cambiar la vida. La municipalidad por su parte no solamente puede recaudar más impuestos cuando tiene emprendedores o empresas más establecidas.
+
+sino que también puede empezar a desarrollar el destino turístico como un valor de la gestión. Entonces, el efecto multiplicador de un hub, Ignacio, es tremendamente importante. Lo significativo acá es que las autoridades vean valor en esto. Y es labor entonces de quien está impulsando el hub o estos espacios de innovación que pongan estos temas en la agenda y tengan la capacidad para seducir y atraer apoyo político a estas materias.
+
+Andrés (07:45)
+Es notable que lo primero que dijiste, que lo necesario para que una ciudad tenga una estrategia de desarrollo empresarial, tecnológico, es la confianza, que no pasa ni por la tecnología, ni siquiera por la disposición de fondos ilimitados. Y quizás una equivocación que muchas ciudades cometen es mirar la Meca, mirar Silicon Valley y pretender que cada ciudad del mundo puede ser un...
+
+Silicon Valley, cuando lo que se trata es de la especificidad del ecosistema local, digamos, para que uno puede ser bueno, porque no se puede ser bueno en todo. ¿Qué hay en el diccionario de las buenas prácticas de Patricio Ovalle para desarrollar una estrategia en una ciudad de Latinoamérica que mal que mal tienen características similares todas?
+
+Patricio Ovalle (08:38)
+Mira, este tema a mí me apasiona. Antes de responder a esa pregunta, Andrés, me gustaría comentar algo. Si tú miras los grandes indicadores y empiezas a decir cuáles son las ciudades más avanzadas en diferentes materias, en innovación, en educación, en confianza, en las autoridades, políticas públicas, en libertad económica, te das cuenta que si cruzamos todos esos rankings van a ver un grupo de ciudades o países, más bien, que están arriba.
+
+y que lideran todo esos rankings. O sea que ahí está la hoja de ruta, podríamos decir, que constituye que cuando una ciudad quiere ser o un país quiere ser líder, tiene que trabajar muy bien aspectos como, por ejemplo, la innovación, la educación, ¿no es cierto? La transparencia que tiene que con la corrupción y justamente también la libertad económica. Entonces son cuatro pilares fundamentales para que esto pueda ocurrir, ¿no es cierto? Ahora bien, cuando vemos las buenas prácticas nos damos cuenta que es...
+
+hay cuestiones que son fundamentales. Lo dije al principio, sin apoyo político no hay innovación. Estamos llenos de superhéroes, Andrés e Ignacio, que quieren innovar, empujan proyectos, son tremendamente talentosos dentro de la función pública, pero no son capaces ni siquiera de tener 10 minutos con su jefe para hablar de un proyecto de innovación. Entonces, lamentablemente no vamos poder innovar si ese profesional no tiene la capacidad de seducir o al revés.
+
+si ese jefe no tiene la capacidad ni sensibilidad de poder entender el valor de la innovación. Por eso el apoyo político es fundamental, porque te abre oportunidades.
+
+La confianza tiene que ver con que un ciudadano, un sujeto de beneficio, emprendedor, vecino, ciudadano, innovador, crea y apueste por la relación entre ciudad y ciudadano. Porque el ciudadano paga un impuesto, ¿no es cierto? Pero acá las ciudades compiten. Es decir, cuando hay, cuando va una empresa grande, elige entre Santiago de Chile, Buenos Aires, Bogotá o Lima para invertir. O entre los países si tú quieres otras canas, ¿cierto?
+
+Y ahí entran los factores que yo te decía, mano, obra, etc. Entonces esos aspectos son los macros. Ahora bien, se requiere tener un equipo capacitado, ¿no cierto? Al menos cinco perfiles se requiere para la innovación. Hay un estudio que dice que los seres humanos podemos manejar aproximadamente entre cinco y siete problemas antes de cometer errores irremediables.
+
+Y un proceso de innovación enfrenta cerca de 120 problemas, de los cuales se activan aproximadamente 30 simultáneamente. Por tanto, quiere decir que si comentemos entre 5 y 7 problemas, si podemos manejar entre 5 y 7 problemas, sin cometer errores y son 30 problemas, necesitamos al menos 5 perfiles. Y los 5 perfiles hay uno que es tremendamente significativo, en mi opinión, y que poco se le da importancia. El aspecto legal. Un laboratorio de innovación tiene que tener un abogado dentro del equipo de innovación.
+
+que no te diga que no se puede hacer, que te diga cómo lo puedo hacer.
+
+porque la legislación pública no es tan sonsa como pensamos, sino que siempre se puede buscar la manera para hacer las cosas. Entonces el abogado te decir sí, pero o no pero. Luego de eso necesitas una persona que le pueda dar solvencia y sostenibilidad a la idea del negocio o la idea de la innovación. Y eso tiene que ver con un aspecto más ligado a los negocios o la innovación empresarial. Después está el diseño, diseño de servicio con foco del ciudadano. Tercer perfil.
+
+El cuarto perfil tiene que ver con el ámbito más administrativo, ¿no cierto? Que le da la viabilidad administrativa al proyecto. Y por último está quien dirige el equipo que sería el director. Esos cinco perfiles sumados a los valores transversales de la confianza, el apoyo político, ¿no cierto? Son los que hoy día constituyen dentro de lo que yo he podido ver las mejores prácticas. Y caso concreto que me pidieron, podemos ver el caso de Estonia, ¿no es cierto?
+
+que nace con una voluntad de tres personas que el año 2007 además este país fue, ustedes saben, fue hackeado por, se dice que fue por Rusia, ¿no es cierto? Y renace en digital, ¿no es cierto? ¿Y por qué renace en digital? Porque hay la voluntad de tres personas que generan el apoyo político con convicción, que generan las condiciones con un equipo para poder rediseñar entonces un programa
+
+para que nazca un país completamente en digital. Y lo mismo hizo Copenhague en otras materias, lo mismo hizo Berlín en otras materias. creo que lo que estamos conversando son temas tremendamente importantes y que no siempre se les da la importancia al momento de implementar estos espacios de innovación en la administración pública.
+
+Ignacio Argonz (13:10)
+Buenísimo, Patricio, vos estás hablando de Estonia, estás hablando de Dinamarca, estás hablando de países que le dieron un impulso a lo que se llama el GovTech, ¿no? Y que están liderando lo que son servicios para el ciudadano. Y sin duda, estas características traversales que vos hablás, de la capacidad, del talento, de la confianza, del liderazgo, obviamente atravesados por una visión legal, son fundamentales. Y te quería preguntar respecto al GovTech, que se habla mucho, que es súper importante.
+
+¿Cómo está el mercado de GovTech o el desarrollo del GovTech en la región, en América Latina? ¿Y cuáles crees que son sus principales desafíos, más allá del desafío principal que tiene que ver con la inteligencia artificial que es un mundo aparte? Y que también me gustaría que nos cuentes un poquito de eso.
+
+Patricio Ovalle (13:56)
+Mira, esto es bien parecido cuando hablamos de la expectativa de vida de los ciudadanos. Yo encuentro que es súper interesante ver qué países han ido largando la expectativa de vida de las personas, pero es más seductor cuando hablamos de la expectativa de vida saludable de las personas, ¿no cierto? Esto es muy parecido porque cuando hablamos de los servicios digitales, tecnología aplicada al gobierno, nos falta incorporar una palabra que es tremendamente importante, seguros.
+
+servicios digitales seguros, tecnología aplicada al gobierno de manera segura. Porque fíjate Ignacio, que ocurre algo, mientras las personas cuando más sabemos de datos, menos datos queremos entregar nosotros. Porque el tema de la seguridad hoy día tiene que ser parte de un estándar. Antiguamente el slogan del gobierno británico, que es uno de los grandes exponentes de materia GovTech, era digital por defecto.
+
+Si ellos tenían mil sitios web y lo unificaron en una sola plataforma con foco en el ciudadano. Digital por defecto. Yo diría, eso ya queda corto. Ya no es digital por defecto. Tiene que ser digital y seguro por defecto. Es decir, cuando tú le entregas tus datos a una introducción pública, y esto, Andrés, que trabaja en materia de Smart City, y tú también, Nacho, lo deben saber muy bien, al final te deja muy expuesto a todas las interacciones que tú vas a hacer. Y ese es el gran, entonces,
+
+esa es la gran propuesta de valor que tiene el gobierno de Estonia con su X-Road, ¿no cierto? Que básicamente funciona con el principio de una sola vez, para las personas que nos están escuchando y que no saben, significa que yo le entrego al Estado una sola vez mis datos y nunca más debo entregar ese dato a una institución pública porque el Estado ya lo empieza a operar de una manera digital pero además segura, ¿sí? Entonces, aquí por ejemplo, cuando nace un niño,
+
+Si Andrés es papá acá en Tallinn, ejemplo, ese niño ya sale con su DNI desde la clínica, desde el hospital. Ese dato ya se va al Ministerio de Educación diciendo que Andrés fue papá y entonces en tres años más hay que guardarle un cupo en la sala de cuna o jardín infantil y en cuatro en el colegio y en 18 en la universidad. ¿Sí me explico?
+
+Finalmente lo que estamos haciendo es una administración basada en datos, seguros, con foco en el ciudadano y que responde entonces a todas las demandas según el ciclo vía del ciudadano de una manera anticipatoria y no reaccionaria. ¿Sí me explico?
+
+Andrés (16:24)
+Acá hay un tema clave que es la escalabilidad. Muchas veces las experiencias de ciudades o de países con un millón de habitantes, un millón de 300.000 habitantes, como el caso de Estonia, uno automáticamente dice, bueno, ¿cómo hacemos esto en un país de 40, de 50? Y con las características de las sociedades latinoamericanas que tienen mucha inequidad.
+
+un estado que es débil en general, pretende ser fuerte pero es débil a la hora de la ejecución. Pero vos nombraste, diste una clave, el foco en las personas. Eso cambia toda la perspectiva. El gobierno se enfoca en los servicios que le quiere dar a los ciudadanos. Y, corregime si anoté mal, pero dijiste que en Providencia el claim era vivir y trabajar. Una ciudad para vivir y trabajar. Y esto muchas veces está dividido en las ciudades.
+
+las ciudades tienen espacios para vivir y espacios para trabajar. Ya sean esos espacios para trabajar oficinas en el centro o el famoso polígono industrial que queda siempre en las afueras de la ciudad. ¿Cuál es tu experiencia? Sé que no es tu tema el urbanismo, pero ¿cómo pueden hacer las ciudades para realmente integrar esto y que efectivamente el vivir y trabajar se dé dentro de lo que es la ciudad misma?
+
+Patricio Ovalle (17:44)
+Bueno, ahí aparece el tema de Carlos Moreno, ¿no cierto? Que es la ciudad de los 15 minutos. Que ahora, con lo digital y los entornos más bien remoto, yo vivo en Chile. En este momento estoy en Estonia y trabajo para Estados Unidos.
+
+Y eso es interesante, que llevo mi computador, mi oficina y con Nacho coordinamos para esta entrevista en diferentes lugares. Nacho está en Argentina, tú estás en Canadá y yo estoy en Chile. Y dos estamos trabajando o conversando en este entorno. Yo creo, Andrés, que tiene que ver con algunos aspectos que ya mencionamos. La ciudad tiene que entender quién es el arquetipo de sus trabajadores, ¿no cierto?
+
+Y cuando hablamos de los arquetipos es ponerse los pies y los zapatos de este ciudadano trabajador. ¿Cuáles son las interacciones que hace con la ciudad? Y desde ahí entonces hacer un diseño o un codiseño de la ciudad que creemos, ¿no cierto? Fíjate, perdona que vuelva de nuevo a Estonia, pero hay casos súper interesantes acá. Yo sé que tú Nacho ha estado, ¿no cierto?, en Estonia.
+
+Ignacio Argonz (18:45)
+Sí, estuve el año pasado con una delegación de asesores políticos de Argentina y vuelvo ahora en mayo. Así que voy a tener la oportunidad de seguir aprendiendo sobre Estonia.
+
+Patricio Ovalle (18:54)
+Bueno, quizás Nacho tú te diste cuenta que Estonia es una ciudad muy fría, limitante, a veces por menos 16, menos 15 grados, digo, Tallinn por ejemplo. Pero ya han creado microcentro. Entonces Andrés, respondido a tu pregunta, lo que han hecho es muy simple. En paños de ciudad, toman y ponen un gran edificio empresarial. En ese gran edificio empresarial ponen al lado un edificio residencial, uno, dos, tres, En ese paño además ponen uno, dos, tres o cuatro restaurantes.
+
+un supermercado, un shopping center, de tal manera que tú tienes servicios a tres o cuatro minutos, sin la necesidad de tomar tu automóvil, sin la necesidad de tomar un transporte público incluso, y han hecho un diseño entonces muy central en el ciudadano. Y hoy día, ¿eso qué lleva? Que las personas puedan levantarse a trabajar caminando o en corta distancia, incluso en bicicleta, en épocas tan frías, pero que además tengan mucho tiempo libre después de la...
+
+del trabajo porque no tiene el costo del trayecto que, por ejemplo, podría tener una persona en Ciudad de México o en Bogotá, ¿no cierto? Con esta planificación urbana que ha sido tan desproporcionada en algunos aspectos. Entonces, cuando empezamos entender el estilo de vida del arquetipo en el contexto que nos movemos, en este caso, el frío, el calor, empezamos a planificar. Pero claro, para eso, Andrés, también necesitamos muchos recursos económicos, ¿no es cierto? Y cuando hablamos de recursos económicos, estamos hablando de inversión.
+
+y quién hace inversión, público-privada y en entornos de hoy día donde a veces tenemos gobiernos que no ven de buena manera la alianza público-privada o en otros casos se ha dejado mucho el mercado, se generan también problemas. No una respuesta fácil, pero entiendo que por ahí va la idea de lo que yo creo o considero que debería ser una planificación urbana adecuada para estos temas.
+
+Ignacio Argonz (20:43)
+Es muy interesante la tensión que acabas de plantear, entre el público y lo privado, entre el rol del Estado, los datos, hay un montón de desafíos que sin duda están haciendo que repensemos la forma de vida en ciudades, la forma en generamos datos. Y el caso de Estonia salió un montón de veces acá. Entiendo los beneficios que estás contando. Hay también otros modelos porque estamos en un mundo cada vez más marcado por las tensiones geopolíticas.
+
+y tenemos Estonia en Europa que tiene su modelo, pero me imagino que hay otros sistemas de interoperabilidad que también ofrecen soluciones de GovTech, me imagino, Estados Unidos tendrá sus y los chinos también. ¿Qué sabes al respecto de los otros modelos que están también pujando por estos sistemas?
+
+Patricio Ovalle (21:29)
+Bueno, caso de China es súper interesante porque lo que practica China más que GovTech es más bien, en mi opinión, una economía de vigilancia. Si tú vas por Shanghai, miras un poste de luz donde en Argentina, en Chile o en otros países habrían una, dos máximas cámaras de seguridad, en Shanghai pueden haber ocho o diez cámaras de seguridad. China tiene lo que se llama el puntaje social. Cuando hay una persona que comete una sensibilidad...
+
+esa insensibilidad le resta en su puntaje social y eso le afecta por ejemplo si quiere renovar su licencia de conducir. La tecnología se está usando para el control de la población, en el caso de China. Después tenemos otra vertiente, por ejemplo en el caso Alemania, la tecnología prácticamente inexistente en el gobierno. Alemania es gobierno de los más burocráticos que yo he conocido o de los que tengo conocimiento.
+
+todo se hace en papel, toda la normativa municipal o estatal alemana es muy burocrática. Y en el caso latinoamericano tenemos casos interesantes, por ejemplo Córdoba, Argentina, es una de las ciudades que ha ido destacando en materia de GovTech, hay desarrollando una especie de sandbox y hay desarrollando programas de aceleración de startups.
+
+con foco en la colaboración público-privada y que abordan retos y desafíos públicos. O, por ejemplo, lo que hace Medellín con su modelo Ciudadanos 360, donde la interacción completa, están apostando que el ciudadano la pueda hacer desde su smartphone, ¿no cierto?
+
+y que el trámite básicamente físico se haga cuando el ciudadano quiera ir a la ciudad y no necesariamente porque sea una condición. O lo que hace Chile, ejemplo, con gran avance que ha tenido hoy día Chile, cerca del 98 % de todo el territorio nacional está conectado a internet. Y aproximadamente el 90 % de las personas mayores a 14 años
+
+tienen su clave única. ¿Qué significa eso? Es una puerta de entrada a los servicios gubernamentales desde un smartphone o desde la plataforma de registro civil. Entonces, teníamos caso que eso es interesante. Vamos muy disparo en Latinoamérica porque me da la sensación que Argentina, Uruguay, Chile van un poquito más adelante que lo que está haciendo Perú, Bolivia, así, en otras materias. el estándar no es tan similar.
+
+pero hay estas luces de esperanza que son las que te mencioné, que me parece que son casos interesantes. Curitiba, por ejemplo, en otro sentido, que es una ciudad que tiene 500 años, 500 años de innovación, dicen ellos, también tiene aspecto en la movilidad, en Ciudad Inteligente, Smart City, que me imagino a Andrés, ustedes, deben haber visto muy profundamente. lo que me parece importante es poder visibilizar la iniciativa de lo que está ocurriendo, ¿sí? Porque los gobiernos trabajan en silos, ¿sí? Dentro de un gobierno. Entonces,
+
+y más aún cuando empezamos en las mejores prácticas o cómo podemos transferir estas buenas prácticas, no hay redes de colaboración, es lo que yo siento. Entonces, no sabemos lo que está haciendo Brasil, no sabemos lo que está haciendo Argentina, lo que está haciendo Chile. Entonces, por eso valoro lo que hacen ustedes. De cierta manera, este espacio ayuda a visibilizar, validar y acercar las buenas prácticas a poblaciones que probablemente no las conocerían si es que no aparecieran en este tipo de plataformas como las que ustedes tienen.
+
+Andrés (24:40)
+Probablemente, muchísimas ciudades de Latinoamérica hoy tienen centros de apoyo al emprendedor con distintos formatos, en alianza con universidades. Pero ¿qué tiene que haber para que
+
+un emprendedor, una idea pase a ser un proyecto, un proyecto pase a ser una startup y luego pueda hacer el Scale Up hasta terminar siendo eventualmente un unicornio. Supongo que Latinoamérica, sospecho, vos confirmáme lo que sos el especialista, hay mucho de apoyo al emprendedurismo, pero no hay tanta masa crítica para el Scale Up y que efectivamente las ciudades puedan convertirse en verdaderos clusters especializados en...
+
+en determinados sectores de la economía. Lo ves así y ¿qué deberían hacer para poder hacer ese salto?
+
+Patricio Ovalle (25:29)
+Mira, voy a decir algo que suena muy cliché, pero Latinoamérica tiene todo lo que quiere Estados Unidos y lo que quiere el mundo. Tiene todo. Desde la parte comparativa y la parte competitiva. Lo comparativo tiene que ver con el clima, los recursos naturales y lo competitivo del capital humano. Desde esa posición, lo que nos falta y cuál es el gap, a mí entender, Andrés, es hambre.
+
+es querer comerse el mundo. No son cosas tan hoy día en condiciones factores de entorno. Tenemos programas de aceleración, tenemos programas de acompañamiento, tenemos financiamiento, tenemos acceso a tecnología. Lo que nos falta es hambre. Y otras cosas, ¿no es cierto? Pero lo prefiero graficar en eso. En Estados Unidos, todos se quieren comer el mundo. Todos se sienten los mejores. Es muy fácil ver a un mendigo con un millonario conversando en una misma mesa. ¿Sí?
+
+en Latinoamérica eso es prácticamente imposible. En Estados Unidos hay personas que andan buscando ayudar a otros no solamente por querer ayudar sino que también porque andan buscando desarrollar esta relación, estos ecosistemas de colaboración. Muchas veces nosotros nos criamos pensando en no contar la idea porque nos iban a robar la idea. En Estados Unidos te decían todo lo contrario, cuenta la idea que te la destruyan porque eso te va a ayudar justamente a nosotros, entonces son aspectos más bien culturales.
+
+son aspectos más bien blandos, comillas, subrayados, cierto, negritas si tú quieres. Porque no son blandos, termina siendo lo más duro. La personalidad, la perseverancia, no es cierto, el querer comerse el mundo, el buscar oportunidades. Y las oportunidades vienen en las conversaciones. Las oportunidades vienen cuando empezamos a conversar con otros. Entonces, me parece que ese es un aspecto central. Y claro, ya después viene el acceso a financiamiento, te van a decir algunos, el costo del dinero u otros. Pero en realidad...
+
+todos los proyectos tienen un buen proyecto siempre a tener financiamiento porque si yo te cuento una idea que un buen proyecto, Andrés, Ignacio, ustedes van a querer vender lo que no tienen para poder financiar porque es un buen proyecto. Entonces, yo tengo la sensación, otra frase cliché, que dinero sobra y lo que falta son buenas ideas. Y entender entonces que el dinero viene al final de todo, no al principio de todo. Viene después del valor que yo entrego, viene después del proyecto, viene después del trabajo, no antes.
+
+Entonces, me parece que hay que ir desarrollando estos ecosistemas, hay que ir contando más historias de emprendedores y acercando también entornos favorables para que el emprendimiento ocurra. Y por el lado político público, hay que ir sensibilizando la autoridad para que puedan entender el valor real que tiene el emprendimiento, que tiene la innovación y que tiene la tecnología aplicada a todas estas materias.
+
+Ignacio Argonz (28:09)
+Patricio, vos sin duda estás contando ⁓ qué tipo de ciudades van a quedar mejor paradas en el futuro, aquellas que tengan estas características que decís. Las ciudades conversan entre sí, ¿hay algún espacio de discusión regional para conocer los casos de éxito? ¿Qué es el URAN Labs?
+
+Patricio Ovalle (28:31)
+Bien, bueno, desde mi rol como asesor signo de innovación del banco, tengo la oportunidad de liderar una red de ciudades que se llama Hub de Ciudades y que justamente es que buscamos eso. Son tres grandes atributos. Uno.
+
+que es capacitar a los equipos profesionales de la ciudad en materia de innovación, principalmente para darle una gobernanza a la innovación, de tal manera que independiente esté Ignacio, esté Andrés, esté yo, el día de mañana la ciudad quede con un modelo de innovación y que la persona que llegue, porque hay mucha rotación, se siga el modelo de innovación independiente de lo de énfasis que tú le quieras dar. Gobernanza. Lo segundo tiene que ver con la transferencia a las mejores prácticas. Buscamos y creamos repositorios.
+
+de proyectos de innovación pública que han resultado abordando retos y desafíos porque los retos y desafíos son comunes en Latinoamérica. Nos damos cuenta que cuando llueve muchas ciudades se inundan. Hoy día hay un escenario de poli-crisis con delincuencia, con exceso de la vocación de calidad, ¿no cierto? crisis de salud, crisis alimentaria y todas las ciudades tienen esos retos pero algunas las han afrontado de buena manera. Entonces estudiamos qué ha resultado y lo disponibilizamos para que otras ciudades lo puedan aprender e implementar.
+
+Y el tercero tiene que ver con justamente que liga los dos primeros, es hacer un bootcamp de innovación para que las ciudades no solamente aprendan y trabajen juntas, sino que también desarrollen proyectos de manera conjunta. Y eso es un espacio, una inmersión de innovación que hacemos durante cinco días o cuatro días, una vez por año, con aproximadamente funcionarios públicos de 20 ciudades de Latinoamérica.
+
+Y eso entonces da pie a lo que es la Hub de Ciudades, un proyecto del Banco Interamericano de Desarrollo que está ya cumpliendo tres años de desarrollo y que ha tenido importantes ciudades participando e importantes logros también en su desarrollo.
+
+Andrés (30:22)
+Patricio, bueno, ha sido interesantísimo conversar con vos.
+
+Me quedo dando vueltas en la cabeza de esto que nos falta hambre de comernos el mundo y no por caer en otro cliché, pero estamos viviendo un momento donde hay una oportunidad enorme con la tecnología democratizada como nunca antes. Así que...
+
+Me quedo con tu mensaje optimista sobre el futuro particular de los países y ciudades de Latinoamérica. Muchísimas gracias por compartir tu tiempo con nosotros y un saludo a todos nuestros oyentes. Un abrazo.
+
+Patricio Ovalle (30:56)
+Muchas gracias a usted, un abrazo, que estén muy bien.
+
+Ignacio Argonz (30:59)
+Gracias Patricio. Hasta luego. Chau Andrés.
+

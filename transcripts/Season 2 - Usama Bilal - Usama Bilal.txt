@@ -1,0 +1,230 @@
+Andrés (00:01)
+Hola a todos. Estamos una vez más en Ciudad Hub, el podcast de Las Ciudades, el lugar donde las ciudades hablan a través de sus protagonistas. Soy Andrés Carpanzano. Estoy en Wakefield, muy cerca de la capital de Canadá, Ottawa, y hago Ciudad Hub con Ignacio Argónz desde Buenos Aires. Hola, Nacho. ¿Cómo te va?
+
+Ignacio Argonz (00:21)
+Andrés, un gusto, que buena escucharte nuevamente. ¿Cómo están las cosas allá por Canadá?
+
+Andrés (00:26)
+Bien, bien, una primavera que sigue cayendo nieve, pero bueno, normal, normal, así que bien, todo muy bien.
+
+Ignacio Argonz (00:32)
+Bueno, acá estamos también en este capítulo que va a ser súper interesante. Vamos a conversar con Usama Abilal, es profesor asociado en Epidemiología y Salud Urbana en la Universidad de Dersler en Filadelfia y también está experimentando esta primavera que no sé qué tan fría es. Por allá, Usama, bienvenido.
+
+Usama (00:54)
+Pues, muchas gracias. Pues, mira, hace dos días estábamos a un grado bajo cero y la semana que viene vamos a estar a 30 grados. O sea que... ¡Imagínense!
+
+Andrés (01:04)
+con esa amplitud térmica es fácil que la gente se enferme y ya nos metemos en el tema. Contanos un poco desde tu visión este maridaje entre ciudades y epidemias y ciudades y enfermedades, cómo introducinos al tema.
+
+Usama (01:09)
+Bueno, bueno, sí.
+
+Sí, mira, las ciudades definitivamente son algo importantísimo para la salud de la gente en el mundo entero y la primera razón es muy sencilla, que casi todo el mundo vive en ciudades. De hecho, las últimas estimaciones creo que se lanzaron en noviembre y dicen que el 80 % del mundo vive en ciudades. Hace unos años hablábamos del 50%, pero ahora lo hemos ido ya afinando un poco mejor. Entonces, cuatro de cada cinco personas en el mundo viven en ciudades y las características de estas ciudades nos afectan y esto es muchísimas cosas.
+
+es muy amplio el campo y podemos empezar desde la contaminación ambiental, el efecto de la temperatura y del clima a nuestro alrededor, concentración de la pobreza, violencia y desigualdad, muchísimos factores en el lugar donde vivimos que afectan a nuestra salud y que van mucho más allá de lo que solemos pensar por la salud, que es el acceso a la atención médica, la dieta que tenemos, la actividad física que hacemos, etc.
+
+todas estas cosas al final, el lugar en donde vivimos afectan a todas ellas y con ella afectan a nuestra salud.
+
+Ignacio Argonz (02:30)
+Y Osama, me imagino que también los momentos recientes han cambiado mucho la configuración de pensar la salud en ciudades y pienso inmediatamente en la pandemia. ¿Cómo afectó la pandemia en la vinculación de salud y planificación urbana?
+
+Usama (02:47)
+Bueno, yo creo que a mucha gente le hizo ver esa importancia. Le hizo ver esa importancia porque nos dimos cuenta de que a ciertas maneras en las que vivimos en las ciudades, pues hacían que la pandemia nos fuera un poco peor. Podemos pensar, ejemplos muy claros de esto, está el efecto del hacinamiento, que es básicamente cuánta gente vive en la misma casa. No cuánta gente vive en un barrio.
+
+tener mucha gente viviendo en un barrio con expansión vertical de ese barrio, ¿no? Pero si en cada casa viven mucha gente, algunas de esas personas trabajaban fuera de esa casa, iban a trabajar, podían contagiarse en ese trabajo o en donde fuera y volvían a casa. Si uno vive con diez personas más en su casa, eso eran diez potenciales nuevos casos, Que luego iban a trabajar, todavía sin saber que estaban contagiados a otro sitio, contagiaban a otra persona más, iban a su casa y contagiaban a diez personas.
+
+personas más. Con esto teníamos una explosión en el número de casos. Si comparan esto con alguien que puede permitirse vivir solo o vivir con su familia más inmediata, digamos dos, tres, cuatro personas, esos números cambian muchísimo. Entonces ese hacinamiento fue, yo creo, que una de las características que más nos hizo ver que las maneras en las que vivimos pueden llevar enfermedad. Y lo más importante para mí aquí es considerar que
+
+no todas las personas tenían una probabilidad igual de vivir en esas condiciones de hacinamiento. Aquellas personas con los recursos para no compartir una casa con mucha más gente se iban a enfermar menos. Y además esas eran las mismas personas, esas que no tenían que compartir esa casa con tanta gente, que además podían quedarse trabajando en casa porque generalmente trabajaban en trabajos que les permitían hacer eso, y tenían los recursos para sobrellevar la pandemia de manera mucho mejor. Entonces nos hizo ver que esas maneras en las que vivimos, cómo se configura el espacio,
+
+y las maneras de vivir, pero también esas desigualdades sociales que hacen que esas maneras de vivir se distribuyan desigualmente, ambas cosas juntas, hicieron que la pandemia fuera mucho más complicada de controlar. Y yo esperaría que hubiéramos aprendido cosas de eso, no tengo tan claro que la lección nos la hayamos aprendido completamente, pero yo creo que algunos posos han quedado ahí.
+
+Andrés (05:03)
+Usama, ¿cuáles son los indicadores para medir? Puedo imaginar los típicos indicadores para medir la salud de una persona, ¿Y cuáles son los indicadores para medir la salud de una ciudad y cómo se entrecruzan esos dos campos diferentes?
+
+Usama (05:21)
+Muy buena pregunta, esto es un campo en sí mismo. El cómo se mide la salud de una población, esa gente que hace estudios enteros acerca de todo eso. Tenemos muchas medidas y de hecho la epidemiología, que lo que yo hago, es a lo que se dedica. Se dedica a ver a las poblaciones del de arriba y ver cómo es su salud y ver qué causas llevan a eso y qué podemos hacer para arruinarlo.
+
+Como indicadores hay muchos, hay uno que me gusta mucho utilizar siempre, que lo llamamos esperanza de vida o expectativas de vida. Es un indicador que nos dice, si alguien nace hoy en esa ciudad y se mantienen estos patrones de mortalidad que tenemos ahora mismo, dice cuánta gente se está muriendo en la ciudad y a qué edad se mueren, esa persona, cuántos años esperamos que viva.
+
+Por ejemplo, aquí en Estados Unidos, según hombres, mujeres, depende, rondan los 80 años. En Canadá, es un poquito más alto. En España es un poquito más alto aún. En Argentina es un poquito más baja. Pero eso lo que nos da es una idea en años de vida de cuánto se muere la gente. Si la gente se muere mucho, pues obviamente vamos a tener menos años de vida vividos. Y es un indicador que es muy intuitivo porque todo el mundo entiende lo que es un año.
+
+El resto de indicadores que utilizamos a veces son excesivamente técnicos y nos dicen que el 30 % de la población en esta ciudad tiene hipertensión. ¿Eso es mucho? ¿Eso poco? Es difícil de saber. La gente en esta ciudad vive de media 50 años. Parece poquito. La gente de esta ciudad vive de media 95 años. Parece mucho. Con ese tipo de indicadores nos podemos dar un poquito empezar a una idea de...
+
+de la salud que tiene esa ciudad. También están indicadores que tienen más que ver con los riesgos a los que estamos expuestos. ¿Tiene mucha contaminación esta ciudad? Sí, no. ¿Tiene muchos niveles de violencia? Sí, no. Estas cosas también nos ayudan un poquito a entender eso. Tenemos indicadores de salud directamente y luego indicadores de riesgos hacia nuestra salud.
+
+Ignacio Argonz (07:38)
+Mira que interesante, Osama. Y vos crees, tu experiencia, que es privada, ya de estados de distintos lugares y hoy estás trabajando desde Estados Unidos en Filadelfia, crees que la salud tiene cada vez más incidencia o tiene cada vez más importancia a la hora de pensar políticas públicas, urbanas, crees que los desores políticos urbanos están pensando a la dimensión de salud, como si lo hacen tal vez con ambiente o tal vez lo hacen con otros...
+
+indicadores más vinculados con ODS.
+
+Usama (08:10)
+Pues mi respuesta es que ojalá que sí. Ojalá que se estuviera pensando en salud y sobre todo que se estuviera pensando en cómo el entorno afecta a la salud, no solo lo que haga el departamento de salud o el ministerio de salud. Yo creo que cada vez más. Y yo creo que volviendo a la pregunta de antes con la pandemia, nos dimos cuenta de que la salud de todos es cosa de todos, es solo cosa de cada uno.
+
+Entonces yo creo que cada vez se piensa más en ello y yo creo que uno de los factores que está ayudando un poquito a eso es precisamente el es uno de los factores que yo estudio más ahora, es el cambio climático. Porque con el cambio climático nos hemos dado cuenta de que, por ejemplo, ejemplo ahí muy claro que yo veo siempre es el calor y las temperaturas extremas, específicamente las temperaturas altas extremas. Sabemos que son peores en ciudades por el efecto de isla de calor urbana. Muchas razones.
+
+Lo que estamos viendo nosotros es que ayuda a la acción climática, por ejemplo, acciones de adaptación o de mitigación, que muchas de ellas se hacen desde las ciudades, ayuda a transformar los efectos del cambio climático, no sólo un grado de temperatura, que de nuevo es poco difícil de entender, ¿no? Un grado más, etcétera, difícil, sino ayuda a transformar los potenciales efectos de salud. Tiene una ola de calor terrible y tanta gente se ha muerto por esta ola de...
+
+de calor, ayuda a impactar esa acción y ayuda a empujar a quienes hacen esas políticas públicas en ciudades, el hacerles ver que estas cosas no son sólo una cosa de temperatura y de ecosistemas que son importantísimos, obviamente, sino que también nos afectan directamente a nosotros como seres humanos y a nuestra salud, y especialmente a salud de ciertas poblaciones que quizás, por una razón u otra, les prestemos más atención, como la población anciana, ⁓ o los niños, mujeres embarazadas, etcétera.
+
+Andrés (10:04)
+Todos los días leemos, ¿no? Salen estadísticas nuevas, yo no le doy mucha importancia. Las 10 mejores ciudades para vivir, las 10 mejores ciudades para lo que sea. Y más allá de esa tendencia, esa moda, ¿qué tiene que tener una ciudad? ¿Qué infraestructura? ¿Qué tipo de diseño? ¿Qué elementos tienen que sí o sí haber en una ciudad para que su población tenga una buena salud?
+
+Usama (10:31)
+ojalá tuviéramos una respuesta única a esa hubiera un factor que digamos esto es lo que necesitas hacer hay muchos obviamente hay muchos y se pueden ver desde muchísimos ángulos y sobre todo no hay una sola manera de tener una ciudad saludable y es muy difícil que una ciudad tenga todo cuando lo tiene todo significa que probablemente falte algo en otro sitio pero algunas ideas tienen que ver por ejemplo yo diría con el control de la contaminación atmosférica
+
+La contaminación es uno de los factores más importantes que afectan a nuestra luz ahora mismo, en este instante. Ha mejorado mucho con el tiempo. Si vemos las ciudades hace décadas, la contaminación era muchísimo más alta. Por eso muchas veces uno ve fotos antiguas de ciudades y no se ve casi que hay otras por la contaminación. Y esto hablo incluso en ciudades que ahora mismo están muy contaminadas. Hace un mes en Ciudad de México, una ciudad que tiene unos niveles de contaminación relativamente altos.
+
+Pero aún así han mejorado mucho en el tiempo. pues disminuir esos niveles de contaminación atmosférica probablemente sea la acción que más vidas puedas salvar en cualquier lugar en el mundo, especialmente en las ciudades donde se concentra mucho. ¿Cómo lo hacemos? Pues bueno, muchas ciudades, especialmente ciudades en países ricos, a medida de esa contaminación viene del uso del automóvil. Pero en general, el mayor determinante de...
+
+Son otras partes del mundo, entra mucha industria, calefacción, etc. Pero ciudades en países ricos, por ejemplo, y en la mayoría del resto de países, es el uso del automóvil. El uso del automóvil, aparte de producir contaminación atmosférica, produce tráfico, obviamente, más autos, pues más tráfico. Da igual el número de carreteras que pongamos, va a haber más tráfico siempre, siempre que haya automóviles.
+
+Y eso lleva a parte de la contaminación atmosférica, lleva a ruido, que sabemos que impacta negativamente a nuestra salud, lleva a la gente no pueda hacer otras cosas que le llevan a más actividad física, cuando una ciudad está llena de coches, es más difícil caminar, más difícil ir en bicicleta. Ambas cosas sabemos que contribuyen a más actividad física y con ello contribuye a que tengamos mejor salud en general. bueno, si hay más autos va a haber menos actividad física. En general contribuyen...
+
+también cuando no se planea bien a que haya menor uso del transporte público, el cual también sabemos, uno tiene que caminar hacia la parada del transporte público, tomar el transporte público y caminar allá donde vaya, esa actividad física que uno no hace si toma el auto desde su casa hasta el otro lugar, decir, actividad física en general, contaminación, ruido, niveles generales de estrés por el tráfico y luego los propios accidentes.
+
+mal llamados accidentes en mi opinión, todas esas cosas que pasan cuando dos autos chocan entre sí o no chocan contra una persona en general, esos siniestros que también son una causa de mala salud importante y que además tiene que afectar a gente joven, a niños, etc. De hecho, niños es una de las primeras causas de muerte en niños pequeños, son los accidentes de los siniestros de tránsito.
+
+y todo eso lleva consecuencias tanto de mortalidad como de mala salud en el resto de la vida. la contaminación como cosa central y las políticas que hagan que disminuir el uso del auto sea posible, digamos que son dos de las cosas que yo me centraría ahora mismo inmediatamente. Y la tercera, que yo diría que mí es una que me encanta siempre, son los espacios verdes.
+
+porque los espacios verdes sabemos que tienen muchísimos beneficios en salud y los espacios verdes no es un parque enorme solamente es tener un arbolado en calles generales o cual requiere un mantenimiento requiere de muchas cosas pero los espacios verdes sabemos que llevan una disminución de la contaminación atmosférica disminución del ruido volviendo a lo que decía antes una disminución del calor
+
+y de hecho es una de las mejores maneras de disminuir el calor que hay en una casa es tener árboles cerca porque tapan el sol, etcétera. Y si esos árboles además son nativos a la zona y funcionan con el ecosistema que hay en esa zona, requieren menos mantenimiento, sabemos también que ayudan en el invierno cuando no tienen hojas y dejan pasar el sol, etcétera. Hay muchas razones por las cuales esos espacios verdes y el verdor en general es muy beneficioso para nuestra salud. Así que si tuviera que centrarme en...
+
+tres cosas, auto, espacios ⁓
+
+Andrés (15:15)
+Te quería preguntar, esas son medidas, las entiendo, son medidas estructurales, producto de tu trabajo, ¿estás viendo algún proyecto innovador, alguna estrategia realmente disruptiva? Yo estaba pensando en los huertos urbanos que tienen que ver también con los espacios verdes, pero eso, hay muchas ciudades que ya tienen estrategias de huertos urbanos. ¿Qué experiencia así te...
+
+te despertó la atención en los últimos tiempos. que esto la verdad que es nuevo y...
+
+Usama (15:48)
+Sí, mira, hay dos específicas que quiero mencionar. Son dos estrategias que estamos de hecho evaluando para su impacto y potencial impacto en salud, las dos en América Latina. Las dos son parte de nuestro estudio Sal Urban, Salud Urbana en América Latina, estudio Sal Urban Clima específicamente, donde nos centramos en qué factores en las ciudades relacionados con el clima afectan a nuestra salud y cómo arreglarlos. Y las dos de las estrategias que estamos evaluando, una de ellas está en Bogotá.
+
+tiene que ver con un plan de la carrera séptima, una avenida muy grande en Bogotá, y la otra está en Santiago de Chile, tiene que ver con un plan sobre arbolado y un bosque urbano, que también están muy relacionadas entre ellas, y además tienen mucho que ver con espacios verdes y recuperación también de ciertos espacios.
+
+dedicados al carro, que ahora pueden dedicarse a las personas. Pues nuestra esperanza con estos dos es que podamos mostrar cuáles serán los potenciales impactos de salud de hacer este tipo de intervenciones. Bien, estas son dos que tienen que ver con muchas cosas, bueno, el arbolado, espacio verde, etcétera, son importantes para ambas. Otras que nosotros hemos estudiado.
+
+que también quiero centrarme en innovaciones que vienen de América Latina tienen que ver con el uso del transporte público, los autobuses de alta velocidad, bus rapid transit, BRT, que es algo que se inventó en América Latina, en Brasil específicamente, sin mal no me equivoco fue en Curitiba y que luego se ha expandido a muchas partes, está en Colombia, tanto en Medellín como en Bogotá.
+
+México con el Metrobús, que realmente utilicé ahora que estaba allá, etcétera. Estas son innovaciones que se han creado en América Latina y que ayudan mucho a solventar aspectos de tránsito, que luego, como decía antes, todo al final es un sistema complejo, que si hay menos autos significa que hay más gente pudiendo hacer actividad física, hay menos contaminación, hay menos ruido, etcétera. Y esto lo facilita una política pública específica que se hace en un sistema de transporte rápido. Y luego es interesante, porque yo siempre lo veo...
+
+Yo vivo en Estados Unidos, pero gracias a estos proyectos intento mantener una mirada en América Latina. Es interesante cómo en Estados Unidos a veces se intentan incorporar algunas de estas cosas, pero al final la importancia política del automóvil es tan grande aquí que es muy difícil incorporar eso. Y lo pienso aquí en Filadelfia, ejemplo, para facilitar a los autobuses.
+
+se pinta un parte de la calzada para decir que solo para el autobús. Y se intenta llamar eso sistema de transporte rápido en autobús. No tiene nada que ver con lo que es el metrobús en México. Uno todavía tiene que subirse al autobús, pagar en el autobús, el autobús para, se levanta, los coches para girar a la derecha tienen que pasar por ese carril, la mitad de veces hay un auto aparcado ahí, no valen para absolutamente nada más que para gastar pintura en el suelo. Y todo eso tiene que ver con que el poder del uso del...
+
+del automóvil y quién usa el automóvil aquí, pues digamos que es muy difícil adoptar estas medidas porque consumen mucho capital político. ejemplos variados un poquito de cómo podemos mejorar esa salud, pero luego tampoco quiero obviar la importancia de medidas que no parecen de urbanismo, pero que en el fondo acaban teniendo un impacto enorme en el urbanismo, que son medidas sociales contra la pobreza, por ejemplo.
+
+las cuales hacen que, por ejemplo, voy a volver al ejemplo con la pandemia de antes, si tenemos medidas por las cuales la gente tenga mejores trabajos o mejores condiciones laborales, eso hace que las condiciones de habitabilidad en las que vivan vayan a ser mejores y esto hace que, por ejemplo, de nuevo, no haya tanto hacinamiento y cuando hay una pandemia o una enfermedad infecciosa no se distribuya de manera tan rápida.
+
+las condiciones de habitabilidad y la calidad de esa vivienda son mejores y con ello hacen que cuando hay una ola de calor, no esté tan caluroso en la casa y el impacto en salud sea mucho mejor. Todas estas cosas que ayudan con la pobreza, ayudan con el urbanismo y por ende acaban ayudando con nuestra salud.
+
+Ignacio Argonz (20:28)
+No, súper complejo. La verdad que vivir en ciudad es complejo, ¿no? Y hay cuestiones materiales que afectan la forma en que experimentamos la ciudad. Hay cuestiones que tienen que ver con equipamiento, hay cuestiones que tienen que ver con cuestiones físicas. Y sin duda tienen, esto afecta muchísimo a las personas, Y puede generar un montón de tipos de enfermedades, de distintos tipos de ángulos de la salud. Pero me imagino que también la ciudad es
+
+afectan nuestra salud mental, justamente la complejidad de vivir en ciudades, sobre todo atravesados con la tecnología y todo este nuevo momento vinculado con ansiedades, con lo que generan las tecnologías. quería preguntar, sobre todo desde Argentina, donde tenemos bastante uso del psicoanálisis y en Buenos Aires todo el mundo recurre a tratar de tener ayuda para pensar las cosas y la dificultad en la complejidad.
+
+¿Qué pensas vos del tema de la salud mental en las ciudades? ¿Cuál pensas vos que es el principal tema que afecta, que impacta a las ciudades de este lugar? Y después te quería preguntar sobre la felicidad. Viste que también hay otros rankings, hay otros indicadores que hablan de la felicidad en las ciudades, las ciudades más felices, los nórdicos son los más felices. Me parece que se está vinculado también con la salud mental. ¿Qué opinas de todo eso?
+
+Usama (21:56)
+Sí, sí, sí, es importantísimo y nuestra vida en las ciudades afecta nuestra salud mental de muchas maneras. El ejemplo que ponía antes con el auto, quien se pasa el día entero en un auto porque hay mucho tráfico, comparado de quien puede caminar, puede permitirse caminar a su trabajo, va a tener una salud muy diferente. De hecho, estaba recordando ahora que hace unos años, yo creo que fue sobre el 2019, publicamos una investigación.
+
+con evidencia, que si mal no recuerdo, de 10 o 11 ciudades en América Latina, que si mal no recuerdo, una de ellas incluía a Buenos Aires, donde mirábamos los niveles de tráfico y congestión en las ciudades, el tiempo que la gente le llevaba a llegar cada día a su trabajo y cómo se relacionaba eso con la incidencia de síntomas de depresión. Y veíamos que, efectivamente, por cada minuto más que la gente estaba en el auto o en lo que fuera...
+
+teniendo que llegar a su trabajo, aumentaban los síntomas de depresión. Si mal no recuerdo, era algo así como que por cada diez minutos aumentaba un 1 % o un 0,5 % la probabilidad de tener depresión, que puede padecer poco, pero he dicho por cada diez minutos. Y sabemos que en muchas de estas ciudades hay gente que se tiene que estar dos horas en el auto para llegar a su trabajo.
+
+y si lo multiplicamos esto por toda la población de la ciudad entera, podemos ver que puede incrementar la probabilidad de que la gente tenga depresión y síntomas asociados con ello muchísimo más. Entonces sí, es importantísimo. Otra parte que es importante aquí tiene que ver no solo con ese uso del auto, esa congestión, etcétera, sino con el hecho de que, como decía antes, las...
+
+muchas veces concentran la pobreza y concentran la desigualdad. Quiero decir con ello que la gente más rica y la gente más pobre muchas veces viven las mismas ciudades y en algunos casos viven casi al lado de otros. Hay fotos muy famosas que son de Brasil y de Sudáfrica de casas pequeñitas, de mala calidad en habitabilidad, etcétera, al lado de edificios con piscinas en todas las...
+
+para todo el mundo, justito al lado de lo utilizado. Y sabemos, no por estudios que hayamos hecho nosotros, sino por otros estudios que hay en la literatura, que simplemente ver esos niveles de desigualdad induce problemas de salud mental para la gente porque genera esas comparativas. Y luego, el hecho de tener que vivir en esa pobreza material, muchas veces lleva a incrementos en niveles de presión y de...
+
+y de ansiedad y otros problemas de salud mental. Y una cosa que diría más es el hecho de que muchas veces vemos esas listas que dicen los países nórdicos tienen los niveles más altos de felicidad, etc. No sé cómo de cierto al final es eso, nunca he vivido en ningún país nórdico, pero lo de tener tan poca luz durante el invierno a mí la verdad es que no me convente.
+
+pero a lo que voy es que muchas de esas asociaciones que vemos, decir, estos países tienen más felicidad, etc., al final tiene mucho que ver con condiciones materiales. el hecho de que la gente que vive ahí, pues en los países nórdicos y en otros países europeos, pues tiene que preocuparse mucho menos por tener un seguro de salud y poder ir al médico, porque sus hijos puedan tener una educación de buena calidad.
+
+porque si se quedan sin trabajo no van a tener que dejar de comer porque hay unas ayudas para poder hacer eso. Solo el hecho de tener esa red de ese sistema de bienestar en sí mismo es importantísimo para la salud mental de la gente. Entonces a veces no es tanto que hacen ahí, que si salen a caminar, por qué tal, no. A veces es pura cosa de evitar esa...
+
+pobreza material que hay en muchos otros países en el mundo. Y que a veces tiene que ver con el urbanismo y a veces es pura cuestión de política nacional. Depende en cada caso.
+
+Andrés (26:12)
+Probablemente los siniestros de tráfico, como los nombraste vos, esa diferencia semántica que es curiosa, que sean la principal causa de muerte en muchas ciudades.
+
+Usama (26:26)
+Pues mira, realmente no, porque tenemos causas de muerte mucho más grandes que no pensamos en ellas como las enfermedades del corazón. Esa es la principal causa de muerte en cualquier sitio. Si añadimos las enfermedades que tienen que ver con los ictus, el equivalente en el cerebro, Shuma, la primera causa de muerte en cualquier lugar del mundo, seguida probablemente por el cáncer. ¿Qué pasa? Y aquí es una diferencia muy importante.
+
+Andrés (26:43)
+Mm-hmm.
+
+Usama (26:54)
+generalmente enfermedad de corazón y ciertos cánceres afectan a gente mayor. Entonces, el impacto que tienen, por ejemplo, en esa métrica que mencionaba al principio, esa esperanza de vida es menor, porque si alguien de 75 años tiene un infarto, pues, podríamos estimar estadísticamente que esa persona podría probablemente vivir 5, 10, 20 años más. Bueno, esos son los años de vida que se pierden ahí. Si un niño, el cual...
+
+sí que es una de las primeras causas de muertes o de esos siniestros. Si un niño se muere en un siniestro de tránsito, pues hemos perdido 80 años de vida potenciales ahí. Entonces, lo que tienen estos siniestros es que no es tanto que números sean altísimos, sino que la población a la que tienden a afectar es una población a la cual todavía le quedan muchos años de vida. Y no solo eso,
+
+y aquí es mucho más importante todavía si nos fijamos no tanto en niños sino en adolescentes y adultos jóvenes, es una población que está lista para contribuir a la sociedad. Que no digo que las personas mayores no lo hagan pero tienen menos años en el futuro para poder hacer esa contribución. Cuando se muere alguien de 20 años que está trabajando ahora esos impactos en toda su vida laboral para la sociedad como tal son mucho mucho más altos. Y esto no es sólo una cosa de siniestros de...
+
+de tránsito también tiene que ver con la violencia que tiende afectar especialmente a hombres y especialmente entre los 15 y 39 años, como el pico, lo cual es una edad pico productividad y otras cosas que benefician a la sociedad.
+
+Andrés (28:29)
+sea, podríamos decir que tiene un impacto relativamente más profundo en la salud de la ciudad, más allá de las estadísticas. Y sin embargo es más difícil, digamos, es naturalmente fácil explicar que un siniestro de tránsito afecta, tiene que ver con la ciudad y tiene que ver con la salud de las personas, las relaciones directas. Sin embargo, me imagino que es una tarea tuya el decir, no, momento.
+
+Usama (28:34)
+Exactamente.
+
+Andrés (28:52)
+Las enfermedades cardiovasculares tienen mucho que ver con la configuración urbana, con el tipo de política pública, con las decisiones que se toman,
+
+Usama (29:00)
+Exactamente, exactamente. Y además son un accidente siniestro, siempre me sale la palabra accidente, intento evitarlo. Un siniestro tiene una causa como muy inmediata aparentemente. Luego, si miramos un poco más al fondo, las causas pueden ir mucho más atrás. Un auto se choca contra una persona. Una enfermedad cardiovascular tiene muchos años de evolución. Entonces, ahí hay una cadena causal muy larga. Estamos en la contaminación a la que uno ha estado expuesto durante todos los años.
+
+de vida, pensamos en lo que esa persona ha comido y por qué no ha podido comer otras cosas, por qué no se podía permitir comer otras cosas o no tenía el tiempo para cocinar otras cosas. Lo mismo pasa con el cáncer, son enfermedades de muy larga dura duración. Pero si uno piensa en los siniestros, uno un poquito también puede ir a lo mismo. Sí, la causa inmediata es que un auto se choque contra alguien. Pero por qué ese auto iba a esa velocidad?
+
+¿por qué esa carretera se hizo tan tan ancha? ¿por qué no se hizo un paso seguro en el que la gente pueda pasar? Todo eso uno puede empezar a tirar del hilo y al final puede acabar con cadenas causales bastante más largas.
+
+Ignacio Argonz (30:14)
+Usamos ahí en el medio de la revolución tecnológica que estamos atravesando y el boom de la inteligencia artificial, ¿no? Como herramienta que todos estamos usando. Me imagino que eso no es ajeno al mundo de la salud, de la salud urbana y la tecnología. ¿Qué tendencias ves vos en el uso de estas herramientas y en su aplicabilidad en tu área de expertiz?
+
+Usama (30:41)
+Yo creo que una clave que estamos viendo en una explosión en últimos cinco años es nuestra capacidad para poder medir esos riesgos para la salud en las ciudades. Por ejemplo, la capacidad para poder medir la contaminación atmosférica o la temperatura o la precipitación, etcétera, que hay en cada punto de nuestras ciudades ha mejorado muchísimo en los últimos años gracias a precisamente estas herramientas.
+
+Por dos razones, una, porque con los datos que ya tenemos podemos estimar cuál es la contaminación atmosférica en cada puntito de nuestras criaturdades y qué temperatura hay, y dos, porque están permitiendo también la medición en cada puntito. Por ejemplo, hay aparatos ahora que quizás con menos calidad que los aparatos de calidad científica que nos permiten medir contaminación atmosférica en nuestra casa. Se pueden poner ahí.
+
+y hay gente que se dedica literalmente a crear redes de estos sensores de bajo coste y con eso lo que nos permite es agregar todas estas medidas, cada una es de menos calidad pero agregadas nos pueden dar mucha información y nos permiten tener un dibujo tiempo real de la contaminación que hay en cada lugar en nuestra ciudad y con eso quizás en algunos casos incluso hacer alerta, decir, si usted tiene una enfermedad
+
+por ejemplo, asma o algún tipo de enfermedad de los pulmones, pues hoy no es un buen día para salir a hacer actividad física afuera porque en su barrio está todo muy contaminado porque ha pasado tal cosa. Lo mismo aplica con la temperatura, por ejemplo, sabemos que hay diferenciales enormes de temperatura, por ejemplo, aquí en Filadelfia, los barrios con más y menor temperatura en verano en una ola de calor puede haber 10 grados de diferencia en la calle. Si uno sale al sol, toda...
+
+todavía más. eso lo que nos permite es hacer alertas de manera muy específica para poder, digamos, avisar a la población de que hay ciertos riesgos en ciertas zonas. Esos son dos de los usos que yo más he visto. Hay gente que los intenta también utilizar para análisis en tiempo real, etcétera, pero bueno, todavía está todo muy en evolución. El último año yo creo que nos ha cambiado mucho a todo esa percepción sobre los usos potenciales que puede tener estas herramientas de inteligencia artificial.
+
+Andrés (33:06)
+Como última pregunta, Usama, y desde ya agradecerte tu tiempo y tu participación, creo que nos hemos metido en varios subniveles para poder comprender un fenómeno sumamente complejo. Pero te quería preguntar, ¿cómo se inserta tu trabajo, tus estudios, tu saber sobre esto en una política pública? Imaginate un alcalde de una ciudad, no de las grandes, porque probablemente las grandes ya tengan incorporado algún departamento de salud que esté trabajando sobre estadísticas y viendo estos temas.
+
+una ciudad mediana de Latinoamérica, es donde nuestro público nos escucha mayormente, ¿cómo insertar? ¿Tiene que haber un USAMA en cada gestión municipal? Pensando estos temas, agregando datos, definiendo políticas, asesorando.
+
+Usama (33:53)
+Sería herramienta interesante, poner un usama en cada ciudad. Quizás con la inteligencia artificial podamos, pero... Yo creo que una de las maneras en la que lo estamos viendo nosotros, y de hecho tenemos un proyecto en la que intentamos hacer esto en dos ciudades de tamaño relativamente grande, Campinas y Belo Horizonte, en Brasil. Tenemos un proyecto con el World Resources Institute, en el cual ayudamos a los departamentos de salud y planeamiento en esas ciudades a ver...
+
+qué barrios específicos necesitan más medidas de adaptación climática, específicamente con el calor. Lo hemos intentado hacer es modelar literalmente cuál es la temperatura cada hora, cada día, durante 20 años. En esas ciudades cruzamos eso con datos sobre quién se muere en cada barrio e intentamos ver qué barrios son especialmente sensibles a los efectos del calor. En esos barrios, idealmente es donde uno va a centrar ciertas políticas de arbolado,
+
+de creación de espacios cuando haya olas de calor para que personas mayores puedan estar en esos espacios durante el día si no tienen aire acondicionado en casa, que faltan la mayoría de viviendas en estas ciudades, aspectos relacionados con el sistema de salud, por ejemplo, poder llamar a las personas que sabemos que tienen ciertas enfermedades que las hacen más sensibles, etc. Bien, esto requiere de ciudades grandes que tengan esto.
+
+recursos. Obviamente es muy difícil de implementar esto, muchas más. Lo que yo diría que todas las ciudades pueden aprender, volviendo un poco a lo que decía ahora con la inteligencia artificial, es el hecho de que cada vez tenemos más disponibilidad de estas medidas sobre dónde en las ciudades hay más contaminación, dónde hay más temperatura cuando hay una ola de calor, dónde hay más riesgos de inundación, etcétera. Y todas estas cosas lo que nos pueden ayudar es a saber dónde intervenir cuando sabemos que viene una crisis relacionada con estas cosas, que sea una ola de calor.
+
+incremento en la contaminación o lo que sea, nos ayudan que estas son las zonas donde hay que intervenir cuando hay una crisis, pero intervenir también cuando no hay una crisis. Si esperamos a poner árboles a que llegue la ola de calor, pues no nos vale para esta ola de calor ni para la siguiente, nos vale para dentro de 20 años, entonces hay que empezar a poner árboles hoy. Bien, ¿dónde los ponemos? Pues identificar cuáles son esos barrios más calientes, por así decirlo, sería importantísimo. Y esta democratización de los datos ambientales...
+
+que muchos países, por ejemplo en Brasil mismo, tienen un buen tablero de datos climáticos, donde incluyen datos relacionados con riesgos climáticos para todas las ciudades en Brasil, como parte de su plan de adaptación climática. algo parecido a nivel nacional, que ayude a cada ciudad, podría ser algo muy importante.
+
+Andrés (36:41)
+espectacular aprendí muchísimo la verdad que sumamente interesante como siempre nos quedamos con más preguntas que respuestas pero está bueno esto de que se nos abran preguntas Usama nuevamente mil gracias buena fortuna en tu trabajo es apasionante y muy necesario así que te digo hasta la próxima
+
+Ignacio Argonz (37:03)
+Gracias Susana por tu tiempo y esperamos seguir estando en contacto.
+
+Usama (37:06)
+Muchas gracias por esta invitación, sido un placer hablar con ustedes.
+
+Andrés (37:10)
+Hasta la próxima. Chao Nacho, saludos a nuestra audiencia.
+
+Ignacio Argonz (37:14)
+Nos vemos Andrés, salud a todos.
+

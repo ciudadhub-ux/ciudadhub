@@ -1,0 +1,37 @@
+Big data gona change the world
+
+Civic data design lab
+Transform data into images
+
+
+Hello everybody, this is CiudadHub, the podcast about cities and citizens. Im Andres Carpanzano, speaking from Dominican Republic, and I produce Ciudad Hub with Oscar Chamat, from Barcelona. Hi Oscar, how are you today
+
+Technology is always spoken as a metaphor of the hammer. It can be used to repair something, or to hit someone, but It happens that there are certain technologies or instruments for which it is difficult to imagine a good use, or a noble use. For example, a chemical weapon.
+Is it the same with data? Is there data that intrinsically leads to a bad use, not appropriate for the common good? Or data is completely neutral, and depends on how we use it?
+
+Data is like the oil for the 21st century, do you think the industry is so powerful and concentrated as the big oil companies in the past? or nowadays small companies can shape big changes and people have more opportunities to participate and modify policies and decisions
+
+Cities borders, mainly in big metropolitan areas are 
+
+Can you share with us an example of public use of data where people participation changed the data and the way it was collected and used?
+
+The boundaries of cities, especially in large metropolitan areas are blurred because of this complexity. Data, and digital data has no boundaries, we draw them. How do you think data science can collaborate to make this complexity more easy to be understand and help big cities to have a better quality of life?
+
+Can we say that visualisation is as important as data itself?
+How can people be educated to understand and use data? 
+
+Do you know a city or neighborhood that have made an urban change that wouldn’t have done without using data and visual tools?
+
+Many cities in the world are using google maps, waze, etc, to plan its,  traffic policies? Thas it make sense invest public budget to develop this kind of technologies? Or is the best model to use for your purpose what others have done?
+
+You developed a research about traffic in Nairobi, the Matatus project. Here in Dominican Republic, there are the wawitas, and in every country in latin America are some of this informal means of transportation. Can you tell us about your conclusions and learnings from the research?
+
+What is your advice for small or medium-sized cities to develop a transparent, useful and accessible data policy?
+
+Is it possible to affect policy with data? Wich are the best tools to do that?
+
+Visualization and data is a yin and yang.  Visualization is nothing without data.  Data without visualization is invisible.
+Visualization and data is a yin and yang.  Visualization is nothing without data.  Data without visualization is invisible.
+
+ Yes communities and cities can have access to data and then shape knowledge built on that data.  The communities need to be sure to build in access to data to the legal agreements they enter into with collectors.
+
