@@ -4,7 +4,7 @@ import { useState, useMemo, useRef } from "react";
 import dynamic from "next/dynamic";
 import { MapPin, X } from "@phosphor-icons/react";
 import { SpotifyIcon, AppleIcon } from "./PodcastIcons";
-import { TopicChip, topicStyle } from "./TopicChip";
+import { TopicChip, topicStyle, topicIconColor, TOPIC_ICONS, DEFAULT_TOPIC_ICON } from "./TopicChip";
 import type { CityDot } from "./InvitadosMap";
 
 const InvitadosMap = dynamic(() => import("./InvitadosMap"), {
@@ -245,6 +245,10 @@ export default function InvitadosClient({ guests, allTopics, cityGuestNames, cou
           <span className="text-xs text-zinc-500 font-mono uppercase tracking-widest">Tema</span>
           <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-sm border"
             style={topicStyle(activeTopic, true, false)}>
+            {(() => {
+              const Icon = TOPIC_ICONS[activeTopic]?.icon ?? DEFAULT_TOPIC_ICON;
+              return <Icon size={13} weight="bold" color={topicIconColor(activeTopic, true)} />;
+            })()}
             {activeTopic}
             <button onClick={() => { setActiveTopic(null); setVisibleCount(PAGE_SIZE); }} className="ml-1 opacity-60 hover:opacity-100"><X size={11} weight="bold" /></button>
           </span>

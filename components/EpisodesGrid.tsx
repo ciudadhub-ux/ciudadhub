@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
-import { MapPin } from "@phosphor-icons/react";
+import { MapPin, SquaresFour } from "@phosphor-icons/react";
 import { Episode } from "@/lib/data";
 import { SpotifyIcon, AppleIcon } from "./PodcastIcons";
 import { TopicChip } from "./TopicChip";
@@ -191,11 +191,12 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
             <button
               key="todos"
               onClick={() => handleTopicChange(null)}
-              className="px-3.5 py-1.5 rounded-full text-[13px] md:text-base font-medium border transition-all duration-200 shrink-0"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] md:text-base font-medium border transition-all duration-200 shrink-0"
               style={!activeTopic
                 ? { background: "#f97316", color: "#09090b", borderColor: "#f97316" }
                 : { background: "transparent", color: "#71717a", borderColor: "#3f3f46" }}
             >
+              <SquaresFour size={14} weight="bold" color={!activeTopic ? "#09090b" : "#71717a"} />
               Todos
             </button>
           );
@@ -205,7 +206,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
                 topic={topic}
                 active={activeTopic === topic}
                 onClick={() => handleTopicChange(topic === activeTopic ? null : topic)}
-                className="px-3 py-1.5 rounded-full text-[13px] md:text-base font-medium border transition-all duration-200"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[13px] md:text-base font-medium border transition-all duration-200"
               />
             </div>
           );
