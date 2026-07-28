@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: "/#episodios",          label: "Episodios",  desktopOnly: false },
   { href: "/invitados",           label: "Invitados",  desktopOnly: false },
   { href: "/invitados#ciudades",  label: "Ciudades",   desktopOnly: true  },
+  { href: "/blog",                label: "Blog",       desktopOnly: false },
   { href: "/#equipo",             label: "Equipo",     desktopOnly: false },
 ];
 
