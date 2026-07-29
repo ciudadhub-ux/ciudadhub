@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import InvitadosClient, { type GuestData, type EpisodeLink } from "@/components/InvitadosClient";
+import Footer from "@/components/Footer";
 import { episodes } from "@/lib/data";
 
 export default function InvitadosPage() {
@@ -61,6 +62,7 @@ export default function InvitadosPage() {
       <main className="pt-[98px] md:pt-48">
         <InvitadosClient guests={guests} allTopics={allTopics} cityGuestNames={cityGuestNamesRecord} countryByCity={countryByCityRecord} />
       </main>
+      <Footer />
     </>
   );
 }
