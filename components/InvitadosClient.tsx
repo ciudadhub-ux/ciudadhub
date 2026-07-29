@@ -4,7 +4,6 @@ import { useState, useMemo, useRef } from "react";
 import dynamic from "next/dynamic";
 import { MapPin, X } from "@phosphor-icons/react";
 import { SpotifyIcon, AppleIcon } from "./PodcastIcons";
-import { TopicChip, topicStyle, topicIconColor, TOPIC_ICONS, DEFAULT_TOPIC_ICON } from "./TopicChip";
 import type { CityDot } from "./InvitadosMap";
 
 const InvitadosMap = dynamic(() => import("./InvitadosMap"), {
@@ -185,23 +184,16 @@ export type GuestData = {
 
 interface Props {
   guests: GuestData[];
-  allTopics: string[];
   cityGuestNames: Record<string, string[]>;
   countryByCity: Record<string, string>;
 }
 
 const PAGE_SIZE = 18;
 
-export default function InvitadosClient({ guests, allTopics, cityGuestNames, countryByCity }: Props) {
+export default function InvitadosClient({ guests, cityGuestNames, countryByCity }: Props) {
   const [activeCity, setActiveCity] = useState<string | null>(null);
-  const [activeTopic, setActiveTopic] = useState<string | null>(null);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const topRef = useRef<HTMLDivElement>(null);
-
-  const filtered = useMemo(
-    () => guests.filter((g) => !activeTopic || g.topics.includes(activeTopic)),
-    [guests, activeTopic]
-  );
 
   const cityGuests = useMemo(() => {
     if (!activeCity) return [];
@@ -224,10 +216,8 @@ export default function InvitadosClient({ guests, allTopics, cityGuestNames, cou
     setActiveCity(city === activeCity ? null : city);
   };
 
-  const clearAll = () => { setActiveCity(null); setActiveTopic(null); setVisibleCount(PAGE_SIZE); };
-  const isFiltered = !!activeTopic;
-  const visibleGuests = activeTopic ? filtered : filtered.slice(0, visibleCount);
-  const hasMore = !activeTopic && visibleCount < filtered.length;
+  const visibleGuests = guests.slice(0, visibleCount);
+  const hasMore = visibleCount < guests.length;
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
@@ -235,40 +225,15 @@ export default function InvitadosClient({ guests, allTopics, cityGuestNames, cou
       {/* Header */}
       <div ref={topRef} className="flex items-baseline justify-between mb-6 scroll-mt-52">
         <span className="font-mono text-[10px] text-zinc-600 tracking-widest uppercase">
-          {filtered.length}{isFiltered ? ` / ${guests.length}` : ""} invitados
+          {guests.length} invitados
         </span>
       </div>
-
-      {/* Active topic filter bar */}
-      {activeTopic && (
-        <div className="flex items-center gap-3 mb-8 flex-wrap">
-          <span className="text-xs text-zinc-500 font-mono uppercase tracking-widest">Tema</span>
-          <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-sm border"
-            style={topicStyle(activeTopic, true, false)}>
-            {(() => {
-              const Icon = TOPIC_ICONS[activeTopic]?.icon ?? DEFAULT_TOPIC_ICON;
-              return <Icon size={13} weight="bold" color={topicIconColor(activeTopic, true)} />;
-            })()}
-            {activeTopic}
-            <button onClick={() => { setActiveTopic(null); setVisibleCount(PAGE_SIZE); }} className="ml-1 opacity-60 hover:opacity-100"><X size={11} weight="bold" /></button>
-          </span>
-          <button onClick={clearAll} className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors underline underline-offset-2">
-            Limpiar
-          </button>
-        </div>
-      )}
 
       {/* Guest grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mb-8">
         {visibleGuests.map((guest) => (
           <GuestCard key={guest.name} guest={guest} />
         ))}
-        {filtered.length === 0 && (
-          <p className="col-span-full text-zinc-600 py-12 text-center text-sm">
-            No hay invitados con ese filtro.{" "}
-            <button onClick={clearAll} className="text-orange-500 underline underline-offset-2">Limpiar filtros</button>
-          </p>
-        )}
       </div>
 
       {hasMore && (
@@ -277,7 +242,7 @@ export default function InvitadosClient({ guests, allTopics, cityGuestNames, cou
             onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
             className="px-6 py-2.5 rounded-full border border-zinc-700 text-zinc-400 hover:text-zinc-200 hover:border-zinc-500 transition-colors text-sm font-medium"
           >
-            Ver más · {filtered.length - visibleCount} invitados
+            Ver más · {guests.length - visibleCount} invitados
           </button>
         </div>
       )}
@@ -324,27 +289,6 @@ export default function InvitadosClient({ guests, allTopics, cityGuestNames, cou
               </div>
             )}
           </div>
-        </div>
-      </div>
-
-      {/* Topic tags */}
-      <div className="pt-8">
-        <div className="flex flex-wrap gap-2">
-          {allTopics.map((topic) => (
-            <TopicChip
-              key={topic}
-              topic={topic}
-              active={activeTopic === topic}
-              onClick={() => {
-                const next = topic === activeTopic ? null : topic;
-                setActiveTopic(next);
-                setVisibleCount(PAGE_SIZE);
-                if (next && topRef.current) {
-                  topRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-                }
-              }}
-            />
-          ))}
         </div>
       </div>
 

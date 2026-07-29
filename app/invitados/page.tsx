@@ -49,7 +49,6 @@ export default function InvitadosPage() {
   }
 
   const guests = [...seen.values()].sort((a, b) => a.name.localeCompare(b.name, "es"));
-  const allTopics = [...new Set(guests.flatMap((g) => g.topics))].sort((a, b) => a.localeCompare(b, "es"));
   const cityGuestNamesRecord: Record<string, string[]> = {};
   for (const [city, names] of cityGuestNames) {
     cityGuestNamesRecord[city] = [...names];
@@ -60,7 +59,7 @@ export default function InvitadosPage() {
     <>
       <Nav />
       <main className="pt-[98px] md:pt-48">
-        <InvitadosClient guests={guests} allTopics={allTopics} cityGuestNames={cityGuestNamesRecord} countryByCity={countryByCityRecord} />
+        <InvitadosClient guests={guests} cityGuestNames={cityGuestNamesRecord} countryByCity={countryByCityRecord} />
       </main>
       <Footer />
     </>
