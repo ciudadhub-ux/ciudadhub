@@ -24,6 +24,7 @@ const INTERVAL = 5500;
 export default function HeroSlider({ episodes }: { episodes: Episode[] }) {
   const featured = episodes.filter((ep) => ep.featured).sort((a, b) => b.id - a.id);
   const items = (featured.length > 0 ? featured : [...episodes].sort((a, b) => b.id - a.id)).slice(0, 10);
+  const latestId = Math.max(...episodes.map((e) => e.id));
 
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
@@ -76,7 +77,7 @@ export default function HeroSlider({ episodes }: { episodes: Episode[] }) {
 
               {/* EP badge */}
               <div className="absolute top-5 left-16 font-mono text-[10px] tracking-[0.18em] uppercase px-2.5 py-1 rounded-md bg-zinc-950/70 text-orange-400 backdrop-blur-sm border border-orange-500/20 z-20">
-                EP {String(ep.id).padStart(2, "0")}
+                {ep.id === latestId ? "Último episodio" : `EP ${String(ep.id).padStart(2, "0")}`}
               </div>
 
               {/* Guest photo + name */}

@@ -31,6 +31,7 @@ const CITY_COORDS: Record<string, [number, number]> = {
   "Miami":        [-80.19,  25.77],
   "Montería":     [-75.89,  8.75],
   "Montevideo":   [-56.16,  -34.90],
+  "Münich":       [11.58,   48.14],
   "New York":     [-74.01,  40.71],
   "Ottawa":       [-75.70,  45.42],
   "Oxford":       [-1.26,   51.75],
