@@ -24,6 +24,22 @@ export interface TopicStat {
 
 export const episodes: Episode[] = [
   {
+    id: 106,
+    title: "Street Experiments for Transitions: la calle como terreno de pruebas",
+    quote: "",
+    guest: "Ana Rivas De Gante",
+    guestRole: "",
+    topics: ["Innovación", "Urbanismo", "Placemaking"],
+    city: "Münich",
+    country: "Alemania",
+    appleUrl: "https://podcasts.apple.com/us/podcast/street-experiments-for-transitions-la-calle-como-terreno/id1093603743?i=1000784868907",
+    spotifyUrl: "https://open.spotify.com/episode/5D7pCYAProAfmkxR81UWUz?si=08sqp3CPRkOSAmvNtNc47w",
+    imageUrl: "/images/episodios/id%20106%20Ana%20Rivas%20de%20Gante.png",
+    guestImageUrl: "",
+    guestAvatarSeed: "anarivasdegante",
+    featured: true,
+  },
+  {
     id: 97,
     title: "Salud urbana: cómo la ciudad define nuestra calidad de vida",
     quote: "",
@@ -1642,12 +1658,12 @@ export const episodes: Episode[] = [
 ]
 
 export const allTopics: TopicStat[] = [
-  { name: "Urbanismo", count: 29 },
+  { name: "Urbanismo", count: 30 },
   { name: "Movilidad", count: 23 },
   { name: "Gobernanza", count: 17 },
-  { name: "Innovación", count: 14 },
-  { name: "Internacionalización", count: 14 },
+  { name: "Innovación", count: 15 },
   { name: "Smart Cities", count: 14 },
+  { name: "Internacionalización", count: 13 },
   { name: "Sostenibilidad", count: 10 },
   { name: "Equidad", count: 10 },
   { name: "Espacio Público", count: 9 },
@@ -1659,6 +1675,7 @@ export const allTopics: TopicStat[] = [
   { name: "Digitalización", count: 4 },
   { name: "Desarrollo", count: 3 },
   { name: "Metrópolis", count: 3 },
+  { name: "Placemaking", count: 1 },
   { name: "Mercados", count: 1 },
   { name: "Cooperación", count: 1 },
   { name: "Agricultura", count: 1 },
