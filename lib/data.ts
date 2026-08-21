@@ -35,7 +35,7 @@ export const episodes: Episode[] = [
     appleUrl: "https://podcasts.apple.com/us/podcast/street-experiments-for-transitions-la-calle-como-terreno/id1093603743?i=1000784868907",
     spotifyUrl: "https://open.spotify.com/episode/5D7pCYAProAfmkxR81UWUz?si=08sqp3CPRkOSAmvNtNc47w",
     imageUrl: "/images/episodios/id%20106%20Ana%20Rivas%20de%20Gante.png",
-    guestImageUrl: "/images/INVITADOS/Ana%20Rivas%20De%20Gante.png",
+    guestImageUrl: "/images/INVITADOS/Ana%20Rivas%20De%20Gante.webp",
     guestAvatarSeed: "anarivasdegante",
     featured: true,
   },
