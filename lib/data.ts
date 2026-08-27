@@ -26,7 +26,7 @@ export const episodes: Episode[] = [
   {
     id: 106,
     title: "Street Experiments for Transitions: la calle como terreno de pruebas",
-    quote: "",
+    quote: "Las calles son espacios públicos y tenemos que empezar a cambiar la manera en que vemos las calles.",
     guest: "Ana Rivas De Gante",
     guestRole: "Co-Founder Street Experiments for Transitions, Technical University of Munich",
     topics: ["Innovación", "Urbanismo", "Placemaking"],
