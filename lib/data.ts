@@ -28,7 +28,7 @@ export const episodes: Episode[] = [
     title: "Street Experiments for Transitions: la calle como terreno de pruebas",
     quote: "",
     guest: "Ana Rivas De Gante",
-    guestRole: "",
+    guestRole: "Co-Founder Street Experiments for Transitions, Technical University of Munich",
     topics: ["Innovación", "Urbanismo", "Placemaking"],
     city: "Münich",
     country: "Alemania",
