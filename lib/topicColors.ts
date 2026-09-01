@@ -1,40 +1,39 @@
 import type { Icon } from "@phosphor-icons/react";
 import {
-  Plant, Bicycle, Handshake, Database, TrendUp, Cpu, Lightning, Scales,
+  Bicycle, Handshake, Database, TrendUp, Cpu, Lightning, Scales,
   Park, House, Gavel, Code, Lightbulb, Globe, Storefront, Buildings,
   Car, ShieldCheck, Heartbeat, TrafficSign, Robot, Leaf, SquaresFour, MapPin, ForkKnife,
   Hash,
 } from "@phosphor-icons/react/dist/ssr";
 
-// Hue distribuido uniformemente (paso 14,4°) sobre el orden alfabético de
+// Hue distribuido uniformemente (paso 15°) sobre el orden alfabético de
 // los temas: el color solo diferencia categorías a simple vista, el
 // significado lo lleva el icono.
 export const TOPIC_ICONS: Record<string, { icon: Icon; hue: number }> = {
-  "Agricultura":          { icon: Plant,       hue: 18  },
-  "Alimentación":         { icon: ForkKnife,   hue: 32  },
-  "Bicicleta":            { icon: Bicycle,     hue: 47  },
-  "Cooperación":          { icon: Handshake,   hue: 61  },
-  "Datos":                { icon: Database,    hue: 76  },
-  "Desarrollo":           { icon: TrendUp,     hue: 90  },
-  "Digitalización":       { icon: Cpu,         hue: 104 },
-  "Electrificación":      { icon: Lightning,   hue: 119 },
-  "Equidad":              { icon: Scales,      hue: 133 },
-  "Espacio Público":      { icon: Park,        hue: 148 },
-  "Gentrificación":       { icon: House,       hue: 162 },
-  "Gobernanza":           { icon: Gavel,       hue: 176 },
-  "Gov-Tech":             { icon: Code,        hue: 191 },
-  "Innovación":           { icon: Lightbulb,   hue: 205 },
-  "Internacionalización": { icon: Globe,       hue: 220 },
-  "Mercados":             { icon: Storefront,  hue: 234 },
-  "Metrópolis":           { icon: Buildings,   hue: 248 },
-  "Movilidad":            { icon: Car,         hue: 263 },
-  "Placemaking":          { icon: MapPin,      hue: 277 },
-  "Resiliencia":          { icon: ShieldCheck, hue: 292 },
-  "Salud":                { icon: Heartbeat,   hue: 306 },
-  "Seguridad Vial":       { icon: TrafficSign, hue: 320 },
-  "Smart Cities":         { icon: Robot,       hue: 335 },
-  "Sostenibilidad":       { icon: Leaf,        hue: 349 },
-  "Urbanismo":            { icon: SquaresFour, hue: 4   },
+  "Alimentación":         { icon: ForkKnife,   hue: 18  },
+  "Bicicleta":            { icon: Bicycle,     hue: 33  },
+  "Cooperación":          { icon: Handshake,   hue: 48  },
+  "Datos":                { icon: Database,    hue: 63  },
+  "Desarrollo":           { icon: TrendUp,     hue: 78  },
+  "Digitalización":       { icon: Cpu,         hue: 93  },
+  "Electrificación":      { icon: Lightning,   hue: 108 },
+  "Equidad":              { icon: Scales,      hue: 123 },
+  "Espacio Público":      { icon: Park,        hue: 138 },
+  "Gentrificación":       { icon: House,       hue: 153 },
+  "Gobernanza":           { icon: Gavel,       hue: 168 },
+  "Gov-Tech":             { icon: Code,        hue: 183 },
+  "Innovación":           { icon: Lightbulb,   hue: 198 },
+  "Internacionalización": { icon: Globe,       hue: 213 },
+  "Mercados":             { icon: Storefront,  hue: 228 },
+  "Metrópolis":           { icon: Buildings,   hue: 243 },
+  "Movilidad":            { icon: Car,         hue: 258 },
+  "Placemaking":          { icon: MapPin,      hue: 273 },
+  "Resiliencia":          { icon: ShieldCheck, hue: 288 },
+  "Salud":                { icon: Heartbeat,   hue: 303 },
+  "Seguridad Vial":       { icon: TrafficSign, hue: 318 },
+  "Smart Cities":         { icon: Robot,       hue: 333 },
+  "Sostenibilidad":       { icon: Leaf,        hue: 348 },
+  "Urbanismo":            { icon: SquaresFour, hue: 3   },
 };
 
 export const DEFAULT_TOPIC_ICON = Hash;
