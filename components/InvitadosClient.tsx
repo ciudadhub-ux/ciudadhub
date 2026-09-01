@@ -22,6 +22,7 @@ const CITY_COORDS: Record<string, [number, number]> = {
   "Caracas":      [-66.92,  10.48],
   "Córdoba":      [-64.18,  -31.42],
   "Guadalajara":  [-103.35, 20.67],
+  "La Paz":       [-68.15,  -16.50],
   "Lima":         [-77.04,  -12.05],
   "Londres":      [-0.12,   51.51],
   "Madrid":       [-3.70,   40.42],
