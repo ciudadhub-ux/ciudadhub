@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-sync-data.py — Lee el Google Sheet publicado y regenera lib/data.ts
+sync-data.py — Lee content/episodios.csv y regenera lib/data.ts
 Uso: python3 scripts/sync-data.py  (o: npm run sync)
 """
 
@@ -11,15 +11,13 @@ import os
 import re
 import unicodedata
 import urllib.parse
-import urllib.request
 from collections import Counter
 from datetime import datetime
 
-SHEET_CSV_URL = (
-    "https://docs.google.com/spreadsheets/d/e/"
-    "2PACX-1vR67mdGIFDbn9wFuVTI01wGmV6zuj2k7rhAwPk6dCamJkiYGjSQUdBc8RrBssTqmXhlJvdYkt0q6cTb"
-    "/pub?output=csv"
-)
+# Fuente de verdad del contenido: un CSV versionado en este mismo repositorio.
+# Antes se leía de un Google Sheet publicado; se migró para poder editarlo
+# directamente, ver los cambios en el diff y no depender de la caché de Google.
+CONTENT_CSV = os.path.join(os.path.dirname(__file__), "..", "content", "episodios.csv")
 
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "lib", "data.ts")
 INVITADOS_DIR = os.path.join(os.path.dirname(__file__), "..", "public", "images", "INVITADOS")
@@ -218,11 +216,12 @@ def ts_string(s: str) -> str:
 
 
 def fetch_sheet() -> list[dict]:
-    print(f"Descargando Google Sheet...")
-    response = urllib.request.urlopen(SHEET_CSV_URL)
-    data = response.read().decode("utf-8")
-    reader = csv.DictReader(io.StringIO(data))
-    return list(reader)
+    path = os.path.abspath(CONTENT_CSV)
+    if not os.path.exists(path):
+        raise SystemExit(f"No se encontró {path}")
+    print(f"Leyendo {os.path.relpath(path, os.getcwd())}...")
+    with io.open(path, encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f))
 
 
 def parse_rows(rows: list[dict]) -> list[dict]:

@@ -44,4 +44,7 @@ credentials.json
 token.json
 service-account.json
 client_secret_*.json
-episodios.csv
+
+# export suelto en la raíz (obsoleto) — NO ignorar content/episodios.csv,
+# que es la fuente de verdad del contenido del sitio
+/episodios.csv
