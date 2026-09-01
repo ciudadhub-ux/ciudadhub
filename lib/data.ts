@@ -42,7 +42,7 @@ export const episodes: Episode[] = [
   {
     id: 97,
     title: "Salud urbana: cómo la ciudad define nuestra calidad de vida",
-    quote: "",
+    quote: "Con la pandemia nos dimos cuenta de que la salud de todos es cosa de todos, no solo cosa de cada uno.",
     guest: "Usama Bilal",
     guestRole: "Associate Professor of Epidemiology and Co-Director of the Urban Health Collaborative\nEpidemiology and Biostatistics, Drexel University, Philadelphia",
     topics: ["Salud", "Innovación", "Urbanismo"],
@@ -58,7 +58,7 @@ export const episodes: Episode[] = [
   {
     id: 96,
     title: "Ecosistemas urbanos innovadores, Gov-Tech y talento",
-    quote: "",
+    quote: "Un proceso de innovación enfrenta cerca de 120 problemas, de los cuales se activan 30 simultáneamente. Los seres humanos podemos manejar entre cinco y siete.",
     guest: "Patricio Ovalle Woods",
     guestRole: "Senior Innovation Advisor | Expert in Entrepreneurship & Innovation Ecosystems, Providencia, Chile",
     topics: ["Innovación", "Gov-Tech", "Desarrollo"],
@@ -74,7 +74,7 @@ export const episodes: Episode[] = [
   {
     id: 95,
     title: "Ciudades, geopolítica y el nuevo (des) orden mundial",
-    quote: "",
+    quote: "Para el mundo en general y para las ciudades en particular, se reducen los grados de libertad.",
     guest: "Mariano Turzi",
     guestRole: "Dr en RRII, profesor Universidad Austral, Argentina",
     topics: ["Internacionalización", "Gobernanza", "Urbanismo"],
@@ -90,7 +90,7 @@ export const episodes: Episode[] = [
   {
     id: 93,
     title: "Buenos Aires: juegos, deporte y espacio urbano",
-    quote: "",
+    quote: "No me puedo partir en dos si vos hacés un patio de juegos para dos edades distintas.",
     guest: "Samanta Szusterman",
     guestRole: "Diseñadora industrial, directora de Arquilúdica: estudio de diseño de espacios lúdicos, deportivos y de encuentro",
     topics: ["Espacio Público", "Urbanismo", "Movilidad"],
@@ -106,7 +106,7 @@ export const episodes: Episode[] = [
   {
     id: 87,
     title: "Smart City: Modelo Latam",
-    quote: "",
+    quote: "Los mandatarios de nuestras ciudades no son expertos en todo. Y uno no puede ir a un supermercado a comprar semáforos inteligentes.",
     guest: "Diana Celis",
     guestRole: "Consultora en Proyectos de TIC, Ciudades y Territorios Inteligentes",
     topics: ["Smart Cities", "Gov-Tech", "Innovación"],
@@ -362,7 +362,7 @@ export const episodes: Episode[] = [
   {
     id: 104,
     title: "Resiliencia: una estrategia para las ciudades",
-    quote: "",
+    quote: "La prevención no paga políticamente. Si uno es exitoso en prevenir, las cosas no ocurren. Es como convencer a la gente de que tiene que votar por la noticia que no ocurrió.",
     guest: "José Corral",
     guestRole: "Intendende de la ciudad de Santa Fe, Argentina 2011-2019",
     topics: ["Resiliencia", "Gobernanza", "Urbanismo"],
@@ -394,7 +394,7 @@ export const episodes: Episode[] = [
   {
     id: 102,
     title: "Urbanismo ecosistémico",
-    quote: "",
+    quote: "Lo que permite acomodar todos los intereses en el interior de la supermanzana es la velocidad. Con 10 km/h conseguimos que el niño pueda jugar en la calle a la pelota.",
     guest: "Salvador Rueda",
     guestRole: "Ecólogo urbano. Fundador de la Agencia de Ecología Urbana, Barcelona.",
     topics: ["Urbanismo", "Espacio Público", "Sostenibilidad"],
@@ -458,7 +458,7 @@ export const episodes: Episode[] = [
   {
     id: 98,
     title: "Cooperación Internacional: un aprendizaje compartido",
-    quote: "",
+    quote: "En América Latina muchas veces alguien ya se lo preguntó, y en muchos casos alguien también ya lo solucionó. En algún lugar ya alguien va más avanzado.",
     guest: "Dennis Quennet",
     guestRole: "Director de los Proyectos de Ciudades, Transporte e Industria sustentable de GIZ, cooperación alemana al desarrollo sustentable, en Mexico.",
     topics: ["Cooperación", "Internacionalización", "Movilidad"],
@@ -522,7 +522,7 @@ export const episodes: Episode[] = [
   {
     id: 103,
     title: "Procesos participativos en el diseño del transporte público",
-    quote: "",
+    quote: "Barcelona cuenta con un transporte público excelente. En TMB se movían 1.700.000 personas cada día.",
     guest: "Mercedes Vidal",
     guestRole: "ex Concejal de Movilidad y ex Presidenta de Transportes Metropolitanos de Barcelona",
     topics: ["Movilidad", "Gobernanza", "Espacio Público"],
@@ -570,7 +570,7 @@ export const episodes: Episode[] = [
   {
     id: 94,
     title: "Estonia, un país sin fronteras digitales",
-    quote: "",
+    quote: "Conozco mucha gente que me dice: me cambió la vida, me resolvió la vida.",
     guest: "Guillermo Chávez",
     guestRole: "Estonia e-Residency - Business Development Coordinator (Spain, Latin America)",
     topics: ["Smart Cities", "Gov-Tech", "Digitalización"],
@@ -602,7 +602,7 @@ export const episodes: Episode[] = [
   {
     id: 90,
     title: "Mendoza, un oasis urbano",
-    quote: "",
+    quote: "Mendoza es una provincia que se construye a partir de un uso racional de uno de los recursos más importantes que tenemos a nivel planetario: el agua.",
     guest: "Sebastián Fermani",
     guestRole: "Secretario de Ambiente y Desarrollo Urbano de la Ciudad de Mendoza, Argentina",
     topics: ["Sostenibilidad", "Agricultura", "Urbanismo"],
@@ -634,7 +634,7 @@ export const episodes: Episode[] = [
   {
     id: 88,
     title: "De las estrategias a los cambios reales",
-    quote: "",
+    quote: "Nunca puedes esperar a tener un consenso total para empezar un proyecto de transformación. Hay que empezarlo asumiendo que habrá conflictividad.",
     guest: "Xavi Matilla",
     guestRole: "Urbanista, profesor ETSAV-UPC. Arquitecte en Cap de Barcelona (2019-2023)",
     topics: ["Urbanismo", "Gobernanza", "Espacio Público"],

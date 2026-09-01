@@ -9,7 +9,7 @@ import { TopicChip } from "./TopicChip";
 import TopicWheel from "./TopicWheel";
 
 interface EpisodesGridProps {
-  episodes: Episode[];
+  episodes: Omit<Episode, "quote">[];
   topics: string[];
 }
 
@@ -22,7 +22,7 @@ function EpisodeCard({
   reduce,
   isLatest,
 }: {
-  episode: Episode;
+  episode: Omit<Episode, "quote">;
   index: number;
   isMatch: boolean;
   isFilterActive: boolean;
