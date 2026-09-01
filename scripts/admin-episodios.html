@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Episodios · CiudadHub</title>
+<style>
+  :root {
+    --bg: #09090b; --panel: #131316; --line: #27272a; --line2: #3f3f46;
+    --text: #e4e4e7; --dim: #a1a1aa; --faint: #71717a;
+    --accent: #f97316; --ok: #22c55e; --warn: #eab308; --err: #ef4444;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .wrap { display: grid; grid-template-columns: 320px minmax(0,1fr); min-height: 100vh; }
+  @media (max-width: 900px) { .wrap { grid-template-columns: 1fr; } }
+
+  aside { border-right: 1px solid var(--line); background: var(--panel); display: flex; flex-direction: column; max-height: 100vh; }
+  .brand { padding: 18px 18px 12px; border-bottom: 1px solid var(--line); }
+  .brand h1 { margin: 0; font-size: 15px; letter-spacing: -0.01em; }
+  .brand p { margin: 4px 0 0; font-size: 12px; color: var(--faint); }
+  .search { padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .list { overflow-y: auto; flex: 1; }
+  .item { padding: 9px 16px; border-bottom: 1px solid var(--line); cursor: pointer; display: grid; gap: 2px; }
+  .item:hover { background: #1b1b1f; }
+  .item.active { background: #26170d; border-left: 3px solid var(--accent); padding-left: 13px; }
+  .item b { font-weight: 600; font-size: 13.5px; }
+  .item span { font-size: 11.5px; color: var(--faint); }
+  .item .badges { display: flex; gap: 5px; align-items: center; margin-top: 2px; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+
+  main { padding: 26px 30px 60px; overflow-y: auto; max-height: 100vh; }
+  h2 { margin: 0 0 20px; font-size: 19px; letter-spacing: -0.015em; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; max-width: 760px; }
+  .full { grid-column: 1 / -1; }
+  label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--dim); margin-bottom: 5px; }
+  input[type=text], input[type=number], input[type=date], textarea, select {
+    width: 100%; background: #0e0e11; border: 1px solid var(--line2); color: var(--text);
+    border-radius: 7px; padding: 8px 10px; font: inherit; font-size: 14px;
+  }
+  textarea { min-height: 74px; resize: vertical; line-height: 1.5; }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); }
+  .hint { font-size: 11.5px; color: var(--faint); margin-top: 4px; }
+
+  .topics { display: flex; flex-wrap: wrap; gap: 7px; }
+  .topics label {
+    display: inline-flex; align-items: center; gap: 6px; margin: 0; cursor: pointer;
+    border: 1px solid var(--line2); border-radius: 999px; padding: 5px 11px;
+    font-size: 12.5px; text-transform: none; letter-spacing: 0; color: var(--dim);
+    user-select: none;
+  }
+  .topics label:hover { border-color: var(--faint); color: var(--text); }
+  .topics input { display: none; }
+  .topics label.on { background: var(--accent); border-color: var(--accent); color: #09090b; font-weight: 600; }
+  .topics label.on .dot { background: #09090b !important; }
+
+  .row { display: flex; gap: 10px; align-items: center; }
+  .check { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; color: var(--text); }
+  .check input { width: 16px; height: 16px; accent-color: var(--accent); }
+
+  .actions { margin-top: 24px; display: flex; gap: 10px; align-items: center; max-width: 760px; }
+  button {
+    background: var(--accent); color: #09090b; border: 0; border-radius: 7px;
+    padding: 9px 18px; font: inherit; font-weight: 600; cursor: pointer;
+  }
+  button:hover { filter: brightness(1.08); }
+  button.ghost { background: transparent; color: var(--dim); border: 1px solid var(--line2); font-weight: 500; }
+  button.ghost:hover { color: var(--text); border-color: var(--faint); }
+
+  .msg { margin-top: 18px; max-width: 760px; border-radius: 8px; padding: 11px 14px; font-size: 13.5px; border: 1px solid; }
+  .msg.ok   { border-color: #14532d; background: #08160d; color: #86efac; }
+  .msg.err  { border-color: #7f1d1d; background: #180a0a; color: #fca5a5; }
+  .msg.warn { border-color: #713f12; background: #171205; color: #fde047; }
+  .msg ul { margin: 6px 0 0; padding-left: 18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside>
+    <div class="brand">
+      <h1>Episodios</h1>
+      <p id="count">cargando…</p>
+    </div>
+    <div class="search">
+      <input type="text" id="q" placeholder="Buscar invitado o título…">
+    </div>
+    <div class="list" id="list"></div>
+  </aside>
+
+  <main>
+    <h2 id="title">Nuevo episodio</h2>
+    <div class="grid">
+      <div>
+        <label for="f-id">ID</label>
+        <input type="number" id="f-id" min="1">
+        <div class="hint" id="id-hint"></div>
+      </div>
+      <div>
+        <label for="f-date">Fecha (define el orden)</label>
+        <input type="date" id="f-date">
+      </div>
+
+      <div class="full">
+        <label for="f-title">Título del episodio</label>
+        <input type="text" id="f-title">
+      </div>
+
+      <div>
+        <label for="f-guest">Invitado</label>
+        <input type="text" id="f-guest">
+      </div>
+      <div>
+        <label for="f-role">Cargo</label>
+        <input type="text" id="f-role">
+      </div>
+
+      <div>
+        <label for="f-country">País</label>
+        <input type="text" id="f-country" list="countries">
+        <datalist id="countries"></datalist>
+      </div>
+      <div>
+        <label for="f-city">Ciudad</label>
+        <input type="text" id="f-city" list="cities">
+        <datalist id="cities"></datalist>
+        <div class="hint" id="city-hint"></div>
+      </div>
+
+      <div class="full">
+        <label>Temas</label>
+        <div class="topics" id="topics"></div>
+      </div>
+
+      <div class="full">
+        <label for="f-quote">Quote (solo se muestra si está en el slider)</label>
+        <textarea id="f-quote"></textarea>
+      </div>
+
+      <div class="full">
+        <label class="check">
+          <input type="checkbox" id="f-slider">
+          Mostrar en el slider del inicio
+        </label>
+      </div>
+
+      <div class="full">
+        <label for="f-apple">Apple Podcasts (obligatorio)</label>
+        <input type="text" id="f-apple">
+      </div>
+      <div class="full">
+        <label for="f-spotify">Spotify</label>
+        <input type="text" id="f-spotify">
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="save">Guardar</button>
+      <button class="ghost" id="new">Nuevo episodio</button>
+    </div>
+
+    <div id="msg"></div>
+  </main>
+</div>
+
+<script>
+let DATA = { records: [], topics: [], cities: [], countries: [], nextId: 1 };
+let originalId = null;
+
+const $ = (id) => document.getElementById(id);
+
+async function load() {
+  DATA = await (await fetch("/api/data")).json();
+  $("count").textContent = DATA.records.length + " episodios · escribe en content/episodios.csv";
+  $("countries").innerHTML = DATA.countries.map((c) => `<option value="${esc(c)}">`).join("");
+  $("cities").innerHTML = DATA.cities.map((c) => `<option value="${esc(c)}">`).join("");
+  renderTopics();
+  renderList();
+  blank();
+}
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function renderTopics() {
+  $("topics").innerHTML = DATA.topics.map((t) => `
+    <label data-topic="${esc(t.name)}">
+      <input type="checkbox" value="${esc(t.name)}">
+      <span class="dot" style="background:hsl(${t.hue} 75% 62%)"></span>${esc(t.name)}
+    </label>`).join("");
+  $("topics").querySelectorAll("input").forEach((cb) => {
+    cb.addEventListener("change", () => cb.closest("label").classList.toggle("on", cb.checked));
+  });
+}
+
+function renderList() {
+  const q = $("q").value.trim().toLowerCase();
+  const rows = DATA.records
+    .filter((r) => !q || (r.Invitado + " " + r.Podcast).toLowerCase().includes(q))
+    .sort((a, b) => Number(b.ID) - Number(a.ID));
+  $("list").innerHTML = rows.map((r) => `
+    <div class="item ${String(r.ID) === String(originalId) ? "active" : ""}" data-id="${esc(r.ID)}">
+      <b>${esc(r.Invitado)}</b>
+      <span>ep ${esc(r.ID)} · ${esc(r.Podcast).slice(0, 46)}</span>
+      <div class="badges">
+        ${r.Slider === "TRUE" ? '<span style="font-size:10px;color:#f97316">★ SLIDER</span>' : ""}
+        ${r.quote ? '<span style="font-size:10px;color:#71717a">“quote”</span>' : ""}
+      </div>
+    </div>`).join("");
+  $("list").querySelectorAll(".item").forEach((el) => {
+    el.addEventListener("click", () => pick(el.dataset.id));
+  });
+}
+
+function setTopics(str) {
+  const on = String(str || "").split(",").map((s) => s.trim()).filter(Boolean);
+  $("topics").querySelectorAll("input").forEach((cb) => {
+    cb.checked = on.includes(cb.value);
+    cb.closest("label").classList.toggle("on", cb.checked);
+  });
+}
+
+function getTopics() {
+  return [...$("topics").querySelectorAll("input:checked")].map((cb) => cb.value).join(", ");
+}
+
+function blank() {
+  originalId = null;
+  $("title").textContent = "Nuevo episodio";
+  $("f-id").value = DATA.nextId;
+  $("f-date").value = new Date().toISOString().slice(0, 10);
+  ["f-title", "f-guest", "f-role", "f-country", "f-city", "f-quote", "f-apple", "f-spotify"]
+    .forEach((k) => ($(k).value = ""));
+  $("f-slider").checked = false;
+  setTopics("");
+  checkId(); checkCity(); renderList(); $("msg").innerHTML = "";
+}
+
+function pick(id) {
+  const r = DATA.records.find((x) => String(x.ID) === String(id));
+  if (!r) return;
+  originalId = r.ID;
+  $("title").textContent = "Editando: " + r.Invitado;
+  $("f-id").value = r.ID;
+  $("f-date").value = (r["Date created"] || "").slice(0, 10);
+  $("f-title").value = r.Podcast;
+  $("f-guest").value = r.Invitado;
+  $("f-role").value = r["Job Title"];
+  $("f-country").value = r["Grabado desde País"];
+  $("f-city").value = r["Grabado desde Ciudad"];
+  $("f-quote").value = r.quote;
+  $("f-apple").value = r.AppelPodcast;
+  $("f-spotify").value = r.spotify;
+  $("f-slider").checked = r.Slider === "TRUE";
+  setTopics(r.Topics);
+  checkId(); checkCity(); renderList(); $("msg").innerHTML = "";
+}
+
+function checkId() {
+  const v = Number($("f-id").value);
+  const taken = DATA.records.some((r) => Number(r.ID) === v && String(r.ID) !== String(originalId));
+  $("id-hint").innerHTML = taken
+    ? '<span style="color:#fca5a5">Ese ID ya está en uso.</span>'
+    : (originalId === null ? "Próximo ID libre: " + DATA.nextId : "");
+}
+
+function checkCity() {
+  const c = $("f-city").value.trim();
+  $("city-hint").innerHTML = (c && !DATA.cities.includes(c))
+    ? '<span style="color:#fde047">Sin coordenadas: no va a salir en el mapa.</span>'
+    : "";
+}
+
+async function save() {
+  const ep = {
+    ID: $("f-id").value,
+    Invitado: $("f-guest").value,
+    "Job Title": $("f-role").value,
+    Podcast: $("f-title").value,
+    quote: $("f-quote").value,
+    Topics: getTopics(),
+    "Grabado desde País": $("f-country").value,
+    "Grabado desde Ciudad": $("f-city").value,
+    Slider: $("f-slider").checked,
+    "Date created": $("f-date").value,
+    AppelPodcast: $("f-apple").value,
+    spotify: $("f-spotify").value,
+  };
+  const r = await fetch("/api/save", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ episode: ep, originalId }),
+  });
+  const out = await r.json();
+  const parts = [];
+  if (out.ok) parts.push(`<div class="msg ok">Guardado. ${out.total} episodios en el CSV. Ahora corré <b>npm run sync</b> para que llegue al sitio.</div>`);
+  if (out.errors && out.errors.length) parts.push(`<div class="msg err">No se guardó:<ul>${out.errors.map((e) => "<li>" + esc(e) + "</li>").join("")}</ul></div>`);
+  if (out.warnings && out.warnings.length) parts.push(`<div class="msg warn">Avisos:<ul>${out.warnings.map((e) => "<li>" + esc(e) + "</li>").join("")}</ul></div>`);
+  $("msg").innerHTML = parts.join("");
+  if (out.ok) { const keep = ep.ID; DATA = await (await fetch("/api/data")).json(); originalId = keep; renderList(); }
+}
+
+$("save").addEventListener("click", save);
+$("new").addEventListener("click", blank);
+$("q").addEventListener("input", renderList);
+$("f-id").addEventListener("input", checkId);
+$("f-city").addEventListener("input", checkCity);
+load();
+</script>
+</body>
+</html>

@@ -224,9 +224,13 @@ def fetch_sheet() -> list[dict]:
         return list(csv.DictReader(f))
 
 
+_incompletas: list[tuple[str, str, list[str]]] = []
+
+
 def parse_rows(rows: list[dict]) -> list[dict]:
     episodes = []
     seen_apple = set()
+    _incompletas.clear()
 
     for row in rows:
         name = MANUAL_GUEST_NAMES.get(
@@ -240,8 +244,15 @@ def parse_rows(rows: list[dict]) -> list[dict]:
         city = clean_city(row.get("Grabado desde Ciudad", ""))
         country = clean_city(row.get("Grabado desde País", ""))
 
-        # Saltar filas sin datos esenciales
+        # Saltar filas sin datos esenciales — pero dejar constancia de las que
+        # tienen contenido a medias, para que no desaparezcan en silencio.
         if not name or not title or not apple_url.startswith("http"):
+            if name or title:
+                falta = []
+                if not name: falta.append("invitado")
+                if not title: falta.append("título")
+                if not apple_url.startswith("http"): falta.append("link de Apple")
+                _incompletas.append((row.get("ID", "").strip() or "sin ID", name or title, falta))
             continue
 
         # Deduplicar por Apple URL
@@ -324,6 +335,63 @@ def parse_rows(rows: list[dict]) -> list[dict]:
     return episodes
 
 
+# ---------------------------------------------------------------------------
+# Validación: atrapa errores de tipeo antes de que lleguen al sitio
+# ---------------------------------------------------------------------------
+TOPIC_COLORS_PATH = os.path.join(os.path.dirname(__file__), "..", "lib", "topicColors.ts")
+CITY_COORDS_PATH = os.path.join(os.path.dirname(__file__), "..", "components", "InvitadosClient.tsx")
+
+
+def _known_topics() -> set[str]:
+    """Los temas definidos en lib/topicColors.ts (los únicos con icono y color)."""
+    try:
+        src = io.open(TOPIC_COLORS_PATH, encoding="utf-8").read()
+    except OSError:
+        return set()
+    return set(re.findall(r'^\s*"([^"]+)":\s*\{ icon:', src, re.M))
+
+
+def _known_cities() -> set[str]:
+    """Las ciudades con coordenadas en CITY_COORDS (las únicas que salen en el mapa)."""
+    try:
+        src = io.open(CITY_COORDS_PATH, encoding="utf-8").read()
+    except OSError:
+        return set()
+    return set(re.findall(r'^\s*"([^"]+)":\s*\[', src, re.M))
+
+
+def validate(episodes: list[dict]) -> list[str]:
+    """Devuelve la lista de problemas encontrados. Vacía = todo bien."""
+    problemas: list[str] = []
+
+    ids = Counter(ep["id"] for ep in episodes)
+    for ep_id, n in sorted(ids.items()):
+        if n > 1:
+            quienes = ", ".join(e["name"] for e in episodes if e["id"] == ep_id)
+            problemas.append(f"ID {ep_id} repetido en {n} episodios ({quienes})")
+
+    topics_ok = _known_topics()
+    if topics_ok:
+        for ep in episodes:
+            for t in ep["topics"]:
+                if t not in topics_ok:
+                    problemas.append(
+                        f"ep {ep['id']} ({ep['name']}): tema desconocido {t!r} — "
+                        f"agregalo a lib/topicColors.ts o corregí el CSV"
+                    )
+
+    cities_ok = _known_cities()
+    if cities_ok:
+        faltan = sorted({ep["city"] for ep in episodes if ep["city"] and ep["city"] not in cities_ok})
+        for c in faltan:
+            problemas.append(
+                f"ciudad {c!r} sin coordenadas — no va a aparecer en el mapa. "
+                f"Agregala a CITY_COORDS en components/InvitadosClient.tsx"
+            )
+
+    return problemas
+
+
 def generate_ts(episodes: list[dict]) -> str:
     topic_counter: Counter = Counter()
     for ep in episodes:
@@ -398,6 +466,20 @@ def main():
     rows = fetch_sheet()
     episodes = parse_rows(rows)
     print(f"Episodios encontrados: {len(episodes)}")
+
+    if _incompletas:
+        print(f"\nℹ  {len(_incompletas)} fila(s) en el CSV todavía sin publicar:")
+        for ep_id, quien, falta in _incompletas:
+            print(f"   · ID {ep_id} — {quien}: falta {', '.join(falta)}")
+        print("   Se conservan en content/episodios.csv; van a publicarse cuando se completen.\n")
+
+    problemas = validate(episodes)
+    if problemas:
+        print(f"\n✗ {len(problemas)} problema(s) — no se generó nada:\n")
+        for p in problemas:
+            print(f"   · {p}")
+        print("\nCorregí content/episodios.csv y volvé a correr npm run sync.")
+        raise SystemExit(1)
 
     output = os.path.abspath(OUTPUT_PATH)
     with open(output, "w", encoding="utf-8") as f:
