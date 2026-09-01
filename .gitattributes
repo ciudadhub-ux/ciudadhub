@@ -1,0 +1,4 @@
+# El CSV de contenido lo escriben dos herramientas distintas (el editor en
+# Node y scripts en Python). Sin esto, cada una usa su propio fin de línea
+# y el diff marca las 106 líneas como cambiadas aunque se haya tocado una.
+content/episodios.csv text eol=lf

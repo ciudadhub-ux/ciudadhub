@@ -61,7 +61,20 @@
   .check { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; color: var(--text); }
   .check input { width: 16px; height: 16px; accent-color: var(--accent); }
 
-  .actions { margin-top: 24px; display: flex; gap: 10px; align-items: center; max-width: 760px; }
+  .actions {
+    position: sticky; bottom: 0; z-index: 5;
+    margin-top: 24px; display: flex; gap: 10px; align-items: center; max-width: 760px;
+    padding: 12px 0 14px; background: linear-gradient(to top, var(--bg) 62%, transparent);
+  }
+  .state { font-size: 12.5px; margin-left: 4px; }
+  .state.dirty { color: var(--warn); }
+  .state.saved { color: var(--ok); }
+  .item.dirty b::after { content: " ●"; color: var(--warn); font-size: 11px; }
+  kbd {
+    font: 11px ui-monospace, monospace; color: var(--faint);
+    border: 1px solid var(--line2); border-bottom-width: 2px;
+    border-radius: 4px; padding: 1px 5px; margin-left: 2px;
+  }
   button {
     background: var(--accent); color: #09090b; border: 0; border-radius: 7px;
     padding: 9px 18px; font: inherit; font-weight: 600; cursor: pointer;
@@ -159,6 +172,8 @@
     <div class="actions">
       <button id="save">Guardar</button>
       <button class="ghost" id="new">Nuevo episodio</button>
+      <span class="state" id="state"></span>
+      <span style="margin-left:auto"><kbd>⌘</kbd><kbd>S</kbd></span>
     </div>
 
     <div id="msg"></div>
@@ -168,6 +183,42 @@
 <script>
 let DATA = { records: [], topics: [], cities: [], countries: [], nextId: 1 };
 let originalId = null;
+let dirty = false;
+
+function setDirty(v) {
+  dirty = v;
+  const el = document.getElementById("state");
+  el.className = "state " + (v ? "dirty" : "");
+  el.textContent = v ? "Sin guardar" : "";
+  document.querySelectorAll(".item").forEach((it) => {
+    it.classList.toggle("dirty", v && it.dataset.id === String(originalId));
+  });
+}
+
+// Cualquier edición marca el formulario como pendiente.
+document.addEventListener("input", (e) => {
+  if (e.target.closest("main") && e.target.id !== "q") setDirty(true);
+});
+document.addEventListener("change", (e) => {
+  if (e.target.closest("main")) setDirty(true);
+});
+
+// Guardar con Cmd+S / Ctrl+S
+document.addEventListener("keydown", (e) => {
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "s") {
+    e.preventDefault();
+    save();
+  }
+});
+
+// Avisar si se cierra la pestaña con cambios pendientes
+window.addEventListener("beforeunload", (e) => {
+  if (dirty) { e.preventDefault(); e.returnValue = ""; }
+});
+
+function confirmarDescarte() {
+  return !dirty || confirm("Hay cambios sin guardar en este episodio.\n\n¿Descartarlos y continuar?");
+}
 
 const $ = (id) => document.getElementById(id);
 
@@ -228,6 +279,7 @@ function getTopics() {
 }
 
 function blank() {
+  if (!confirmarDescarte()) return;
   originalId = null;
   $("title").textContent = "Nuevo episodio";
   $("f-id").value = DATA.nextId;
@@ -236,10 +288,11 @@ function blank() {
     .forEach((k) => ($(k).value = ""));
   $("f-slider").checked = false;
   setTopics("");
-  checkId(); checkCity(); renderList(); $("msg").innerHTML = "";
+  checkId(); checkCity(); renderList(); $("msg").innerHTML = ""; setDirty(false);
 }
 
 function pick(id) {
+  if (!confirmarDescarte()) return;
   const r = DATA.records.find((x) => String(x.ID) === String(id));
   if (!r) return;
   originalId = r.ID;
@@ -256,7 +309,7 @@ function pick(id) {
   $("f-spotify").value = r.spotify;
   $("f-slider").checked = r.Slider === "TRUE";
   setTopics(r.Topics);
-  checkId(); checkCity(); renderList(); $("msg").innerHTML = "";
+  checkId(); checkCity(); renderList(); $("msg").innerHTML = ""; setDirty(false);
 }
 
 function checkId() {
@@ -300,7 +353,16 @@ async function save() {
   if (out.errors && out.errors.length) parts.push(`<div class="msg err">No se guardó:<ul>${out.errors.map((e) => "<li>" + esc(e) + "</li>").join("")}</ul></div>`);
   if (out.warnings && out.warnings.length) parts.push(`<div class="msg warn">Avisos:<ul>${out.warnings.map((e) => "<li>" + esc(e) + "</li>").join("")}</ul></div>`);
   $("msg").innerHTML = parts.join("");
-  if (out.ok) { const keep = ep.ID; DATA = await (await fetch("/api/data")).json(); originalId = keep; renderList(); }
+  if (out.ok) {
+    const keep = ep.ID;
+    DATA = await (await fetch("/api/data")).json();
+    originalId = keep;
+    setDirty(false);
+    renderList();
+    $("state").className = "state saved";
+    $("state").textContent = "Guardado";
+    setTimeout(() => { if (!dirty) $("state").textContent = ""; }, 2500);
+  }
 }
 
 $("save").addEventListener("click", save);
