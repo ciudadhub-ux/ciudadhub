@@ -44,6 +44,10 @@ export const metadata: Metadata = {
     images: [OG_IMAGE.url],
   },
   robots: { index: true, follow: true },
+  // Verificación de propiedad en Google Search Console (método etiqueta HTML).
+  verification: {
+    google: "N7t_F_EDVH7O-yVdU77ah5Om83h72qhUR0Ud-ajmQ80",
+  },
 };
 
 export default function RootLayout({
