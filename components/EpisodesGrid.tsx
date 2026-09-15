@@ -105,7 +105,7 @@ function EpisodeCard({
   );
 }
 
-const PAGE_SIZE = 12;
+const PAGE_SIZE = 40;  // 10 filas de 4 columnas
 
 export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
   const [activeTopic, setActiveTopic] = useState<string | null>(null);

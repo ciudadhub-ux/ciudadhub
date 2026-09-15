@@ -238,6 +238,13 @@ def parse_rows(rows: list[dict]) -> list[dict]:
             (row.get("Invitado") or row.get("Name") or "").strip(),
         )
         role = row.get("Job Title", "").strip()
+        # Algunos episodios tienen dos invitados. El segundo va en su propia
+        # columna: una fila extra se descartaría al deduplicar por link de Apple.
+        name2 = MANUAL_GUEST_NAMES.get(
+            (row.get("Invitado 2") or "").strip(),
+            (row.get("Invitado 2") or "").strip(),
+        )
+        role2 = row.get("Job Title 2", "").strip()
         title = row.get("Podcast", "").strip()
         apple_url = row.get("AppelPodcast", "").strip()
         spotify_url = row.get("spotify", "").strip()
@@ -298,6 +305,10 @@ def parse_rows(rows: list[dict]) -> list[dict]:
             "created_date": created_date,
             "image_url": image_url,
             "guest_image_url": find_guest_image(name, sheet_id),
+            "name2": name2,
+            "role2": role2,
+            "seed2": name_to_seed(name2) if name2 else "",
+            "guest_image_url2": find_guest_image(name2) if name2 else "",
             "featured": featured,
             "seed": name_to_seed(name),
             "sheet_id": sheet_id,
@@ -409,6 +420,10 @@ def generate_ts(episodes: list[dict]) -> str:
         "  quote: string",
         "  guest: string",
         "  guestRole: string",
+        "  guest2: string",
+        "  guestRole2: string",
+        "  guestImageUrl2: string",
+        "  guestAvatarSeed2: string",
         "  topics: string[]",
         "  city: string",
         "  country: string",
@@ -437,6 +452,10 @@ def generate_ts(episodes: list[dict]) -> str:
             f"    quote: {ts_string(ep['quote'])},",
             f"    guest: {ts_string(ep['name'])},",
             f"    guestRole: {ts_string(ep['role'])},",
+            f"    guest2: {ts_string(ep['name2'])},",
+            f"    guestRole2: {ts_string(ep['role2'])},",
+            f"    guestImageUrl2: {ts_string(ep['guest_image_url2'])},",
+            f"    guestAvatarSeed2: {ts_string(ep['seed2'])},",
             f"    topics: {topics_ts},",
             f"    city: {ts_string(ep['city'])},",
             f"    country: {ts_string(ep['country'])},",

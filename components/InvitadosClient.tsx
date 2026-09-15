@@ -190,7 +190,7 @@ interface Props {
   countryByCity: Record<string, string>;
 }
 
-const PAGE_SIZE = 18;
+const PAGE_SIZE = 60;  // 10 filas de 6 columnas
 
 export default function InvitadosClient({ guests, cityGuestNames, countryByCity }: Props) {
   const [activeCity, setActiveCity] = useState<string | null>(null);

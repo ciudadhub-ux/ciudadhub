@@ -40,24 +40,39 @@ export default function InvitadosPage() {
       appleUrl: ep.appleUrl,
     };
 
-    if (!seen.has(name)) {
-      seen.set(name, {
-        name,
-        guestRole: ep.guestRole,
-        city: ep.city,
-        country: ep.country,
-        topics,
-        photoSrc: ep.guestImageUrl || null,
-        episodes: [],
+    // Un episodio puede tener dos invitados: cada uno recibe su propia ficha,
+    // ambas apuntando al mismo episodio.
+    const participantes: { nombre: string; rol: string; foto: string }[] = [
+      { nombre: name, rol: ep.guestRole, foto: ep.guestImageUrl },
+    ];
+    if (ep.guest2?.trim()) {
+      participantes.push({
+        nombre: ep.guest2.trim(),
+        rol: ep.guestRole2 ?? "",
+        foto: ep.guestImageUrl2 ?? "",
       });
-      guestEpisodes.set(name, []);
     }
-    guestEpisodes.get(name)!.push(epLink);
+
+    for (const p of participantes) {
+      if (!seen.has(p.nombre)) {
+        seen.set(p.nombre, {
+          name: p.nombre,
+          guestRole: p.rol,
+          city: ep.city,
+          country: ep.country,
+          topics,
+          photoSrc: p.foto || null,
+          episodes: [],
+        });
+        guestEpisodes.set(p.nombre, []);
+      }
+      guestEpisodes.get(p.nombre)!.push(epLink);
+    }
 
     // Collect ALL cities across all episodes for the map
     if (ep.city) {
       if (!cityGuestNames.has(ep.city)) cityGuestNames.set(ep.city, new Set());
-      cityGuestNames.get(ep.city)!.add(name);
+      for (const p of participantes) cityGuestNames.get(ep.city)!.add(p.nombre);
       if (!countryByCity.has(ep.city)) countryByCity.set(ep.city, ep.country);
     }
   }
