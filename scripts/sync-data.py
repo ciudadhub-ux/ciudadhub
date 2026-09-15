@@ -241,8 +241,13 @@ def parse_rows(rows: list[dict]) -> list[dict]:
         title = row.get("Podcast", "").strip()
         apple_url = row.get("AppelPodcast", "").strip()
         spotify_url = row.get("spotify", "").strip()
-        city = clean_city(row.get("Grabado desde Ciudad", ""))
-        country = clean_city(row.get("Grabado desde País", ""))
+        # "Grabado desde" es dónde se grabó el episodio. La ciudad del invitado
+        # es otra cosa y vive en su propia columna; si está vacía se cae a la de
+        # grabación para no dejar al invitado fuera del mapa.
+        rec_city = clean_city(row.get("Grabado desde Ciudad", ""))
+        rec_country = clean_city(row.get("Grabado desde País", ""))
+        city = clean_city(row.get("Ciudad invitado", "")) or rec_city
+        country = clean_city(row.get("País invitado", "")) or rec_country
 
         # Saltar filas sin datos esenciales — pero dejar constancia de las que
         # tienen contenido a medias, para que no desaparezcan en silencio.
@@ -292,6 +297,8 @@ def parse_rows(rows: list[dict]) -> list[dict]:
             "spotify_url": spotify_url if spotify_url.startswith("http") else "",
             "city": city,
             "country": country,
+            "rec_city": rec_city,
+            "rec_country": rec_country,
             "topics": topics,
             "created_date": created_date,
             "image_url": image_url,
@@ -410,6 +417,8 @@ def generate_ts(episodes: list[dict]) -> str:
         "  topics: string[]",
         "  city: string",
         "  country: string",
+        "  recCity: string",
+        "  recCountry: string",
         "  appleUrl: string",
         "  spotifyUrl: string",
         "  imageUrl: string",
@@ -438,6 +447,8 @@ def generate_ts(episodes: list[dict]) -> str:
             f"    topics: {topics_ts},",
             f"    city: {ts_string(ep['city'])},",
             f"    country: {ts_string(ep['country'])},",
+            f"    recCity: {ts_string(ep['rec_city'])},",
+            f"    recCountry: {ts_string(ep['rec_country'])},",
             f"    appleUrl: {ts_string(ep['apple_url'])},",
             f"    spotifyUrl: {ts_string(ep['spotify_url'])},",
             f"    imageUrl: {ts_string(ep['image_url'])},",

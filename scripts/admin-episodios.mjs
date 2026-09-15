@@ -22,6 +22,9 @@ const PORT = 4002;
 
 const COLUMNS = [
   "ID", "Invitado", "Job Title", "Podcast", "quote", "Topics",
+  // Dónde está el invitado (lo que muestra el mapa) vs dónde se grabó el
+  // episodio. Son cosas distintas y no siempre coinciden.
+  "Ciudad invitado", "País invitado",
   "Grabado desde País", "Grabado desde Ciudad", "Slider",
   "Date created", "AppelPodcast", "spotify",
 ];
@@ -112,7 +115,7 @@ function validateEpisode(ep, { usedIds, topics, cities, isNew }) {
   for (const t of chosen) if (!names.includes(t)) errors.push(`Tema desconocido: ${t}`);
 
   const warnings = [];
-  const city = String(ep["Grabado desde Ciudad"] || "").trim();
+  const city = String(ep["Ciudad invitado"] || ep["Grabado desde Ciudad"] || "").trim();
   if (city && !cities.includes(city))
     warnings.push(`La ciudad "${city}" no tiene coordenadas: no va a aparecer en el mapa. Agregala a CITY_COORDS en components/InvitadosClient.tsx.`);
   if (!chosen.length) warnings.push("El episodio no tiene ningún tema asignado.");
