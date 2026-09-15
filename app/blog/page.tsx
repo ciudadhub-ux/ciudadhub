@@ -1,13 +1,25 @@
 import type { Metadata } from "next";
+import { OG_IMAGE } from "@/lib/site";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import BlogCard from "@/components/blog/BlogCard";
 import { posts } from "@/lib/blog-data";
 
+const DESCRIPTION =
+  "Artículos sobre movilidad, datos urbanos, salud pública y espacio público: análisis del equipo de ciudadhub sobre el futuro de nuestras ciudades.";
+
+// El sufijo "— CiudadHub" lo agrega el template de title del layout raíz.
 export const metadata: Metadata = {
-  title: "Blog — ciudadhub",
-  description:
-    "Artículos sobre movilidad, datos urbanos, salud pública y espacio público: análisis del equipo de ciudadhub sobre el futuro de nuestras ciudades.",
+  title: "Blog",
+  description: DESCRIPTION,
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    type: "website",
+    url: "/blog",
+    title: "Blog — CiudadHub",
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 export default function BlogIndexPage() {

@@ -2,6 +2,25 @@ import Nav from "@/components/Nav";
 import InvitadosClient, { type GuestData, type EpisodeLink } from "@/components/InvitadosClient";
 import Footer from "@/components/Footer";
 import { episodes } from "@/lib/data";
+import type { Metadata } from "next";
+import { OG_IMAGE } from "@/lib/site";
+
+const DESCRIPTION =
+  "Los invitados e invitadas de CiudadHub: quienes gestionan, estudian y transforman ciudades en América Latina y Europa, y el mapa de dónde hablan.";
+
+// El sufijo "— CiudadHub" lo agrega el template de title del layout raíz.
+export const metadata: Metadata = {
+  title: "Invitados",
+  description: DESCRIPTION,
+  alternates: { canonical: "/invitados" },
+  openGraph: {
+    type: "website",
+    url: "/invitados",
+    title: "Invitados — CiudadHub",
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+};
 
 export default function InvitadosPage() {
   const seen = new Map<string, GuestData>();
@@ -59,6 +78,7 @@ export default function InvitadosPage() {
     <>
       <Nav />
       <main className="pt-[98px] md:pt-48">
+        <h1 className="sr-only">Invitados de CiudadHub</h1>
         <InvitadosClient guests={guests} cityGuestNames={cityGuestNamesRecord} countryByCity={countryByCityRecord} />
       </main>
       <Footer />

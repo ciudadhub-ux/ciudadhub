@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { OG_IMAGE, SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -15,9 +16,34 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ciudadhub - Podcast sobre ciudades",
-  description:
-    "Conversaciones sobre urbanismo, movilidad, cultura y el futuro de nuestras ciudades en Latinoamérica.",
+  // Prefijo para todas las URLs relativas de los metadatos (canónico, og:image…).
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    template: `%s — ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  // Evita que se indexe el mismo contenido como http/https o con y sin www.
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "es_ES",
+    url: "/",
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@ciudadhub",
+    creator: "@ciudadhub",
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE.url],
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

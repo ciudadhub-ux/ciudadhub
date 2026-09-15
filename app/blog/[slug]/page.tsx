@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGE } from "@/lib/site";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, CalendarBlank, Clock } from "@phosphor-icons/react/dist/ssr";
@@ -23,9 +24,21 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
+  // El sufijo "— CiudadHub" lo agrega el template de title del layout raíz.
   return {
-    title: `${post.title} — ciudadhub`,
+    title: post.title,
     description: post.summary,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      type: "article",
+      url: `/blog/${post.slug}`,
+      title: post.title,
+      description: post.summary,
+      publishedTime: post.date,
+      authors: [post.author],
+      tags: post.tags,
+      images: [OG_IMAGE],
+    },
   };
 }
 
