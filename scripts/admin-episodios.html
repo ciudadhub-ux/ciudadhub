@@ -131,25 +131,15 @@
       </div>
 
       <div>
-        <label for="f-city">Ciudad del invitado <span style="color:#f97316">(la del mapa)</span></label>
+        <label for="f-city">Grabado desde: ciudad <span style="color:#f97316">(la del mapa)</span></label>
         <input type="text" id="f-city" list="cities">
         <datalist id="cities"></datalist>
         <div class="hint" id="city-hint"></div>
       </div>
       <div>
-        <label for="f-country">País del invitado</label>
+        <label for="f-country">Grabado desde: país</label>
         <input type="text" id="f-country" list="countries">
         <datalist id="countries"></datalist>
-      </div>
-
-      <div>
-        <label for="f-reccity">Grabado desde (ciudad)</label>
-        <input type="text" id="f-reccity" list="cities">
-        <div class="hint">Dónde se grabó. No afecta el mapa.</div>
-      </div>
-      <div>
-        <label for="f-reccountry">Grabado desde (país)</label>
-        <input type="text" id="f-reccountry" list="countries">
       </div>
 
       <div class="full">
@@ -294,7 +284,7 @@ function blank() {
   $("title").textContent = "Nuevo episodio";
   $("f-id").value = DATA.nextId;
   $("f-date").value = new Date().toISOString().slice(0, 10);
-  ["f-title", "f-guest", "f-role", "f-country", "f-city", "f-reccity", "f-reccountry", "f-quote", "f-apple", "f-spotify"]
+  ["f-title", "f-guest", "f-role", "f-country", "f-city", "f-quote", "f-apple", "f-spotify"]
     .forEach((k) => ($(k).value = ""));
   $("f-slider").checked = false;
   setTopics("");
@@ -312,10 +302,8 @@ function pick(id) {
   $("f-title").value = r.Podcast;
   $("f-guest").value = r.Invitado;
   $("f-role").value = r["Job Title"];
-  $("f-city").value = r["Ciudad invitado"] || r["Grabado desde Ciudad"];
-  $("f-country").value = r["País invitado"] || r["Grabado desde País"];
-  $("f-reccity").value = r["Grabado desde Ciudad"];
-  $("f-reccountry").value = r["Grabado desde País"];
+  $("f-city").value = r["Grabado desde Ciudad"];
+  $("f-country").value = r["Grabado desde País"];
   $("f-quote").value = r.quote;
   $("f-apple").value = r.AppelPodcast;
   $("f-spotify").value = r.spotify;
@@ -347,10 +335,8 @@ async function save() {
     Podcast: $("f-title").value,
     quote: $("f-quote").value,
     Topics: getTopics(),
-    "Ciudad invitado": $("f-city").value,
-    "País invitado": $("f-country").value,
-    "Grabado desde Ciudad": $("f-reccity").value,
-    "Grabado desde País": $("f-reccountry").value,
+    "Grabado desde Ciudad": $("f-city").value,
+    "Grabado desde País": $("f-country").value,
     Slider: $("f-slider").checked,
     "Date created": $("f-date").value,
     AppelPodcast: $("f-apple").value,
