@@ -567,7 +567,7 @@ export const episodes: Episode[] = [
     city: "Buenos Aires",
     country: "Argentina",
     appleUrl: "https://podcasts.apple.com/ca/podcast/ciudad-hubs-tracks/id1093603743?i=1000527175980",
-    spotifyUrl: "https://www.spreaker.com/episode/45482121",
+    spotifyUrl: "https://open.spotify.com/episode/0mmUjKV5OqG89IE3gS1GKa",
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Melisa%20Breda.webp",
     guestAvatarSeed: "melisabreda",
