@@ -6,7 +6,7 @@ const TEAM = [
     country: "Canadá",
     twitter: "andrescarpan",
     linkedin: "https://www.linkedin.com/in/andrescarpanzano",
-    photo: "/images/equipo/Andres Carpanzano_edited.webp",
+    photo: "/images/equipo/andres-carpanzano.webp",
     bio: "Argentino, de Santa Fe, Director de [Diplomacity](https://www.diploma.city) consultor especializado en estrategias de comunicación para personalidades, instituciones, ciudades y empresas.\n\nEs delegado oficial del Smart City Expo World Congress de Barcelona para: Canada, Argentina, Uruguay, Paraguay, República Dominicana, Costa Rica, Panamá y Bolivia.\n\nBasado entre Wakefield, Québec y Buenos Aires, su trabajo conecta perspectivas globales con las realidades y desafíos urbanos de la región.",
   },
   {
