@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { MapPin, X } from "@phosphor-icons/react";
 import { SpotifyIcon, AppleIcon } from "./PodcastIcons";
 import type { CityDot } from "./InvitadosMap";
+import { formatEpisodeDate } from "@/lib/format";
 
 const InvitadosMap = dynamic(() => import("./InvitadosMap"), {
   ssr: false,
@@ -86,8 +87,8 @@ function MapPopupCard({ guest }: { guest: GuestData }) {
       <div className="mt-auto flex flex-col gap-1.5">
         {eps.map((ep) => (
           <div key={ep.id} className="flex items-center gap-1.5" title={ep.title}>
-            {eps.length > 1 && (
-              <span className="font-mono text-[10px] text-orange-500/70 shrink-0">EP {ep.id}</span>
+            {eps.length > 1 && ep.date && (
+              <span className="font-mono text-[10px] text-orange-500/70 shrink-0">{formatEpisodeDate(ep.date)}</span>
             )}
             {ep.spotifyUrl && (
               <a href={ep.spotifyUrl} target="_blank" rel="noopener noreferrer"
@@ -143,8 +144,8 @@ function GuestCard({ guest }: { guest: GuestData }) {
       <div className="mt-auto pt-1 flex flex-col gap-1.5">
         {eps.map((ep) => (
           <div key={ep.id} className="flex items-center gap-1.5" title={ep.title}>
-            {eps.length > 1 && (
-              <span className="font-mono text-[10px] text-orange-500/70 shrink-0">EP {ep.id}</span>
+            {eps.length > 1 && ep.date && (
+              <span className="font-mono text-[10px] text-orange-500/70 shrink-0">{formatEpisodeDate(ep.date)}</span>
             )}
             {ep.spotifyUrl && (
               <a href={ep.spotifyUrl} target="_blank" rel="noopener noreferrer"
@@ -172,6 +173,7 @@ export type EpisodeLink = {
   title: string;
   spotifyUrl: string;
   appleUrl: string;
+  date: string;
 };
 
 export type GuestData = {

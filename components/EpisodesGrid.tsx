@@ -289,7 +289,7 @@ export default function EpisodesGrid({ episodes, topics }: EpisodesGridProps) {
             onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
             className="px-6 py-2.5 rounded-full border border-zinc-700 text-zinc-400 hover:text-zinc-200 hover:border-zinc-500 transition-colors text-sm font-medium"
           >
-            Ver más · {matchingEps.length - visibleCount} episodios
+            Ver {matchingEps.length - visibleCount} episodios más
           </button>
         </div>
       )}

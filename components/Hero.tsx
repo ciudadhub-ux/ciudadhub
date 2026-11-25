@@ -7,12 +7,14 @@ export default function Hero({ episodes }: { episodes: Episode[] }) {
   // La selección se hace acá, en el servidor: al componente de cliente solo
   // le llegan los episodios que realmente se muestran. Así los datos de los
   // demás (quotes incluidas) no viajan en el payload de la página.
-  const featured = episodes.filter((ep) => ep.featured).sort((a, b) => b.id - a.id);
-  const fallback = [...episodes].sort((a, b) => b.id - a.id);
+  // episodes ya viene ordenado por fecha (más reciente primero) desde sync-data.py.
+  // El id es solo el número de fila del CRM: no indica orden de publicación.
+  const featured = episodes.filter((ep) => ep.featured);
+  const fallback = episodes;
   const items = (featured.length > 0 ? featured : fallback).slice(0, MAX_SLIDES);
   // El badge "Último episodio" se calcula sobre TODOS los episodios, no solo
   // los del slider, así que el id se pasa aparte.
-  const latestId = episodes.length > 0 ? Math.max(...episodes.map((e) => e.id)) : -1;
+  const latestId = episodes[0]?.id ?? -1;
 
   return (
     <section className="relative hidden md:block md:pt-56 md:pb-8 overflow-hidden">

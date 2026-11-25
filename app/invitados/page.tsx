@@ -38,6 +38,7 @@ export default function InvitadosPage() {
       title: ep.title,
       spotifyUrl: ep.spotifyUrl,
       appleUrl: ep.appleUrl,
+      date: ep.date,
     };
 
     // Un episodio puede tener dos invitados: cada uno recibe su propia ficha,

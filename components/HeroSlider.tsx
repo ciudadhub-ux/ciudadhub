@@ -5,6 +5,7 @@ import Image from "next/image";
 import { CaretLeft, CaretRight } from "@phosphor-icons/react";
 import { motion, AnimatePresence } from "motion/react";
 import { Episode } from "@/lib/data";
+import { formatEpisodeDate } from "@/lib/format";
 import { SpotifyIcon as SpotifyIconBase, AppleIcon as AppleIconBase } from "./PodcastIcons";
 
 function avatarUrl(seed: string) {
@@ -78,10 +79,12 @@ export default function HeroSlider({
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/65 to-zinc-950/15" />
 
-              {/* EP badge */}
+              {/* Badge: último episodio o fecha de publicación */}
+              {(ep.id === latestId || ep.date) && (
               <div className="absolute top-5 left-16 font-mono text-[10px] tracking-[0.18em] uppercase px-2.5 py-1 rounded-md bg-zinc-950/70 text-orange-400 backdrop-blur-sm border border-orange-500/20 z-20">
-                {ep.id === latestId ? "Último episodio" : `EP ${String(ep.id).padStart(2, "0")}`}
+                {ep.id === latestId ? "Último episodio" : formatEpisodeDate(ep.date)}
               </div>
+              )}
 
               {/* Guest photo + name */}
               <div className="absolute top-5 right-16 flex flex-col items-center gap-2 z-20">

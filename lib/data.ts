@@ -18,6 +18,7 @@ export interface Episode {
   imageUrl: string
   guestImageUrl: string
   guestAvatarSeed: string
+  date: string
   featured: boolean
 }
 
@@ -45,6 +46,7 @@ export const episodes: Episode[] = [
     imageUrl: "/images/episodios/id%20106%20Ana%20Rivas%20de%20Gante.png",
     guestImageUrl: "/images/INVITADOS/Ana%20Rivas%20De%20Gante.webp",
     guestAvatarSeed: "anarivasdegante",
+    date: "2026-08-21",
     featured: true,
   },
   {
@@ -65,6 +67,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Usama%20Bilal.webp",
     guestAvatarSeed: "usamabilal",
+    date: "2026-04-14",
     featured: false,
   },
   {
@@ -85,6 +88,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Patricio%20Ovalle%20Woods.webp",
     guestAvatarSeed: "patricioovallewoods",
+    date: "2026-03-23",
     featured: false,
   },
   {
@@ -105,6 +109,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Mariano%20Turzi.webp",
     guestAvatarSeed: "marianoturzi",
+    date: "2026-03-09",
     featured: false,
   },
   {
@@ -125,6 +130,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Guillermo%20Chavez%20Garc%C3%ADa.webp",
     guestAvatarSeed: "guillermochvez",
+    date: "2026-03-04",
     featured: false,
   },
   {
@@ -145,6 +151,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Samanta%20Szusterman.webp",
     guestAvatarSeed: "samantaszusterman",
+    date: "2026-02-16",
     featured: false,
   },
   {
@@ -165,6 +172,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Ramon%20Gras%20Alum%C3%A0.webp",
     guestAvatarSeed: "ramongrasalum",
+    date: "2024-09-29",
     featured: false,
   },
   {
@@ -185,6 +193,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Stephane%20Bazire.webp",
     guestAvatarSeed: "stephanebazire",
+    date: "2024-09-18",
     featured: false,
   },
   {
@@ -205,6 +214,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Sebasti%C3%A1n%20Fermani.webp",
     guestAvatarSeed: "sebastinfermani",
+    date: "2024-08-28",
     featured: false,
   },
   {
@@ -225,6 +235,7 @@ export const episodes: Episode[] = [
     imageUrl: "/images/episodios/id%2089%20Luz%20Amparo%20Medina%20-%20Impacto%20local%20de%20la%20acci%C3%B3n%20global%20de%20las%20ciudades.webp",
     guestImageUrl: "/images/INVITADOS/Luz%20Amparo%20Medina.webp",
     guestAvatarSeed: "luzamparomedina",
+    date: "2024-08-20",
     featured: false,
   },
   {
@@ -245,6 +256,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Xavier%20Matilla.webp",
     guestAvatarSeed: "xavimatilla",
+    date: "2024-07-31",
     featured: false,
   },
   {
@@ -265,6 +277,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Pedro%20Espondaburu.webp",
     guestAvatarSeed: "pedroespondaburu",
+    date: "2023-05-04",
     featured: false,
   },
   {
@@ -285,6 +298,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Diana%20Celis.webp",
     guestAvatarSeed: "dianacelis",
+    date: "2023-04-27",
     featured: false,
   },
   {
@@ -305,6 +319,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Mireia%20Piqueras.webp",
     guestAvatarSeed: "mireiapiqueras",
+    date: "2022-10-23",
     featured: false,
   },
   {
@@ -325,6 +340,7 @@ export const episodes: Episode[] = [
     imageUrl: "/images/episodios/id%20101%20Maria%20Teresa%20Nogales.webp",
     guestImageUrl: "/images/INVITADOS/Maria%20Teresa%20Nogales.webp",
     guestAvatarSeed: "marateresanogales",
+    date: "2022-09-19",
     featured: false,
   },
   {
@@ -345,6 +361,7 @@ export const episodes: Episode[] = [
     imageUrl: "/images/episodios/id%2084%20Agusti%20Fernandez%20de%20Losada%20-%20Ciudades%20Globales%20en%20un%20mundo%20desglobalizado.webp",
     guestImageUrl: "/images/INVITADOS/Agusti%20Fernandez%20Losada.webp",
     guestAvatarSeed: "agustfernndezdelosad",
+    date: "2022-07-18",
     featured: true,
   },
   {
@@ -365,6 +382,7 @@ export const episodes: Episode[] = [
     imageUrl: "/images/episodios/id%2082%20Mart%C3%ADn%20Yeza%20-%20Pinamar%20la%20reinvenci%C3%B3n%20del%20mar.webp",
     guestImageUrl: "/images/INVITADOS/martin%20yeza.webp",
     guestAvatarSeed: "martinyeza",
+    date: "2022-07-03",
     featured: true,
   },
   {
@@ -385,6 +403,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Nicol%C3%A1s%20Galarza.webp",
     guestAvatarSeed: "nicolsgalarza",
+    date: "2022-06-21",
     featured: false,
   },
   {
@@ -405,6 +424,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Fernando%20Garcia.webp",
     guestAvatarSeed: "fernandogarca",
+    date: "2022-04-20",
     featured: false,
   },
   {
@@ -425,6 +445,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Lorena%20Zarate.webp",
     guestAvatarSeed: "lorenazrate",
+    date: "2022-03-26",
     featured: false,
   },
   {
@@ -445,6 +466,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Edgardo%20Bilsky.webp",
     guestAvatarSeed: "edgardobilsky",
+    date: "2022-02-28",
     featured: false,
   },
   {
@@ -465,6 +487,7 @@ export const episodes: Episode[] = [
     imageUrl: "/images/episodios/id%2075%20Agust%C3%ADn%20Su%C3%A1rez%20-%20Boti%20Una%20experiencia%20ciudadana.webp",
     guestImageUrl: "/images/INVITADOS/Agust%C3%ADn%20Su%C3%A1rez.webp",
     guestAvatarSeed: "agustnsurez",
+    date: "2022-02-24",
     featured: false,
   },
   {
@@ -485,6 +508,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Javier%20Creus.webp",
     guestAvatarSeed: "javiercreus",
+    date: "2021-11-29",
     featured: false,
   },
   {
@@ -505,6 +529,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Diana%20Maria%20Parra.webp",
     guestAvatarSeed: "dianamariaparraromer",
+    date: "2021-09-14",
     featured: false,
   },
   {
@@ -525,6 +550,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Sarah%20Williams.webp",
     guestAvatarSeed: "sarahwilliams",
+    date: "2021-08-06",
     featured: false,
   },
   {
@@ -545,6 +571,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Melisa%20Breda.webp",
     guestAvatarSeed: "melisabreda",
+    date: "2021-06-28",
     featured: false,
   },
   {
@@ -565,6 +592,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Jose%20Corral.webp",
     guestAvatarSeed: "joscorral",
+    date: "2021-06-22",
     featured: false,
   },
   {
@@ -585,6 +613,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Federico%20Bervejillo.webp",
     guestAvatarSeed: "federicobervejillo",
+    date: "2021-05-30",
     featured: false,
   },
   {
@@ -605,6 +634,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Salvador%20Rueda.webp",
     guestAvatarSeed: "salvadorrueda",
+    date: "2021-05-10",
     featured: false,
   },
   {
@@ -625,6 +655,7 @@ export const episodes: Episode[] = [
     imageUrl: "/images/episodios/id%2072%20Carles%20Benito%20-%20La%20bici%20vino%20para%20quedarse.webp",
     guestImageUrl: "/images/INVITADOS/carles%20benito.webp",
     guestAvatarSeed: "carlesbenito",
+    date: "2021-05-02",
     featured: false,
   },
   {
@@ -645,6 +676,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Gabriel%20Lanfranchi.webp",
     guestAvatarSeed: "gabriellanfranchi",
+    date: "2021-04-19",
     featured: false,
   },
   {
@@ -665,6 +697,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Octavi%20de%20la%20Varga%20Mas.webp",
     guestAvatarSeed: "octavidelavargamas",
+    date: "2021-04-13",
     featured: false,
   },
   {
@@ -685,6 +718,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Dennis%20Quennet.webp",
     guestAvatarSeed: "dennisquennet",
+    date: "2021-03-02",
     featured: false,
   },
   {
@@ -705,6 +739,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Luis%20Herrera%20Favela.webp",
     guestAvatarSeed: "luisherrerafavela",
+    date: "2021-02-02",
     featured: false,
   },
   {
@@ -725,6 +760,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Monica%20Taher.webp",
     guestAvatarSeed: "mnicataher",
+    date: "2021-01-25",
     featured: false,
   },
   {
@@ -745,6 +781,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Sergio%20Vinitsky.webp",
     guestAvatarSeed: "sergiovinitsky",
+    date: "2020-12-29",
     featured: false,
   },
   {
@@ -765,6 +802,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Mercedes%20Vidal%20Lago.webp",
     guestAvatarSeed: "mercedesvidal",
+    date: "2020-12-09",
     featured: false,
   },
   {
@@ -785,6 +823,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Salvador%20Rueda.webp",
     guestAvatarSeed: "salvadorrueda",
+    date: "2020-08-09",
     featured: false,
   },
   {
@@ -805,6 +844,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Elvis%20Garcia.webp",
     guestAvatarSeed: "elvisgarca",
+    date: "2020-07-04",
     featured: false,
   },
   {
@@ -825,6 +865,7 @@ export const episodes: Episode[] = [
     imageUrl: "/images/episodios/id%2037%20Daniel%20Abadie%20-%20Gobierno%20digital%20para%20no%20hacer%20esperar%20al%20ciudadano.webp",
     guestImageUrl: "/images/INVITADOS/Daniel%20Abadie.webp",
     guestAvatarSeed: "danielabadie",
+    date: "2020-06-20",
     featured: false,
   },
   {
@@ -845,6 +886,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Aida%20Esteban%20Millat.webp",
     guestAvatarSeed: "aidaestebanmillet",
+    date: "2020-06-08",
     featured: false,
   },
   {
@@ -865,6 +907,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Mariana%20Flores%20Mayen.webp",
     guestAvatarSeed: "marianafloresmayen",
+    date: "2020-05-22",
     featured: false,
   },
   {
@@ -885,6 +928,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Pau%20Solanilla.webp",
     guestAvatarSeed: "pausolanillafranco",
+    date: "2020-04-12",
     featured: false,
   },
   {
@@ -905,6 +949,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Joao%20Porto%20de%20Albuquerque.webp",
     guestAvatarSeed: "joaoportodealbuquerq",
+    date: "2020-03-15",
     featured: false,
   },
   {
@@ -925,6 +970,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Alvaro%20Porro%20Gonzalez.webp",
     guestAvatarSeed: "alvaroporrogonzlez",
+    date: "2020-02-26",
     featured: false,
   },
   {
@@ -945,6 +991,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Nancy%20Lozano.webp",
     guestAvatarSeed: "nancylozano",
+    date: "2020-02-14",
     featured: false,
   },
   {
@@ -965,6 +1012,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Elkin%20Velasquez.webp",
     guestAvatarSeed: "elkinvelasquez",
+    date: "2019-12-26",
     featured: false,
   },
   {
@@ -985,6 +1033,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Sara%20Ortiz.webp",
     guestAvatarSeed: "saraortiz",
+    date: "2019-11-08",
     featured: false,
   },
   {
@@ -1005,6 +1054,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Isabelle%20Anguelovski.webp",
     guestAvatarSeed: "isabelleanguelovski",
+    date: "2019-10-06",
     featured: false,
   },
   {
@@ -1025,6 +1075,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Jordi%20Honeyroses.webp",
     guestAvatarSeed: "jordihoneyroses",
+    date: "2019-09-23",
     featured: false,
   },
   {
@@ -1045,6 +1096,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Mercedes%20Bidart.webp",
     guestAvatarSeed: "mercedesbidart",
+    date: "2019-09-08",
     featured: false,
   },
   {
@@ -1065,6 +1117,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Carlos%20Corral.webp",
     guestAvatarSeed: "carloscorral",
+    date: "2019-08-09",
     featured: false,
   },
   {
@@ -1085,6 +1138,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Miquel_Rodriguez_Planas.webp",
     guestAvatarSeed: "miguelrodrguezplanas",
+    date: "2019-07-09",
     featured: false,
   },
   {
@@ -1105,6 +1159,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Gabriel%20Lanfranchi.webp",
     guestAvatarSeed: "gabriellanfranchi",
+    date: "2019-07-02",
     featured: false,
   },
   {
@@ -1125,6 +1180,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Carlos%20Felipe%20Pardo.webp",
     guestAvatarSeed: "carlosfelipepardo",
+    date: "2019-06-09",
     featured: false,
   },
   {
@@ -1145,6 +1201,7 @@ export const episodes: Episode[] = [
     imageUrl: "/images/episodios/id%2024%20Alain%20Jorda%20-%20%20Liderazgo%20colaborativo%2C%20la%20clave%20del%20desarrollo%20local.webp",
     guestImageUrl: "/images/INVITADOS/Alain%20Jorda.webp",
     guestAvatarSeed: "alainjorda",
+    date: "2019-05-29",
     featured: true,
   },
   {
@@ -1165,6 +1222,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Dar%C3%ADo%20Hidalgo.webp",
     guestAvatarSeed: "darohidalgo",
+    date: "2019-03-29",
     featured: false,
   },
   {
@@ -1185,6 +1243,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Pedro%20Julio%20Uribe%20Bermudez.webp",
     guestAvatarSeed: "pedrojuliouribebermu",
+    date: "2019-02-24",
     featured: false,
   },
   {
@@ -1205,6 +1264,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Luis%20Gomez.webp",
     guestAvatarSeed: "luisgmez",
+    date: "2019-02-16",
     featured: false,
   },
   {
@@ -1225,6 +1285,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/David%20Uniman.webp",
     guestAvatarSeed: "daviduniman",
+    date: "2019-02-06",
     featured: false,
   },
   {
@@ -1245,6 +1306,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Salvador%20Rueda.webp",
     guestAvatarSeed: "salvadorrueda",
+    date: "2018-12-31",
     featured: false,
   },
   {
@@ -1265,6 +1327,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Ver%C3%B3nica%20Mansilla.webp",
     guestAvatarSeed: "vernicamansilla",
+    date: "2018-12-03",
     featured: false,
   },
   {
@@ -1285,6 +1348,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Omar%20Quiroga.webp",
     guestAvatarSeed: "omarquiroga",
+    date: "2018-11-26",
     featured: false,
   },
   {
@@ -1305,6 +1369,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Mariola%20Panzuela.webp",
     guestAvatarSeed: "mariolapanzuela",
+    date: "2018-11-21",
     featured: false,
   },
   {
@@ -1325,6 +1390,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Leonardo%20Brawl.webp",
     guestAvatarSeed: "leonardobrawl",
+    date: "2018-11-04",
     featured: false,
   },
   {
@@ -1345,6 +1411,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Carolina%20Huffman.webp",
     guestAvatarSeed: "carolinahuffman",
+    date: "2018-10-29",
     featured: false,
   },
   {
@@ -1365,6 +1432,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Pilar%20Conesa.webp",
     guestAvatarSeed: "pilarconesa",
+    date: "2018-10-20",
     featured: false,
   },
   {
@@ -1385,6 +1453,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Guillermo%20Bernal.webp",
     guestAvatarSeed: "guillermobernal",
+    date: "2018-10-13",
     featured: false,
   },
   {
@@ -1405,6 +1474,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Juli%C3%A1n%20Bautista%20Rojas.webp",
     guestAvatarSeed: "julinbautistarojas",
+    date: "2018-09-28",
     featured: false,
   },
   {
@@ -1425,6 +1495,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Ivan%20Acevedo.webp",
     guestAvatarSeed: "ivnacevedo",
+    date: "2018-09-19",
     featured: false,
   },
   {
@@ -1445,6 +1516,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/V%C3%ADctor%20Pineda.webp",
     guestAvatarSeed: "vctorpineda",
+    date: "2018-06-27",
     featured: false,
   },
   {
@@ -1465,6 +1537,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Silvia%20Cazorran.webp",
     guestAvatarSeed: "silviacasorrn",
+    date: "2018-05-25",
     featured: false,
   },
   {
@@ -1485,6 +1558,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Guillermo%20Gil%20Pe%C3%B1aloza.webp",
     guestAvatarSeed: "guillermopealosa",
+    date: "2018-04-08",
     featured: false,
   },
   {
@@ -1505,6 +1579,7 @@ export const episodes: Episode[] = [
     imageUrl: "/images/episodios/id%2065%20Jordi%20Hereu%20-%20La%20ciudad%20como%20proyecto.webp",
     guestImageUrl: "/images/INVITADOS/Jordi%20Hereu.webp",
     guestAvatarSeed: "jordihereu",
+    date: "2018-03-24",
     featured: true,
   },
   {
@@ -1525,6 +1600,7 @@ export const episodes: Episode[] = [
     imageUrl: "/images/episodios/id%2028%20Claudia%20Pe%C3%B1aranda%20%20Londres%20el%20transporte%20urbano%20como%20actividad%20vital.webp",
     guestImageUrl: "/images/INVITADOS/Claudia%20Penaranda.webp",
     guestAvatarSeed: "claudiapearanda",
+    date: "2018-03-15",
     featured: false,
   },
   {
@@ -1545,6 +1621,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Elkin%20Velasquez.webp",
     guestAvatarSeed: "elkinvelasquez",
+    date: "2018-03-01",
     featured: false,
   },
   {
@@ -1565,6 +1642,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Mauricio%20Leclerc.webp",
     guestAvatarSeed: "mauricioleclerc",
+    date: "2018-02-14",
     featured: false,
   },
   {
@@ -1585,6 +1663,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Victoria%20Alsina%20Burgues.webp",
     guestAvatarSeed: "victoriaalsina",
+    date: "2018-02-12",
     featured: false,
   },
   {
@@ -1605,6 +1684,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Esteban%20Le%C3%B3n.webp",
     guestAvatarSeed: "estebanlen",
+    date: "2018-01-26",
     featured: false,
   },
   {
@@ -1625,6 +1705,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Elis%20Juan.webp",
     guestAvatarSeed: "ellisjuan",
+    date: "2017-12-29",
     featured: false,
   },
   {
@@ -1645,6 +1726,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Genis%20Arnas%20P%C3%A1ez.webp",
     guestAvatarSeed: "genisarnspez",
+    date: "2017-12-15",
     featured: false,
   },
   {
@@ -1665,6 +1747,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Manuel%20Redondo.webp",
     guestAvatarSeed: "manuelredondo",
+    date: "2017-11-28",
     featured: false,
   },
   {
@@ -1685,6 +1768,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Patricia%20Alata.webp",
     guestAvatarSeed: "patriciaalata",
+    date: "2017-11-05",
     featured: false,
   },
   {
@@ -1705,6 +1789,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Carolina%20Pozo.webp",
     guestAvatarSeed: "carolinapozo",
+    date: "2017-11-05",
     featured: false,
   },
   {
@@ -1725,6 +1810,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Luis%20Romhan%20Diez.webp",
     guestAvatarSeed: "luisromhandiez",
+    date: "2017-09-20",
     featured: false,
   },
   {
@@ -1745,6 +1831,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Juan%20Ortiz%20Taboada.webp",
     guestAvatarSeed: "juanortiz",
+    date: "2017-08-22",
     featured: false,
   },
   {
@@ -1765,6 +1852,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Ugo%20Valenti.webp",
     guestAvatarSeed: "ugovalenti",
+    date: "2017-07-27",
     featured: false,
   },
   {
@@ -1785,6 +1873,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Rosa%20Suri%C3%B1ach.webp",
     guestAvatarSeed: "rosasuriach",
+    date: "2017-07-09",
     featured: false,
   },
   {
@@ -1805,6 +1894,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Carlos%20Eduardo%20Correa.webp",
     guestAvatarSeed: "carloseduardocorrea",
+    date: "2017-05-08",
     featured: false,
   },
   {
@@ -1825,6 +1915,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Fabio%20Quetglas.webp",
     guestAvatarSeed: "fabioquetglas",
+    date: "2017-04-29",
     featured: false,
   },
   {
@@ -1845,6 +1936,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Jorge%20P%C3%A9rez%20Jaramillo.webp",
     guestAvatarSeed: "jorgeprezjaramillo",
+    date: "2017-04-20",
     featured: false,
   },
   {
@@ -1865,6 +1957,7 @@ export const episodes: Episode[] = [
     imageUrl: "/images/episodios/id%2043%20Carlos%20Hernandez%20Correa%20-%20Gentrificaci%C3%B3n%20en%20las%20ciudades.webp",
     guestImageUrl: "/images/INVITADOS/Carlos%20Hernandez%20Correa.webp",
     guestAvatarSeed: "carloshernndezcorrea",
+    date: "2017-03-07",
     featured: false,
   },
   {
@@ -1885,6 +1978,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Man%20Fernandez.webp",
     guestAvatarSeed: "manufernndez",
+    date: "2017-01-26",
     featured: false,
   },
   {
@@ -1905,6 +1999,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Zulma%20Bolivar.webp",
     guestAvatarSeed: "zulmabolvar",
+    date: "2017-01-11",
     featured: false,
   },
   {
@@ -1925,6 +2020,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Ignacio%20Alcalde.webp",
     guestAvatarSeed: "ignacioalcalde",
+    date: "2016-11-07",
     featured: false,
   },
   {
@@ -1945,6 +2041,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Josep%20Ferrer.webp",
     guestAvatarSeed: "josepferrer",
+    date: "2016-11-05",
     featured: false,
   },
   {
@@ -1965,6 +2062,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Cristina%20Zubillaga.webp",
     guestAvatarSeed: "cristinazubillaga",
+    date: "2016-10-14",
     featured: false,
   },
   {
@@ -1985,6 +2083,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Franco%20Rinaldi.webp",
     guestAvatarSeed: "francorinaldi",
+    date: "2016-09-09",
     featured: false,
   },
   {
@@ -2005,6 +2104,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Ver%C3%B3nica%20Kuchinow.webp",
     guestAvatarSeed: "vernicakuchinow",
+    date: "2016-07-13",
     featured: false,
   },
   {
@@ -2025,6 +2125,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Daniel%20Trevi%C3%B1o.webp",
     guestAvatarSeed: "danieltrevio",
+    date: "2016-07-01",
     featured: false,
   },
   {
@@ -2045,6 +2146,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Alvaro%20Nicolas.webp",
     guestAvatarSeed: "alvaronicols",
+    date: "2016-06-08",
     featured: false,
   },
   {
@@ -2065,6 +2167,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/Johnny%20L%C3%B3pez.webp",
     guestAvatarSeed: "johnnylpez",
+    date: "2016-05-14",
     featured: false,
   },
   {
@@ -2085,6 +2188,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/CiudadHub.webp",
     guestAvatarSeed: "ciudadhub",
+    date: "2016-05-05",
     featured: false,
   },
   {
@@ -2105,6 +2209,7 @@ export const episodes: Episode[] = [
     imageUrl: "",
     guestImageUrl: "/images/INVITADOS/CiudadHub.webp",
     guestAvatarSeed: "ciudadhub",
+    date: "2016-03-13",
     featured: false,
   },
 ]

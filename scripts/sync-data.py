@@ -432,6 +432,7 @@ def generate_ts(episodes: list[dict]) -> str:
         "  imageUrl: string",
         "  guestImageUrl: string",
         "  guestAvatarSeed: string",
+        "  date: string",
         "  featured: boolean",
         "}",
         "",
@@ -464,6 +465,7 @@ def generate_ts(episodes: list[dict]) -> str:
             f"    imageUrl: {ts_string(ep['image_url'])},",
             f"    guestImageUrl: {ts_string(ep['guest_image_url'])},",
             f"    guestAvatarSeed: {ts_string(ep['seed'])},",
+            f"    date: {ts_string(ep['_sort_date'].strftime('%Y-%m-%d') if ep['_sort_date'] else '')},",
             f"    featured: {'true' if ep['featured'] else 'false'},",
             "  },",
         ]

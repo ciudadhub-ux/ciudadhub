@@ -18,9 +18,15 @@ export default function EpisodesSection({
     return rest as Omit<Episode, "quote">;
   });
 
+  const years = episodes.map((ep) => ep.date.slice(0, 4)).filter(Boolean).sort();
+  const firstYear = years[0] ?? "";
+
   return (
     <section id="episodios" className="pt-28 md:pt-2 pb-24 scroll-mt-[98px] md:scroll-mt-48">
       <div className="max-w-7xl mx-auto px-6">
+        <p className="font-mono text-xs tracking-[0.18em] uppercase text-zinc-500 mb-4">
+          {episodes.length} episodios{firstYear ? ` · desde ${firstYear}` : ""}
+        </p>
         <EpisodesGrid episodes={stripped} topics={topics} />
       </div>
     </section>
